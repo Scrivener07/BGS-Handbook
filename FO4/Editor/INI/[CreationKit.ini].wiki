@@ -1,0 +1,31 @@
+The following [[Initialization File]] settings are for [[Creation Kit]] editor only.
+
+= [General] =
+The <Code>[General]</Code> section settings.
+<BR>
+{{Editor:INI:General:bAllowMultipleEditors}}<BR>
+{{Editor:INI:General:bAllowMultipleMasterLoads}}<BR>
+{{Editor:INI:General:bUseVersionControl}}<BR>
+{{Editor:INI:General:sNetwork Path}}<BR>
+{{Editor:INI:General:sNewVersionBackupPath}}<BR>
+{{Editor:INI:General:sNetworkMasterPath}}<BR>
+
+
+= [Papyrus] =
+The <Code>[Papyrus]</Code> section settings.
+Adjusting the source folder and imports settings can help you keep individual groups of scripts organized.
+<BR>
+{{Editor:INI:Papyrus:sScriptSourceFolder}}
+{{Editor:INI:Papyrus:sAdditionalImports}}
+{{Editor:INI:Papyrus:sScriptTempFolder}}
+{{Editor:INI:Papyrus:sScriptCompiledFolder}}
+{{Editor:INI:Papyrus:sCompilerFolder}}
+{{Editor:INI:Papyrus:sAutoFillNamespaceDefault}}
+
+= See Also =
+* [[Initialization File]]
+* [[INI Settings (Papyrus)]]
+
+
+[[Category:Editor Reference]]
+[[Category:Game Files]]

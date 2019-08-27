@@ -8,3 +8,4 @@ Since the game can only read them from the data scripts folder, there is little 
 
 
 [[Category:Editor Configurations]]
+[[Category:Papyrus Configurations]]

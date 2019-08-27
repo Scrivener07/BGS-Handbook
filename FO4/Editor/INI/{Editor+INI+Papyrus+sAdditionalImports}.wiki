@@ -24,3 +24,4 @@ sAdditionalImports="$(Source);.\Data\Script\Source\DLC06;.\Data\Script\Source\DL
 
 
 [[Category:Editor Configurations]]
+[[Category:Papyrus Configurations]]

@@ -1,7 +1,7 @@
 <onlyinclude>
 == sScriptTempFolder ==
 * '''Default:''' <Code>""</Code>
-* '''Value:''' <Code>"C:\Users\<USERNAME>\AppData\Local\Temp\PapyrusTemp"</Code>
+* '''Path:''' <Code>"C:\Users\<USERNAME>\AppData\Local\Temp\PapyrusTemp"</Code>
 
 This tells the [[Creation Kit]] where to temporarily put script files that are being edited or compiled, as well as the compiler [[Papyrus Project]] files that it generates.
 When this entry is set to the default empty string, then the editor will use a temporary folder in the user's Windows temporary folder at <Code>"C:\Users\<username>\AppData\Local\Temp\PapyrusTemp"</Code>.
@@ -11,3 +11,4 @@ There is generally no need to change this setting unless the drive your user fol
 
 
 [[Category:Editor Configurations]]
+[[Category:Papyrus Configurations]]

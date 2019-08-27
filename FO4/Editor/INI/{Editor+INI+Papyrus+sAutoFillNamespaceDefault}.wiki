@@ -19,3 +19,4 @@ sAutoFillNamespaceDefault1="Tango57"
 
 
 [[Category:Editor Configurations]]
+[[Category:Papyrus Configurations]]

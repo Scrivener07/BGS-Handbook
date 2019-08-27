@@ -8,3 +8,4 @@ There is almost no reason to change this as the compiler installs to this folder
 
 
 [[Category:Editor Configurations]]
+[[Category:Papyrus Configurations]]

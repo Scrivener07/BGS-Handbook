@@ -9,3 +9,4 @@ If relative, it is relative to the editor's folder.
 
 
 [[Category:Editor Configurations]]
+[[Category:Papyrus Configurations]]
