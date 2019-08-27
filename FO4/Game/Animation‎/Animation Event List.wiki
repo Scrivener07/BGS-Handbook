@@ -1,0 +1,30 @@
+{{Template:Incomplete Article}}
+{{Template:Inaccurate Article}}
+{|border="1" cellpadding="5" cellspacing="0" align="left"
+|-
+! style="background:#efefef;" colspan=1  | Event Name
+! style="background:#efefef;" colspan=1  | Notes
+|-
+| weaponFire||The weapon has fired, multiple events for automatic gun fire.
+|-
+| jumpUp||A jump animation.
+|-
+| weaponDraw||
+|-
+| weaponSheathe||
+|-
+| sightedStateEnter||Player has entered Iron Sights/Scope.
+|-
+| sightedStateExit||Iron Sights/Scope Exit event.
+|-
+| reloadStartSlave||Player has begun reloading.
+|-
+| reloadComplete|| Refills the weapon's loaded ammo.
+|-
+| reloadEnd||Stops the reload animation and blends back to idle.
+|}
+
+
+[[Category:Editor Reference ]]
+[[Category:Cheat Sheets]]
+[[Category:Animation]]

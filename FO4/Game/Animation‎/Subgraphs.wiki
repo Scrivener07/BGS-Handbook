@@ -1,0 +1,89 @@
+[[Category:Animation]]
+Animations use '''Subgraphs''' to break off logical components of the character graph.
+This page will explain how Subgraphs work and also how to configure them for a [[Race]].
+
+=== Summary ===
+While working on Skyrim, BGS ended up using the ''behavior file reference'' functionality of Havok Behavior to break off logical components of the character graph into smaller, easier to understand chunks.
+Animation Sub Graphs further leverage this concept by dynamically attaching a behavior file reference to an active character behavior graph thus allowing use of the same graph logic for multiple animations.
+This is particularly helpful for modders since Havok does not release their toolset for modifying behavior graphs.
+Now modders can utilize one of the standard Fallout 4 graphs to add new content without needing Havok Behavior.
+The graph logic contains the animation file names, so they are static, but the animation paths can change.
+
+=== Data Setup ===
+An [[Actor]]s Subgraph data is set up on its [[Race]] under the "Subgraph Data".
+When modding, you should always create a new [[Race]] and make it "additive" to an existing race.
+This will prevent conflicts when loading multiple mods that both add new content to the same race.
+
+[[File:SubgraphDataEntry.jpg]]
+
+==== Additive/Template Drop down ====
+* Additive should be used to add subgraph data to an existing race inside a plugin / masterfile.
+* Template allows you to use the same subgraph animation data for a new race that another race used.  This allows you to reskin a race but use the same animations.
+**'''Note''': Skeleton & Behavior Graph have to be set to the same as the template race as well.  This should all happen automatically if you duplicate a race and rename it.
+
+==== Roles ====
+The role of the subgraph data specifies when the graph & animations will be loaded.
+
+* '''MT''': This is used when you didn't have a weapon readied.
+** Changed when using [[ChangeAnimArchetype - Actor]] or [[ChangeAnimFlavor - Actor]]
+* '''Weapon'''
+** Should change when switching [[Weapon]]s and potentially changed when using [[ChangeAnimArchetype - Actor]] or [[ChangeAnimFlavor - Actor]].
+* '''Furniture'''
+* '''Pipboy''': This is only used for 1st person pipboy animations.
+* '''Linking Only''': This is only useful for Bethesda's internal build process.
+
+==== Perspective ====
+Useful only for the player's [[Race]], this allows you to specify 1st or 3rd person animations.  Choose 3rd for all non-playable race data.
+
+==== Actor Keywords ====
+These [[Keyword]]s need to exist on the [[Actor]] for this sub graph data to get picked.
+Some keywords can be added dynamically (Archetype, Flavor & Injuries) and some are typically added in the editor to the [[Race]] or [[Actor]] (AnimSynth, AnimArchetypePlayer).
+'Female' is a special actor keyword automatically added based on the combination of Actor's gender & 'opposite gender anims' checkbox.
+The game will always choose the subgraph data that matches the maximum number of actor keywords.
+Matching the number of target keywords is the tie breaker.
+If two are tied in both those categories, it is undetermined which will get chosen.
+
+==== Target Keywords ====
+The "target" is specific to a certain role.
+If the role has a target, that target must match all keywords in the "target keywords" set.
+
+Targets broken down by role.
+* MT: No target.
+* Weapon: The [[Weapon]] being equipped.
+* Furniture: The [[Furniture]] being used.
+
+==== Behavior Path ====
+The behavior graph that is used to provide the logic for this sub graph data.
+Bethesda only supports use of behavior graphs shipped as sub graphs to the particular root project on the race.
+For any project in the body data tab, if there is a behavior graph you'd like to use in the "Behavior Paths" for that project already, you're ok to use it.
+All others will not work properly.
+
+==== Animation Paths ====
+When loading a behavior graph for the sub graph data entry, the animation file names it uses will be searched for in the paths provided here.
+The path order is important - it will check the first path before moving onto the next path and so on.
+
+=== Generating Metadata needed for Game ===
+Since the same graph logic is reused, the game needs some extra data to know how to translate the speeds the game wants into what animations play.
+There is also data that is need to calculate [[Furniture]] entries & exits as well as [[Weapon]] sight lines & fire locations.
+This data is generated through a build process that is run through the Creation Kit.
+To run the process, after you've added your sub graph entries and have the necessary data, run, based on role:
+
+<code>CreationKit.exe -GenerateAnimInfo:<ESMFilename> <DataFilepath> <OutputFilepath> [--speed] [--stance] [--forceAll]</code>
+
+Note: <ESMFilename> must be an ESM file with no spaces in the name.
+
+==== For MT ====
+<code>CreationKit.exe -GenerateAnimInfo:SubgraphExample.esm ..\Data ..\Data\Meshes\AnimTextData --speed</code>
+
+==== For Weapon ====
+<code>CreationKit.exe -GenerateAnimInfo:SubgraphExample.esm ..\Data ..\Data\Meshes\AnimTextData --speed --stance</code>
+
+==== For Furniture ====
+<code>CreationKit.exe -GenerateAnimInfo:SubgraphExample.esm ..\Data ..\Data\Meshes\AnimTextData</code>
+
+== Notes ==
+* Create Archive should properly collect all this data into your mod archive.
+
+== See Also ==
+*[[:Category:Animation|Animation Category]]
+*[[:Category:Actor|Actor Category]]
