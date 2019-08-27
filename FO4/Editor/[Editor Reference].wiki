@@ -1,0 +1,40 @@
+__NOTOC__ __NOEDITSECTION__
+{|style="color:black;" width="100%" border="0" cellpadding="5" valign="top"
+|valign="top"|
+== Welcome to the Creation Kit Editor Reference ==
+This portion of the wiki exists as a living reference for the various tools, concepts and objects in the [[Creation Kit]].
+Here you will find topics covering the various forms, dialogs, and options you will encounter while using the [[Creation Kit]].
+If you're not sure how to use an [[Activator]], how to change the contents of a [[Container]], or what the [[Object Window]] is, then this category is a good place to look.
+Unlike the [[:Category:Tutorials|Tutorial hub]], you may notice that this page doesn't contain a lot of links or direction.
+That's because this section of the wiki is more of an encyclopedia - it exists as a reference for when you aren't sure how something works or need more information.
+
+As with all of the Creation Kit Wiki, your contributions are valuable.
+If you find a page that is missing or inaccurate, please update it if you have the knowledge, or flag it for moderators by making a note on the discussion page.
+
+|style="color:black;" width="30%" border="0" cellpadding="5" valign="top"|
+== Editor Index ==
+=== Editor Concepts ===
+* [[Creation Kit|Getting Started]]
+* [[New Editor Features]]
+* [[Editor Interface]]
+* [[Sharing Mods]]
+
+=== Editor Interface ===
+* [[Data Window]]
+* [[Glossary]]
+* [[Glossary]]
+* [[Glossary]]
+
+=== Other Resources ===
+* [[Glossary]]
+* [[Cheat Sheets]]
+
+=== Reference Pages ===
+* [[Tooling Reference]]
+* [[Game File Reference]]
+* [[Object Class Reference]]
+* [[Console Command Reference]]
+* [[Condition Function Reference]]
+|-
+|colspan=2|
+|}
