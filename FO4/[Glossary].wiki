@@ -1,0 +1,441 @@
+{{Inaccurate Article}}
+=A=
+====Activation====
+Activation is the interaction between two objects in the Creation Engine.
+For example, when the player opens a door, this is an ''activation'' event between the player object and the [[Door]] object in question.
+Many object types react to an activation with some default behavior.
+[[Door]]s will open or shut, [[Container]]s display their contents, and [[NPC]]s will converse.
+[[OnActivate - ObjectReference|Activation Events]] are script-accessible as well, allowing content creators to implement advanced interactions.
+
+====Archive====
+[[Archive File]]s are compressed <code>.bsa</code> files used by Creation Engine to store certain types of data, such as 3D models, sound, meshes, and textures, efficiently.
+The [[Creation Kit]] allows users to create these archives by hand or automatically when uploading mods to the Steam Workshop.
+See also: [[File Menu#Create Archive|File Menu > Create Archive]]
+
+====Artifact====
+In computer graphics, an artifact is a visual glitch introduced by some technical process.
+[http://en.wikipedia.org/wiki/Compression_artifact Non-game specific examples on wikipedia]
+
+=B=
+====Base Object====
+The term for any [[#Object|Object]] listed in the [[Object Window]].
+Objects can have any number of [[#Object Reference|Reference]]s placed into the game world.
+
+''For example, the '''Base Object''' Actor  "Alvor" has a single [[Reference]] with the EditorID of "AlvorRef" that is in the RiverwoodAlvorsHouse cell.''
+
+''The '''Base Object''' Kit Piece "NorRmSmMid01" has many [[Reference]]s, found throughout most Nordic ruins.''
+
+
+=C=
+====Cleared Location====
+A [[Location]] can be cleared.
+By default, a [[Location]] is cleared when any/all reference(s) with the "Boss" [[Glossary#LocRefType|Location Reference Type]] is killed.
+A [[Location]] can also be cleared [[SetCleared - Location|via script]].
+
+Locations that are cleared are indicated as such on the world map.
+If the player re-visits the [[Location]] after the area has had time to reset, it may re-populated.
+
+====Creation Club====
+The '''Creation Club''' is a microtransaction system for content curated by Bethesda Game Studios for Fallout 4 and Skyrim.
+
+====Creation Engine====
+The '''Creation Engine''' is a collection of software and technologies behind Fallout 4.
+
+====Creation Kit====
+The [[Creation Kit]] will create [[Data File]]s for Fallout 4.
+
+====Culling====
+To cull, to pick out : in computer science, culling is a term used for objects which are prevented from rendering.
+
+=D=
+====Default Master Package====
+The [[Default Master Package]] is a special package which gives content creators quick access to commonly used AI behaviors without needing to create custom [[Package]]s each time.
+
+====Default Objects====
+Default objects are permanent objects that the programs needs to access reliably.
+Assign the appropriate game object to the default Use.
+
+====Depth Bias====
+Depth bias enables coplanar geometry to not z-fight, offsetting decal geometry when depth-bias is on so that it appears in front of the geometry it is on top of.
+
+Depth bias (on shadow lights) is a method to account for insufficient depth precision in shadowmaps.
+Small depth bias can result in striping artifacts on the surface of objects, large depth bias can result in a lack of contact shadows.
+
+====DMP====
+Acronym shorthand for [[Default Master Package]].
+
+=E=
+====Edge====
+Term used to describe the edge of a polygon.
+Usually used in reference to [[:Category:Navmesh|navmesh]]
+
+====EOF====
+When seen in the context of [[Papyrus Compiler Errors]] this means '''E'''vent '''O'''r '''F'''unction.
+Generally, in computing this would mean ''End Of File''.
+
+====Exterior Cells====
+Exterior [[Cell]]s belong to a [[World Spaces|Worldspaces]], and are part of the worldspace's landscape, which is basically a grid that extends infinitely in all directions.
+Each exterior cell is 4096 units by 4096 [[unit|units]] (or approximately 192x192ft or 58.5x58.5m).
+Each vertex in an exterior [[Cell]] is 128 units (6ft) apart.
+
+All exterior cells are automatically given a grid number that represents their [X,Y] position from the center of the world.
+You will see this in the [[Render Window]] title as you select objects.
+
+====External Emittance====
+External emittance is when an object gets its emittance color from an external source.
+External Emittance can be set to a specific light color, but can also inherit the sky color from a specific region of the world, allowing the emittance color to change to reflect time-of-day.
+
+=F=
+====Form====
+Each of the objects in the currently loaded [[masterfile]]s and[[ plug-in]]s, including those found in the [[Object Window]] as well as not found there.
+([[Actor]]s, [[Faction]]s, [[Package]]s, [[Cell]]s, [[Reference]]s, etc. are all forms)
+
+====Frustum====
+In games, a [http://en.wikipedia.org/wiki/Frustum Frustum] generally refers to the "view frustum" of the game camera.
+Imagine the 3D space of the game-world, and a camera floating in that space.
+The frustum of that camera, a cone-shaped field, would include all visible objects within that 3D space.
+Frustums can also be used to describe the area which an [[NPC]] can see.
+
+====FX====
+Shorthand for "Effects", usually "Special Effects".
+In the [[Creation Kit]], FX objects usually are particle systems such as fire, smoke or fog.
+
+=G=
+====Glow Fill====
+Glow Fills are a kind of Special Effects object.
+These are designed to simulate the glowing haze surrounding a source of light.
+They are typically used to create ambiance in interiors as well as obscure visual tricks such as Sun Holes.
+The object '''FXAmbBeamDust03''' is one example of a glow fill.
+
+=I=
+====Imagespace====
+An imagespace applies post-processing effects to the image.
+Images space can control elements such as contrast, tinting, how bright objects must be for bloom lighting, the intensity of the sky/sun, depth of field and more.
+More information is available in this wiki: [[ImageSpace|Imagespace reference article]].
+
+====Interior Cells====
+Interior [[Cell]]s are entered through a load [[Door]] linked to another [[Cell]] (interior or exterior).
+When in an interior, the exterior world is no longer visible.
+Each interior cell is essentially its own universe.
+
+=L=
+====Leaky Faucet Pacing====
+Term used to describe a level design pacing problem.
+Imagine the annoying persistence of a leaking faucet - it's easy to fall into a pattern of placing encounters into a level at very regular intervals.
+This problem is usually addressed very simply by removing entire encounters, as many designers will tend towards too much combat in early iterations.
+The issue can also be addressed by paying attention to relative intensity of encounters, and making sure there is an interesting progression rather than a linear one.
+
+====LinkedRef====
+Shorthand for "Linked Reference".
+Refers to the target of a Linked Reference relationship, which can be set in the Reference Properties of most references, from the Linked Ref tab.
+LinkedRefs may optionally have a keyword specified, which is helpful for references that need multiple associations/relationships.
+This is commonly used in package building and scripting.
+
+====LocRefType====
+Shorthand for Location Reference Type.
+This is a tag that can be applied to a reference, used by the [[Radiant Story]] system to populate variable with appropriate objects and locations.
+
+=N=
+====[[:Category:Navmesh|Navmesh]]====
+[[:Category:Navmesh|Navmesh]] is an editor-created three-dimensional shape which exists for the purpose of providing AI with navigation details in 3D space.
+The primary function of navmesh is simply to define where an actor can path, but navmesh can also include meta-data such as cover, ledges, water, and preferred routes.
+
+=O=
+====Object====
+Can mean different things depending on context.
+Usually refers to a [[form]] in the [[masterfile]] or added by a mod.
+Often (but not always) either a [[#Base Object|Base Object]] or an [[#Object Reference|Object Reference]].
+
+When discussing Papyrus Scripting, an Object can refer to any of the [[Script Objects]] (which correlate closely to forms).
+
+====Object Reference====
+Generally referred to as a "Reference" or "Ref", an Object Reference is an instance of an Object, placed in the world.
+For example, there is only one '''NorRmSmWallSideExSm01''' Base Object - but you can place as many instances of that object as you like.
+Each of these instances is a reference to the Base Object: so, each one is an Object Reference.
+References are explained in more depth on their own page: see [[Reference]].
+
+====Orthographic View====
+Sometimes shortened to "Ortho", orthographic view is a type of rendering/projection which displays a 3D space with no vanishing point.
+This is extremely useful for a blueprint-type view where walls appear as straight lines, allowing for very precise placement of objects in a space.
+
+Orthographic view can be toggled in the [[Creation Kit]] with the "'''0'''" (zero) hotkey.
+
+[http://en.wikipedia.org/wiki/Orthographic_projection More information is available on wikipedia.]
+
+=P=
+====Pisa Problem====
+A problem in visual design.
+The term refers to the [http://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa Leaning Tower of Pisa], which is remarkable specifically because remains standing although it doesn't look like it should remain standing.
+Because videogame locations are not required to obey the laws of physics, a structure such as the Tower would simply look ill-conceived.
+
+In general, the Pisa problem is a reminder to build spaces that look physically grounded and feasible.
+
+====Prefab====
+Prefab is a shorthand term used to refer to a collection of objects which can be easily copied to provide some complex functionality, such as multi-object traps, puzzles and creature ambushes.
+These are provided in interior cells with the ''warehouse'' prefix.
+
+Note that "prefab" is not a form type in the [[Creation Kit]].
+It's just the term applied by the team to these kinds of pre-configured setups.
+
+=Q=
+====Quest Item====
+The ''Quest Item'' check box is available on most base objects.
+Objects marked as ''Quest Item'' cannot be dropped from the player's inventory, are not counted against encumbrance, and are not cleaned up when a [[Cell]] is reset (and are not cleared from reset inventories).
+[[Actor]]s marked as quest items update more frequently.
+
+=R=
+====Reference====
+Also known as "Ref"s, there are various types of reference in the [[Creation Kit]].
+Generally, though, when speaking about references, people will mean [[Glossary#Object Reference|Object Reference]]s.
+
+====[[Region|Regions]]====
+Regions are a means of storing data about blocks of cells in [[World Spaces|Worldspaces]].
+In ''Skyrim'', they are primarily used as a way to assign [[Weather]] to exterior cells.
+
+====Rendering====
+Rendering is a computer science term for drawing an image on-screen.
+On this wiki, it refers to any 3D objects which the Creation Engine is currently displaying.
+It is important to note that a rendered image is not always visible.
+This is why optimization is important: it helps content creators cut down on the amount of wasted rendering by ensuring that as few objects as possible are unnecessarily rendered.
+
+For more information, check out the [http://en.wikipedia.org/wiki/Rendering_(computer_graphics) Rendering article on wikipedia]
+
+====Roombound====
+A synonym for "Room Marker"
+
+====Room-Hall-Room====
+Refers to a pacing problem in level design.
+It's very easy for a level to fall into a rut where the space simply feels like a series of random rooms connected by repetitive hallways.
+This is usually the sign of a level in early stages of design.
+Room-Hall-Room can be addressed by replacing bland hallways with more interesting traversal spaces, giving rooms a sense of cohesive purpose in the larger meaning of a level, and tuning encounter pacing.
+
+====Room Marker====
+A cube used to encompass references for the sake of manual occlusion.
+Room Markers are linked to each other via portals, helping the Creation Engine make better decisions about what to cull and render.
+[[Bethesda_Tutorial_Optimization|More information is available in this tutorial.]]
+
+=S=
+====Skybox====
+A common game development term for an unreachable area created as a sort of diorama to create the illusion of an opening to sky.
+In Skyrim these usually consist of ceiling holes where a patch of sky can be seen, and additional clutter such as foliage is often used to make the illusion more convincing.
+
+=T=
+====Triangle====
+In the context of [[:Category:Navmesh|navmesh]], a triangle or "tri" is a 3-sided polygon.
+
+=U=
+====UI====
+Common acronym for "User Interface".
+Used interchangeably with GUI and HUD, or "Graphical User Interface", and "Heads-Up Display", respectively.
+
+=V=
+====Vertex====
+A vertex, or "vert", is a point in 3D space.
+When working with [[:Category:Navmesh|navmesh]], vertices(plural) are used to create the corners of triangular polygons.
+
+=Z=
+====Z-Fighting====
+In videogames, this term refers to a common visual bug where a surface flickers erratically because two objects are co-planar.
+Z-Fighting in the [[Creation Kit]] is commonly caused by the accidental duplication of static objects, or placement of decal objects directly on a surface with no offset.
+
+= Object Classes =
+{| class="wikitable sortable"
+|-
+! Links
+! Object Property
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Activate Text Override|Search]]
+| {{Editor:Property:Activate Text Override}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Actor Value|Search]]
+| {{Editor:Property:Actor Value}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Add Destruction Data|Search]]
+| {{Editor:Property:Add Destruction Data}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Art Object|Search]]
+| {{Editor:Property:Art Object}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:B|Search]]
+| {{Editor:Property:B}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Clac from components|Search]]
+| {{Editor:Property:Clac from components}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Color|Search]]
+| {{Editor:Property:Color}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Component Data|Search]]
+| {{Editor:Property:Component Data}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Conditions|Search]]
+| {{Editor:Property:Conditions}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Crafting Sound|Search]]
+| {{Editor:Property:Crafting Sound}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Damage|Search]]
+| {{Editor:Property:Damage}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Desc|Search]]
+| {{Editor:Property:Desc}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Description|Search]]
+| {{Editor:Property:Description}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Destructible Object|Search]]
+| {{Editor:Property:Destructible Object}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Display Name|Search]]
+| {{Editor:Property:Display Name}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Edit Destruction Data|Search]]
+| {{Editor:Property:Edit Destruction Data}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Editor Color|Search]]
+| {{Editor:Property:Editor Color}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Effect Shader|Search]]
+| {{Editor:Property:Effect Shader}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Enchanting|Search]]
+| {{Editor:Property:Enchanting}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Equip Type|Search]]
+| {{Editor:Property:Equip Type}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Explosion|Search]]
+| {{Editor:Property:Explosion}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Featured Item Message|Search]]
+| {{Editor:Property:Featured Item Message}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Full Name|Search]]
+| {{Editor:Property:Full Name}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:G|Search]]
+| {{Editor:Property:G}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Health|Search]]
+| {{Editor:Property:Health}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Icon|Search]]
+| {{Editor:Property:Icon}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:ID|Search]]
+| {{Editor:Property:ID}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:ImageSpace Modifier|Search]]
+| {{Editor:Property:ImageSpace Modifier}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Impact Data Set|Search]]
+| {{Editor:Property:Impact Data Set}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Instance Naming|Search]]
+| {{Editor:Property:Instance Naming}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Inventory Art|Search]]
+| {{Editor:Property:Inventory Art}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Inventory Image|Search]]
+| {{Editor:Property:Inventory Image}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:IS Mod|Search]]
+| {{Editor:Property:IS Mod}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Keywords|Search]]
+| {{Editor:Property:Keywords}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Menu Art Object|Search]]
+| {{Editor:Property:Menu Art Object}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Menu Image|Search]]
+| {{Editor:Property:Menu Image}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Message Icon|Search]]
+| {{Editor:Property:Message Icon}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Model|Search]]
+| {{Editor:Property:Model}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Name|Search]]
+| {{Editor:Property:Name}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Notes|Search]]
+| {{Editor:Property:Notes}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Object Window Filter|Search]]
+| {{Editor:Property:Object Window Filter}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Old Script|Search]]
+| {{Editor:Property:Old Script}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:On Local Map|Search]]
+| {{Editor:Property:On Local Map}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Pack-In Use Only|Search]]
+| {{Editor:Property:Pack-In Use Only}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Papyrus Fragment|Search]]
+| {{Editor:Property:Papyrus Fragment}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Papyrus Script|Search]]
+| {{Editor:Property:Papyrus Script}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Pickup Sound|Search]]
+| {{Editor:Property:Pickup Sound}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Playable|Search]]
+| {{Editor:Property:Playable}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Preview Transform|Search]]
+| {{Editor:Property:Preview Transform}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Priority|Search]]
+| {{Editor:Property:Priority}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Projectile|Search]]
+| {{Editor:Property:Projectile}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Putdown Sound|Search]]
+| {{Editor:Property:Putdown Sound}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:R|Search]]
+| {{Editor:Property:R}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Short Name|Search]]
+| {{Editor:Property:Short Name}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Sound|Search]]
+| {{Editor:Property:Sound}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Spells|Search]]
+| {{Editor:Property:Spells}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:SWF|Search]]
+| {{Editor:Property:SWF}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Use Global|Search]]
+| {{Editor:Property:Use Global}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Use Sound|Search]]
+| {{Editor:Property:Use Sound}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Value|Search]]
+| {{Editor:Property:Value}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:Weight|Search]]
+| {{Editor:Property:Weight}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:World Art|Search]]
+| {{Editor:Property:World Art}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:Property:World Model|Search]]
+| {{Editor:Property:World Model}}
+|-
+| [[Special:WhatLinksHere/Template:Editor:PropertyObsolete|Search]]
+| {{Editor:PropertyObsolete}}
+|}
+
+
+[[Category:Editor Reference]]
