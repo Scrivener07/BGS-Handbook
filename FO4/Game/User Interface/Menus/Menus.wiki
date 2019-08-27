@@ -1,0 +1,13 @@
+{{Template:Menus}}
+
+== See Also ==
+*[[Flash File]]
+*[[OnMenuOpenCloseEvent - ScriptObject]]
+*[[RegisterForMenuOpenCloseEvent - ScriptObject]]
+*[[UnregisterForMenuOpenCloseEvent - ScriptObject]]
+*[[:Category:User Interface|User Interface Category]]
+
+
+[[Category:Editor Reference]]
+[[Category:User Interface]]
+[[Category:Cheat Sheets]]

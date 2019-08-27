@@ -1,0 +1,74 @@
+__NOTOC__ __NOEDITSECTION__
+
+{|style="color:black;" width="100%" border="0" cellpadding="5" valign="top"
+|valign="top"|
+==Welcome to the Creation Kit Papyrus Reference==
+'''Papyrus''' is an entirely new scripting system created specifically for the Creation Kit.  Like any scripting environment, Papyrus can be a daunting system, especially for those who are unfamiliar with other scripting or programming languages.  This page is intended to serve as your portal to all things Papyrus, and there are several ways to use it, depending on expertise level.
+===The Complete Beginner===
+If you've never used a scripting or programming language before, it will take you some time to get up to speed with Papyrus, but don't worry: ''you've totally got this''.  If you've never used a Bethesda toolset before, consider some [[:Category:Tutorials|basic tutorials]] to get your footing with the Creation Kit in general.  The [[Bethesda_Tutorial_Papyrus_Hello_World|Hello, World]] tutorial will get you started with creating and manipulating your own Papyrus scripts.  You may wish to read the [[Papyrus_Introduction|Papyrus primer]] as well, even though some concepts may go over your head for now.
+
+Remember that Papyrus is a fully-fledged scripting language.  As such, it's going to take substantial work to become adept with it, but much of what you learn will directly apply to other scripting and programming languages you may wish to learn in the future.  Stick with it, and be sure to get help from other modders in online communities such as this wiki and the official [http://community.bethesda.net/community/fallout/fallout-4/creation-kit-beta/ Fallout 4 Creation Kit forum]!
+
+===Veteran Bethesda Modders===
+Prior experience in modding for Morrowind, Oblivion, Fallout 3 or Fallout: New Vegas will give you an advantage with Papyrus, as the basic terminology and usage of many core concepts has been preserved.  Papyrus interfaces with the game in an entirely new way, however, and introduces several new concepts. Be sure to read about the  [[Differences_from_Previous_Scripting|differences from previous Bethesda scripting tools]], as well as the general [[Papyrus_Introduction|Papyrus primer]] before diving in.  The [[Bethesda_Tutorial_Papyrus_Hello_World|Hello, World]] tutorial is also a good starting point understanding how a papyrus script is created, compiled, and connected to the game.
+
+===Veteran Skyrim Modder===
+If you have done modding for Skyrim then you'll already be mostly familiar with Papyrus for Fallout 4. You will probably want to start with the [[Differences from Skyrim to Fallout 4]] page, which details the changes and the new additions to the language since the last game. Of course, this category page will also list all the new functions that have been added to Fallout 4 as well, so keep that search bar handy!
+
+===Experienced Scripters/Programmers===
+If you're already comfortable with concepts like "Object-Oriented", "Compiling" and "Threading", you'll want to start by looking over the [[Papyrus_Introduction|Papyrus primer]].  This article provides an overview of the language, how it interacts with the Creation Kit and game, and includes a few practical examples.  For a hands-on project, try [[Bethesda_Tutorial_Papyrus_Events_and_Properties|this tutorial]], which adds some scripted gameplay to a boss battle introduced in the [[:Category:Bethesda_Level_Design_Tutorial_Series|level design tutorial series]].
+
+===Papyrus Expert===
+Once you're comfortable with Papyrus, this page will become a useful index of the various functions available in the language.  Consider bookmarking this page and using your browser "search" function (''ctrl+F in most browsers'') to quickly search for what you need. More articles can be searched on the second page of the wiki Papyrus category.
+
+Also consider adding your own best practices and usage examples to existing function pages as you become proficient with the language.  These contributions to the modding knowledge base are instrumental to the longevity and vitality of the Creation Kit community - meaning better mods for us all!
+
+|style="color:black;" width="30%" border="0" cellpadding="5" valign="top"|
+== Papyrus Index ==
+=== Papyrus Concepts ===
+* [[Papyrus Introduction|Papyrus Primer]]
+* [[Differences_from_Previous_Scripting|Differences from Previous Scripting]]
+* [[Differences from Skyrim to Fallout 4]]
+* [[Variables and Properties (Papyrus)|Variables & Properties]]
+* [[Papyrus_Naming_Conventions|Papyrus Naming Conventions]]
+* [[Expression_Reference|Expressions]]
+* [[Operator_Reference|Operators]]
+* [[Function_Reference|Functions]]
+* [[Statement_Reference|Statements]]
+* [[Arrays (Papyrus)|Arrays]]
+* [[Structs (Papyrus)|Structs]]
+* [[States (Papyrus)|States]]
+* [[Extending Scripts (Papyrus)|Extending Scripts]]
+* [[Threading Notes (Papyrus)|Notes on Threading]]
+* [[Persistence (Papyrus)|Persistence]]
+* [[Save File Notes (Papyrus)|Notes on Saves]]
+* [[Performance (Papyrus)|Performance]]
+* [[:Category:Events | Events]]
+* [[Remote Papyrus Event Registration]]
+* [[Custom Papyrus Events]]
+* [[Papyrus Projects]]
+* [[Inter-mod Communication]]
+
+=== Other Resources ===
+* [[Papyrus FAQs]]
+* [[:Category:Text Editors|Choosing a Text Editor]]
+
+===External Text Editors===
+* [[Sublime Text]]
+* [[Atom]]
+* [[Notepad++]]
+* [[Visual Studio Code]]
+
+=== Reference Pages ===
+* [[:Category:Papyrus Language Reference|Papyrus Language Reference]]
+* [[:Category:Script Objects|Papyrus Script Objects]]
+* [[Papyrus Compiler Reference]]
+* [[Papyrus Compiler Errors]]
+* [[Papyrus Runtime Errors]]
+* [[INI Settings (Papyrus)|Papyrus-related INI Settings]]
+* [[Gamesettings (Papyrus)|Papyrus-related Gamesettings]]
+* [[Console Commands (Papyrus)|Papyrus-related Console Commands]]
+* [[Papyrus_Glossary|Glossary of Terms]]
+|-
+|colspan=2|
+|}

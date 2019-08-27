@@ -1,0 +1,111 @@
+<onlyinclude>These are the user interface menus that players interact with in game.
+{| class="wikitable"
+! style="text-align: center; font-weight: bold;" | Name
+! style="font-weight: bold;" | Description
+|-
+| style="text-align: center;" | BarterMenu
+|
+|-
+| style="text-align: center;" | BookMenu
+|
+|-
+| style="text-align: center;" | Console
+|
+|-
+| style="text-align: center;" | ConsoleNativeUIMenu
+|
+|-
+| style="text-align: center;" | ContainerMenu
+|
+|-
+| style="text-align: center;" | CookingMenu
+|
+|-
+| style="text-align: center;" | CreditsMenu
+|
+|-
+| style="text-align: center;" | CursorMenu
+|
+|-
+| style="text-align: center;" | DialogueMenu
+|
+|-
+| style="text-align: center;" | ExamineMenu
+|
+|-
+| style="text-align: center;" | FaderMenu
+|
+|-
+| style="text-align: center;" | FavoritesMenu
+|
+|-
+| style="text-align: center;" | GenericMenu
+|
+|-
+| style="text-align: center;" | HUDMenu
+|
+|-
+| style="text-align: center;" | LevelUpMenu
+|
+|-
+| style="text-align: center;" | LoadingMenu
+|
+|-
+| style="text-align: center;" | LockpickingMenu
+|
+|-
+| style="text-align: center;" | LooksMenu
+|
+|-
+| style="text-align: center;" | MainMenu
+|
+|-
+| style="text-align: center;" | MessageBoxMenu
+|
+|-
+| style="text-align: center;" | MultiActivateMenu
+|
+|-
+| style="text-align: center;" | PauseMenu
+|
+|-
+| style="text-align: center;" | PipboyMenu
+|
+|-
+| style="text-align: center;" | PromptMenu
+|
+|-
+| style="text-align: center;" | ScopeMenu
+|
+|-
+| style="text-align: center;" | SitWaitMenu
+|
+|-
+| style="text-align: center;" | SleepWaitMenu
+|
+|-
+| style="text-align: center;" | SPECIALMenu
+|
+|-
+| style="text-align: center;" | TerminalHolotapeMenu
+|
+|-
+| style="text-align: center;" | TerminalMenu
+|
+|-
+| style="text-align: center;" | VATSMenu
+|
+|-
+| style="text-align: center;" | VignetteMenu
+|
+|-
+| style="text-align: center;" | WorkshopMenu
+|
+|-
+| style="text-align: center;" | Workshop_CaravanMenu
+|
+|}
+'''Key'''
+*'''Name:''' The string identifier of the menu.
+*'''Description:''' A short description of where or how the menu appears in game.
+</onlyinclude>

@@ -1,0 +1,3 @@
+The in game user interface [[Menu]]s are a combination of [[Flash File]]s and other [[Game System]]s.
+
+[[Category:Game Systems]]

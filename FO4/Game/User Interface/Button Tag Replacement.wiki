@@ -1,0 +1,142 @@
+Like in Fallout, we have a system in place to auto-magically replace a tagged user event name with the button art to which it's mapped.  Tag replacement is done by enclosing a user event name in square brackets '''[  ]'''.
+
+
+== Tag Names ==
+The following are the valid user event tags.  Next to each tag are the default controls that trigger the user event.  If a default control is not noted for a platform, then it does not exist on that platform.  E.g. "Forward" doesn't exist on the 360; it is a keyboard-only user event.  Also, controls on the 360 are identical to controls on a 360 controller plugged into the PC.
+
+=== Gameplay ===
+{|border="1" cellpadding="5" cellspacing="0" align="center"
+|-
+! style="background:#efefef;" | User Event
+! style="background:#efefef;" | PC
+! style="background:#efefef;" | Console
+|-
+| Forward
+| W
+|
+|-
+| Back
+| S
+|
+|-
+| Strafe Left
+| A
+|
+|-
+| Strafe Right
+| D
+|
+|-
+| Move
+|
+| Left stick
+|-
+| Look
+|
+| Right stick
+|-
+| Secondary Attack
+| Right mouse button
+| Left trigger
+|-
+| Primary Attack
+| Left mouse button
+| Right trigger
+|-
+| Melee
+| T
+| Right bumper
+|-
+| Activate
+| E
+| A button
+|-
+| Ready Weapon
+| R
+| X button
+|-
+| Pipboy
+| Tab
+| B button
+|-
+| Toggle POV
+| G
+| Back button
+|-
+| Zoom Out
+| Mouse wheel down
+|
+|-
+| Zoom In
+| Mouse wheel up
+|
+|-
+| Jump
+| Spacebar
+| Y button
+|-
+| Sprint
+| L-Alt
+| L3
+|-
+| VATS
+| Z
+| Left bumper
+|-
+| Sneak
+| L-Ctrl
+| R3
+|-
+| Pause
+| Esc
+| Start button
+|-
+|}
+
+== Button Names ==
+It's also possible to specify a particular button to show up.  Just keep in mind that if you specify a button directly, they'll show up as specified on all platforms.  E.g. if you have "[Xenon_Y]" in your text, it show up as (Y) on both PC and PS4, as well.
+
+'''PC'''
+* Just the letter / number / symbol on the key.  E.g. 'E', '[', 'Backspace', etc.
+
+'''PC Controller/XB1'''
+* Up
+* Down
+* Left
+* Right
+* Xenon_Start
+* Xenon_Back
+* Xenon_L3
+* Xenon_R3
+* Xenon_LB
+* Xenon_RB
+* Xenon_A
+* Xenon_B
+* Xenon_X
+* Xenon_Y
+* Xenon_LT
+* Xenon_RT
+* Xenon_LS
+* Xenon_RS
+
+'''PS4'''
+* Up
+* Down
+* Left
+* Right
+* PSN_Start
+* PSN_Back
+* PSN_L3
+* PSN_R3
+* PSN_LB
+* PSN_RB
+* PSN_A
+* PSN_B
+* PSN_X
+* PSN_Y
+* PSN_LT
+* PSN_RT
+* PSN_LS
+* PSN_RS
+
+[[Category:User Interface]]

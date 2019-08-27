@@ -1,0 +1,151 @@
+{{Template:Incomplete Article}}
+The '''Text Replacement''' game system parses value tokens and formatting tags. This is used on a several forms like [[Book]]s and [[Terminal]]s.
+
+==Tokens==
+Quest-associated books can contain tokens used for '''Text Replacement''' if you add a book alias to the quest and set "Uses Stored Text" flag on this alias.
+
+==Markup==
+Some text fields support a variety of '''Markup''' tags used with formatting.
+
+===Example===
+<source lang="text">
+<!--This is the example for text markup-->
+<font face='$HandwrittenFont' size='35'>Hello World!</font>
+<b><i><u>This is bold, italic, and underlined.</u></i></b>
+<BR>These are some colors I like.
+<ul>
+<li>Black</li>
+<li>White</li>
+<li>Red</li>
+<li>Green</li>
+<li>Blue</li>
+</ul></nowiki>
+[pagebreak]
+<!--A new page has starts here-->
+<p align='center'>My center aligned text.
+<p align='left'>My left aligned text.
+</source>
+
+===Syntax===
+* '''Comment Tag'''
+** Tag: <code>&lt;!--Comment text--&gt;</code>
+** Description: Comments tell the renderer not display the text wrapped within the tags while still retaining the text in the editor.
+* '''Bold Tag'''
+** Tag: <code><nowiki><b></b></nowiki></code>
+** Description: Text surrounded by bold tags will be '''bolded'''.
+* '''Italic Tag'''
+** Tag: <code><nowiki><i></i></nowiki></code>
+** Description: Text surrounded by italics tags will be ''italicized''.
+* '''Underline Tag'''
+** Tag: <code><nowiki><u></u></nowiki></code>
+** Description: Text surrounded by underline tags will be <u>underlined</u>.
+* '''List Tag'''
+** Tag: <code><nowiki><ul><li>ITEM HERE</li></ul></nowiki></code>
+** Description: Creates list items with an empty square for the icon. Each list item is indented and separated by an empty line.
+** Example: <code><nowiki><ul><li>Red</li><li>Green</li><li>Blue</li></ul></nowiki></code>
+* '''Line-Break Tag'''
+** Tag: <code><nowiki><br></nowiki></code>
+** Description: Breaks the text to the next line.  Strictly speaking, this tag isn't necessary.  You can just as easily add blank lines to the book text.
+* '''Page-Break'''
+** Tag: <code>[pagebreak]</code>
+** Description: Breaks to the next page.  Must be on its own line.  Text automatically breaks to the next page once it reaches the end.
+** Note: images do not, so if you notice your images running off the edge of the page, manually place a page-break or reduce the size of your image.
+* '''Paragraph Tag'''
+** Tag: <code><nowiki><p></nowiki></code>
+** Description: Aligns and delineates a block of text as a paragraph.
+*** Alignment
+**** Tag: <code><nowiki><p align='center'></nowiki></code>
+**** Description: Aligns the surrounded text.  Valid values are 'left', 'right', 'justify', 'center'.
+**** Note: If you want to place an image within some text so that it wraps around it, the text containing the image needs to be within paragraph tags.
+* '''Font Tags'''
+** Tag: <code><nowiki><font></nowiki></code>
+** Description: Changes the font attributes of the surrounded text.
+*** Color
+**** Tag: <code><nowiki><font color='#FFFFFF'></font></nowiki></code>
+**** Description: Changes the font's color.
+*** Face
+**** Tag: <code><nowiki><font face='$HandwrittenFont'></font></nowiki></code>
+**** Description: Changes the typeface of the font. See the fonts section for valid typeface names.
+*** Point Size
+**** Tag: <code><nowiki><font size='20'></font></nowiki></code>
+**** Description: Changes the font size. See below for the line lengths you can accommodate using different font sizes.
+*** Alpha
+**** Tag: <code><nowiki><font alpha='#FF'></font></nowiki></code>
+**** Description: Changes the font's transparency. Two-digit hexadecimal values from <code>'#00'</code> (fully transparent) through <code>'#FF'</code> (fully opaque) are supported.
+* '''Image tags'''
+** Tag: <code><nowiki><img></nowiki></code>
+** Description: Places an image on the page.
+*** Source Filename
+**** Tag: <code><nowiki><img src='img://example.dds'></nowiki></code>
+**** Description: This attribute specifies the filename of the image you want to show up.  You need to use the texture path to an image.
+**** Note: Make sure the filename begins with <code>img://</code>.
+*** Height and Width
+**** Tag: <code><nowiki><img src='example.dds' height='40' width='40'></nowiki></code>
+**** Description: Sets the height and width of the image in pixels.
+*** Illuminated Letters
+**** Tag: <code><img src='img://Textures/Interface/Books/Illuminated_Letters/X_letter.png'></code>
+**** Description: Used for adding special illuminated letters at the beginning of books. (Replace the "X" with any letter or number.)
+
+==Fonts==
+The fonts displayed in game are stored in a [[Flash File]] font library.
+These font libraries are shared between menus during runtime.
+The current font configuration can be found in ''Fallout 4\Data\Interface\FontConfig.txt''
+
+*'''Library:'''Interface\fonts_en.swf [[File:Roboto Condensed Example.png|thumb|top|Example of the main Fallout 4 font]]
+**'''Font Class:''' $MAIN_Font
+**'''Font Family:''' Roboto Condensed
+**'''Font Style:''' Normal
+
+*'''Library:'''Interface\fonts_en.swf [[File:Roboto Condensed Bold Example.png|thumb|top|Example of the main Fallout 4 font, bolded]]
+**'''Font Class:''' $MAIN_Font_Bold
+**'''Font Family:''' Roboto Condensed
+**'''Font Style:''' Bold
+
+*'''Library:'''Interface\fonts_en.swf [[File:Handwritten Institute Font Example.png|thumb|top|Example of the handwritten font in Fallout 4]]
+**'''Font Class:''' $HandwrittenFont
+**'''Font Family:''' Handwritten_Institute
+**'''Font Style:''' Normal
+
+*'''Library:'''Interface\fonts_en.swf [[File:Brody Bold Example.png|thumb|top|Example of the Brody font in Fallout 4]]
+**'''Font Class:''' $BRODY
+**'''Font Family:''' "Brody"
+**'''Font Style:''' Bold
+
+*'''Library:'''Interface\fonts_en.swf [[File:Share-TechMono Font Example.png|thumb|top|Example of the terminal font in Fallout 4]]
+**'''Font Class:''' $Terminal_Font
+**'''Font Family:''' Share-TechMono
+**'''Font Style:''' Normal
+
+*'''Library:'''Interface\fonts_en.swf
+**'''Font Class:''' $Controller_Buttons
+**'''Font Family:''' Controller  Buttons
+**'''Font Style:''' Normal
+
+*'''Library:'''Interface\fonts_en.swf
+**'''Font Class:''' $Controller_Buttons_inverted
+**'''Font Family:''' Controller  Buttons inverted
+**'''Font Style:''' Normal
+
+*'''Library:'''Interface\fonts_en.swf
+**'''Font Class:''' $CClub_Font
+**'''Font Family:''' Eurostile LT Std Roman
+**'''Font Style:''' None
+
+*'''Library:'''Interface\fonts_en.swf
+**'''Font Class:''' $CClub_Font_Bold
+**'''Font Family:''' Eurostile Cyr Std Bold
+**'''Font Style:''' None
+
+*'''Library:'''Interface\fonts_console.swf [[File:Arial Font Example.png|thumb|top|Example of the console font in Fallout 4]]
+**'''Font Class:''' $ConsoleFont
+**'''Font Family:''' Arial
+**'''Font Style:''' Normal
+
+*'''Library:'''Interface\fonts_console.swf [[File:Consolas Font Example.png|thumb|top|Example of the console debug font in Fallout 4]]
+**'''Font Class:''' $DebugTextFont
+**'''Font Family:''' Consolas
+**'''Font Style:''' Normal
+
+
+[[Category:Game Systems]]
+[[Category:User Interface]]
