@@ -1,3 +1,11 @@
+.\wiki
+TES5/
+
+# Archives
+*.7z
+*.zip
+*.rar
+
 # Windows thumbnail cache files
 Thumbs.db
 Thumbs.db:encryptable
