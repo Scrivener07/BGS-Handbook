@@ -1,0 +1,10 @@
+<onlyinclude>
+=== sScriptCompiledFolder ===
+* '''Default:''' <Code>".\Data\Scripts"</Code>
+
+This tells the [[Creation Kit]] where to put compiled [[Script File]]s.
+Since the game can only read them from the data scripts folder, there is little reason to change this.
+</onlyinclude>
+
+
+[[Category:Editor Configurations]]

@@ -1,0 +1,7 @@
+<onlyinclude>'''Component Data:''' A collection of [[Component]]s this [[MiscItem]] will yield when scrapped. The object's cap ''Value'' may also be influenced by entries within the collection.
+**'''Component:''' The [[Component]] object to use.
+**'''Quantity:''' The amount of this component.
+**'''Display Index:''' Used for sorting the display order within the user interface. Sorting is alphabetical by default, where higher values are sorted towards the bottom.</onlyinclude>
+
+
+[[Category:Editor Properties]]

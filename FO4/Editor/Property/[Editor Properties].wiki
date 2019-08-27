@@ -1,0 +1,6 @@
+This category is for shared property descriptions of [[Base Object]]s.
+These descriptions are transcluded onto the [[Glossary]] and pages within the [[Object Class Reference]].
+
+
+[[Category:Object Classes]]
+[[Category:Glossary]]

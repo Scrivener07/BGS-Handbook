@@ -1,0 +1,32 @@
+= Editor Settings =
+The following settings are editor-only [[Initialization File]] settings.
+
+== Defaults ==
+The following block shows the defaults for all the various settings.
+If you end up messing something up you can always copy this block back into your ini file (or delete the block entirely):
+
+ [Papyrus]
+ sScriptSourceFolder="../Source/Scripts/"
+ sAdditionalImports=""
+ sScriptTempFolder=""
+ sScriptCompiledFolder="Data/Scripts/"
+ sCompilerFolder="Papyrus Compiler/"
+
+== Individual Settings ==
+You will typically not need to touch any of these settings, though adjusting the source folder and imports settings can help you keep individual groups of scripts separate.
+
+{{Editor:Configuration:sScriptSourceFolder}}
+{{Editor:Configuration:sAdditionalImports}}
+{{Editor:Configuration:sScriptTempFolder}}
+{{Editor:Configuration:sScriptCompiledFolder}}
+{{Editor:Configuration:sCompilerFolder}}
+{{Editor:Configuration:sAutoFillNamespaceDefault}}
+
+== See Also ==
+* [[Initialization File]]
+* [[Editing INI Settings (Papyrus)]]
+
+
+[[Category:Editor Reference]]
+[[Category:Game Files]]
+[[Category:Papyrus]]

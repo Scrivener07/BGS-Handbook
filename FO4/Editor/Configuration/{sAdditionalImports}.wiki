@@ -1,0 +1,26 @@
+<onlyinclude>
+=== sAdditionalImports ===
+* '''Default:''' <Code>"$(source);.\Data\Scripts\Source\Base"</Code>
+
+This setting is a list of additional folders that the editor and compiler should use.
+The folders are separated by semicolons, and will be used in left-to-right order.
+Any listed import folders on the left will override import folders on the right.
+
+A special variable called <Code>$(source)</Code> may be specifed to indicate the value of <Code>sScriptSourceFolder</Code> should be used.
+The order of imports may be verifed by looking at the import list within the script tab of the [[Preference Window]].
+Like the source folder, paths may be absolute or relative to the editor's isntallation directory.
+
+'''Examples'''
+<source lang="ini">
+; Include a "base" folder containing all original game scripts, let DLC1 override it, and then finally override both with the source folder:
+sAdditionalImports="$(Source);Data/Scripts/Source/DLC01;Data/Scripts/Source/Base"
+</Source>
+<BR>
+<source lang="ini">
+; Include all DLC imports.
+sAdditionalImports="$(Source);.\Data\Script\Source\DLC06;.\Data\Script\Source\DLC05;.\Data\Script\Source\DLC04;.\Data\Script\Source\DLC03;.\Data\Script\Source\DLC02;.\Data\Script\Source\DLC01;.\Data\Script\Source\Base"
+</Source>
+</onlyinclude>
+
+
+[[Category:Editor Configurations]]
