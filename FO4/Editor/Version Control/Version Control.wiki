@@ -1,29 +1,78 @@
-[[Category:Tutorials]]
-<br />
-Information contained herein was taken from the Skyrim page, and amended after testing in the Fallout 4 Creation Kit. Though instructions are similar, this page shall document the process specifically for Fallout 4, in the context of mod collaboration from multiple contributors. This page will not document how to use external revision control software such as Perforce, or Git.
-<br />
-<br />
-== Setup your Creation Kit installation to enable version control ==
-<br />
-* Navigate to your Fallout 4 directory
-* Create the following new folders:
-** Fallout 4\Merging\Data
-** Fallout 4\Merging\VersionBackup
-** Fallout 4\Data\CheckInBackup
+The [[Version Control]] system allows multiple developers to work simultaneously on a single [[Data File]].
+The [[Creation Kit]] does this by merging the contents of a multiple child plugins into a single master plugin.
+Using the version control system is essential to working on team projects.
+This page will document the process of mod collaboration with multiple contributors.
+This document will not cover how to use external revision control software such as ''Perforce'', or ''Git''.
+This document assumes basic usage knowledge of the Creation Kit.
 
-* Enable Windows Sharing for the newly created folders
-** Right click on the CheckInBackup folder -> select "Properties" -> select the "Sharing" tab -> click "Advanced Sharing..."
-** Click "Share this folder", and then "OK"
-** Back on the Properties windows, click "Share..."
+
+= Setup =
+To begin, configure the [[Creation Kit]] to enable version control.
+This will involve creating directories, network sharing folders, editing [[Initialization File]]s, and creating a master [[Data File]].
+
+
+=== Create Directories ===
+Navigate to the Fallout 4 installation directory and create the following new folders.
+* <code>...\steamapps\common\Fallout 4\Merging\Data</code>
+* <code>...\steamapps\common\Fallout 4\Merging\VersionBackup</code>
+* <code>...\steamapps\common\Fallout 4\Data\CheckInBackup</code>
+
+
+=== Enable Windows Sharing ===
+Enable ''Windows File Sharing'' on the following two folders.
+* <code>...\steamapps\common\Fallout 4\Merging</code>
+* <code>...\steamapps\common\Fallout 4\Data\CheckInBackup</code>
+
+Configure sharing for <code>CheckInBackup</code>, and then repeat these steps for the <code>Merging</code> folder.
+There is no need to share any of the <code>Merging</code> sub-folders.
+* Right click on the '''CheckInBackup''' folder and select '''Properties'''.
+* Select the '''Sharing''' tab -> click '''Advanced Sharing...'''.
+* Click '''Share this folder''', and then '''OK'''.
+* Back on the ''Properties'' windows, click the '''Share...''' button.
 *: [[File:SharePropertiesTab.png]]
-** You won't actually be sharing your computer with anyone else, so you don't have to add any additional users - just click "Share" -> "Done"
-** Make note of the "Network Path" displayed, you'll need this for the next step
-** Repeat the above for the Merging folder (you don't need to do this individually for the two sub-folders within)
+* You won't actually be sharing your computer with anyone else, so you don't have to add any additional users - just click '''Share''' -> '''Done'''.
+* Make note of the '''Network Path''' displayed, you'll need this for the next step.
 
 
-* Next, navigate back to your Fallout 4 directory
-* Open the file "CreationKit.ini"
-* Modify the following line to say:
+=== Create Master File ===
+The Creation Kit version control system will need a master [[Data File]] to merge child plugins into.
+There are various ways to create new master files with community made software.
+Some of these include [[XEdit]], [[Wrye Bash]], or any hexidecial editor.
+There are even more software projects that can be found with an internet search.
+
+Create a new master plugin.
+
+
+=== User Information ===
+Use the windows command line to get your ''User Name'' and ''Computer Name''.
+You can optionally execute the batch file below to get configuration information.
+
+====== VersionControl.bat ======
+<source lang="winbatch">
+@ECHO OFF
+ECHO Use these values to configure the Creation Kit version control system.
+ECHO.
+ECHO Computer Name: %COMPUTERNAME%
+ECHO User Name: %USERNAME%
+ECHO.
+PAUSE
+</Source>
+
+====== Example Output ======
+<source lang="text">
+Use these values to configure the Creation Kit version control system.
+
+Computer Name: KS07
+User Name: Scrivener07
+
+Press any key to continue . . .
+</Source>
+
+
+=== Initialization Files ===
+* Navigate to the <code>...\steamapps\common\Fallout 4</code>, the Fallout 4 directory.
+* Open\Create the <code>CreationKitCustom.ini</code> [[Initialization File]].
+* Populate the <code>CreationKitCustom.ini</code> with the following:
 <source lang="ini">bUseVersionControl=1</source>
 
 * Add the following lines (anywhere under the "[General]" heading):
@@ -52,9 +101,7 @@ YOURWINDOWSUSERNAME=1
 *: [[File:versioncontrol_creationkitprefs.png]]
 
 
-
-
-== Understanding .esp and .esm files ==
+= Understanding Data Files =
 <br />
 .esp files are "Bethesda Plugin Data Files"
 * This is the standard file type created by the Creation Kit, to save your mod
@@ -170,6 +217,7 @@ Here's a diagram demonstrating the proper workflow for multiple team members con
 * User 3 uploads version 4 of the .esm to the repository
 <br/>
 <br/>
+
 == Merge process and workflow of the individual team member ==
 <br/>
 * Download the latest .esm file from the repository, to both the \Fallout 4\Data\ folder, AND \Merging\Data\.
@@ -208,8 +256,21 @@ Good luck!
 <br/>
 <br/>
 
+== Notes ==
+* Information contained herein was taken from the Skyrim page, and amended after testing in the Fallout 4 [[Creation Kit]].
+
 == See Also ==
 * [[Creation Kit]]
 * [[Data Window]]
+* [[Version Control Window]]
 * [[Data File]]
+* [https://support.microsoft.com/en-us/help/4092694 File sharing over a network in Windows 10].
+* [https://www.creationkit.com/index.php?title=Version_control Skyrim - Version Control]
+* [https://www.creationkit.com/index.php?title=Mod_Merging Skyrim - Mod Merging]
+* [https://www.youtube.com/watch?v=6eInvAyMXoI Wheeze's Creation Kit Tutorials - Skyrim Version Control]
+* [https://www.perforce.com/ Perforce - Source Control Manager]
+* [https://git-scm.com/ git - Source Control Manager]
 
+
+[[Category:Editor Reference]]
+[[Category:Tutorials]]
