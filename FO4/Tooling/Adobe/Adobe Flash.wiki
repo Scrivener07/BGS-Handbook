@@ -1,0 +1,15 @@
+Adobe Flash is a multimedia authoring program developed by [https://www.adobe.com/ Adobe Systems] with built-in support for [[Flash File]]s.
+Flash can be used for animating vector graphics, text, images, and scripting with ActionScript.
+Published Flash content is viewed via a third-party Flash Players called Scaleform.
+
+You can download it from the official website [https://www.adobe.com/products/animate.html here].
+
+== Notes ==
+*Newer releases of Adobe Flash have been rebranded as Adobe Animate for Creative Cloud.
+
+== See Also ==
+*[[Flash File]]
+*[https://en.wikipedia.org/wiki/Scaleform_GFx Scaleform GFx]
+
+
+[[Category:Tooling]]

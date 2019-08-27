@@ -1,0 +1,17 @@
+[[Adobe Illustrator]] is a vector graphics editor developed by [https://www.adobe.com/ Adobe Systems].
+Adobe Illustrator can be used with [[Adobe Flash]] to create graphics for the game's [[User Interface]].
+
+You can download it from the official website [https://www.adobe.com/products/illustrator.html here].
+
+== Notes ==
+None
+
+== See Also ==
+*[[Adobe Flash]]
+*[[Interface File]]
+*[https://en.wikipedia.org/wiki/Adobe_Illustrator Adobe Illustrator on Wikipedia]
+*[https://en.wikipedia.org/wiki/Vector_graphics Vector Graphics on Wikipedia]
+
+
+[[Category:Tooling]]
+[[Category:User Interface]]

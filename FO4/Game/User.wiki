@@ -1,0 +1,9 @@
+The [[User]] is in control of the [[Player]].
+
+== See Also ==
+* [[Actor]]
+* [[Player]]
+* [https://en.wikipedia.org/wiki/User_(computing) User (Computing) on Wikipedia]
+
+
+[[Category:Game System]]

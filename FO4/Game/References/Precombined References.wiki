@@ -1,0 +1,40 @@
+There are two systems new to Fallout 4 whose shared goal is to help with performance: precombination and previs.
+
+== New Systems ==
+
+=== Precombination ===
+Precombination works by analyzing 3D reference data for a cell and merging like geometries across similarly located references into a different set of [[Model File | NIFs]]. For example, if you had three references to "RockWithLichen" and one reference to "RockWithNoLichen" tucked together in the corner of a cell, precombination would merge all four rock geometries together and all four lichen geometries together into a single NIF named for the combination key for that corner of the cell (e.g., <code>Meshes\PreCombined\0000DBBB_01B8656E_OC.NIF</code>.) The cell would store the Form IDs for those combined references, so that the cell would know to not load 3D for those NIFs because their 3D will have already been baked into the combined NIFs.
+
+=== Previs ===
+Previs is precomputed visibility data that is calculated using the precombined [[Model File | NIFs]]. Previs builds a visibility graph of which non-mobile uncombined references and combined geometries are visible from different points, which is then used in the game for preculling the scene. This data is stored for a 3x3 collection of cells in the UVD files (e.g., <code>Vis\Fallout4.esm\0000DBB9.UVD</code>.)
+
+== How Precombination and Previs Work Together ==
+When we detect a change to a reference used in any of that process during a plugin load, we disable both systems for that area. Most changes would invalidate the precreated [[Model File | NIFs]], so the game errs on the side of caution and just turns off precombination, and because the game cannot unmerge precreated NIFs, anything that turns off, or partially disables, precombination must also turn off previs.
+
+Newly added references are fine, however. They are not prebaked into any NIFs and aren't in the combined lists, so they aren't affected. They are also treated by the previs system as dynamic objects, so although their visibility isn't calculated as optimally as it could be, the system at least is not shut down. But not every change can be adding something new.
+
+=== Solutions ===
+* The solution to this which was used in the DLC is to just recreate new precombination and previs data for the changed cells. Bethesda used an automated process for this, but the <code>PreCombine Geometry</code> items in the World menu should work as well to generate new local combined [[Model File | NIFs]] and stamp new combination data onto the cells.
+* The Visibility menu contains options for recreating UVD files with your changes. Ensure that you generate vis data for neighboring cells, too, since it contains information about what can be seen across cell boundaries.
+
+The challenge for modders is in handling mods with overlapping areas since only one set of precombined/previs data can exist. For DLC, Bethesda just stayed away from areas that other DLC touched, but that won't work for modders. One possible solution for modders is to combine mods in a way that the precalc data is merged together.
+
+=== Replacing NIFs ===
+When a [[Model File | NIF]] is changed out from under an existing reference, that reference doesn't know it was changed, so precombination isn't disabled. Poking that reference, or any other combined reference in the cell, to get it into the plugin will disable precombined data though, and when the game tries to load the actual 3D for the reference, the game finds the new model and loads that model correctly. For similar changes to base objects, there is a <code>Clear Affected Cells For PreCombine Data</code> option in the Object Window right-click menu that should wipe the combined data from any cell containing that base object.
+
+== Development Notes ==
+Ideally, references would have been combined at run time, so that the developers and modders would not have to worry about it. However, this was not feasible due to memory restrictions and load time/streaming concerns.
+
+== Related INI Settings ==
+The Fallout 4 team used two [[Initialization File]] settings during development to disable these systems completely:
+
+<pre>
+[General]
+bUseCombinedObjects=0
+bPreCulledObjectsEnabled=0
+</pre>
+
+Although these settings can cause performance issues, these settings can be used to test whether an issue is related to a plugin or precalc data.
+
+
+[[Category:Game Systems]]

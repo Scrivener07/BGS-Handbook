@@ -1,0 +1,120 @@
+[[Category:Scripting_Guides]]
+This script will allow you to implement a user log on your scripts for the purpose of debugging.
+
+
+==Requirements==
+You will need to [[Enable Debug Logging]] in Fallout 4's [[Initialization File]] in order to allow the game to create logs in the file system.
+
+
+==Script==
+
+<source lang="papyrus">
+Scriptname Papyrus:Log Hidden DebugOnly
+{Creates custom user logs for the purpose of debugging}
+
+Struct UserLog
+	string Caller
+	string FileName
+EndStruct
+
+
+; User Log
+;---------------------------------------------
+
+bool Function WriteLine(UserLog Log, var Text) Global
+	If (Log == none)
+		Log = new UserLog
+		Log.Caller = ""
+		Log.FileName = "User"
+	ElseIf (StringIsNoneOrEmpty(Log.FileName))
+		Log.FileName = "User"
+	EndIf
+	Text = Log.Caller + " " + Text
+	If(Debug.TraceUser(Log.FileName, Text))
+		return true
+	Else
+		Debug.OpenUserLog(Log.FileName)
+		return Debug.TraceUser(Log.FileName, Text)
+	EndIf
+EndFunction
+
+
+Function WriteChangedValue(UserLog Log, string propertyName, var fromValue, var toValue) Global
+	WriteLine(Log, "Changing "+propertyName+" from " + fromValue + " to " + toValue)
+EndFunction
+
+
+Function WriteNotification(UserLog Log, var Text) Global
+	If (WriteLine(Log, Text))
+		Debug.Notification(Text)
+	EndIf
+EndFunction
+
+
+Function WriteMessage(UserLog Log, var Text) Global
+	If (WriteLine(Log, Text))
+		Debug.MessageBox(Text)
+	EndIf
+EndFunction
+
+
+Function WriteError(UserLog Log, var Text) Global
+	If (WriteLine(Log, Text))
+		Debug.MessageBox("Error\n"+Text)
+	EndIf
+EndFunction
+
+
+; Text
+;---------------------------------------------
+
+bool Function StringIsNoneOrEmpty(string value) Global
+	return !(value) || value == ""
+EndFunction
+
+</source>
+
+
+==Usage==
+The Papyrus:Log script is a global library which is implemented by other scripts. An example of a Papyrus:Log implemented on a [[Quest]] would be as shown below.
+
+<source lang="papyrus">
+ScriptName Papyrus:LogExample extends Quest
+{Attaches to a Quest form in the CreationKit}
+
+import Papyrus:Log
+; imports the Log script so the compiler knows about the UserLog struct type.
+
+UserLog Log
+
+
+Event OnInit()
+	Log = new UserLog
+	Log.Caller = self
+	Log.FileName = "MyLogFileName"
+EndEvent
+
+
+Event OnQuestInit()
+	; Event received when this quest has just started up - after aliases are filled, and at the same time as the quest startup stage is run.
+	WriteLine(Log, "The OnQuestInit event has executed.")
+EndEvent
+
+
+Event OnStageSet(int auiStageID, int auiItemID)
+	WriteLine(Log, "The OnStageSet event StageID equals "+auiStageID+" and auiItemID equals "+auiItemID)
+EndEvent
+
+
+Event OnReset()
+	;Event received when this quest is started up (either the first time or subsequent times - this will fire in parallel with your startup stage!).
+	WriteLine(Log, "The OnReset event has executed.")
+EndEvent
+
+
+Event OnQuestShutdown()
+	; Event received when this quest has shut down (aliases are cleared at this time).
+	WriteLine(Log, "The OnQuestShutdown event has executed.")
+EndEvent
+
+</source>

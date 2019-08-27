@@ -1,0 +1,16 @@
+The scripting guide for Papyrus may include walkthoughs, samples, and snippets for common scenarios.
+This is a good place to start learning about the practical applications and feature areas of Papyrus in Fallout 4.
+
+==Standards==
+Scripts included in this category should be ones that are likely to be useful to readers.
+There are a few things that are likely to make a script useful in this way.
+
+*'''Guidelines'''
+**Script in this category should demonstrate a solution to a common problem or advanced technique.
+**Both comments and member names should be short and descriptive.
+**Scripts should be kept short and only perform a single function.
+**Scripts should be kept reusable to in order to apply to a generic situation.
+**A scripts behaviour and any setup required in the Creation Kit should be documented on its page.
+
+
+[[Category:Tutorials]]

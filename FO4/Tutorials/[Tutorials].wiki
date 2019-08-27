@@ -1,0 +1,59 @@
+__NOTOC__ __NOEDITSECTION__
+{|style="color:black;" width="100%" border="0" cellpadding="5" valign="top"
+|valign="top"|
+Welcome to the Creation Kit tutorial hub.
+[[Creation Kit|Get started]] with the '''Creation Kit''' and browse topics here.
+The [http://www.creationkit.com/index.php?title=Category:Tutorials Skyrim Creation Kit Tutorials] also have information useful for modding Fallout 4.
+Notice, that there are some ''changes'' to the new [[Creation Kit]] for Fallout 4.
+Be sure to check out the [[New Editor Features]] and [[Differences from Skyrim to Fallout 4]].
+
+== Tips ==
+*You can use {{key press|Ctrl|Shift|A}} to align to a [[Reference]]'s position. You can also use {{key press|Ctrl|A}} to align to its rotation.
+*{{key press|Alt|Q}} will clear your current snap [[Reference]].
+*Pressing {{key press|Mouse Click|Button 4}} while moving/rotating a [[Reference]] will slow the translation down, allowing for fine movements.
+*{{key press|Alt|G}} will enable ''Local Rotation'' mode, which allows you to move on the world's axis and rotate on the last selected [[Reference]]'s local axis.
+*You can {{key press|Double Mouse Click}} a [[Layer]] to hide/show it.
+*You can {{key press|Alt|Double Mouse Click}} a [[Layer]] to freeze it.
+*You can {{key press|Ctrl|Double Mouse Click}} a [[Layer]] to make it the active [[Layer]].
+*You can rotate a group of [[Object]]s around their local axis by being in ''Local Mode (G)'' and holding the ''control key'' while rotating the [[Reference]]s.
+*To make a ''Static Collection'', select the [[Reference]]s and press {{key press|Alt|O}}. {{key press|Alt|U}} will break them back out into their individual statics.
+*You can use {{key press|Ctrl|G}}to group the selected [[Reference]]s. {{key press|Ctrl|U}} will ungroup them. You can select a specific [[Reference]] in a group while holding the alt key.
+*To link one [[Reference]] to another, you can use {{key press|Ctrl|Space}} and click the [[Reference]] you'd like to link to, then hit {{key press|Enter}}.
+*{{key press|Alt|Shift|1}} will hide all unselected [[Reference]]s, which "isolates" the selected [[Reference]]s.  {{key press|Alt|1}} will unhide everything.
+*You can now use {{key press|1}} to hide selected triangles while in navmesh mode.  {{key press|Alt|1}} will unhide all hidden triangles.
+*You can change the colors of [[Object]]s and categories in the [[Object Window]] by modifying their layout. You can even hide them! Go to <code>View -> Object Window Layout</code>.
+*You can create a Pack-In of [[Reference]]s (a saved copy of them) by selecting the [[Reference]]s, right clicking, and selecting "Create Pack-In".
+*{{key press|Ctrl|Alt|D}} will duplicate the selected [[Reference]], and ''LinkRef'' the old [[Reference]] to the newly created one.  Quick way to make a patrol, or ''LinkRef'' chain.
+*While holding Z, X, or C to rotate/move a [[Reference]] on a specific axis you can manipulate the selected [[Reference]]s without actually having your cursor over them.
+*Holding S while clicking and dragging will scale a spline's thickness.  Holding {{key press|Ctrl|Alt|S}} will adjust its tension.
+*If performing operations in the [[Render Window]] feels sluggish, and there are a lot of loaded [[Reference]]s, try checking the "Filtered Only" checkbox in the [[Cell View Window]].
+*{{key press|Shift|R}} will Show/Hide Roombounds and Portals.
+*{{key press|Ctrl|F5}} will export data from most lists in the editor to a <code>.txt</code> file.
+*{{key press|Ctrl|Shift|Mouse Click|Drag}} will de-select any selected [[Reference]].
+*The [[Layer Window]] now has a ''Filter Box''.
+*There is a "Recent Cells" list that displays your most recently visited [[Cell]]s.  You can find it between "Interiors" and "Commonwealth" in the "World Space" drop-down in the [[Cell View Window]].
+*Double <code>right-clicking</code> on an item in most drop-down menus will open that item.
+*If you want to stay in the "Recent Cells" Worldspace upon loading a [[Cell]] then set <code>bSelectWorldspaceForRecentCell=0</code> under <code>[General]</code> in your CreationKitCustom.ini
+*You can now rename multiple ''Forms'' in the [[Object Window]] by selecting them, right clicking, and selecting "Rename".
+*The "Out of Date Dialogue" button allows you to record all your dialog quickly.
+*In the Scene View, "Dialog Only" allows you to quickly edit dialog.
+*In Scene View, {{key press|Ctrl|P}} adds a new ''PC Response''.
+*In Scene View, {{key press|Ctrl|D}} adds a new ''Dialog Action''.
+*In Scene View, {{key press|Ctrl|R}} adds a new ''NPC Response Action''.
+*If you're not in the scene view, if you hold down shift and double left click you can immediately begin editing dialog.
+
+|style="color:black;" width="30%" border="0" cellpadding="5" valign="top"|
+== Tutorial Index ==
+=== Creation Kit ===
+*[[Creation Kit|Getting Started]]
+*[[New Editor Features]]
+*[[Differences from Skyrim to Fallout 4]]
+*[[:Category:Scripting Guides|Scripting Guides]]
+
+=== Other ===
+* [[Glossary]]
+* [[Cheat Sheets]]
+
+|-
+|colspan=2|
+|}

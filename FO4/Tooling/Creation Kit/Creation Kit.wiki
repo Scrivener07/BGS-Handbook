@@ -1,0 +1,59 @@
+[[File:Creation Kit Logo.png|200px|left]]
+The Creation Kit is the official tooling by Bethesda Game Studios for working with [[Data File]]s.
+This editor was the same tool used by Bethesda Game Studios to create Fallout 4 and its DLC.
+
+Due to the Creation Engine's modular nature, mod authors may take advantage to create their own content.
+Such content as new [[Quest]]s, [[Actor]]s, [[Weapon]]s, [[Armor]]s, and everything else a [[Data File]] contains.
+The Creation Kit is free to anyone with a PC copy of Fallout 4 and a [https://bethesda.net Bethesda.net] account.
+{{ClearFloats}}
+
+== Installing ==
+The Creation Kit is acquired through the ''Bethesda.net Launcher''.
+You can download the ''Bethesda.net Launcher'' from the official [https://bethesda.net Bethesda.net] website.
+
+:[http://download.cdp.bethesda.net/BethesdaNetLauncher_Setup.exe Direct Download]
+:[https://bethesda.net/en/eulas/bethesdalauncher End User License Agreement]
+# To begin the download, locate the launcher download option at the bottom of the website or use the direct link above.
+# Once downloaded, locate the file called "BethesdaNetLauncher_Setup" to begin the installation, follow the instructions to install the application.
+# Create a [https://account.bethesda.net/en/login Bethesda.net account] and log into the launcher.
+# Once logged in to the Bethesda Launcher, click on the arrows circled in red. This will expand a list to containing the Creation Kit for Fallout 4. See image below.
+# Install the Creation Kit from the launcher.
+
+[[File:Creation Kit Launcher.png|600px]]
+
+== Setup ==
+For the most part, the Creation Kit is ready to use after installation.
+Though depending on the type of mod project, some settings and configurations may need to be changed.
+For the smoothest experience, consider some configurations such as [[Enable Loose Files]] and [[Enable Debug Logging]].
+[[Sharing Mods]] on Xbox and Playstation will require [[Bethesda Login Window|signing into your Bethesda.net account]] with the Creation Kit.
+
+== Usage ==
+Visit the [[Editor Reference]] for specific usage documentation and get familiar with the [[Editor Interface]].
+
+[[File:CreationKit Editor.png|600px]]
+
+== Technologies ==
+*Uses Havok (TM): ©1999-2016. Havok.com, Inc. (and its Licensors). All Rights Reserved. See www.havok.com for details. All rights reserved
+*Uses Bink Video. Copyright 2007-2016 by RAD Game Tools, Inc.
+*Uses Autodesk® Scaleform® copyright ©2011, Autodesk, Inc.  All rights reserved.
+*FaceFX software used for facial animation. ©2002-2016, OC3 Entertainment, Inc. and its licensors. All rights reserved.
+*Uses Umbra 3 Visibility Solution. ©2016 by Umbra Software Ltd. www.umbrasoftware.com.
+*NVIDIA GameWorks (TM) Technology provided under license from NVIDIA Corporation. Copyright ©2002-2016 NVIDIA Corporation. All Rights Reserved.
+*Uses the Sentry Spelling-Checker Engine.  Copyright ©1994-2003 Wintertree Software Inc.
+*Uses ANTLR 3. Copyright ©2010 Terence Parr. All Rights Reserved.
+
+== Notes ==
+*Uploading mods to Bethesda.net requires a ''Steam-linked'' Bethesda.net account. See the [https://bethesda.net/community/topic/151/uploading-mods-to-bethesda-net-requires-steam-linked-bethesda-net-account developer post] for more details.
+
+== See Also ==
+*[[Data File]]
+*[[Creation Kit Toolset]]
+*[[New Editor Features]]
+*[[Editor Reference]]
+*[https://account.bethesda.net/en/login Bethesda.net Login]
+*[https://bethesda.net/community/category/61/fallout-4 Creation Kit Support]
+
+
+[[Category:Editor Reference]]
+[[Category:Tooling]]
+[[Category:Creation Kit]]

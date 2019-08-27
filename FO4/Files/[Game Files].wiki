@@ -1,0 +1,53 @@
+A reference of all the game files and directories that may be encountered while using Fallout 4 and the [[Creation Kit]].
+This reference will explain their uses, differences, and importance to making mods.
+
+== Data ==
+Fallout 4 and the [[Creation Kit]] will load file assets from the ''Data'' directory, located <code>...\Steam\SteamApps\common\Fallout 4\Data\</code>.
+The game will load [[Data File]]s, [[Archive File]]s, and [[Initialization File]]s from this folder.
+With the [[Enable Loose Files]] configuration, Fallout 4 will also consider several sub-directories that load specific assets based on their file type.
+
+'''Directories'''
+*<code>...\Fallout 4\Data\</code>: Loads [[Data File]]s, [[Archive File]]s, and [[Initialization File]]s.
+*<code>...\Fallout 4\Data\Interface\</code>: Loads [[Interface File]]s for Fallout 4.
+*<code>...\Fallout 4\Data\Layouts\</code>: Loads window presets for the [[Creation Kit]].
+*<code>...\Fallout 4\Data\LSData\</code>: Loads lip sync data for the [[Creation Kit]].
+*<code>...\Fallout 4\Data\Materials\</code>: Loads [[Material File]]s for Fallout 4.
+*<code>...\Fallout 4\Data\Meshes\</code>: Loads [[Model File]]s for Fallout 4.
+*<code>...\Fallout 4\Data\Programs\</code>: Loads [[Interface File]]s for [[Holotape]]s which are a ''Program''.
+*<code>...\Fallout 4\Data\Scripts\</code>: Loads [[Script File]]s
+*<code>...\Fallout 4\Data\Sound\</code>: Loads [[Sound File]]s for Fallout 4.
+*<code>...\Fallout 4\Data\Textures\</code>: Loads [[Texture File]]s for Fallout 4.
+*<code>...\Fallout 4\Data\Video\</code>: Loads [[Video File]]s for Fallout 4.
+
+== User ==
+Fallout 4 and the [[Creation Kit]] will store various application settings in your [https://msdn.microsoft.com/en-us/library/windows/desktop/bb776900(v=vs.85).aspx Windows User Profile]
+This is typically located <code>C:\Users\<USERNAME>\...</code>.
+There, you see folders such as ''Desktop'', ''Downloads'', ''Documents'', ''Music'', and ''Pictures''.
+
+'''Directories'''
+*<code>C:\Users\<USERNAME>\AppData\Local\Fallout4\..</code>: Application settings related to ''Load Order'' and activated ''DLC''. Used by Fallout 4 and the [[Creation Kit]].
+*<code>C:\Users\<USERNAME>\AppData\Local\Temp\PapyrusTemp\...</code>:  Used by the [[Creation Kit]] to write temporary files for compiling [[Papyrus]] scripts.
+*<code>C:\Users\<USERNAME>\Documents\My Games\Fallout4\...</code>:
+
+== Assets ==
+Between runtime and authortime, the game uses many kinds of files. The following asset types have details.
+*[[Data File]]
+*[[Archive File]]
+*[[String File]]
+*[[Initialization File]]
+*[[Text File]]
+*[[Sound File]]
+*[[Model File]]
+*[[Texture File]]
+*[[Material File]]
+*[[Script File]]
+*[[Interface File]]
+*[[Video File]]
+
+== See Also ==
+*[[Enable Loose Files]]
+*[[Tooling Reference]]
+*[[Editor Reference]]
+*[https://msdn.microsoft.com/en-us/library/windows/desktop/bb776900(v=vs.85).aspx Windows User Profile]
+
+[[Category:Editor Reference]]

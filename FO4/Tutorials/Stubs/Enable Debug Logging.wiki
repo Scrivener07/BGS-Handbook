@@ -1,0 +1,29 @@
+[[Category:Tutorial_Stubs]]
+The [[Debug Script]] offers many methods for diagnosing and tracing execution of [[Papyrus]] scripts.
+The following are some of the most commonly used.
+
+<source lang="papyrus">
+ Debug.Trace("This message is written to the papyrus log file.")
+ Debug.Notification("This message is displayed on the HUD menu.")
+ Debug.MessageBox("This message is displayed in a message box.")
+ Debug.CenterOnCell("QASmoke")
+ Debug.DumpEventRegistrations(self)
+</source>
+
+
+However, these methods will not work unless you enable logging:
+
+# Open the file :  <code>..\Documents\My Games\Fallout 4\Fallout4Custom.ini</code>
+# Populate the Fallout4Custom.ini file with the following:
+<source lang="text">
+ [Papyrus]
+ bEnableLogging=1
+ bEnableTrace=1
+ bLoadDebugInformation=1
+ bEnableProfiling=1
+ sDefaultLogOverlay=Papyrus
+</source>
+
+
+'''NOTE'''
+Log output from [[Papyrus]] will be written to <code>..\Documents\My Games\Fallout 4\Logs\Script\Papyrus.0.log</code> or <code>..\Documents\My Games\Fallout 4\Logs\Script\User\</code> if you have configured a user log.

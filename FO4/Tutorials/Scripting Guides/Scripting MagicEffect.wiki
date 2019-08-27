@@ -1,0 +1,54 @@
+[[Category:Scripting_Guides]]
+
+This example script can be attached to a Magic Effect and create a looping incremental effect
+that will increment for the entire duration of the effect, and then either stop or be removed, depending on user preference.
+ActionPoints are used here, but any ActorValue - including custom ones - can be applied.
+
+==Script==
+<source lang="papyrus">
+Scriptname change_value_over_time extends activemagiceffect
+
+ActorValue Property avSomeActorValue Auto Const
+{ The actor value you want this script to modify }
+Actor akEffectTarget
+
+Float Property fChangeBy Auto
+{ The amount to increment the value by each time, to decrease over time use a negative number }
+Float Property fInitialAmount Auto
+{ The value to set when the effect starts }
+Float Property fFrequency Auto
+{ Seconds between increments }
+
+
+int iChangeTimerID = 10 ; Give our timer an ID we can remember
+
+Event OnEffectStart(Actor akTarget, Actor akCaster)
+	akEffectTarget = akTarget ; We store this here so that the timer event has access to the target
+
+        if(fInitialAmount)
+            akTarget.SetValue(akSomeActorValue, fInitialAmount)
+        endif
+
+;	This script will continue applying the fChangeBy amount every fFrequency seconds until the effect wears off, so a Magic Effect lasting ten seconds with 1.0 frequency will apply ten times in this example.
+	StartTimer(fFrequency, iChangeTimerID)
+endEvent
+
+Event OnTimer(int aiTimerID)
+        if(aiTimerID == iChangeTimerID)
+            ; Change the value by adding the change amount to the current value, the fChangeBy is negative, it will reduce the value
+            akEffectTarget.SetValue(avSomeActorValue, akEffectTarget.GetValue(avSomeActorValue) + fChangeBy)
+
+            StartTimer(fFrequency, iChangeTimerID) ; Start the timer again
+	endif
+EndEvent
+
+;	It's important leave this event block in so that effectTarget gets cleaed out of the memory when the effect completes. It can also be used to add any final effects
+Event OnEffectFinish(Actor akTarget, Actor akCaster)
+	akEffectTarget = None ; This isn't the target sent by the event, just our temporary variable keeping the actor reference. Maintaining references in variables can cause them to persist, it's a good habit to confirm they aren't being kept when no longer needed.
+EndEvent
+
+</source>
+
+==Usage==
+
+The dynamic Looping Change script is meant to be used in tandem with [[Magic Effect]]s; it will change a chosen Actor Value for the duration of the Magic Effect, at a frequency indicated by the user. This is useful for situations where a magic effect is intended to increase or decrease an actor value within the duration of the effect, rather than immediately "jump" to a particular value as is only allowed for by default behavior.

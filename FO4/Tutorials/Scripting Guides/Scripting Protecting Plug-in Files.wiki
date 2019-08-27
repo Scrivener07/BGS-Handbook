@@ -1,0 +1,104 @@
+[[Category:Scripting_Guides]]
+This script will allow you to only allow access to an esp plug-in file if requirements are met.
+
+==Usage==
+There are many reasons why you may want to protect a plug-in file from only allowing authoirsed users to test said file or if you want to use said file for personal use. This method can also be used to prevent piracy.
+
+==Preperations==
+First lets make a quest to handle our script so that it will run as soon as the player loads into the game.
+
+To do this go to the <b>Object Window</b> and under the <b>Character tab</b>, open the <b>Quests</b> sub menu. Then right click on any quest and click <b>New</b>. Give this quest an ID and insure that <b>Allow Repeated Stages</b> is checked on the <b>Quest Data</b> menu. Then lets make a new stage under the <b>bQuest Stages</b> menu and call it stage 10. Make sure that <b>Run On Start</b> is checked. The close the <b>Quest Window</b> and reopen the same quest we just made. This will give us access to the stage fragments. Lets go over to the <b>Scripts</b> tab on the far right end of the quest window and make a new script by pressing <b>Add</b> followed by <b>[New Script]</b>.
+
+Once you have clicked on <b>[New Script]</b> name it what you would like and click <b>OK</b>. Now please refer to the <u>Script</u> part of this tutorial.
+
+
+
+==Script==
+This is an example script. It can be used to prevent access to a plugin file by displaying a series of messages and menus that will either let the player into the game with the plug-in or take them back to the main menu where they can uninstall the plug-in file.
+
+<b>EXPLANATION:</b>
+
+The first part of the script uses the <u>Group Function</u>. This is used to group properties together and make a cleaner look to the script. Note that groups, like other functions have to be ended using EndGroup. Group Functions can be named which is what is after the word Group, the first group is named Reqiured_Properties. Group names can not have spaces so underscores will have to do. Once a group has been created, script properties can be put inside them. Using {} underneath either a group or a property will allow you to add a note so that you can refer back to it later.
+
+The next part of the script after all properties have been declaired is the Requirements Section, which is where you can define what should be true, or even false in this case. We are using Game.IsPluginInstalled() to check if a plugin is installed and enabled in the players game. If so a message will be showed.
+
+The Self.Reset() and Self.Stop() Functions are part of the Quest scripting and stop and restart the quest so that the message will be displayed if the player go to the menu and loads the game again.
+
+The functions below all of this are what control happens with messages and menus where aiButton is the integer that will correspond with what button is pressed in the message box and then will follow out set instructions. These functions are then called such as how the first function called Menu() is called when the user has met the reqiurments of the script.
+
+To learn more about menu's and buttons please see this tutorial by TheDarkFox127: https://www.youtube.com/watch?v=Hm8GBbTLQAs
+
+In the menu I have used as an example, I have made 4 buttons, The first is an exit button that will restart the quest and return the player to the main menu. The second button will teleport the player to a marker. The third will display an very important message and the final button will list people who are testing / using the mod currently.
+
+<source lang="papyrus">
+
+Scriptname PluginProtector extends Quest
+
+Group Required_Properties
+	{Messages and Holotape Required For Script To Run}
+
+Message Property StartUpMessage01 Auto Const
+	{Message To Show When Menu Function Is Called}
+
+Message Property FailMessage01 Auto Const
+	{Message To Show If User Does Not Meet Requirements}
+
+Message Property WarningMessage01 Auto Const
+	{Message To Show Player When Important Button Is Pressed}
+
+Message Property Contributors01 Auto Const
+	{Lists Current QAT's}
+
+ObjectReference Property TpMarker01 Auto Const
+	{Place To Send Player}
+
+EndGroup
+
+; -------------------------------------------------- Does User Meet Requirements?  This section will check if the player / user meets requiremets to access the plugin file.
+Event OnQuestInit()
+	If (Game.IsPluginInstalled("ExamplePlugin01.esp"))
+			Menu()
+	Else
+		FailMessage01.Show()
+		Self.Stop()
+		Self.Reset()
+		Game.QuitToMainMenu()
+	EndIf
+EndEvent
+
+; -------------------------------------------------- Main Message Menu  This section will control what happens when the player presses a button in the message pop-up
+Function Menu(int aiButton = 0)
+aiButton = StartUpMessage01.Show()
+	If aiButton == 0
+		Self.Stop()
+		Self.Reset()
+		Game.QuitToMainMenu()
+	ElseIf aiButton == 1
+		Game.FastTravel(TpMarker01)
+	ElseIf aiButton == 2
+		ImportantMenu()
+	ElseIf aiButton == 3
+		QATs()
+	EndIf
+EndFunction
+; -------------------------------------------------- Warning Message Menu  This section will display any other information that is important or relevant
+Function ImportantMenu(int aiButton = 0)
+aiButton = WarningMessage01.Show()
+	If aiButton == 0
+		Menu()
+	EndIf
+EndFunction
+; -------------------------------------------------- Contributors & QAT's  This section will display current testers of this Alpha Release mod in the form of a message
+Function QATs(int aiButton = 0)
+aiButton = Contributors01.Show()
+	If aiButton == 0
+		Menu()
+	EndIf
+EndFunction
+
+</source>
+
+==Finishing==
+After you have finished with your script and it has successfully compiled, go back to that stage we created earlier and under the <b>kmyQuest</b> tab just above the fragments window, select the script you just made. Then in the fragment type <b>kmyQuest.Start()</b> . This will insure that the script will start when the player loads into the save game.
+
+And you are done! You now have a plug-in file that will only load if the user mets your requirements.

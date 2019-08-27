@@ -1,0 +1,22 @@
+The [[Player]] is a special [[Actor]] reference which is controlled by the [[User]].
+The [[Player]] is almost always loaded by the Fallout 4 and uses a named reference called <code>PlayerREF</code>.
+The [[Player]]s base [[Actor]] form is called <code>Player</code>.
+
+The developers used a design paradigm dubbed "[https://en.wikipedia.org/wiki/Atlas_(mythology) Atlas]" to optimize how and when Fallout 4 loads data.
+With interior and exterior [[WorldSpace]]s, only the [[Cell]]s immediatly surrounding the [[Player]] will be loaded by Fallout 4.
+How and when [[WorldSpace]]s are loaded all rests on the [[Player]]s shoulders.
+
+
+== Notes ==
+* The [[Initialization File]] setting called <code>uGridsToLoad</code> will influence how many [[Cell]]s are loaded surrounding the [[Player]]. It is not recommended to alter this setting.
+
+== See Also ==
+* [[Actor]]
+* [[User]]
+* [[Cell]]
+* [[WorldSpace]]
+* [[Reference]]
+* [https://en.wikipedia.org/wiki/Atlas_(mythology) Atlas (Mythology) on Wikipedia]
+
+
+[[Category:Game System]]

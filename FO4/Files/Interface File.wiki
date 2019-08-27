@@ -1,0 +1,34 @@
+'''File Extension:''' <code>.swf</code>, <code>.fla</code>, <code>xfl</code>, <code>.as</code>, <code>.gfx</code>
+
+The in game [[User Interface]] and [[Menu]]s are vector based animations created with [[Adobe Flash]] via [https://en.wikipedia.org/wiki/Scaleform_GFx Scaleform].
+These are commonly referred to as [[Flash File]]s.
+
+== Files ==
+There are several kinds flash files with very different purposes.
+
+'''Movie:''' <code>.swf</code>
+* These are used by the flash player after being published from a '''Movie Project''' and '''Actionscript'''.
+
+'''Movie Project:''' <code>.fla</code> or <code>.xfl</code>
+*Movie projects are used in combination with '''Actionscript''' to publish playable '''Movie''' files.
+
+'''Actionscript:''' <code>.as</code>
+*Fallout 4 uses the the Actionscript 3.0 language version.
+*This is the source code for flash animation scripting.
+
+== Tooling ==
+*[[Adobe Flash]]
+*[[Adobe Illustrator]]
+*[https://github.com/jindrapetrik/jpexs-decompiler JPEXS Free Flash Decompiler (FFDec)]
+*There are other software projects that provided tooling for working with flash files.
+
+== See Also ==
+*[[Menus]]
+*[[User Interface]]
+*[[Game File]]
+*[https://en.wikipedia.org/wiki/Scaleform_GFx Scaleform GFx]
+
+
+[[Category:Editor Reference]]
+[[Category:Game Files]]
+[[Category:User Interface]]
