@@ -1,5 +1,5 @@
 <onlyinclude>
-=== sAutoFillNamespaceDefault* ===
+== sAutoFillNamespaceDefault* ==
 The auto filled namespace presets for the [[Creation Kit]].
 
 '''Default'''

@@ -1,5 +1,5 @@
 <onlyinclude>
-=== sScriptCompiledFolder ===
+== sScriptCompiledFolder ==
 * '''Default:''' <Code>".\Data\Scripts"</Code>
 
 This tells the [[Creation Kit]] where to put compiled [[Script File]]s.

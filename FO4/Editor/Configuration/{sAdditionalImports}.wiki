@@ -1,5 +1,5 @@
 <onlyinclude>
-=== sAdditionalImports ===
+== sAdditionalImports ==
 * '''Default:''' <Code>"$(source);.\Data\Scripts\Source\Base"</Code>
 
 This setting is a list of additional folders that the editor and compiler should use.

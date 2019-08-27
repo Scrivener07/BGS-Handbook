@@ -1,5 +1,5 @@
 <onlyinclude>
-=== sCompilerFolder ===
+== sCompilerFolder ==
 * '''Default:''' <Code>"Papyrus Compiler/"</Code>
 
 This tells the [[Creation Kit]] where the [[Papyrus Compiler]] is installed.

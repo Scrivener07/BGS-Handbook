@@ -1,5 +1,5 @@
 <onlyinclude>
-=== sScriptSourceFolder ===
+== sScriptSourceFolder ==
 * '''Default:''' <Code>".\Data\Scripts\Source\User"</Code>
 
 This setting tells the editor where to put new script source files, as well as one of the locations to use when loading and compiling script source.

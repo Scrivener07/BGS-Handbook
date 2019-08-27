@@ -1,5 +1,5 @@
 <onlyinclude>
-=== sScriptTempFolder ===
+== sScriptTempFolder ==
 * '''Default:''' <Code>""</Code>
 * '''Value:''' <Code>"C:\Users\<USERNAME>\AppData\Local\Temp\PapyrusTemp"</Code>
 

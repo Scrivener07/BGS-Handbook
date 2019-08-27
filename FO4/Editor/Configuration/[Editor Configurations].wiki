@@ -1,5 +1,21 @@
 The following settings are editor-only [[Initialization File]] settings.
 
+= [General] =
+The <Code>[General]</Code> section settings.
+
+{{Editor:Configuration:bAllowMultipleEditors}}
+
+{{Editor:Configuration:bAllowMultipleMasterLoads}}
+
+{{Editor:Configuration:bUseVersionControl}}
+
+{{Editor:Configuration:sNetwork Path}}
+
+{{Editor:Configuration:sNewVersionBackupPath}}
+
+{{Editor:Configuration:sNetworkMasterPath}}
+
+
 = [Papyrus] =
 You will typically not need to touch any of the <Code>[Papyrus]</Code> section settings.
 Adjusting the source folder and imports settings can help you keep individual groups of scripts organized.
