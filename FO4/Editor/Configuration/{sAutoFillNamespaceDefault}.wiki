@@ -1,5 +1,6 @@
 <onlyinclude>
 === sAutoFillNamespaceDefault* ===
+The auto filled namespace presets for the [[Creation Kit]].
 
 '''Default'''
 <source lang="ini">
@@ -9,8 +10,7 @@ sAutoFillNamespaceDefault3="MyMod03"
 sAutoFillNamespaceDefault4="MyMod04"
 sAutoFillNamespaceDefault5="MyMod05"
 </Source>
-
-
+<BR>
 '''Example'''
 <source lang="ini">
 sAutoFillNamespaceDefault1="Tango57"

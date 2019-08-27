@@ -21,6 +21,7 @@ If you find a page that is missing or inaccurate, please update it if you have t
 * [[New Editor Features]]
 * [[Editor Interface|Editor Interface Overview]]
 * [[Preferences Window]]
+* [[:Category:Editor Configurations|Editor Configurations]]
 
 === Data ===
 * [[Data Window]]
