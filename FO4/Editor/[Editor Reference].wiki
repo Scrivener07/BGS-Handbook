@@ -11,23 +11,44 @@ That's because this section of the wiki is more of an encyclopedia - it exists a
 As with all of the Creation Kit Wiki, your contributions are valuable.
 If you find a page that is missing or inaccurate, please update it if you have the knowledge, or flag it for moderators by making a note on the discussion page.
 
+<BR>
+[[File:CreationKit Editor.png|1000px]]
+
 |style="color:black;" width="30%" border="0" cellpadding="5" valign="top"|
 == Editor Index ==
-=== Editor Concepts ===
-* [[Creation Kit|Getting Started]]
+=== Getting Started ===
+* [[Creation Kit|The Creation Kit Toolset]]
 * [[New Editor Features]]
-* [[Editor Interface]]
-* [[Sharing Mods]]
+* [[Editor Interface|Editor Interface Overview]]
+* [[Preferences Window]]
 
-=== Editor Interface ===
+=== Data ===
 * [[Data Window]]
-* [[Glossary]]
-* [[Glossary]]
-* [[Glossary]]
+* [[Version Control Window]]
+* [[Archive Browser window]]
+* [[Bethesda Login Window]]
+* [[Sharing Mods]]
+* [[Use Info Window]]
+* [[Warnings Window]]
+
+=== World ===
+* [[Render Window]]
+* [[Cell View Window]]
+* [[Navmesh]]
+
+=== Objects ===
+* [[Object Window]]
+* [[Object Palette Window]]
+* [[Preview Window]]
+
+=== Papyrus ===
+* [[Papyrus Manager Window]]
+* [[Papyrus Compile Window]]
 
 === Other Resources ===
 * [[Glossary]]
 * [[Cheat Sheets]]
+* [[Creation Kit Keyboard Mapping]]
 
 === Reference Pages ===
 * [[Tooling Reference]]
