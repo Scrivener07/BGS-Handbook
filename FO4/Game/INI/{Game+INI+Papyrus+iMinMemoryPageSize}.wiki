@@ -1,0 +1,11 @@
+<onlyinclude>
+== iMinMemoryPageSize ==
+* '''Default:''' <Code>128</Code>
+
+This is the smallest amount of memory the VM will allocate for a single stack page, in bytes.
+Smaller values will waste less memory on small stacks, but larger values will reduce the number of allocations for stacks with many small frames, which improves performance.
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

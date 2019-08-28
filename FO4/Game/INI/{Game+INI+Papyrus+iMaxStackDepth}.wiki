@@ -1,0 +1,13 @@
+<onlyinclude>
+== iMaxStackDepth ==
+* '''Default:''' <Code>100</Code>
+
+This is the maximum stack depth the VM will allow before forcibly killing function calls on that stack.
+This mainly helps with killing any potential infinite recursion.
+If you find yourself hitting this, consider using loops over recursion.
+Increasing this value may increase stack memory pressure, while decreasing this may forcibly kill valid scripts.
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

@@ -7,5 +7,5 @@ There is almost no reason to change this as the compiler installs to this folder
 </onlyinclude>
 
 
-[[Category:Editor Configurations]]
+[[Category:CreationKit.ini]]
 [[Category:Papyrus Configurations]]

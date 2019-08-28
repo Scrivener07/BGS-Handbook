@@ -1,0 +1,22 @@
+The following [[Initialization File]] settings are for the game only.
+
+= [Papyrus] =
+The <Code>[Papyrus]</Code> section settings.
+<BR>
+{{Game:INI:Papyrus:bEnableLogging}}<BR>
+{{Game:INI:Papyrus:bEnableProfiling}}<BR>
+{{Game:INI:Papyrus:bEnableTrace}}<BR>
+{{Game:INI:Papyrus:bLoadDebugInformation}}<BR>
+{{Game:INI:Papyrus:fExtraTaskletBudgetMD}}<BR>
+{{Game:INI:Papyrus:fPostLoadUpdateTimeMS}}<BR>
+{{Game:INI:Papyrus:fUpdateBudgetMS}}<BR>
+{{Game:INI:Papyrus:iMaxAllocatedMemoryBytes}}<BR>
+{{Game:INI:Papyrus:iMaxMemoryPageSize}}<BR>
+{{Game:INI:Papyrus:iMaxStackDepth}}<BR>
+{{Game:INI:Papyrus:iMinMemoryPageSize}}<BR>
+{{Game:INI:Papyrus:sDefaultLogOverlay}}<BR>
+{{Game:INI:Papyrus:sTraceStatusOfQuest}}<BR>
+
+
+[[Category:Editor Reference]]
+[[Category:Game Files]]

@@ -1,0 +1,27 @@
+<onlyinclude>
+== sTraceStatusOfQuest ==
+* '''Default:''' <Code>Empty</Code>
+
+This setting sets a [[Quest]] to track for script changes by form ID.
+The quest that this setting specifies will spit out a Papyrus stack trace to the log every time a Papyrus script tries to change something with it.
+For example, starting, stopping, setting a stage, or showing an objective.
+
+This setting accepts a form ID (as visible in the editor, optionally prefixed with a ''0x''), an editor ID, or a plugin (with extension) followed by a comma and a form ID.
+Because of the way string ini settings work, do not have any comments on the same line as they will be treated as part of the value.
+
+'''Examples'''
+<source lang="ini">
+; Tracks the quest with a form ID of 000105FA
+sTraceStatusOfQuest = 000105FA
+
+; Tracks the quest with an editor ID of MQ101
+sTraceStatusOfQuest = MQ101
+
+; Tracks the quest with a form ID of 0100FB14 (ignoring the load index of 01) in the "CoolDLC" plugin.
+sTraceStatusOfQuest = CoolDLC.esm, 0100FB14
+</Source>
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

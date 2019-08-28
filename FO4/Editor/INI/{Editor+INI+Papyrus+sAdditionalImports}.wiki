@@ -23,5 +23,5 @@ sAdditionalImports="$(Source);.\Data\Script\Source\DLC06;.\Data\Script\Source\DL
 </onlyinclude>
 
 
-[[Category:Editor Configurations]]
+[[Category:CreationKit.ini]]
 [[Category:Papyrus Configurations]]

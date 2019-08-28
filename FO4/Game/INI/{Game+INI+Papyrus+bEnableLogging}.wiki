@@ -1,0 +1,13 @@
+<onlyinclude>
+== bEnableLogging ==
+* '''Default:''' <Code>0</Code>
+
+This setting turns logging on and off.
+If off, no logging will occur, even traces, and so it will override the <Code>bEnableTrace</Code> value.
+The in-game log display will still work, but nothing will be written to disk.
+Turning this off may improve performance due to less disk activity.
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

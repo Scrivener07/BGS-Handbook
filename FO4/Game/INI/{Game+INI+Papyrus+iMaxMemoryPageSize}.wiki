@@ -1,0 +1,12 @@
+<onlyinclude>
+== iMaxMemoryPageSize ==
+* '''Default:''' <Code>512</Code>
+
+This is the largest amount of memory the VM will allocate for a single stack page, in bytes.
+Smaller values may force the VM to allocate more pages for large stack frames.
+Larger values may cause the memory allocator to allocate differently, decreasing performance for large stack frames.
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

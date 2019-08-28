@@ -1,0 +1,6 @@
+<onlyinclude>
+</onlyinclude>
+
+
+[[Category:CreationKit.ini]]
+[[Category:Papyrus Configurations]]

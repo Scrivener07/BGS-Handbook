@@ -1,0 +1,13 @@
+<onlyinclude>
+== bEnableProfiling ==
+* '''Default:''' <Code>0</Code>
+
+This setting enables or disables the [[Papyrus Profile Analyzer]].
+If off, none of the script profiling commands will be available.
+Turn this setting on to allow profiling information to be collected and logged.
+If on, script performance will degrade slightly.
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

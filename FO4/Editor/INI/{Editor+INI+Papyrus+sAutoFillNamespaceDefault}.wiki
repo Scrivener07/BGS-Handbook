@@ -18,5 +18,5 @@ sAutoFillNamespaceDefault1="Tango57"
 </onlyinclude>
 
 
-[[Category:Editor Configurations]]
+[[Category:CreationKit.ini]]
 [[Category:Papyrus Configurations]]

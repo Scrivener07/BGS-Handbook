@@ -1,0 +1,14 @@
+<onlyinclude>
+== fExtraTaskletBudgetMD ==
+* '''Default:''' <Code>1.2</Code>
+
+This setting controls how much time taken out of another game thread is taken up by running script tasklets.
+This is the code that runs the raw script byte code.
+This time is on top of the time that the tasklets normally get in their own thread, but because that thread is shared they may end up being starved if other systems are highly stressed.
+If the game is not stressed, this time will not be used.
+Increasing this value may improve script performance in high-stress situations at the expense of framerate.
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

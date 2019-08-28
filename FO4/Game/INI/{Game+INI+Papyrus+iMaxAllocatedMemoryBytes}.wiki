@@ -1,0 +1,13 @@
+<onlyinclude>
+== iMaxAllocatedMemoryBytes ==
+* '''Default:''' <Code>153600</Code> (150kb)
+
+This is the maximum amount of memory the VM will allocate in total for stack frames.
+If an allocation would push memory usage over this limit, the VM will instead wait for more memory to be freed.
+Increasing this value may improve performance in high-stress situations with lots of scripts running, but will use more memory.
+Note that it is possible to exceed this value temporarily while loading a save game due to slightly different allocation ordering.
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

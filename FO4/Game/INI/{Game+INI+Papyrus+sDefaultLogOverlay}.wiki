@@ -1,0 +1,17 @@
+<onlyinclude>
+== sDefaultLogOverlay ==
+* '''Default:''' <Code>Papyrus</Code>
+
+This setting tells the game which log to show by default in the Papyrus log overlays.
+By default this is the global "Papyrus" log, but the name of any user log will also work.
+
+'''Examples'''
+<source lang="ini">
+; Tells the game to default to the workshop user log.
+sDefaultLogOverlay=Workshop
+</Source>
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

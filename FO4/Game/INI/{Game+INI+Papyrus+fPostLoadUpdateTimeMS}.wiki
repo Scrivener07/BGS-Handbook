@@ -1,0 +1,14 @@
+<onlyinclude>
+== fPostLoadUpdateTimeMS ==
+* '''Default:''' <Code>500.0</Code>
+
+This setting controls how much time is added onto the load screen to do additional script processing in case the cell being loaded into needs to set itself up.
+Adjusting the time will adjust your visible load screen time.
+Adjust this setting if a cell with very complicated scripting is not getting quite set up in time by the time the player loads.
+This also may depend on the story manager since quests may not start until the load screen finishes if they are started up right before the player hits a load door.
+If the quest initial stage has a lot of scripting then it may need the extra time to run before the load screen is pulled down.
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

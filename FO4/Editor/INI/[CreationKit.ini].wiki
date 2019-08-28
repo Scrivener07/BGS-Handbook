@@ -1,4 +1,4 @@
-The following [[Initialization File]] settings are for [[Creation Kit]] editor only.
+The following [[Initialization File]] settings are for the [[Creation Kit]] editor only.
 
 = [General] =
 The <Code>[General]</Code> section settings.
@@ -13,7 +13,6 @@ The <Code>[General]</Code> section settings.
 
 = [Papyrus] =
 The <Code>[Papyrus]</Code> section settings.
-Adjusting the source folder and imports settings can help you keep individual groups of scripts organized.
 <BR>
 {{Editor:INI:Papyrus:sScriptSourceFolder}}
 {{Editor:INI:Papyrus:sAdditionalImports}}

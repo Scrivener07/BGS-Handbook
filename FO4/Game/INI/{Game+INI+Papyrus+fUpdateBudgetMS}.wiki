@@ -1,0 +1,13 @@
+<onlyinclude>
+== fUpdateBudgetMS ==
+* '''Default:''' <Code>1.2</Code>
+
+This setting controls how much time the main Papyrus update loop gets.
+This loop mainly controls function dispatch.
+If a lot of function calls are being made and a lot of scripts are running, increasing this value may improve script performance at the cost of reduced game framerate.
+However most of the time the VM won't take this entire time slice and increasing the value will have no effect.
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

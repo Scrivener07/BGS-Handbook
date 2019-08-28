@@ -1,0 +1,13 @@
+Papyrus has several INI settings that can control some elements of how it operates and utilizes resources.
+All of these settings are under the [Papyrus] section of the INI file for the game or editor.
+
+Adjusting the source folder and imports settings can help you keep individual groups of scripts organized.
+
+= See Also =
+* [[Initialization File]]
+* [[INI Settings (Papyrus)]]
+
+
+[[Category:CreationKit.ini]]
+[[Category:CreationKitPrefs.ini]]
+[[Category:Papyrus]]
