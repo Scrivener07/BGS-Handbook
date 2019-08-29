@@ -1,14 +1,101 @@
 The following [[Initialization File]] settings are for the [[Creation Kit]] editor only.
 
+
 = [General] =
 The <Code>[General]</Code> section settings.
 <BR>
-{{Editor:INI:General:bAllowMultipleEditors}}<BR>
 {{Editor:INI:General:bAllowMultipleMasterLoads}}<BR>
-{{Editor:INI:General:bUseVersionControl}}<BR>
 {{Editor:INI:General:sNetwork Path}}<BR>
 {{Editor:INI:General:sNewVersionBackupPath}}<BR>
 {{Editor:INI:General:sNetworkMasterPath}}<BR>
+{{Editor:INI:General:bCullingBatch}}<BR>
+{{Editor:INI:General:bUseMyGamesDirectory}}<BR>
+{{Editor:INI:General:bUseVersionControl}}<BR>
+{{Editor:INI:General:SLocalSavePath}}<BR>
+{{Editor:INI:General:SLocalMasterPath}}<BR>
+{{Editor:INI:General:SLocalBackupPath}}<BR>
+{{Editor:INI:General:uiFaceGenMaxEGTDataSize}}<BR>
+{{Editor:INI:General:uiFaceGenMaxEGMDataSize}}<BR>
+{{Editor:INI:General:bUseEyeEnvMapping}}<BR>
+{{Editor:INI:General:bFixFaceNormals}}<BR>
+{{Editor:INI:General:bUseFaceGenHeads}}<BR>
+{{Editor:INI:General:bFaceMipMaps}}<BR>
+{{Editor:INI:General:bExternalLODDataFiles}}<BR>
+{{Editor:INI:General:bOnlyActiveFileForRefFix}}<BR>
+{{Editor:INI:General:bForceCheckOutOnRefFix}}<BR>
+{{Editor:INI:General:bFixPersistenceOnRefInit}}<BR>
+{{Editor:INI:General:bFixBadLocRefsOnInit}}<BR>
+{{Editor:INI:General:iCheckCellRegionsOnInit}}<BR>
+{{Editor:INI:General:bCheckDoorCollisionOnInit}}<BR>
+{{Editor:INI:General:bWarnOnGameSettingLoad}}<BR>
+{{Editor:INI:General:bFaceGenTexturing}}<BR>
+{{Editor:INI:General:bCheckHairOnInit}}<BR>
+{{Editor:INI:General:bKeepHeadOnRaceChange}}<BR>
+{{Editor:INI:General:bCreateShaderPackage}}<BR>
+{{Editor:INI:General:uGridDistantTreeRangeCity}}<BR>
+{{Editor:INI:General:uGridDistantCountCity}}<BR>
+{{Editor:INI:General:uGridDistantTreeRange}}<BR>
+{{Editor:INI:General:uGridDistantCount}}<BR>
+{{Editor:INI:General:uGridsToLoad}}<BR>
+{{Editor:INI:General:bAnimationUseBlendFromPose}}<BR>
+{{Editor:INI:General:fAnimationDefaultBlend.2000}}<BR>
+{{Editor:INI:General:fAnimationMult}}<BR>
+{{Editor:INI:General:iCheckOutOnBoundChange}}<BR>
+{{Editor:INI:General:bFixAIPackagesOnLoad}}<BR>
+{{Editor:INI:General:bKeepPluginWhenMerging}}<BR>
+{{Editor:INI:General:bLoadTheUserPlugin}}<BR>
+{{Editor:INI:General:bCreate Maps Enable}}<BR>
+{{Editor:INI:General:bDisableDuplicateReferenceCheck}}<BR>
+{{Editor:INI:General:bCheckForMultiFileForms}}<BR>
+{{Editor:INI:General:bCheckForRefCellChanges}}<BR>
+{{Editor:INI:General:bTintMipMaps}}<BR>
+{{Editor:INI:General:uExterior Cell Buffer}}<BR>
+{{Editor:INI:General:uInterior Cell Buffer}}<BR>
+{{Editor:INI:General:bPreemptivelyUnloadCells}}<BR>
+{{Editor:INI:General:SFaceTestSoundName}}<BR>
+{{Editor:INI:General:bClearPersistenceOnVCSort}}<BR>
+{{Editor:INI:General:bAllowNonGroupedVersionControl}}<BR>
+{{Editor:INI:General:iFullSaveCellThreshhold}}<BR>
+{{Editor:INI:General:iNPCCheckOutCount}}<BR>
+{{Editor:INI:General:iLandCheckOutCount}}<BR>
+{{Editor:INI:General:fPathGridAutoConnectRadius}}<BR>
+{{Editor:INI:General:SFile Path}}<BR>
+{{Editor:INI:General:bLight Radius}}<BR>
+{{Editor:INI:General:bMaximize Editor}}<BR>
+{{Editor:INI:General:bPreview}}<BR>
+{{Editor:INI:General:bAllowUnsafeSave}}<BR>
+{{Editor:INI:General:bAllowMultipleEditors}}<BR>
+{{Editor:INI:General:bEditorHotLoading}}<BR>
+{{Editor:INI:General:bEditorHotLoading360}}<BR>
+{{Editor:INI:General:bEditorHotLoadingPS3}}<BR>
+{{Editor:INI:General:bDisableComputeShaderOnCombinations}}<BR>
+{{Editor:INI:General:sMaterialEditorPage}}<BR>
+
+
+= [Bethesda.net] =
+The <Code>[Bethesda.net]</Code> section settings.
+<BR>
+{{Editor:INI:Bethesda.net:bEnablePlatformSelection}}<BR>
+{{Editor:INI:Bethesda.net:bEnableXB1}}<BR>
+{{Editor:INI:Bethesda.net:bEnablePS4}}<BR>
+
+
+= [Imagespace] =
+The <Code>[Imagespace]</Code> section settings.
+<BR>
+{{Editor:INI:Imagespace:bMBEnable}}<BR>
+
+
+= [Display] =
+The <Code>[Display]</Code> section settings.
+<BR>
+{{Editor:INI:Display:bDeferredCommands}}<BR>
+{{Editor:INI:Display:bDynamicObjectQueryManager}}<BR>
+{{Editor:INI:Display:bMultiThreadedAccumulation}}<BR>
+{{Editor:INI:Display:bMultiThreadedRenderingUNP}}<BR>
+{{Editor:INI:Display:iTexMipMapMinimum}}<BR>
+{{Editor:INI:Display:fDecalLifetime}}<BR>
+{{Editor:INI:Display:bUsePreCulledObjects}}<BR>
 
 
 = [Papyrus] =
@@ -20,6 +107,7 @@ The <Code>[Papyrus]</Code> section settings.
 {{Editor:INI:Papyrus:sScriptCompiledFolder}}
 {{Editor:INI:Papyrus:sCompilerFolder}}
 {{Editor:INI:Papyrus:sAutoFillNamespaceDefault}}
+
 
 = See Also =
 * [[Initialization File]]

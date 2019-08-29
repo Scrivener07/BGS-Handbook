@@ -1,6 +1,15 @@
 <onlyinclude>
+== USERNAME ==
+* '''Default:''' <Code></Code>
+
+Used by [[Version Control]] to specify which ''Windows User Accounts'' are allowed to merge into the master [[Data File]].
+
+'''Examples'''
+<source lang="ini">
+[WhoCanMerge]
+Scrivener07=1
+</Source>
 </onlyinclude>
 
 
-[[Category:CreationKit.ini]]
-[[Category:Papyrus Configurations]]
+[[Category:CreationKitPrefs.ini]]

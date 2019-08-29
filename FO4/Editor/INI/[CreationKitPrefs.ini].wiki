@@ -4,12 +4,14 @@ The following [[Initialization File]] settings are for [[Creation Kit]] editor o
 The <Code>[General]</Code> section settings.
 <BR>
 
-
 = [Papyrus] =
 The <Code>[Papyrus]</Code> section settings.
 Adjusting the source folder and imports settings can help you keep individual groups of scripts organized.
 <BR>
 
+= [WhoCanMerge] =
+The <Code>[WhoCanMerge]</Code> section settings.
+{{Editor+INI+WhoCanMerge+UserName}}
 
 = See Also =
 * [[Initialization File]]
