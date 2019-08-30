@@ -1,0 +1,18 @@
+A loose file is a file that exist within the Fallout 4 directory that is not listed by any manifests.
+By default, Fallout 4 will ignore loose files.
+This includes the compiled .pex files the [[Papyrus Compiler]] creates.
+If you find that none of your scripts appear to be working in the game, then most likely it is because you have not enabled loose files.
+
+# Open\Create the file :  <Documents>\My Games\Fallout 4\Fallout4Custom.ini
+# Populate the Fallout4Custom.ini file with the following:
+<source lang="ini">
+[Archive]
+bInvalidateOlderFiles=1
+sResourceDataDirsFinal=
+</source>
+
+= See Also =
+* [[Archive File]]
+
+
+[[Category:Game Configurations]]

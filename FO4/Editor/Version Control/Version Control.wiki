@@ -11,6 +11,24 @@ To begin, configure the [[Creation Kit]] to enable version control.
 This will involve creating directories, network sharing folders, editing [[Initialization File]]s, and creating a master [[Data File]].
 
 
+=== Understanding Data Files ===
+The .esp files are "Bethesda Plugin Data Files"
+* This is the standard file type created by the Creation Kit, to save your mod
+* It contains all of the asset reference data used in your mod
+
+<br />
+The .esm files are "Bethesda Master Data Files"
+* This is the file type you'll see used by DLC
+* It contains the same information used by .esp files, but it can have references merged into it
+
+<br />
+In the context of using version control in the Fallout 4 Creation Kit:
+* The .esm master file will be your primary mod file, containing all the level and asset reference data for your mod. When you're ready to distribute your mod, it's the .esm that you'll upload.
+* The .esp file will be the file you and your project contributors use locally to make all your changes. After you merge your changes into the .esm file, the .esp won't contain any references
+* The first time you save your mod, it will be saved as .esp (you do not have a choice)
+* It will become .esm the first time you do a merge to prepare it for multi-contributor collaboration
+
+
 === Create Directories ===
 Navigate to the Fallout 4 installation directory and create the following new folders.
 * <code>...\steamapps\common\Fallout 4\Merging\Data</code>
@@ -101,21 +119,6 @@ YOURWINDOWSUSERNAME=1
 *: [[File:versioncontrol_creationkitprefs.png]]
 
 
-= Understanding Data Files =
-<br />
-.esp files are "Bethesda Plugin Data Files"
-* This is the standard file type created by the Creation Kit, to save your mod
-* It contains all of the asset reference data used in your mod
-<br />
-.esm files are "Bethesda Master Data Files"
-* This is the file type you'll see used by DLC
-* It contains the same information used by .esp files, but it can have references merged into it
-<br />
-In the context of using version control in the Fallout 4 Creation Kit:
-* The .esm master file will be your primary mod file, containing all the level and asset reference data for your mod. When you're ready to distribute your mod, it's the .esm that you'll upload.
-* The .esp file will be the file you and your project contributors use locally to make all your changes. After you merge your changes into the .esm file, the .esp won't contain any references
-* The first time you save your mod, it will be saved as .esp (you do not have a choice)
-* It will become .esm the first time you do a merge to prepare it for multi-contributor collaboration
 
 
 == First merge and creation of your .esm file ==
@@ -154,6 +157,11 @@ Now you're ready to create your .esm file!
 * The results are output into the normal Data folder
 ** You can see that after a merge is performed, the filesize of the .esp is now 1KB, because the contents have been transferred to the newly created .esm
 *: [[File:versioncontrol_sizechange.png]]
+
+
+
+
+
 
 == Workflow for multiple team members contributing to the same .ESM file ==
 <br/>
@@ -218,6 +226,10 @@ Here's a diagram demonstrating the proper workflow for multiple team members con
 <br/>
 <br/>
 
+
+
+
+
 == Merge process and workflow of the individual team member ==
 <br/>
 * Download the latest .esm file from the repository, to both the \Fallout 4\Data\ folder, AND \Merging\Data\.
@@ -264,6 +276,8 @@ Good luck!
 * [[Data Window]]
 * [[Version Control Window]]
 * [[Data File]]
+* [[CreationKit.ini]]
+* [[CreationKitPrefs.ini]]
 * [https://support.microsoft.com/en-us/help/4092694 File sharing over a network in Windows 10].
 * [https://www.creationkit.com/index.php?title=Version_control Skyrim - Version Control]
 * [https://www.creationkit.com/index.php?title=Mod_Merging Skyrim - Mod Merging]

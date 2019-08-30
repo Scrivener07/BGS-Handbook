@@ -1,0 +1,9 @@
+Adjusting the source folder and imports settings can help you keep individual groups of scripts organized.
+
+= See Also =
+* [[Initialization File]]
+* [[INI Settings (Papyrus)]]
+
+
+[[Category:Configurations]]
+[[Category:Papyrus]]
