@@ -1,0 +1,70 @@
+'''File Extension:''' <code>.ini</code>
+
+The '''Initialization File''' format is an informal standard for storing application [[Configurations]].
+These files are normally only loaded once when an application is starting up.
+The configuration format is a <code>section</code> followed by multiple <code>property=value</code>.
+
+==INI Custom==
+Using a ''custom'' initialization file will preserve your changes after [[Fallout 4]] or the [[Creation Kit]] update.
+This is useful becuase the ''default'' initialization files are overwritten by application updates.
+The ''*Custom.ini'' suffixed files work by overriding values in their parent ''default'' initialization files.
+Override values in the ''default'' files by only adding settings which are intended to be changed to the custom ini.
+Both [[Fallout 4]] and the [[Creation Kit]] support ''custom'' initialization files.
+
+For Fallout 4, create a new, empty file called [[Fallout4Custom.ini]] within the user directory.
+<BR><code>\My Games\Fallout4\Fallout4Custom.ini</code>
+<source lang="ini">
+[Archive]
+bInvalidateOlderFiles=1
+sResourceDataDirsFinal=
+
+[Papyrus]
+bEnableLogging=1
+bEnableTrace=1
+bLoadDebugInformation=1
+</source>
+
+<BR>
+For the Creation Kit, create a new, empty file called [[CreationKitCustom.ini]] within the game directory.
+<BR><code>\steamapps\common\Fallout 4\CreationKitCustom.ini</code>
+<source lang="ini">
+[General]
+bAllowMultipleEditors=1
+bAllowMultipleMasterLoads=1
+</source>
+
+
+==INI Fragments==
+Any active [[Data File]] can override values in [[Fallout4.ini]] by including a new <code>*.ini</code> file that shares the same name.
+Including ''INI Fragments'' with Xbox or Playstation distributions is not supported.
+<BR>
+<code>\Fallout4\Data\MyWastelandMod.esp</code><BR>
+<code>\Fallout4\Data\MyWastelandMod.ini</code>
+<source lang="ini">
+[Display]
+fPipboyScreenEmitIntensityPA=1.25
+fPipboyScreenDiffuseIntensityPA=0.15
+
+[Pipboy]
+bPipboyDisableFX=1
+
+[Interface]
+bShowTutorials=0
+</source>
+
+==Tooling==
+*A standard [[Text Editor]] can create and edit initialization files.
+
+== Notes ==
+* The sections may be optional in some uses.
+
+== See Also ==
+*[[Configurations]]
+*[[Fallout4.ini]]
+*[[CreationKit.ini]]
+*[[INI Settings (Papyrus)]]
+*[[Game File]]s
+
+
+[[Category:Editor Reference]]
+[[Category:Game Files]]

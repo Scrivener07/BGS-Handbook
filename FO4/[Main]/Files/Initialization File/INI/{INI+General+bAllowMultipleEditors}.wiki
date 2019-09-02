@@ -1,0 +1,21 @@
+<onlyinclude>
+==bAllowMultipleEditors==
+* '''Default:''' <Code>0</Code>
+Allows multiple application instances of the [[Creation Kit]] to be started.
+
+'''Examples'''
+<source lang="ini">
+[General]
+; Enables multiple application instances.
+bAllowMultipleEditors=1
+</Source>
+<BR>
+<source lang="ini">
+[General]
+; Disables multiple application instances.
+bAllowMultipleEditors=0
+</Source>
+</onlyinclude>
+
+
+[[Category:CreationKit.ini]]

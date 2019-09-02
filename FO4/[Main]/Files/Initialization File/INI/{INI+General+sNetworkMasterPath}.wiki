@@ -1,0 +1,16 @@
+<onlyinclude>
+==sNetworkMasterPath==
+* '''Default:''' <Code></Code>
+A network directory to the master [[Data File]] used for the [[Version Control]] system.
+
+'''Examples'''
+<source lang="ini">
+[General]
+; The network master path.
+sNetworkMasterPath=\\ToddHoward-PC\Merging\Data\
+</Source>
+</onlyinclude>
+
+
+[[Category:CreationKit.ini]]
+[[Category:Version Control Configurations]]

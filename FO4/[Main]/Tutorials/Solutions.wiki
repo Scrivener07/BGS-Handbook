@@ -1,0 +1,11 @@
+
+
+
+
+
+= Distribution =
+How do I upload my mod to the [[Creation Club]]?
+How do I upload my mod to [[Steam Workshop]]?
+How do I make and distribute a non-plugin mod such as a texture or sound replacement mod?
+
+

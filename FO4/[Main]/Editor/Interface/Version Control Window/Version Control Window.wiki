@@ -1,0 +1,44 @@
+The [[Version Control Window]] allows the [[Creation Kit]] to merge [[Data File]]s with [[Version Control]].
+The window can be found on the toolbar by clicking the version control ([[File:Version Control Icon.png]]) icon.
+
+== Editor Window ==
+[[File:Version Control Window.png]]
+*'''Master File Forms:'''
+**'''Cancel My Check In:'''
+**'''Select All:'''
+**'''Check In:'''
+**'''Check Out:'''
+**'''Undo Check Out:'''
+**'''Remove Forms From Current ESM on Check In:'''
+**'''List'''
+***'''Form ID:''' The numeric descriptor for the form record.
+***'''Deleted:''' A ''D'' indicates a plugin has deleted the form record.
+***'''Editor ID:''' A string descriptor for the form record.
+***'''Type:''' A four character string descriptor of the form type.
+***'''File:'''
+***'''Current User:'''
+***'''Last User:'''
+***'''Date:'''
+***'''{{key press|Right-Click}} Use Info:'''
+***'''{{key press|Right-Click}} Edit:'''
+**'''View'''
+***'''Altered:'''
+***'''My Owned:'''
+***'''All Checked Out:'''
+***'''All:'''
+*'''Papyrus Scripts'''
+**'''Select All:'''
+**'''Check In:'''
+**'''Undo Check Out:'''
+*'''Additional Data Files That Need Updating:'''
+**'''Update:'''
+
+== See Also ==
+*[[Version Control]]
+*[[Data File]]
+*[[Editor Interface]]
+*[[Game File Reference]]
+
+
+[[Category:Editor Reference]]
+[[Category:Editor Interface]]

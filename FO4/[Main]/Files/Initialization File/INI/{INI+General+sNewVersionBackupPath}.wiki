@@ -1,0 +1,17 @@
+<onlyinclude>
+== sNewVersionBackupPath ==
+* '''Default:''' <Code></Code>
+The directory where back up copies of [[Data File]]s are put on [[Version Control]] check in.
+
+'''Examples'''
+<source lang="ini">
+[General]
+; The new verison backup path.
+sNewVersionBackupPath=\\ToddHoward-PC\Merging\VersionBackup\
+</Source>
+</onlyinclude>
+
+
+[[Category:Configurations]]
+[[Category:CreationKit.ini]]
+[[Category:Version Control]]

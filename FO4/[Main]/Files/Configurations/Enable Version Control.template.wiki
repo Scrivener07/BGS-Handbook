@@ -1,0 +1,33 @@
+The [[Version Control]] system allows multiple developers to work simultaneously on a single [[Data File]].
+By default, [[Version Control]] features are disabled within the [[Creation Kit]].
+
+The following [[Initialization File]] settings will need to be configured to use ''Version Control''.
+
+====== CreationKitCustom.ini ======
+Add or change the following under the <code>[General]</code> section heading of [[CreationKitCustom.ini]].
+Replace <code>COMPUTERNAME</code> with your Windows ''Computer Name''.
+Note the space in <code>sNetwork Path</code> and do not omit the leading or trailing path seperators.
+
+<source lang="ini">
+[General]
+bUseVersionControl=1
+sNetwork Path=\\COMPUTERNAME\Merging\
+sNewVersionBackupPath=\\COMPUTERNAME\Merging\VersionBackup\
+sNetworkMasterPath=\\COMPUTERNAME\Merging\Data\
+sLocalBackupPath=Data\CheckInBackup\
+</source>
+* [[CreationKit.ini#bUseVersionControl|General::bUseVersionControl]]
+* [[CreationKit.ini#sNetwork_Path|General::sNetwork Path]]
+* [[CreationKit.ini#sNewVersionBackupPath|General::sNewVersionBackupPath]]
+* [[CreationKit.ini#sNetworkMasterPath|General::sNetworkMasterPath]]
+* [[CreationKit.ini#sLocalBackupPath|General::sLocalBackupPath]]
+
+====== CreationKitPrefs.ini ======
+Add or change the following under the <code>[WhoCanMerge]</code> section heading of [[CreationKitPrefs.ini]].
+Replace <code>USERNAME</code> with your Windows ''User Name''.
+
+<source lang="ini">
+[WhoCanMerge]
+USERNAME=1
+</source>
+* [[CreationKitPrefs.ini#USERNAME|WhoCanMerge::USERNAME]]

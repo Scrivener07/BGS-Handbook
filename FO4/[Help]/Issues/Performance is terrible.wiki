@@ -1,0 +1,7 @@
+== Site performance is in the trash.==
+Maybe I would leave more commit messages if the site didnt fail to load and trash submissions constantly.
+The last big change I spent 30 minutes straight, copy and pasting the same submission over and over again.
+When it finally submitted, I had forgot to copy my commit message too.
+My commit message would have been "split into sections, added links, added details, and changed format".
+Bethesda, if your web team reads this then PLEASE consider fixing the site.
+It has behaved this way for years now and is the reason contributions are rare. [[User:Scrivener07|Scrivener07]] ([[User talk:Scrivener07|talk]]) 2019-09-02T17:28:03 (EDT)

@@ -1,0 +1,100 @@
+Welcome to The Creation Kit Wiki.
+
+This Wiki is a community-run site that is a living help file where you'll find everything you need to use the [[Creation Kit]] and make mods for [[Fallout 4]].
+This Wiki is publicly editable... all you need to do is create an [[Special:Userlogin|account]] to start contributing.
+There are currently [[Special:Statistics|{{NUMBEROFARTICLES}}]] [[Special:Allpages|articles]] and we continue to grow.
+
+== Finding Information ==
+The first thing to realize about the Wiki is that it is a Wiki.
+If you are unfamiliar with the Wiki concept, the quintessential example of a Wiki is [http://en.wikipedia.org/wiki/Main_Page Wikipedia] - an encyclopedia written by thousands of online contributors.
+
+Because of the nature of the Wiki, it is important to understand the way things are laid out in order to find information.
+The organization of the Wiki can make incredible amounts of information very easy to find, but only if you know where it is.
+
+== Making the Most of the Wiki ==
+The Creation Kit Wiki can best be used by registered users.
+If you haven't already, it is strongly recommended that you [[Special:Userlogin|create an account]] today!
+Registered users can customize their Wiki display, can ask questions, and can help make the Wiki the best Fallout 4 modding resource on the Internet.
+
+=== Searching ===
+[[Help: Searching|Searching]] is the most obvious way to find information on the Creation Kit Wiki.
+The Search box is found on the left side of the screen, and it will return any and all pages which contain the words you type in it.
+The Search tool is useful, but it has some important limitations, so please visit our page dedicated to making the most of your search.
+
+=== Asking Questions ===
+Every page on the Wiki has its own Discussion or Talk page.
+This is where questions may be asked and feedback given.
+Questions on the Wiki ought to pertain to confusion regarding the page in question, or about where to find information.
+Questions should not be about your specific mod - such questions go on the [https://bethesda.net/community/category/131/creation-kit| Forums].
+The [http://forums.bethsoft.com/index.php?/forum/183-skyrim-mods/| Old Forums] are readonly but also have useful information.
+
+Questions should get their own [[Help: Wiki Editing Syntax Guide#Headings|Secondary Header]] at the top of the page.
+The header should be something meaningful, please don't just write "Help!" in the header.
+At the end of your question, please sign the question as described in [[Help: Wiki Editing Syntax Guide#Signing a Page|here]].
+
+Feedback is also encouraged.
+If anything on the page is unclear or confusing, mentioning that is significant boon to the Wiki as a whole.
+Please follow the same guidelines for feedback as for questions.
+
+Please do not ask questions, give feedback, or add signatures in the actual articles.
+Always use the associated Talk page.
+
+=== Simple Ways to Help on the Wiki ===
+Every user can help improve the Wiki.
+Even simple things like fixing typos in articles lead to a vastly improved Wiki.
+There are a great many things that you can do to improve the Wiki that take no more than a few clicks to do.
+Never worry about messing up the Wiki; mistakes are easy to fix, and often lead to overall improvement of an article.
+Editing is simple, and you are strongly encouraged to make any and all edits that you feel are appropriate.
+
+== Joining the Wiki Community ==
+If you would like to help out at the Wiki in more substantial ways, by editing and/or writing, please, by all means!
+We always welcome new members.
+
+Here are some tips for getting started:
+* Write something on your [[Special:MyPage|User Page]]! Your user page is there for you to tell us all about yourself as a modder and Wiki contributor.
+* See what's new at [[Special:Recentchanges|Recent Changes]]! This page automatically lists every edit made on the Wiki, making it a great way to keep up with what's going on, and it means you'll always know when there are questions to be answered, pages to fix, or articles that people would love to see written!
+* Read the Wiki Editing [[Help:Wiki Editing Style Guide|Style Guide]] and [[Help:Wiki Editing Syntax Guide|Syntax Guide]]! These twin-guides serve to explain what we're all about and to direct you in your Wiki contributions.
+
+== Get Modding ==
+Now that you have been properly welcomed to the Creation Kit Wiki, it's time to start modding!
+If you're new to modding [[Fallout 4]], we recommend the [[:Category: Getting Started|Getting Started]] and [[:Category:Tutorials|Tutorials]] categories.
+They're full of resources to get you started.
+
+== Shortcuts ==
+* [[Special:RecentChanges|Recent Changes]]
+* [[Special:SpecialPages]]
+* [[Inaccurate Articles]]
+* [[Incomplete Articles]]
+* [[Pages Marked for Deletion]]
+* [[Special:AllPages/Category:|All Categories]]
+
+==== Templates ====
+These are some useful templates for new page content.
+* [[Template:Notice]]
+* [[Template:Inaccurate Article]]
+* [[Template:Incomplete Article]]
+* [[Template:Delete]]
+* [[Template:Editor:Property]]
+* [[Template:Editor:PropertyObsolete]]
+* [[Template:ClearFloats]]
+* [[Template:Anchor]]
+* [[Template:key press]]
+* [[Template:Papyrus:RequiredF4SE]]
+
+==== Supported Language Syntaxes ====
+The supported languages for syntax highlighting.
+<source lang="html4strict">
+4cs, 6502acme, 6502kickass, 6502tasm, 68000devpac, abap, actionscript, actionscript3, ada, aimms, algol68, apache, applescript, arm, asm, asp, asymptote, autoconf, autohotkey, autoit, avisynth, awk, bascomavr, bash, basic4gl, bf, bibtex, blitzbasic, bnf, boo, c, caddcl, cadlisp, cfdg, cfm, chaiscript, chapel, cil, clojure, cmake, cobol, coffeescript, cpp, csharp, css, cuesheet, d, dart, dcl, dcpu16, dcs, delphi, diff, div, dos, dot, e, ecmascript, eiffel, email, epc, erlang, euphoria, ezt, f1, falcon, fo, fortran, freebasic, freeswitch, fsharp, gambas, gdb, genero, genie, gettext, glsl, gml, gnuplot, go, groovy, gwbasic, haskell, haxe, hicest, hq9plus, html4strict, html5, icon, idl, ini, inno, intercal, io, ispfpanel, j, java, java5, javascript, jcl, jquery, kixtart, klonec, klonecpp, latex, lb, ldif, lisp, llvm, locobasic, logtalk, lolcode, lotusformulas, lotusscript, lscript, lsl2, lua, m68k, magiksf, make, mapbasic, matlab, mirc, mmix, modula2, modula3, mpasm, mxml, mysql, nagios, netrexx, newlisp, nginx, nimrod, nsis, oberon2, objc, objeck, ocaml, octave, oobas, oorexx, oracle11, oracle8, oxygene, oz, papyrus, parasail, parigp, pascal, pcre, per, perl, perl6, pf, php, pic16, pike, pixelbender, pli, plsql, postgresql, postscript, povray, powerbuilder, powershell, proftpd, progress, prolog, properties, providex, purebasic, pycon, pys60, python, q, qbasic, qml, racket, rails, rbs, rebol, reg, rexx, robots, rpmspec, rsplus, ruby, rust, sas, scala, scheme, scilab, scl, sdlbasic, smalltalk, smarty, spark, sparql, sql, standardml, stonescript, systemverilog, tcl, teraterm, text, thinbasic, tsql, typoscript, unicon, upc, urbi, uscript, vala, vb, vbnet, vbscript, vedit, verilog, vhdl, vim, visualfoxpro, visualprolog, whitespace, whois, winbatch, xbasic, xml, xpp, yaml, z80, zxbasic
+</source>
+
+== See Also ==
+* [[Standards and Policies]]
+* [[:Help:Contents|Contents]]
+* [[:Help:Communication|Communication]]
+* [[:Help:Search Terms|Search Terms]]
+* [[:Help:Welcome to Wiki Syntax|Welcome to Wiki Syntax]]
+* [[:Help:Wiki Editing Syntax Guide|Wiki Editing Syntax Guide]]
+* [[:Help:Searching|Searching]]
+* [[:Help:FAQ|FAQ]]
+* [[:Help:Simple Things You Can Do To Improve the Wiki|Simple Things You Can Do To Improve the Wiki]]
+* [[:Help:Wiki Editing Style Guide|Wiki Editing Style Guide]]

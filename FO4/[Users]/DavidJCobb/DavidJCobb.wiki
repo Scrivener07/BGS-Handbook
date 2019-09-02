@@ -1,0 +1,175 @@
+hi
+
+__TOC__
+
+== Subpages ==
+{| class="wikitable" style="width:100%"
+|-
+! style="border-right:0" | <!-- HEADER -->
+! style="border-left:0;font-size:1.1em;text-align:left" | Mod troubleshooting guides
+|-
+! [[/Binary search (troubleshooting)|Binary searches]]
+| The mathematically optimal way to identify one mod in your installation that is causing issues
+|-
+! [[/Notepad++ Papyrus Setup|Notepad++ Papyrus setup]]
+| A custom Papyrus language definition for Notepad++. Notably, you can define custom code-folding regions using block-comments.
+|-
+! [[/Papyrus logging|Papyrus logging]]
+| How to enable and retrieve debugging information from the script engine
+|-
+! style="border-right:0" | <!-- HEADER -->
+! style="border-left:0;font-size:1.1em;text-align:left" | Modding resources
+|-
+! [[/Tutorials/Editing NIFs|Editing NIFs]]
+| A quick overview of the tools needed to edit 3D models in Skyrim.
+|-
+! [[/Rotation Library|Papyrus rotation library]]
+| An old Papyrus library for performing rotation math and positioning objects relative to each other
+|-
+! [[/Stack dumping|Stack dumping]]
+| Information on a Papyrus warning that indicates too many scripted tasks running at once
+|-
+! style="border-right:0" | <!-- HEADER -->
+! style="border-left:0;font-size:1.1em;text-align:left" | Miscellaneous
+|-
+! [[/Methodologies|Methodologies]]
+| Outdated/throwaway page with some Papyrus scripting content
+|-
+! [[/Miscellany|Miscellaneous tips]]
+| Outdated/throwaway page with observations cobbled together from the web
+|-
+|}
+
+== Injected records ==
+In general, I've called dibs on the form IDs in the ''00C0BBxx'' range.
+
+{| class="wikitable" style="width:100%"
+|-
+! style="font-size:1.1em" | Form ID
+! style="font-size:1.1em" | Type
+! style="font-size:1.1em;text-align:left" | Mod
+! style="font-size:1.1em" | Purpose
+|-
+| 00C0BB00
+| STAT
+| Cobb Positioner
+| Deprecated. This was a Static base form reserved for use as a placeable [[NAVCUT]] volume, but created references with injected base forms don't get written to the savegame properly.
+|-
+| 00C0BB01
+| KYWD
+| Cobb Rim Lighting (2.1+)
+| Cobb Rim Lighting pauses on the player (and only the player) while they have any magic effect with this keyword. Used for compatibility with ESO Death and Resurrection (1.1+).
+|-
+| 00C0BB02
+| PERK
+| ESO Death and Resurrection (1.0+)
+| Perk used to indirectly locate the "Dead Player Ability" spell. The spell needs to be applied directly by the DLL, but can't be injected, because injected spells are not saved/loaded properly after being added to the player. To work around this, the ability spell has a unique perk (that does nothing) as its Casting Perk, and the DLL searches for the ability spell with that casting perk. The perk has a guaranteed form ID 00C0BB02.
+|-
+| 00C0BB03
+| KYWD
+| Cobb Positioner (2.2.1+)
+| Activators with this keyword are considered suitable targets for having collision primitive data (e.g. [[NAVCUT]]) added to them at run-time.
+|-
+|}
+
+== Scratchpad ==
+
+*'''OBSE Plugins'''
+** The official source is broken. Use [https://github.com/llde/Oblivion-Script-Extender this repo] instead.
+** Llde's repo builds OBSE as "version 22." The latest official build is "version 21." Be sure to check for 21 in your plugin's Query function, not just ''OBSE_VERSION_INTEGER''.
+** Llde's repo is... still broken, actually. You can compile the sample plugin, but about half of OBSE's codebase will trigger bullcrap linker errors (LNK2001) if used. You need to restructure the solution to resemble SKSE:
+*** Open the "plugin example" solution.
+*** Add an existing project: the "obse" project.
+*** If necessary, tamper with the plugin-example project's XML so that it doesn't include OBSE files manually. No, there's no UI for this in Visual Studio, because why would an IDE let you choose how you organize your code?
+*** Set the "obse" project to build a Static Library (.lib).
+*** Add a "reference" to your project so that it pulls from the OBSE library.
+*** Add the following preprocessor directives to the "plugin example" and "obse" projects per llde's instructions: ''_CRT_NO_VA_START_VALIDATION'' and ''_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS''. Note that the latter directive silences a fatal error about a deprecated class: it's possible that future versions of VS just won't be able to build OBSE or its resources at all.
+** That should be about everything?
+
+*'''SkyUI MCM'''
+** OnInit calls both OnConfigInit and OnGameReload. If you need a task performed for both of those, put it in OnGameReload.
+** OnGameReload calls OnVersionUpdate, which means that OnVersionUpdate will run whenever you call Parent.OnGameReload in your override.
+** You can use HTML FONT tags in option text and sometimes in values. However, concatenated translations may break if wrapped in FONT tags. Fortunately, you can also put the FONT tags in the translation file itself.
+
+*'''Reacting to when an item is dropped'''
+**OnContainerChanged is reliable but can cause stack dumping when masses of items are removed.
+**OnInit is neither reliable nor safe. It fires twice: once when the item is first added to the player's inventory, and again while the item is being dropped. In the second case, OnInit may (and usually will) fire before the item is actually safe to work with, i.e. ''while'' it's ''becoming'' a safe ObjectReference. In essence, the item will be an ObjectReference script wrapping a null entity; it doesn't equal None and you can cast it to ObjectReference and Form, but you can't call methods on it.
+**OnLoad is safe but unreliable: when an item (whose base form has scripts) is dropped, Skyrim doesn't attach non-native scripts immediately, so your script may only be attached after the load event is fired. (OnContainerChanged is held until the script is attached; OnLoad is not.)
+***This delay doesn't seem to affect items spawned with PlaceAtMe. It seems to only affect items that the player has dropped.
+**OnItemRemoved can work, but due to the delay in attaching scripts, one must be careful. You won't be able to cast the akItemReference to the script that it ''should'' have until that script is attached. Thankfully, you can force Skyrim to attach the script immediately by performing certain (any?) concrete actions on the native ObjectReference, e.g. akItemReference.Disable() or even just akItemReference.MoveTo(akItemReference).
+***So given an item with MyItemScript attached to it, you'd try and cast akItemReference to a MyItemScript. If this fails, you'd do akItemReference.MoveTo(akItemReference) and then try casting again. One of these casts ''should'' succeed if the item is indeed a MyItemScript item; but then, this whole matter is insufficiently documented and I've only had this level of understanding for a day, as of this writing.
+
+* '''Applying AI packages to an NPC'''
+** You generally don't apply a single package to NPC, but rather a list. For example, each meal that the NPC eats would be powered by separate packages.
+** [[User:DavidJCobb/Default AI packages‎|List of default AI packages (WIP)]]
+** Possible ways to make merchants
+*** ''SandboxAndKeepEyeOn'' package set to keep the merchant in the cell where they'll sell wares. Set them to keep an eye on the player. Modify their merchant faction data to make them sell in the area.
+*** ''SitTarget'' package targeted to a CounterLeanMarker. Modify their merchant faction data to make them sell in the area.
+* '''Worldspace design'''
+** Border regions are generally used to enforce hard level boundaries (the player is stopped and notified when they touch one). You can still supplement these by using collision primitives, including flat planes as invisible walls. These are available in the toolbar of the Creation Kit's main window.
+** When adding small amounts of content to a vanilla cell (e.g. a mine entrance), remember that you can avoid the need for direct navmesh edits (and the associated compatibility issues) by placing collision primitives and setting them to L_NAVCUT. At run-time, these will act as modifiers for the navmesh. (Bethesda themselves did this for certain dynamically-spawned statics, such as the Civil War catapults.)
+** The Flatten tool is terrible: it has a minimum radius of 6 vertices and it cannot be undone, so it's only good for blocking out large areas of undesigned terrain. Be ''very'' careful to make sure it's turned ''off'' before doing Landscape edits in areas you've actually designed and detailed.
+** Fall Forest climate
+*** The Fall Forest climate consists primarily of aspen trees, yellow shrubs, and scenery tagged with "FallForest;" however, the occasional pine tree appears as well. As one moves into snowier terrain, pine trees start to replace aspen trees entirely. Pine shrubs don't appear often; I've seen one or two on the small islands in Riften's lake.
+** Wildlife
+*** AMbrFrogsForestfallNight_LP ''(sound effect marker occasionally hidden in lakeside shrubs)''
+*** critterSpawnPond_Deep ''(used in Riften's lake)''
+** Scenery ideas
+*** Small stairway built with StockadeWoodbeams (used on the island for Goldenglow Estates)
+*** A wooden fence built with StockadeFreeWalls and StockadeFreewallBeams (used on the island for Goldenglow Estates)
+* '''Creation Kit bugs'''
+** Embedded render windows (that is, those found inside dialog boxes) will steal focus onmouseover.
+** The Creation Kit is somewhat crash-prone when trying to select navmesh edges while cover is being drawn, or recently after Find Cover Edges has been used.
+** Edge selection is generally broken when working with navmesh cover anyway.
+** The Creation Kit does not ignore placed effects (e.g. fog) when placing navmesh vertices, or when using the "drop to ground" tool on navmesh vertices. So that's great.
+* '''Combining multiple vanilla statics into a single NIF'''
+** Programs needed:
+*** NifSkope
+*** NifUtilsSuite
+**** Make sure this is configured properly. It needs to know where NifSkope's nif.xml is, and it needs to be able to access that file.
+*# Create NifUtilsSuite template file.
+*## Pick the vanilla static whose collision is most representative of the combined static you're building. If you're adding stuff onto a building, pick the building.
+*## Extract its NIF and open it in NifSkope. Delete every block that isn't the root block, a BSXFlags, or a bhkCollisionObject.
+*## Save this stripped-down NIF.
+*# Create the merged static, minus collision.
+*#* You can copy and paste NiTriShapes from NIF to NIF. Paste all of your statics' NiTriShapes into a single file (under the root node).
+*#* You can reposition a NiTriShape by selecting it in the sidebar, and then editing its Translation and Rotation in the bottom pane.
+*#* You can rename a NiTriShape (to keep track of them easier) by selecting it in the sidebar, and then double-clicking the "Txt" icon shown next to the name in the bottom pane.
+*#* Be sure to delete all collision-related information (which should pretty much just be any bhkCollisionObject blocks).
+*# Create the merged collision mesh.
+*## Use NifUtilsSuite's ChunkExtract to rip each individual static's collision mesh as a NIF. Make sure that ChunkExtract sets NiTriShape names from the collision material.
+*##* NiTriShape Name: From material
+*## Use NifSkope to combine the individual collision meshes into a single mesh, similarly to how you combined statics earlier. Do not rename any NiTriShapes.
+*# Apply the merged collision mesh to the merged static using NifUtilsSuite's ChunkMerge.
+*#* Use the template file you created earlier.
+*#* Be aware that this will overwrite the input file. You should probably create a backup of your merged static.
+*#* Use "mesh data" as the Collision Source, and "name of NiTriShape" as the Collision Material.
+* '''Common pitfalls when creating combined statics'''
+** It seems that NifSkope doesn't always use the right Euler conventions for Skyrim. As such, rotation values won't work quite the same way as they do in the Creation Kit.
+** NifUtilsSuite needs to be able to access NifSkope's nif.xml. If that file is in an administrator-only location (e.g. Program Files), you will need to run NifUtilsSuite as an administrator.
+** NifUtilsSuite will crash if you accidentally tell it to read from a non-existent file, so maybe don't do that. Check your pathnames.
+
+=== Code snippets ===
+
+==== Is an ObjectReference an item? ====
+Works as well as is possible given the methods available to us.
+
+<pre style="overflow-x:auto">Bool Function IsItem(ObjectReference akObject)
+   Form akForm = akObject.GetBaseObject()
+   If !akForm
+      return false
+   EndIf
+   If akForm as Book
+      ;
+      ; SKSE grants read access to the Playable flag for books.
+      ;
+      return (akForm as Book).IsTakeable()
+   EndIf
+   If (akForm as Ammo) || (akForm as Armor) || (akForm as Ingredient) || (akForm as Key) || (akForm as MiscObject) || (akForm as Potion) || (akForm as Scroll) || (akForm as SoulGem) || (akForm as Weapon)
+      ;
+      ; Other object types don't have a script-accessible player flag. Sux.
+      ;
+      return true
+   EndIf
+   return false
+EndFunction</pre>

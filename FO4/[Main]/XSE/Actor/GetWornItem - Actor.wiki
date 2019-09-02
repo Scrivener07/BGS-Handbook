@@ -1,0 +1,100 @@
+'''F4SE Member of:''' [[Actor Script]]
+{{Template:Papyrus:RequiredF4SE|version=0.2.0}}
+
+Obtains [[WornItem Struct - Actor|WornItem]] information about an actors [[Biped Slots|Biped Slot]].
+
+== Syntax ==
+<source lang="papyrus">
+WornItem Function GetWornItem(int slotIndex, bool firstPerson = false) Native
+</source>
+
+== Parameters ==
+*slotIndex: The [[Biped Slots|Biped Slot]] index to check.
+*firstPerson: Specifies whether first or third person information for the [[Biped Slots|Biped Slot]] should be returned.
+
+== Return Value ==
+The [[WornItem Struct - Actor|WornItem]] for the given [[Biped Slots|Biped Slot]] index.
+
+== Examples ==
+<source lang="papyrus">
+Actor:WornItem wornItem= Game.GetPlayer().GetWornItem(34)
+Debug.Trace("Item: " + wornItem.Item)
+Debug.Trace("Model: " + wornItem.Model)
+Debug.Trace("ModelName: " + wornItem.ModelName)
+Debug.Trace("MaterialSwap: " + wornItem.MaterialSwap)
+Debug.Trace("Texture: " + wornItem.Texture)
+</source>
+
+<source lang="papyrus">
+{For each biped slot}
+Actor Player = Game.GetPlayer()
+int index = 0
+int end = 43 const
+
+while (index < end)
+    Actor:WornItem wornItem = Player.GetWornItem(index)
+    Debug.Trace("Slot Index: " + index + ", " + wornItem)
+    index += 1
+EndWhile
+</source>
+
+== Armor Slot Precedence ==
+There is a precedence to [[Armor]] slot ordering which is from head-to-toe.
+An [[Armor]] form only properly exists on the highest slot it covers, lower slots will return none.
+Armors will superfically flag the cover slots it covers as occupied.
+
+For example a helmet with goggles that covers the '''HEAD''' + '''EYE''' slots will have to be accessed via the '''HEAD''' slot.
+On the other hand, a gas mask that covers the '''EYE''' + '''MOUTH''' slots will need to be accessed via the '''EYE''' slot.
+If for some reason there is a mask that covers the '''HEAD''' + '''EYES''' + '''MOUTH''' then it will need to be accessed via the '''HEAD''' slot because its the highest one.
+
+<source lang="papyrus">
+Scriptname WornExample extends Quest
+
+Actor Player
+int BipedEyes = 17 const
+bool ThirdPerson = false const
+
+Event OnQuestInit()
+	Player = Game.GetPlayer()
+	Actor:WornItem worn = GetWorn()
+	Debug.TraceSelf(self, "OnQuestInit", "Worn:"+worn)
+EndEvent
+
+Actor:WornItem Function GetWorn()
+	{Scans down the highest slot of an eye slot armor.}
+	int slot = 0
+	While (slot <= BipedEyes)
+		Actor:WornItem worn = Player.GetWornItem(slot, ThirdPerson)
+		If (ItemFilter(worn.Item))
+			return worn
+		EndIf
+		slot += 1
+	EndWhile
+	Debug.TraceSelf(self, "GetWorn", "No biped slot has a valid eyes armor.")
+	return none
+EndFunction
+
+bool Function ItemFilter(Form item)
+	Armor armo = item as Armor
+	return armo && HasSlotMask(armo, kSlotMask47)
+EndFunction
+
+bool Function HasSlotMask(Armor armo, int value) Global
+	return Math.LogicalAnd(armo.GetSlotMask(), value) == value
+EndFunction
+
+</source>
+
+== Notes ==
+*Returns a none struct beyond index 43 as those are actually invalid.
+*Slots with empty forms are just empty slots.
+
+== See Also ==
+*[[Actor Script]]
+*[[Biped Slots]]
+*[[WornItem Struct - Actor]]
+
+
+[[Category:F4SE]]
+[[Category:Scripting]]
+[[Category:Papyrus]]

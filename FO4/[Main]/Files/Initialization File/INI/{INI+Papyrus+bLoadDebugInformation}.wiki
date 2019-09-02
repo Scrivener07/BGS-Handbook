@@ -1,0 +1,14 @@
+<onlyinclude>
+== bLoadDebugInformation ==
+* '''Default:''' <Code>0</Code>
+
+This setting enables or disables the loading of additional debug information which is essentially line number information.
+If this setting is off, error messages cannot generate line number data.
+Turning this on will allow line numbers to be available in error traces at the cost of increased memory usage.
+
+This is used by the game to report [[Papyrus Runtime Errors#Stack Traces|Papyrus Runtime Errors via Stack Traces]].
+</onlyinclude>
+
+
+[[Category:Fallout4.ini]]
+[[Category:Papyrus Configurations]]

@@ -1,0 +1,8 @@
+
+=== Create Master File ===
+The Creation Kit version control system will need a master [[Data File]] to merge child plugins into.
+There are various ways to create new master files with community made software.
+Some of these include [[XEdit]], [[Wrye Bash]], or any hexidecial editor.
+There are even more software projects that can be found with an internet search.
+
+Create a new master plugin.

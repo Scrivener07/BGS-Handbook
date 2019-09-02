@@ -1,0 +1,22 @@
+<onlyinclude>
+== bUseVersionControl ==
+* '''Default:''' <Code>0</Code>
+Enables or disables [[Version Control]] within the [[Creation Kit]] editor.
+
+'''Examples'''
+<source lang="ini">
+[General]
+; The version control system is off.
+bUseVersionControl=0
+</Source>
+<BR>
+<source lang="ini">
+[General]
+; The version control system is on.
+bUseVersionControl=1
+</Source>
+</onlyinclude>
+
+
+[[Category:CreationKit.ini]]
+[[Category:Version Control Configurations]]

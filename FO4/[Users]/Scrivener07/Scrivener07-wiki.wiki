@@ -1,0 +1,178 @@
+This is my personal notepad to keep track of wiki information and TODOs for the website.
+See also [[Help:Welcome to the Wiki|Helping the Wiki]].
+
+
+Visit the [[User:Scrivener07/Wiki|Wiki Portal]]]] to get started using the website.
+* [https://en.uesp.net/wiki/Main_Page The Unofficial Elder Scrolls Pages (UESP)]
+* [https://www.creationkit.com/index.php?title=Main_Page Skyrim Creation Kit Wiki]
+* [http://geck.bethsoft.com Fallout 3 & New Vegas Creation Kit Wiki]
+* [https://cs.elderscrolls.com Oblivion Construction Set Wiki]
+
+
+* Consolidate [[:Category:Entry Points]].
+* Reevaluate [[Template:Effect Item]].
+* Help Kingtobbe format his external link resource. https://pastebin.com/QatiZ4ec
+* The Creation Kit's form picker (used by script properties as well as the Constructible Item screen), has a limit of 99 characters. If a record exists that could populate that menu that has 100+ characters, the CK crashes on trying to display that menu. This is an editor ID limitation. If you make a form called <code>Some_NewObject_WithARidiculouslyLongEditorID_ThatForSomeReasonSurpasses99Characters_AndCrashesTheConstructibleItemScreen</code>, accessing screens that could include that form in a drop-down will crash the CK.
+* Glean more notes for [[FormList]]. https://www.reddit.com/r/skyrimmods/comments/beb2sa/papyrus_formlists_are_annoyingly_inconsistent/
+
+
+[[Main Page]]<BR>
+:[[Community Portal]]<BR>
+:[[Glossary]]<BR>
+
+[[Tutorials]]<BR>
+:[[Creation Kit|Getting Started]]<BR>
+:[[New Editor Features]]<BR>
+:[[Differences from Skyrim to Fallout 4]]<BR>
+:[[Configurations]]<BR>
+:[[Scripting Guides]]<BR>
+:[[Video Tutorials]]<BR>
+:[[Cheat Sheets]]<BR>
+
+[[Fallout 4]]<BR>
+:'''Addons'''
+:[[Fallout_4#Automatron|Automatron]]<BR>
+:[[Fallout_4#Wasteland_Workshop|Wasteland Workshop]]<BR>
+:[[Fallout_4#Far_Harbor|Far Harbor]]<BR>
+:[[Fallout_4#Contraptions_Workshop|Contraptions Workshop]]<BR>
+:[[Fallout_4#Vault-Tec_Workshop|Vault-Tec Workshop]]<BR>
+:[[Fallout_4#Nuka-World|Nuka-World]]<BR>
+:[[Fallout_4#High_Resolution_Texture_Pack|High Resolution Texture Pack]]<BR>
+
+[[Game Systems]]<BR>
+:[[User Interface]]<BR>
+::[[Actionscript Reference]]<BR>
+
+:[[Animation]]<BR>
+:[[Companions]]<BR>
+:[[Navmesh]]<BR>
+:[[Story Manager]]<BR>
+:[[Workshop]]<BR>
+:[[Texturing]]<BR>
+
+[[Editor Reference]]<BR>
+:[[Version Control]]<BR>
+:[[Page Tile 2]]<BR>
+:[[Page Tile 3]]<BR>
+
+[[Tooling]]<BR>
+[[Game Files]]<BR>
+
+[[Papyrus|Scripting Reference]]<BR>
+:[[Page Tile 1]]<BR>
+:[[Page Tile 2]]<BR>
+:[[Page Tile 3]]<BR>
+
+
+= [[Main Page]] =
+== Help ==
+*Improve the [[Help:Welcome to the Wiki]] page.
+*Link to [[Vandalism]].
+*The [[Creation Kit:Copyrights]] page is blanked. Ill look into this further..
+Here's some links to help while you edit the wiki - keep it open in a separate tab or window for quick reference. Feel free to add any categories or articles you want to keep on hand.
+* [[Help: Wiki Editing Style Guide]] & [[Help: Wiki Editing Syntax Guide]]
+* [http://en.wikipedia.org/wiki/Help:Contents/Editing_Wikipedia Editing Wikipedia]
+
+
+
+== [[Tutorials]] ==
+* [[Bethesda Tutorial Conversations]]
+=== [[:Category:Scripting Guides]] ===
+=== [[Cheat Sheets]] ===
+=== [[Glossary]] ===
+*Maybe add a section to category pages that list out the "also referred as X". Use the "What Links Here" for redirects. For example, [[Creation Kit Toolset]].
+
+
+
+== [[Game Systems]] ==
+
+== [[Editor Reference]] ==
+* Add [[Editor Smoke]] to "Getting Started".
+*Possibly add [[Glossary]] for terms like ''Base Object''. See also Skyrim wiki @ https://www.creationkit.com/index.php?title=Glossary
+*Restore the [[Condition Function]]s reference.
+*Add proper redirect pages for established categories. Also continue to restore or consolidate the broken redirects like [[Default Objects]] and [[Regions]].
+
+
+
+=== [[Editor Interface]] ===
+*Expand the [[Editor Interface]] and related "windows".
+*Document the [[Creation Kit]] [[Menu Bar]].
+*Add '''Object Window Layout''' to [[Object Window]], this is the layout editor window "for" this window. [[Quest]] and other windows have these layout editors too.
+=== Windows ===
+*Add the [[Data Window]].
+*Add [[Toolbar Window]], [[Toolbar]], [[Editor Interface#Toolbar]], (?)
+*Add [[Statusbar Window]], [[Statusbar]], [[Editor Interface#Toolbar]], (?)
+*Add [[Cell View Window]], [[Cell View]]
+*Add [[Scene Info Window]], [[Scene Info]]
+*Add [[Open Windows]]
+*Add [[Preview Window]]
+*Add [[Show\Hide Window]], [[Show/Hide Window]]
+*Add [[Reference Batch Action Window]]
+*Add [[Layers Window]]
+*Add [[Material Palette Window]], [[Material Palette]]
+*Add Edit -> Render Window Picking Preferences, [[Picking Preferences Window]] or [[Render Window Picking Preferences]]?
+*Add [[Render Window Hotkeys]]
+*Add [[WorldSpace Window]], [[WorldSpace]]
+*Add [[Region Editor Window]], [[Region Editor]], [[Region]], (?)
+*Add [[Properties Window]], [[Properties]]
+*Add [[Reference Window]] @Render Window
+*Add [[Use Report]].
+
+
+
+=== [[Tooling Reference]] ===
+==== [[Creation Kit Toolset]] ====
+
+
+
+=== [[Game File Reference]] ===
+*Add page anchors to file extensions in the [[Game File Reference]]. Add redirects to the anchors for extension in all caps. (TXT, FLA, PEX)
+*Mention the [[Archive File]] naming scheme when paired with a [[Data File]]. For example, <code>MyArchive - Main.ba2</code> and <code>MyArchive - Textures.ba2</code>
+*Add [[Text File]], tab-delimited format for some [[Creation Kit]] report exporting.
+*Creation INI reference. Maybe add as a section to [[Creation Kit]] and a new page called [[Fallout 4]].
+==== [[Data File]] ====
+*Expand on [[Version Control and Multiple Contributor Collaboration ]] for the [[Creation Kit]].
+
+=== [[Object Class Reference]] ===
+*Research type signatures for Forms. Add cheat sheet for signatures and type icons.
+*Restore the enormous editors like [[Quest]], [[Actor]], and [[Race]].
+*Better pages for [[Object]], [[Base Object]], [[Object Reference]], and [[Reference]].
+*Add template for where objects can be found in the [[Object Window]]. For example: <code>The [[Key]] [[Object]] is found within the [[Object Window]] under the [[Items Category]].</code>
+==== Icons ====
+I had the idea to add the editor icons to object pages alongside the object's type code.
+*[[File:Actor Action EditorIcon.png]] [[Actor Action]]
+*[[File:Perk EditorIcon.png]] [[Perk]]
+*[[File:Quest EditorIcon.png]] [[Quest]]
+
+=== [[Console Command Reference]] ===
+=== [[Condition Function Reference]] ===
+
+== [[Scripting]] ==
+*Expand papyrus pages to include both minimalistic and complete source code examples.
+*Add better pages on structs & more actual examples of when structs are most useful.
+*Finish [[F4SE]] script documentation up to the current version.
+*Document the papyrus assembly. The [[Script File]] may be the only mention of papyrus assembly. The user cadpnq has started to document some of the assembly instructions here https://github.com/cadpnq/papyrith/wiki/Instruction-Reference
+=== Papyrus Concepts ===
+=== Other Resources ===
+=== External Text Editors ===
+=== Reference Pages ===
+==== [[Papyrus Language Reference]] ====
+==== Papyrus Script Objects ====
+
+= F4SE =
+*Remove F4SE pages from the [[Papyrus]] category.
+*Add templates for F4SE features. (auto add to category, icon, required version, etc..)
+*[[F4SE:DummyTestPage]] Maybe prefix like this?
+
+This is something I have delayed doing for some time now.
+With the wiki tools I have access to, this would be a very tedious and time consuming task.
+I have continued to add new f4se pages to the [[Papyrus]] category for consistency.
+I would rather reorganize/move the f4se pages all at once than a mix.
+See [[F4SE]] talk page.
+
+Using [https://www.mediawiki.org/wiki/Help:Subpages Subpages] might be an option if that is enabled in the wiki software.
+Subpages are enabled for user & talk pages by default, but not the main namespace.
+
+
+===== Pages =====
+{{Special:PrefixIndex/{{FULLPAGENAME}}/}}

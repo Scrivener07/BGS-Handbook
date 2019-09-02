@@ -1,0 +1,22 @@
+<onlyinclude>
+==bAllowMultipleMasterLoads==
+* '''Default:''' <Code>0</Code>
+Allows multiple master [[Data File]]s to be loaded within the [[Creation Kit]] at once.
+A [[Data File]] may be loaded through the [[Data Window]].
+
+'''Examples'''
+<source lang="ini">
+[General]
+; Enables multiple master loading.
+bAllowMultipleMasterLoads=1
+</Source>
+<BR>
+<source lang="ini">
+[General]
+; Enables multiple master loading.
+bAllowMultipleMasterLoads=0
+</Source>
+</onlyinclude>
+
+
+[[Category:CreationKit.ini]]

@@ -1,0 +1,36 @@
+The following [[Initialization File]] settings are for the game only.
+
+
+= [Messages] =
+The <Code>[Messages]</Code> section for [[:Category:Fallout4.ini|Fallout4.ini]] settings.
+<BR>
+{{INI:Messages:bFaceGenWarnings}}<BR>
+{{INI:Messages:iFileLogging}}<BR>
+{{INI:Messages:bBlockMessageBoxes}}<BR>
+{{INI:Messages:bUseWindowsMessageBox}}<BR>
+{{INI:Messages:bDisableAssertQueuing}}<BR>
+{{INI:Messages:bAllowYesToAll}}<BR>
+{{INI:Messages:bShowMissingLipWarnings}}<BR>
+{{INI:Messages:bShowMissingAudioWarnings}}<BR>
+
+
+= [Papyrus] =
+The <Code>[Papyrus]</Code> section for [[:Category:Fallout4.ini|Fallout4.ini]] settings.
+<BR>
+{{INI:Papyrus:bEnableLogging}}<BR>
+{{INI:Papyrus:bEnableProfiling}}<BR>
+{{INI:Papyrus:bEnableTrace}}<BR>
+{{INI:Papyrus:bLoadDebugInformation}}<BR>
+{{INI:Papyrus:fExtraTaskletBudgetMD}}<BR>
+{{INI:Papyrus:fPostLoadUpdateTimeMS}}<BR>
+{{INI:Papyrus:fUpdateBudgetMS}}<BR>
+{{INI:Papyrus:iMaxAllocatedMemoryBytes}}<BR>
+{{INI:Papyrus:iMaxMemoryPageSize}}<BR>
+{{INI:Papyrus:iMaxStackDepth}}<BR>
+{{INI:Papyrus:iMinMemoryPageSize}}<BR>
+{{INI:Papyrus:sDefaultLogOverlay}}<BR>
+{{INI:Papyrus:sTraceStatusOfQuest}}<BR>
+
+
+[[Category:Editor Reference]]
+[[Category:Game Files]]

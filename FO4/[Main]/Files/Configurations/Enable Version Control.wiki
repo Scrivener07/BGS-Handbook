@@ -1,0 +1,18 @@
+This configuration requires a Microsoft Windows ''User Name'' and ''Computer Name''.
+Its easy to get this information using the windows command line.
+Optionally, download the [[File:VersionControl(bat).zip]] batch script to get this information.
+
+# Press the keyboard keys {{key press|Windows|R}}, then type <code>cmd</code>, and press '''OK'''.
+# On the Windows CLI terminal, type in the <code>WhoAmI</code> command and press {{key press|Enter}}.
+:'''Command:''' <code>WhoAmI</code>
+:'''Output:''' <code>ToddHoward-PC\ToddHoward</code>
+<BR>
+:'''Computer Name:''' <code>ToddHoward-PC</code>
+:'''User Name:''' <code>ToddHoward</code>
+
+<BR>
+{{Enable Version Control}}
+
+
+[[Category:Configurations]]
+[[Category:Version Control Configurations]]

@@ -1,0 +1,24 @@
+== Creating & Editing ESM Files ==
+The [[Creation Kit]] does not allow you to create ESM files.
+However several tools exist which allow easy conversion between ESM and ESP files.
+However, there are some limits on such functions for complex mods.
+(More on this later.)
+
+Most modders who want to create ESM files will usually create an ESP file and then convert it to an ESM for release.
+Subsequent editing can be done either by converting the file back to an ESP and editing it with the Creation Kit, or by using other tools to merge ESP files into the ESM file.
+
+
+
+== Modifying Other Mods ==
+While the Creation Kit allows ESPs to use and modify ESMs, it will not allow similar actions for ESPs.
+The basic problem here is that the Creation Kit refuses to allow an ESP to become a master of an ESP.
+And without that master relationship, it's impossible for the new ESP to refer to anything in the old ESP (and thus is unable to use or modify it).
+
+However, it's possible to trick the Creation Kit into remembering another ESP as a master.
+Once this is done, then the new mod is able to use and modify the old ESP (almost) as if it were a regular ESM file.
+See De-Isolation Tutorial.
+
+Also of note is that ESMs can modify other ESMs -- within certain limits.
+The main limit seems to be that one ESM cannot add items to worldspaces defined by another ESM.
+Or rather, it can't do so safely -- since doing so causes landscape and buildings to disappear during gameplay.
+

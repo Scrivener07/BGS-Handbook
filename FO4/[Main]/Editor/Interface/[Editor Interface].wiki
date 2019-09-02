@@ -1,0 +1,287 @@
+{{Incomplete Article}}
+
+The [[Creation Kit]] is the primary tool for creating and editing [[Data File]]s.
+Here you can find information about all the windows and dialogs you may encounter while using the toolset.
+
+[[File:CreationKit Editor.png|600px]]
+
+= Toolbar =
+The main toolbar includes a set of buttons as shortcuts for commonly used functions from the menus.
+[[File:Editor Toolbar.png]]
+*[[File:Version Control Icon.png]] '''Version Control:''' Opens the [[Version Control Window]].
+*[[File:Data File Load Icon.png]] '''Load Master/Plugin Files:''' Opens the [[Data Window]].
+*[[File:Data File Save Icon.png]] '''Save Plugin:''' Saves any changes you've made to the current ''Active'' file.
+*[[File:Data File Save - Hotload PC Icon.png]] [[File:Data File Save - Hotload Xbox Icon.png]] [[File:Data File Save - Hotload Playstation Icon.png]] '''Save Plugin, then hot-load it into game on (PC, Xbox, Playstation):'''
+*[[File:Go To Selection - PC.png]] [[File:Go To Selection - Xbox.png]] '''Go to Selection on (PC, Xbox):'''
+*[[File:Preferences Icon.png]] '''Preferences:'''
+*[[File:Material Editor Icon.png]] '''Open Material Editor:'''
+*[[File:Edit Undo Icon.png]] '''Undo:'''
+*[[File:Edit Redo Icon.png]] '''Redo:'''
+*[[File:Snap To Grid Icon.png]] '''Snap to Grid:'''
+*[[File:Snap To Angle Icon.png]] '''Snap to Angle:'''
+*[[File:Snap To Connect Points Icon.png]] '''Snap to Connect Points:'''
+*[[File:Toggle Local Global Translation Icon.png]] '''Toggle Local/Global Translation:'''
+*[[File:World Heightmap Editing Icon.png]] '''World (Heightmap) Editing:'''
+*[[File:Landscape Editing Icon.png]] '''Landscape Editing:'''
+*[[File:Run Havok Sim Icon.png]] '''Run Havok Sim:'''
+*[[File:Animate Lights and Effects Icon.png]] '''Animate Lights and Effects:'''
+*[[File:Toggle Lights Icon.png]] '''Toggle Lights:'''
+*[[File:Toggle Sky Icon.png]] '''Toggle Sky:'''
+*[[File:Toggle Grass Icon.png]] '''Toggle Grass:'''
+*[[File:Force Render Window Weather Icon.png]] '''Force render window weather:'''
+*[[File:Open Filtered Dialogue Window Icon.png]] '''Open Filtered Dialogue Window:'''
+*[[File:NavMesh Mode Icon.png]] '''NavMesh Mode:'''
+*[[File:Set Up Default Lights Icon.png]] '''Set Up Default Lights:''' Sets up 4 defaultLight objects around the area which can be deleted if necessary.
+*[[File:Create Trigger Icon.png]] '''Create Trigger:'''
+*[[File:Create a Multibound Cube Icon.png]] '''Create a Multibound Cube:'''
+*[[File:Create a Multibound Sphere Icon.png]] '''Create a Multibound Sphere:'''
+*[[File:Create an Occlusion Plane Icon.png]] '''Create an Occlusion Plane:'''
+*[[File:Create an Occlusion Cube.png]] '''Create an Occlusion Cube:'''
+*[[File:Join-Break Occlusion Planes Icon.png]] '''Join/Break Occlusion Planes:'''
+*[[File:Create a Roombound Icon.png]] '''Create a Roombound:'''
+*[[File:Enter Portal Mode Icon.png]] '''Enter Portal Mode:'''
+*[[File:Create a Portal Icon.png]] '''Create a Portal:'''
+*[[File:Link Portal to Room Icon.png]] '''Link Portal to Room:'''
+*[[File:Detach Portal from Room Icon.png]] '''Detach Portal from Room:'''
+*[[File:Join Rooms Icon.png]] '''Join Rooms:'''
+*[[File:Create a Sound Emitter Icon.png]] '''Create a Sound Emitter:'''
+*[[File:Create an Acoustic Space Icon.png]] '''Create an Acoustic Space:'''
+*[[File:Create a Box Light Icon.png]] '''Create a Box Light:'''
+*[[File:Create a Collision Plane Icon.png]] '''Create a Collision Plane:'''
+*[[File:Create a Collision Cube Icon.png]] '''Create a Collision Cube:'''
+*[[File:Create a Collision Sphere Icon.png]] '''Create a Collision Sphere:'''
+*[[File:Create a Current Plane Icon.png]] '''Create a Current Plane:'''
+*[[File:Create a Current Cube Icon.png]] '''Create a Current Cube:'''
+*[[File:Create a Current Sphere Icon.png]] '''Create a Current Sphere:'''
+*[[File:Create an LOD Clip Volume Icon.png]] '''Create an LOD Clip Volume:'''
+*'''Time of day:''' Will adjust the time of day within the [[Render Window]].
+
+= Statusbar =
+The status bar is located at the bottom of the editor window.
+The various application status and progress reporting are displayed here.
+
+= Menu Bar =
+The menu bar is located at the top of the [[Creation Kit]] window.
+Navigating the drop-down menus will reveal many commands, preferences, and settings.
+
+== File ==
+This menu is used for managing [[Data File]]s, checking data validity and managing [[Archive File]]s.
+The editor [[Preferences]] window and import/export data menus data are also here.
+[[File:Data Window.png|400px|right]]
+*'''Data...:''' Opens the [[Data Window]].
+*'''Save:''' Saves any changes you've made to the current ''Active'' file. If you haven't specified an ''Active'' file in the [[Data Window]], you will be prompted for a new filename to save your changes to. All changes will be saved to a plugin file (FILENAME.esp) based on the current master file.
+**Note: Plugin files cannot contain any reserved characters, such as "(" or ")", or when attempting to select them the loader will not recognize them as valid plugins. To remove this error, simply rename the plugin to not contain reserved characters.
+*'''Save and Push Plugin to PC:'''
+*'''Version Control...:''' Opens the [[Version Control Window]].
+*'''Import/Export:''' Allows you to export data into tab delimited text files. Used for localization during development.
+*'''Preferences:''' Allows you to set [[Preference]]s for various aspects of the editor. These preferences mainly having to do with the [[Render Window]].
+*'''Validate Loaded Data:''' Validate Loaded Data runs a check through the loaded plugin and master files to check for errors in how the data is set up. This check is also run automatically when the [[Creation Kit]] finishes loading the data selected; this is just a way to run that check without having to reload the data.
+*'''Create Archive:''' Opens up the [[Archive Browser]] window. The [[Creation Kit]] includes a rudimentary tool for gathering [[Game File]]s and bundling them into an [[Archive File]]s.
+*'''Upload Plugin and Archive to Bethesda.net:''' Uploads the mod to Bethesda.net for the selected platform.
+**'''PC:''' Selects the PC platform for upload.
+**'''XB1:''' Selects the Xbox platform for upload.
+**'''PS4:''' Selects the Playstation platform for upload.
+*'''Compact Active File Form IDs:''' Compacts all form IDs in the ''Active'' file. This will invalidate any saves made off this file.
+*'''Convert Active File to Light Master:''' Converts the ''Active'' file to a light master file. This will only work for small files.
+*'''Login to Bethesda.net...:''' Opens the [[Bethesda Login Window]].
+*'''Logout:''' Logs the editor out of any logged in Bethesda.net accounts.
+*'''Exit:''' Closes the editor. If you have made any changes since your last save, you will be prompted to save before exiting.
+{{ClearFloats}}
+
+== Edit ==
+Undo/Redo, Copy/Paste and other essential functions live here, which we will mostly access via [[Creation Kit Interface Cheat Sheet]].
+[[File:Search & Replace Wildcard Window.png|350px|right]]
+*'''{{Anchor|Undo}}  <span id="Undo">Undo</span>:''' Negates the last action taken in the [[Render Window]]. For example, an object that had just been moved will be returned to its prior location.
+*'''Redo:''' Re-applies an action undone with the ''Undo'' action.
+*'''Cut Render:''' Removes any selected references from the [[Render Window]].
+*'''Copy Render:''' Copies any currently selected references in the [[Render Window]]. Note that relative position and orientation will be maintained.
+*'''Paste Render:''' Pastes any previously copied reference, or multiple references, into the [[Render Window]] at the cursor's current position. All references copied into the window will be selected.
+*'''Paste in Place:''' Pastes in any selected reference(s) at the position of the initial location copied from.
+*'''Duplicate:''' Create a new version of any currently selected references in the same location as the original. The newly created reference is immediately selected.
+*'''Search & Replace...:''' Opens the [[Search & Replace]] window.
+*'''Find Text:''' Opens the [[Text Search]] window.
+*'''Render Window Hotkeys:''' Opens the [[Render Window Hotkeys]] dialog. Shows a listing of all [[Render Window]] commands and their associated hotkeys.
+*'''Render Window Picking Preferences:''' Allows the user to select what types of objects can be picked in the [[Render Window]].
+{{ClearFloats}}
+
+== View ==
+Options here largely control how the [[Render Window]] behaves, and will be useful during more complex tasks.
+[[File:Editor RenderWindow.png|400px|right]]
+*'''Toolbar:''' Toggles the [[#Toolbar|Toolbar]] at the top of the screen.
+*'''Statusbar:''' Toggles the [[#Statusbar|Statusbar]] at the bottom of the screen.
+*'''Object Window:''' Toggles the [[Object Window]].
+*'''Cell View Window:''' Toggles the [[Cell View Window]].
+*'''Scene Info Window:''' Toggles the [[Scene Info Window]].
+*'''Open Windows...:''' Displays the [[Open Windows]] dialog which is a list of all opened windows in the [[Creation Kit]].
+*'''Preview Window:''' Displays a window to preview objects selected in tree.
+*'''Show/Hide Window:''' Displays a set of checkboxes to toggle elements in the [[Render Window]].
+*'''Reference Batch Action Window:''' Enables data changes to a collection of [[Reference]]s.
+*'''Layers...:'''
+*'''Material Palette:'''
+*'''Object Window Layouts:'''
+*'''Current Cell Only:''' Displays only the navmesh of the [[Cell]] in focus. Only functions when editing [[Navmesh]].
+*'''Markers:''' Toggles markers in the [[Render Window]].
+*'''Light Markers:''' Toggles the markers used for [[Light]] sources (typically a light bulb) in the [[Render Window]].
+*'''Sound Markers:''' Toggles the markers used for [[Sound]] sources in the [[Render Window]].
+*'''Light Radius:''' Toggles display of [[Light]] radius in the [[Render Window]].
+*'''Wireframe:''' Toggles between Wireframe and normal rendered view in the [[Render Window]].
+*'''Bright Light:''' Toggles ''Bright Light'' view in [[Render Window]].
+*'''Sky:''' Toggles the sky in the [[Render Window]].
+*'''Grass:''' Toggles grass on and off in the editor.
+*'''Fog:''' Toggles fog on and off in the editor.
+*'''Collision Geometry:''' Toggles Collision Geometry display in the [[Render Window]].
+*'''Leaves:''' Toggles leaves on or off in the [[Render Window]].
+*'''Trees:''' Toggles trees on or off in the [[Render Window]].
+*'''Occlusion Planes:''' Toggles display of occlusion surfaces.
+*'''Isometric:''' Rotates through three perspective views (top, front, and left) of the selected object in the [[Render Window]].
+*'''Top:''' Moves the camera to a top view of the selected object in the [[Render Window]].
+*'''Depth Biasing:''' Forces the depth biasing to function as it would in game. This is a great way to see which objects will ''Z-Fight'' in the game, even if they aren't in the editor.
+*'''Refresh Render Window:''' Refreshes the [[Render window]], this will make all hidden objects visible again as well as update anything that has been changed from outside of the editor, like a new .nif.
+*'''Warnings:''' Opens the [[Warnings]] window.
+*'''Properties:''' Opens the [[Properties]] window.
+{{ClearFloats}}
+
+== World ==
+This menu collects many tools for manipulating aspects of the game world.
+*'''World Spaces...:''' Opens the [[WorldSpace]] window.
+*'''Regions:''' Opens the [[Region]] window.
+*'''Cells:''' Opens the [[Cell]] window.
+*'''World LOD...:''' Used for generating LOD [[Model File]]s for [[WorldSpace]]s.
+*'''World Testing And Reports:''' Brings up the World Testing sub-menu .
+**'''Test Models:'''
+**'''Test Icons/Textures:'''
+**'''Test All Cells:'''
+**'''Test Interior Cells:'''
+**'''Output Model Size List:'''
+**'''Update Distant LOD Data:'''
+**'''Update Model Bounds:'''
+**'''Update Model Texture Lists:'''
+**'''Update Object Visibility Data:'''
+**'''Update Obstacle Cover Data:'''
+**'''Analyze Archive Data:'''
+**'''Recalc Land Normals:'''
+**'''Find equipment with 100% condition rating:'''
+**'''View all locks:'''
+**'''View leveled actors by encounter zone:'''
+**'''Validate water geometry:'''
+**'''Output MapMarker Data:'''
+**'''Global Loot Preview:'''
+*'''View Render Test Failures...:'''
+*'''View BetaComment Data...:'''
+*'''Run Havok Sim:''' Toggles Havok physics, lighting, and vfx simulation in the [[Render Window]].
+*'''Update Lighting and Effects:''' Toggles Havok lighting and vfx simulation only. Unlike ''Run Havok Sim'', objects and [[Actor]]s will not settle while this mode is on.
+*'''Landscape Editing:''' Used to edit the local landscape in the [[Render Window]].
+*'''Object Palette Editing:'''
+*'''Heightmap Autopaint:'''
+*'''Heightmap Import:'''
+*'''Create Local Maps:''' This allows local maps to be exported from the [[Creation Kit]]. It is not used in creating the local maps seen in game which are automatically generated based on level geometry. This also cannot be used to import a map in place of the generated map.
+*'''Validate room/portal alignment:'''
+*'''Align tangent space ay NIF intersection:'''
+*'''Generate LOS:'''
+*'''Generate Max Height Data For Current Cell:'''
+*'''Generate Max Height Data For World:'''
+*'''Generate Max Height Data For ALL Worlds:'''
+*'''Generate HiRes Heightfield For Cells:'''
+*'''PreCombine Geometry for Current Cell:'''
+*'''PreCombine Geometry for Loaded Area:'''
+*'''PreCombine Geometry For World:'''
+*'''PreCombine Geometry For Interior Cells:'''
+*'''Export All Landscape:'''
+*'''Force Weather:'''
+
+== NavMesh ==
+Users familiar with Fallout 3's GECK will remember navmesh, our central tool for AI navigation through an environment.
+This menu holds our various tools for creating and manipulating this valuable functionality.
+*'''Generation:'''
+**'''Havok-Based Generation:'''
+**'''Recast-Based Generation:'''
+**'''Advanced:'''
+*'''Auto Generate WorldSpace:'''
+*'''Check NavMeshes:'''
+*'''Finalize Cell NavMeshes:'''
+*'''Find Cover Edges:'''
+*'''Precut All Scrappables:'''
+*'''Link All Scrappables:'''
+*'''Create Precuts for Selection:'''
+*'''Link Precuts for Selection:'''
+*'''Clear Precuts from Selection:'''
+*'''Clear All PRecut Links:'''
+*'''Move Selection To Separate NavMesh:'''
+*'''Navmesh Draw Mode:'''
+*'''Draw Cover:'''
+*'''Draw Tunnels:'''
+*'''Draw Waypoints:'''
+*'''Clear Generated Cover:'''
+*'''Clear Cover:'''
+*'''Remove Cell NavMeshes:'''
+*'''Check Worldspace Cells for Finalize:'''
+*'''Finalize Loaded Area:'''
+*'''Finalize WorldSpace:'''
+*'''Force Finalize Full WorldSpace:'''
+*'''Finalize All Interiors:'''
+*'''Force Finalize All Spaces:'''
+*'''Generate Cover For All Spaces:'''
+*'''Remove All AutoGen Islands:'''
+*'''Generate Cell Waypoints:'''
+*'''Set Cell Auto Generated:'''
+*'''Clear Cell Auto Generated:'''
+*'''Audit Navmesh Report:'''
+*'''Normal Pathing Test:'''
+*'''Cover Test:'''
+*'''Dodge Test:'''
+*'''Flee Test:'''
+*'''Hide Test:'''
+*'''LOS Test:'''
+*'''ClosePoint Test:'''
+*'''Safe Straight Line Test:'''
+*'''Navmesh Test Mode:'''
+**'''Draw Path Only:'''
+**'''Draw Cost:'''
+**'''Draw Heuristic:'''
+**'''Draw Fitness:'''
+**'''Draw PathSmoother Bounds:'''
+*'''Update Obstacle Manager:'''
+*'''Select Triangle By Index:'''
+*'''Export Navmesh as OBJ:'''
+
+== Visibility ==
+*'''Generate Visibility for Current Cell:'''
+*'''Generate Visibility for All Loaded Cells:'''
+*'''Generate Precombined Visibility for Current Cell:'''
+*'''Generate Precombined Visibility for All Loaded Cells:'''
+
+== Character ==
+These tools are mostly for the manipulation of character behavior.
+*'''Filtered Dialogue...:'''
+*'''Export Relationship Data:'''
+*'''Export Dialogue:'''
+*'''Export Dialogue for Specific Voices:'''
+*'''List Neutral Emotion Dialogue:'''
+*'''Quest Voice Asset Totals:'''
+*'''Update NPC Body Tint Colors:'''
+*'''Update FaceBones Model Availability:'''
+*'''Edit Player Dialogue:'''
+*'''Quest Aliases:'''
+*'''Generate Player Address Lip Files:'''
+
+== Gameplay ==
+These advanced settings can have game-wide effects.
+*'''Settings:'''
+*'''Papyrus Script Manager:''' Opens the [[Papyrus Manager Window]].
+*'''Compile Papyrus Scripts...:'''
+*'''Migrate Papyrus Property Data...:'''
+*'''Animations:'''
+*'''Facial Animation...:'''
+*'''Animation Sound Tag Overrides...:'''
+*'''Camera Paths:'''
+*'''Default Objects...:'''
+*'''Validate Forms:'''
+
+== Help ==
+The help menu is used to access this wiki and to confirm the version number of the [[Creation Kit]].
+Simple version information and a link to this wiki!
+*'''Contents:'''
+*'''About:''' Selecting this function will bring up a window listing the [[Creation Kit]]'s current version number. This can be found at the top of the window, just over the logo.
+
+
+[[Category:Editor Reference]]

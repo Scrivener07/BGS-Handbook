@@ -1,0 +1,15 @@
+<onlyinclude>
+==sNetwork Path==
+* '''Default:''' <Code></Code>
+The network path used for the [[Version Control]] system.
+
+'''Examples'''
+<source lang="ini">
+[General]
+sNetwork Path=\\ToddHoward-PC\Merging\
+</Source>
+</onlyinclude>
+
+
+[[Category:CreationKit.ini]]
+[[Category:Version Control Configurations]]

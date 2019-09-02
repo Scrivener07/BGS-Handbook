@@ -1,0 +1,13 @@
+This page covers topics related to [[Version Control]] and the [[Creation Kit]].
+
+== Enable Version Control ==
+{{Enable Version Control}}
+
+
+= See Also =
+* [[Version Control]]
+* [[Data File]]
+* [[Initialization File]]
+
+
+[[Category:Configurations]]

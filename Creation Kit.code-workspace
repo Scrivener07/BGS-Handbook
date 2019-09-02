@@ -2,7 +2,29 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"name": "Fallout 4",
+			"path": "E:\\Games\\Steam\\steamapps\\common\\Fallout 4"
+		},
+		{
+			"name": "My Documents",
+			"path": "C:\\Users\\Scrivener07\\Documents\\My Games\\Fallout4"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/BashLoadOrders.dat.bak": true,
+			"**/BashSettings.dat.bak": true,
+			"**/BashLoadOrders.dat": true,
+			"**/BashSettings.dat": true,
+			"**/WryeLogTemp.html": true
+		},
+		"explorerExclude.backup": null
+	}
 }

@@ -1,0 +1,12 @@
+<onlyinclude>
+==xxxxxxxxxx==
+* '''Default:''' <Code></Code>
+
+
+'''Examples'''
+<source lang="ini">
+</Source>
+</onlyinclude>
+
+
+[[Category:CreationKit.ini]]

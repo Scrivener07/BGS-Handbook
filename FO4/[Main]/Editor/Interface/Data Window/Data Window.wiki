@@ -1,0 +1,81 @@
+The [[Data Window]] allows the [[Creation Kit]] to load [[Data File]]s and edit their meta data.
+The window can be found under the title bar menu, <code>File -> Data...</code>.
+
+== Editor Window ==
+[[File:Data Window.png]]
+*'''Plugin/Master Files:''' A list of [[Data File]]s found in the ''data folder''.
+**'''Filename:''' The name of this [[Data File]].
+**'''Status:''' The status of this [[Data File]].
+***''Master:'' The [[Data File]] is an <code>.esm</code> or <code>.esl</code> master file.
+***''Plugin:'' The [[Data File]] is an <code>.esp</code> plugin file.
+***''Active:'' The [[Data File]] is an <code>.esp</code> and is selected for ''Saving''.
+*'''Set as Active File:''' Sets the selected plugins '''Status''' to ''Active''.
+*'''Details...:''' Opens the ''File Details'' window.
+*'''Created By:''' The author's name.
+*'''Summary:''' A summary description of this [[Data File]].
+*'''Created On:''' The date & time this file was created on the file system.
+*'''Last Modified:''' The date & time this file was last modified on the file system.
+*'''Parent Masters:''' A list of master [[Data File]]s for the selected plugin.
+*'''OK:''' Pressing ok will reload the entire editor with the selected [[Data File]]s and their masters.
+*'''Cancel:''' Closes this window.
+
+
+
+
+
+== File Details ==
+[[File:Data File Details Window v2.png]]
+
+Displays information about all of the forms in a file.
+*'''Type:''' 4 char descriptor of form type
+*'''Deleted:''' 'D' indicates a plugin has deleted the form
+*'''Ignored:''' 'I' indicates the form has been marked as ignored
+*'''Editor ID:''' string descriptor for form
+*'''Form ID:''' numeric descriptor for form
+*'''Offset:''' offset of form into the file
+*'''Length:''' length of the form or group
+
+
+=== Working with Records ===
+When you are using the [[Creation Kit]], the records that you have edited in the currently active [[Data File]] will be marked with a '''*''' within the [[Object Window]].
+To see all records a [[Data File]] changes or adds in a single list, do the following.
+#Make sure the [[Data File]] is saved to disk.
+#Then navigate to '''File -> Data...''' from the [[Creation Kit]] title bar menu.
+#Highlight your [[Data File]] in the left pane, and  press the '''Details...''' button.
+#A separate window will then show the full list of records that the [[Data File]] adds or changes.
+#Select any file and choose the '''Details...''' button.
+
+The above method is the only way to get a full listing within the [[Creation Kit]] of your changes to a master files records, and additional records your plugin creates.
+It's worth noting that your additional records will have FormID's that are higher than those of the master files.
+The first 2 characters count up for each file loaded.
+So sorting by FormID, by clicking the column heading, becomes a useful tool too.
+
+==== Ignoring Records ====
+[[File:Data File Details Mark As Ignored Window.png]]{{ClearFloats}}
+
+If you see some records listed that you didn't intend to change, you can highlight them in the popup box and press the {{key press|Delete}} key.
+This will mark them with an '''I''' for ''ignored''.
+The ignored records will be purged from your file the next time you save it.
+
+=== More Info ===
+[[File:Data File Details Info Window.png]]
+[[File:Data File Details Info Window GIF.gif]]
+{{ClearFloats}}<BR>
+
+This window is very tall and so requires some ''Microsoft Windows'' shortcuts to navigate.
+With the ''More Info'' window focused, press the {{key press|Alt|Spacebar}} keys together to open the ''System Menu''.
+Select the ''Move'' option and press the {{key press|Up}} & {{key press|Down}} arrow keys to navigate.
+
+== See Also ==
+*[[Data File]]
+*[[Version Control]]
+*[[Object Window]]
+*[[Editor Interface]]
+*[[Game File Reference]]
+
+==== Links ====
+* [https://cs.elderscrolls.com/index.php?title=File_Details Elder Scrolls - File Details]
+
+
+[[Category:Editor Reference]]
+[[Category:Editor Interface]]
