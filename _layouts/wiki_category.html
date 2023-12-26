@@ -2,28 +2,56 @@
 layout: wiki
 ---
 
+<head>
+	<meta charset="UTF-8">
+	<title>Page with Left Sidebar</title>
+	<style>
+		body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+		}
+		.container {
+			display: flex;
+		}
+		.sidebar {
+			width: 200px;
+			background-color: #f3f3f3;
+			padding: 20px;
+			height: 100vh; /* Full height */
+		}
+		.content {
+			flex-grow: 1;
+			padding: 20px;
+			background-color: #fff;
+		}
+	</style>
+</head>
+
+
 <article class="post">
+	<div class="container">
 
-	<div class="sidebar">
-		<!-- Sidebar content -->
-		<nav>
-			<h4>Pages</h4>
-			{% include list-pages.html %}
+		<div class="sidebar">
+			<!-- Sidebar content -->
+			<nav>
+				<h4>Pages</h4>
+				{% include list-pages.html %}
 
-			<h4>Sections</h4>
-			{% include list-sections.html %}
-		</nav>
-	</div>
-
-	<div class="content">
-		<!-- Main content -->
-		<h1>Welcome to the Page</h1>
-		<p>This is the main content area of the page.</p>
-
-		<!-- Add more content as needed -->
-		<div class="post-content">
-			{{ content }}
+				<h4>Sections</h4>
+				{% include list-sections.html %}
+			</nav>
 		</div>
-	</div>
 
+		<div class="content">
+			<!-- Main content -->
+			<h1>Welcome to the Page</h1>
+			<p>This is the main content area of the page.</p>
+
+			<!-- Add more content as needed -->
+			<div class="post-content">
+				{{ content }}
+			</div>
+		</div>
+
+	</div>
 </article>
