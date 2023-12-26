@@ -1,7 +1,7 @@
 ---
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: default
+layout: wiki_category
 title: "Site"
 showNavigation: true
 ---
@@ -36,3 +36,9 @@ This project uses the [Minima](https://github.com/jekyll/minima) theme.
 - **Preview:** [Live Theme Preview](https://jekyll.github.io/minima/)
 - **Identifier:** `minima`
 - **Command:** `bundle info --path minima`
+
+
+### Michael Currin's Nested Jekyll Menus
+This project uses components of Michael Currin's *Nested Jekyll Menus*.
+- Source: https://github.com/MichaelCurrin/nested-jekyll-menus/
+- Found via: https://talk.jekyllrb.com/t/how-to-list-subpages/5051/4
