@@ -4,6 +4,8 @@
 layout: home
 ---
 
-### Fallout 4
-- [Interface](wiki/fo4/interface/interface)
-- [Interface Reference](wiki/fo4/interface/reference/ui)
+### Index
+- [Wiki](wiki)
+- [Wiki: Fallout 4](wiki/fo4)
+- [Wiki: Fallout 4: Interface](wiki/fo4/interface)
+- [Wiki: Fallout 4: Interface: Reference](wiki/fo4/interface/reference)
