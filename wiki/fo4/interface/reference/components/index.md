@@ -1,3 +1,8 @@
+---
+layout: wiki_category
+title: "Components"
+---
+
 # UI Components
 Components are reusable units of behavior and visuals that are used to build the user interface.
 

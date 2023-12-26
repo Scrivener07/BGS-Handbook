@@ -1,3 +1,8 @@
+---
+layout: wiki_category
+title: "Menus"
+---
+
 # UI Menus
 These are the User Interface menus that Players interact with in game.
 The UI includes various menus and screens, such as the main menu, pause menu, and load screens.

@@ -1,3 +1,8 @@
+---
+layout: wiki_category
+title: "Interface"
+---
+
 The Fallout 4 in-game menus, such as the HUD, and other user interface elements were built using [Adobe Animate](https://www.adobe.com/products/animate.html) and [Autodesk Scaleform](https://en.wikipedia.org/wiki/Scaleform_GFx).
 Adobe Flash is a tool for creating vector based graphics and animations.
 

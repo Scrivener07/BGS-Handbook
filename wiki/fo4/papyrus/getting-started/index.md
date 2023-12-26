@@ -1,3 +1,8 @@
+---
+layout: wiki_category
+title: "Getting Started"
+---
+
 I have opinions on how imports should be but that ship sailed long ago for wide spread adoption.
 `...\Fallout 4\Data\Scripts\Source\Base\` vanilla base scripts
 `...\Fallout 4\Data\Scripts\Source\F4SE\` f4se base scripts

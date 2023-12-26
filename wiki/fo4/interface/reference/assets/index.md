@@ -1,3 +1,8 @@
+---
+layout: wiki_category
+title: "Assets"
+---
+
 # UI Assets
 - [Fonts](Fonts.md)
 - [DamageIcons](DamageIcons.md)

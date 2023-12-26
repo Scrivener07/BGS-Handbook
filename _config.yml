@@ -54,6 +54,11 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+exclude:
+  - .gitattributes
+  - .gitignore
+  - README.md
+
 
 # Defaults
 # https://jekyllrb.com/docs/configuration/front-matter-defaults/
