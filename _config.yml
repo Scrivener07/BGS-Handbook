@@ -11,7 +11,8 @@
 # If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
-#
+
+
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
@@ -21,17 +22,17 @@
 title: BGS Handbook
 email: ScrivenerMods@Gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Scrivener's modding journal and research notes for games made by Bethesda Game Studios.
 baseurl: "/BGS-Handbook" # the subpath of your site, e.g. /blog
 url: "https://scrivener07.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Scrivener07
+
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -54,6 +55,7 @@ plugins:
 #   - vendor/ruby/
 
 
+# Defaults
 # https://jekyllrb.com/docs/configuration/front-matter-defaults/
 # Now, this will only set the layout for files where the type is posts.
 # The different types that are available to you are pages, posts, drafts or any collection in your site.
