@@ -1,21 +1,21 @@
 {% comment %}
-    https://github.com/MichaelCurrin/nested-jekyll-menus/blob/master/_includes/list-pages.html
+	https://github.com/MichaelCurrin/nested-jekyll-menus/blob/master/_includes/list-pages.html
 
-    List pages in same directory as the current page, excluding the page itself.
+	List pages in same directory as the current page, excluding the page itself.
 
-    Edited by Scrivener:
-    The modification introduces a fallback mechanism for the link text.
-    If item.title is not available or is empty, the file name of the page (item.name) is used instead.
-    This change ensures that every link will have some descriptive text, either the specified title or the file name.
+	Edited by Scrivener:
+	The modification introduces a fallback mechanism for the link text.
+	If item.title is not available or is empty, the file name of the page (item.name) is used instead.
+	This change ensures that every link will have some descriptive text, either the specified title or the file name.
 {% endcomment %}
 
 <ul>
-    {% for item in site.pages %}
-        {% if item.dir == page.dir and item.path != page.path %}
-        <li>
-            {% assign title = item.title | default: item.name %}
-            <a href="{{ item.url | relative_url }}">{{ title }}</a>
-        </li>
-        {% endif %}
-    {% endfor %}
+	{% for item in site.pages %}
+		{% if item.dir == page.dir and item.path != page.path %}
+		<li>
+			{% assign title = item.title | default: item.name %}
+			<a href="{{ item.url | relative_url }}">{{ title }}</a>
+		</li>
+		{% endif %}
+	{% endfor %}
 </ul>
