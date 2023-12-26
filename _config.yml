@@ -52,3 +52,21 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+# https://jekyllrb.com/docs/configuration/front-matter-defaults/
+# Now, this will only set the layout for files where the type is posts.
+# The different types that are available to you are pages, posts, drafts or any collection in your site.
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "wiki"
+      type: "pages"
+    values:
+      layout: "wiki"
