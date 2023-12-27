@@ -57,10 +57,11 @@ plugins:
 exclude:
   - .gitattributes
   - .gitignore
+  - .vscode
+  - BGS-Handbook.code-workspace
   - README.md
-  - site-serve.ps1
   - site-serve-debug.ps1
-
+  - site-serve.ps1
 
 # Defaults
 # https://jekyllrb.com/docs/configuration/front-matter-defaults/
