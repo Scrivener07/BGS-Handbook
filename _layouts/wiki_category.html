@@ -4,7 +4,6 @@ layout: wiki
 
 <head>
 	<meta charset="UTF-8">
-	<title>Page with Left Sidebar</title>
 	<style>
 		body {
 			margin: 0;
@@ -14,7 +13,6 @@ layout: wiki
 			display: flex;
 		}
 		.sidebar {
-			width: 200px;
 			background-color: #f3f3f3;
 			padding: 20px;
 			height: 100vh; /* Full height */
@@ -34,10 +32,10 @@ layout: wiki
 		<div class="sidebar">
 			<!-- Sidebar content -->
 			<nav>
-				<h4>Pages</h4>
+				<!-- <h4>Pages</h4> -->
 				{% include list-pages.html %}
 
-				<h4>Sections</h4>
+				<!-- <h4>Sections</h4> -->
 				{% include list-sections.html %}
 			</nav>
 		</div>

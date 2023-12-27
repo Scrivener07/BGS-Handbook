@@ -1,71 +1,74 @@
-The '''Container Menu''' is used to move items between the [[Player]] and a [[Container]].
+---
+title: "ContainerMenu"
+---
 
-== AS3 ==
-* <code>var BGSCodeObj:Object</code>
-* <code>var ButtonHintBar_mc:BSButtonHintBar</code>
-* <code>var CapsLabel_tf:TextField</code>
-* <code>var ContainerInventory_mc:MovieClip</code>
-* <code>var ContainerList_mc:ItemList</code>
-* <code>var ItemCard_mc:ItemCard</code>
-* <code>var PickpocketInfo_mc:MovieClip</code>
-* <code>var PlayerInventory_mc:MovieClip</code>
-* <code>var QuantityMenu_mc:MovieClip</code>
-* <code>var PlayerHasJunk:Boolean</code>
-* <code>function get containerIsSelected():Boolean</code>
-* <code>function get selectedIndex():int</code>
-* <code>function set inspectingFeaturedItem(aValue:Boolean):*</code>
-* <code>function set playFocusSounds(aValue:Boolean):*</code>
-* <code>function set playerHasJunk(aValue:Boolean):*</code>
-* <code>function onIntroAnimComplete():*</code>
-* <code>function SetContainerInfo(strName:String, auiMode:uint):*</code>
-* <code>function get playerListArray():Array</code>
-* <code>function get containerListArray():Array</code>
-* <code>function set sortButtonLabel(aStr:String):*</code>
-* <code>function set messageBoxIsActive(aActive:Boolean):*</code>
-* <code>function InvalidateLists():*</code>
-* <code>function SwitchToContainerList(aPlaySound:Boolean = true):Boolean</code>
-* <code>function onQuantityConfirm(event:Event):*</code>
-* <code>function onAccept():*</code>
-* <code>function onQuantityAccepted():*</code>
-* <code>function onTakeAll():*</code>
-* <code>function onEquipOrStore():*</code>
-* <code>function onExitMenu():*</code>
-* <code>function onQuantityCanceled():*</code>
-* <code>function onInspect():*</code>
-* <code>function onEndInspect():*</code>
-* <code>function onKeyUp(event:KeyboardEvent):void</code>
-* <code>function ProcessUserEvent(strEventName:String, abPressed:Boolean):Boolean</code>
-* <code>function UpdateEncumbranceAndCaps(aContainer:Boolean, aCurrWeight:uint, aMaxWeight:uint, aCaps:uint, aIncomingCaps:int):*</code>
-* <code>function UpdatePickpocketInfo(aShow:Boolean, aTaking:Boolean, aSuccessPercent:uint):*</code>
-* <code>function onQuantityModified(aEvent:Event):*</code>
-* <code>function onToggleEquip():*</code>
-* <code>function requestSort():*</code>
-
-==== BGSCodeObj ====
-* <code>function PlaySound(name:String):void</code>
-* <code>function toggleSelectedItemEquipped(index:int, inContainer:Boolean):void</code>
-* <code>function confirmInvest():void</code>
-* <code>function inspectItem():void</code>
-* <code>function getSelectedItemEquipped(index:int, inContainer:Boolean):Boolean</code>
-* <code>function onIntroAnimComplete():void</code>
-* <code>function getItemValue(index:int, inContainer:Boolean):*</code>
-* <code>function getSelectedItemEquippable(index:int, inContainer:Boolean):Boolean</code>
-* <code>function show3D(index:int, inContainer:Boolean):void</code>
-* <code>function sendYButton():void</code>
-* <code>function sendXButton():void</code>
-* <code>function updateItemPickpocketInfo(index:int, inContainer:Boolean):void</code>
-* <code>function sortItems(isPlayerInv:Boolean, indexFilter:uint, arg3:Boolean):void</code>
-* <code>function exitMenu():void</code>
-* <code>function transferItem(index:int, inContainer:Boolean):void</code>
-* <code>function takeAllItems():void</code>
-* <code>function updateSortButtonLabel(isPlayerInv:Boolean, indexFilter:uint):void</code>
-
-== See Also ==
-*[[Container]]
-*[[Menu]]
-*[[User Interface]]
+The **Container Menu** is used to move items between the *Player* and a *Container*.
 
 
+## AS3
+* `var BGSCodeObj:Object`
+* `var ButtonHintBar_mc:BSButtonHintBar`
+* `var CapsLabel_tf:TextField`
+* `var ContainerInventory_mc:MovieClip`
+* `var ContainerList_mc:ItemList`
+* `var ItemCard_mc:ItemCard`
+* `var PickpocketInfo_mc:MovieClip`
+* `var PlayerInventory_mc:MovieClip`
+* `var QuantityMenu_mc:MovieClip`
+* `var PlayerHasJunk:Boolean`
+* `function get containerIsSelected():Boolean`
+* `function get selectedIndex():int`
+* `function set inspectingFeaturedItem(aValue:Boolean):*`
+* `function set playFocusSounds(aValue:Boolean):*`
+* `function set playerHasJunk(aValue:Boolean):*`
+* `function onIntroAnimComplete():*`
+* `function SetContainerInfo(strName:String, auiMode:uint):*`
+* `function get playerListArray():Array`
+* `function get containerListArray():Array`
+* `function set sortButtonLabel(aStr:String):*`
+* `function set messageBoxIsActive(aActive:Boolean):*`
+* `function InvalidateLists():*`
+* `function SwitchToContainerList(aPlaySound:Boolean = true):Boolean`
+* `function onQuantityConfirm(event:Event):*`
+* `function onAccept():*`
+* `function onQuantityAccepted():*`
+* `function onTakeAll():*`
+* `function onEquipOrStore():*`
+* `function onExitMenu():*`
+* `function onQuantityCanceled():*`
+* `function onInspect():*`
+* `function onEndInspect():*`
+* `function onKeyUp(event:KeyboardEvent):void`
+* `function ProcessUserEvent(strEventName:String, abPressed:Boolean):Boolean`
+* `function UpdateEncumbranceAndCaps(aContainer:Boolean, aCurrWeight:uint, aMaxWeight:uint, aCaps:uint, aIncomingCaps:int):*`
+* `function UpdatePickpocketInfo(aShow:Boolean, aTaking:Boolean, aSuccessPercent:uint):*`
+* `function onQuantityModified(aEvent:Event):*`
+* `function onToggleEquip():*`
+* `function requestSort():*`
+
+
+#### BGSCodeObj
+* `function PlaySound(name:String):void`
+* `function toggleSelectedItemEquipped(index:int, inContainer:Boolean):void`
+* `function confirmInvest():void`
+* `function inspectItem():void`
+* `function getSelectedItemEquipped(index:int, inContainer:Boolean):Boolean`
+* `function onIntroAnimComplete():void`
+* `function getItemValue(index:int, inContainer:Boolean):*`
+* `function getSelectedItemEquippable(index:int, inContainer:Boolean):Boolean`
+* `function show3D(index:int, inContainer:Boolean):void`
+* `function sendYButton():void`
+* `function sendXButton():void`
+* `function updateItemPickpocketInfo(index:int, inContainer:Boolean):void`
+* `function sortItems(isPlayerInv:Boolean, indexFilter:uint, arg3:Boolean):void`
+* `function exitMenu():void`
+* `function transferItem(index:int, inContainer:Boolean):void`
+* `function takeAllItems():void`
+* `function updateSortButtonLabel(isPlayerInv:Boolean, indexFilter:uint):void`
+
+
+## See Also
+- [Container](https://falloutck.uesp.net/wiki/Container)
 
 
 # ContainerMenu.as Documentation
