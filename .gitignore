@@ -1,6 +1,19 @@
+# VS Code
+# https://github.com/github/gitignore/blob/main/VisualStudio.gitignore#L379
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
 # Jekyll
-_site
-.sass-cache
-.jekyll-cache
+# https://github.com/github/gitignore/blob/main/Jekyll.gitignore
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
-vendor
+
+### Bundler
+.bundle/
+vendor/
