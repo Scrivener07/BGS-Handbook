@@ -1,3 +1,7 @@
+---
+title: "Console"
+---
+
 The '''Console Menu''' is where [[Console Command]]s may be executed.
 
 == AS3 ==

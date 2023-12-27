@@ -1,9 +1,14 @@
-The '''Barter Menu''' is used to trade items between the [[Player]] and an [[Actor]].
-This menu is usually opened through [[Actor]] dialogue scripts using the [[ShowBarterMenu - Actor]] Papyrus function.
+---
+title: "BarterMenu"
+---
+
+The **Barter Menu** is used to trade items between the *Player* and an *Actor*.
+This menu is usually opened through *Actor* dialogue scripts using the `Actor.ShowBarterMenu()` Papyrus function.
 
 ## AS3
 The ActionScript instance variable which points to the `BarterMenu` class is `root1.FilterHolder_mc.Menu_mc` where `Menu_mc` is an instance of `BarterMenu.as`.
-The `BarterMenu` class in ActionScript directly inherits (extends) the [[ContainerMenu]] class.
+The `BarterMenu` class in ActionScript directly inherits (extends) the `ContainerMenu.as` class.
+
 
 #### BGSCodeObj
 - `function PlaySound(name:String):void`
@@ -25,9 +30,9 @@ The `BarterMenu` class in ActionScript directly inherits (extends) the [[Contain
 - `function updateSortButtonLabel(isPlayerInv:Boolean, indexFilter:uint):void`
 
 
-== See Also
-*[[Actor]]
-*[[ShowBarterMenu - Actor]]
-*[[ContainerMenu]]
-*[[Menu]]
-*[[User Interface]]
+## See Also
+- [Actor]()
+- [ShowBarterMenu - Actor]()
+- [ContainerMenu](../container)
+- [Menu]()
+- [User Interface]()

@@ -1,6 +1,6 @@
-# ButtonBarMenu.as Documentation
-
-## Overview
+---
+title: "ButtonBarMenu"
+---
 
 `ButtonBarMenu.as` is an ActionScript class that extends the `IMenu` class.
 It is part of a user interface framework where elements such as a button bar and prompt menu panel are used in a menu system.
