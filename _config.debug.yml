@@ -1,4 +1,23 @@
-  # These exclusions peed up development time when editing layouts.
 exclude:
+  # The default exclusion list.
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  # The project exclusion list.
+  - .gitattributes
+  - .gitignore
+  - .vscode
+  - BGS-Handbook.code-workspace
+  - README.md
+  - site-serve-debug.ps1
+  - site-serve.ps1
+  # These exclusions speed up development time when editing layouts.
   - wiki/fo4/interface/reference/menus/
   - wiki/fo4/interface/reference/scripts/

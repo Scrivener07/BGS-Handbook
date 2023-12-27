@@ -41,20 +41,20 @@ plugins:
 #
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
 
 exclude:
+  # The default exclusion list.
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  # The project exclusion list.
   - .gitattributes
   - .gitignore
   - .vscode
@@ -62,6 +62,7 @@ exclude:
   - README.md
   - site-serve-debug.ps1
   - site-serve.ps1
+
 
 # Defaults
 # https://jekyllrb.com/docs/configuration/front-matter-defaults/
