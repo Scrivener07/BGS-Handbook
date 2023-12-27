@@ -32,8 +32,9 @@ You can find the source code for Jekyll at GitHub:
 
 # Theme Information
 This project uses the [Minima](https://github.com/jekyll/minima) theme.
-- **Source:** [GitHub Repository](https://github.com/jekyll/minima)
-- **Preview:** [Live Theme Preview](https://jekyll.github.io/minima/)
+- **Source:** https://github.com/jekyll/minima
+- - **Version:** https://github.com/jekyll/minima/tree/v2.5.1/
+- **Preview:** https://jekyll.github.io/minima/
 - **Identifier:** `minima`
 - **Command:** `bundle info --path minima`
 
