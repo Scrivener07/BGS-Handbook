@@ -58,6 +58,8 @@ exclude:
   - .gitattributes
   - .gitignore
   - README.md
+  - site-serve.ps1
+  - site-serve-debug.ps1
 
 
 # Defaults

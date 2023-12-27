@@ -1,0 +1,4 @@
+  # These exclusions peed up development time when editing layouts.
+exclude:
+  - wiki/fo4/interface/reference/menus/
+  - wiki/fo4/interface/reference/scripts/
