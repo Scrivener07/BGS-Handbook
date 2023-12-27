@@ -6,6 +6,8 @@ View [this](site/index.md) for site information and debugging previews.
 
 ### See Also
 - [Jekyll Documentation](https://jekyllrb.com/docs/)
+- - [Site Variables](https://jekyllrb.com/docs/variables/#site-variables)
+- - [Page Variables](https://jekyllrb.com/docs/variables/#page-variables)
 - [Liquid Documentation](https://shopify.github.io/liquid/)
 
 
