@@ -2,19 +2,21 @@
 layout: site/default
 ---
 
-<!-- The breadcrumb navigation area for this layout. -->
-<nav class="container">
-	<div class="wrapper">
-		{% include nav/breadcrumbs.html %}
-	</div>
+<nav class="wrapper">
+	{% include nav/breadcrumbs.html %}
 </nav>
 
-<!-- The main content area for this layout. -->
-<main class="page-content" aria-label="Content">
-	<div class="wrapper">
+<div class="nav_container">
+	<nav class="nav_sidebar">
+		{% include nav/list-pages.html %}
+		{% include nav/list-sections.html %}
+	</nav>
 
-		<!-- Inserts the templating system content area. -->
-		{{ content }}
-
+	<div class="nav_content">
+		<main class="page-content" aria-label="Content">
+			<div class="wrapper">
+				{{ content }}
+			</div>
+		</main>
 	</div>
-</main>
+</div>
