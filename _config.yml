@@ -23,8 +23,9 @@ title: BGS Handbook
 email: ScrivenerMods@Gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Scrivener's modding journal and research notes for games made by Bethesda Game Studios.
-baseurl: "/BGS-Handbook" # the subpath of your site, e.g. /blog
 url: "https://scrivener07.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/BGS-Handbook" # the subpath of your site, e.g. /blog
+source: docs
 github_username:  Scrivener07
 
 
@@ -43,6 +44,7 @@ plugins:
 # their entries' file path in the `include:` list.
 #
 # exclude:
+#   # The default exclusion list.
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
@@ -53,11 +55,6 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-exclude:
-  - .gitattributes
-  - .gitignore
-  - README.md
 
 
 # Defaults
