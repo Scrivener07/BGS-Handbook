@@ -23,8 +23,9 @@ title: BGS Handbook
 email: ScrivenerMods@Gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Scrivener's modding journal and research notes for games made by Bethesda Game Studios.
-baseurl: "/BGS-Handbook" # the subpath of your site, e.g. /blog
 url: "https://scrivener07.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/BGS-Handbook" # the subpath of your site, e.g. /blog
+source: docs
 github_username:  Scrivener07
 
 
@@ -41,27 +42,19 @@ plugins:
 #
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
-
-exclude:
-  # The default exclusion list.
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  # The project exclusion list.
-  - .gitattributes
-  - .gitignore
-  - .vscode
-  - BGS-Handbook.code-workspace
-  - README.md
-  - site-serve-debug.ps1
-  - site-serve.ps1
+#
+# exclude:
+#   # The default exclusion list.
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
 
 
 # Defaults
@@ -71,7 +64,7 @@ exclude:
 defaults:
   -
     scope:
-      path: "" # an empty string here means all files in the project
+      path: "docs" # an empty string here means all files in the project
       type: "pages"
     values:
       layout: "default"
