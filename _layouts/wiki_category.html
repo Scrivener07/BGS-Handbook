@@ -2,6 +2,12 @@
 layout: wiki
 ---
 
+<!--
+	TODO:
+	This is very bad practice because now many docs will have TWO `head` blocks.
+	This is breaking the original head configuration like CSS links.
+-->
+
 <head>
 	<meta charset="UTF-8">
 	<style>
@@ -33,10 +39,10 @@ layout: wiki
 			<!-- Sidebar content -->
 			<nav>
 				<!-- <h4>Pages</h4> -->
-				{% include list-pages.html %}
+				{% include nav/list-pages.html %}
 
 				<!-- <h4>Sections</h4> -->
-				{% include list-sections.html %}
+				{% include nav/list-sections.html %}
 			</nav>
 		</div>
 

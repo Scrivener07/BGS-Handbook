@@ -1,24 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+---
+layout: site/default
+---
 
-<!-- The head for this layout's HTML document. -->
-{%- include head.html -%}
+<!-- The breadcrumb navigation area for this layout. -->
+<nav class="container">
+	<div class="wrapper">
+		{% include nav/breadcrumbs.html %}
+	</div>
+</nav>
 
-<body>
+<!-- The main content area for this layout. -->
+<main class="page-content" aria-label="Content">
+	<div class="wrapper">
 
-	<!-- The header area for this layout. -->
-	{%- include header.html -%}
+		<!-- Inserts the templating system content area. -->
+		{{ content }}
 
-	<!-- The main content area for this layout. -->
-	<main class="page-content" aria-label="Content">
-		<div class="wrapper">
-			{{ content }}
-		</div>
-	</main>
-
-	<!-- The footer area for this layout. -->
-	{%- include footer.html -%}
-
-</body>
-
-</html>
+	</div>
+</main>
