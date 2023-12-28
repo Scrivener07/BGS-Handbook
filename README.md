@@ -1,7 +1,7 @@
 # Scrivener's BGS Handbook
 - Website: https://scrivener07.github.io/BGS-Handbook/
 
-View [this](site/index.md) for site information and debugging previews.
+View [this](docs/site/index.md) for site information and debugging previews.
 
 
 ### See Also
