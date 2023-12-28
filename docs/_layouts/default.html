@@ -2,21 +2,25 @@
 layout: site/base
 ---
 
-<nav class="wrapper">
-	{% include nav/breadcrumbs.html %}
-</nav>
-
 <div class="nav_container">
+
 	<nav class="nav_sidebar">
 		{% include nav/list-pages.html %}
 		{% include nav/list-sections.html %}
 	</nav>
 
 	<div class="nav_content">
+		<nav>
+			{% include nav/breadcrumbs.html %}
+		</nav>
+
 		<main class="page-content" aria-label="Content">
-			<div class="wrapper">
-				{{ content }}
-			</div>
+			{{ content }}
 		</main>
+
+		<nav>
+			{% include nav/breadcrumbs.html %}
+		</nav>
 	</div>
+
 </div>
