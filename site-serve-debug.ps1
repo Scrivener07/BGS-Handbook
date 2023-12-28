@@ -1,7 +1,22 @@
 # site-serve-debug.ps1
 
-# Set the environment variable for Jekyll
+# Store the current directory
+$originalLocation = Get-Location
+
+# Set the environment variable for Jekyll.
 $Env:JEKYLL_ENV = "development"
 
-# Run Jekyll serve with the desired exclusions
-bundle exec jekyll serve --baseurl="" --watch --livereload --incremental --config "_config.yml,_config.debug.yml"
+# Try block to ensure finally gets called even if the script is stopped manually
+try
+{
+	# Change directory to the site source folder.
+	Set-Location -Path .\docs
+
+	# Run Jekyll serve with the development debug configurations
+	bundle exec jekyll serve --baseurl="" --watch --livereload --incremental --config "_config.yml,_config.debug.yml"
+}
+finally
+{
+	# Changes the directory back to the original location.
+	Set-Location -Path $originalLocation
+}
