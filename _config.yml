@@ -25,11 +25,13 @@ description: >- # this means to ignore newlines until "baseurl:"
   Scrivener's modding journal and research notes for games made by Bethesda Game Studios.
 url: "https://scrivener07.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/BGS-Handbook" # the subpath of your site, e.g. /blog
+source: docs
 github_username:  Scrivener07
 
 
 # Build settings
 theme: minima
+remote_theme: minima
 plugins:
   - jekyll-feed
 
