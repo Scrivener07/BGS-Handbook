@@ -1,4 +1,6 @@
-# MessageBoxButtonEntry Documentation
+---
+title: "MessageBoxButtonEntry"
+---
 
 The `MessageBoxButtonEntry` class is an ActionScript file that extends the functionality of `BSScrollingListEntry` typically used in a modding context for Bethesda Game Studios titles.
 Below, you will find comprehensive documentation about the `MessageBoxButtonEntry` class, structured in a way to provide clear understanding and usage of the provided code.

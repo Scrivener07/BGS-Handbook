@@ -1,8 +1,9 @@
-# PromptMenuPanel_1 Documentation
+---
+title: "PromptMenuPanel_1"
+---
 
-## Overview
-
-`PromptMenuPanel_1` is a dynamic class extending `MovieClip` from the ActionScript package `PromptMenu_fla`. It is designed to represent a panel that can hold and display a message within a movie clip, complete with configurable bracket styles and background settings.
+`PromptMenuPanel_1` is a dynamic class extending `MovieClip` from the ActionScript package `PromptMenu_fla`.
+It is designed to represent a panel that can hold and display a message within a movie clip, complete with configurable bracket styles and background settings.
 
 ### File Details
 - **Filename:** `PromptMenuPanel_1.as`
@@ -83,11 +84,11 @@ package PromptMenu_fla {
 
 ## Usage Example
 
-To use the `PromptMenuPanel_1` within your Flash application, simply create an instance of the panel and add it to the stage or a parent display object container:
+To use the `PromptMenuPanel_1` within your Flash application, simply create an instance of the panel and add it to the stage or a parent display object container.
+
+This will display the message panel with all the default bracket and background settings applied.
 
 ```as
 var promptPanel:PromptMenuPanel_1 = new PromptMenuPanel_1();
 this.addChild(promptPanel);
 ```
-
-This will display the message panel with all the default bracket and background settings applied.

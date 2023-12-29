@@ -3,49 +3,12 @@ layout: wiki_category
 title: "Menus"
 ---
 
-# UI Menus
 These are the User Interface menus that Players interact with in game.
 The UI includes various menus and screens, such as the main menu, pause menu, and load screens.
 These menu names are used as string identifiers for the menus.
 
-- [BarterMenu](container-barter/BarterMenu.md)
-- [BookMenu](book/BookMenu.md)
-- [Console](console/Console.md)
-- [ConsoleNativeUIMenu](console-native/ConsoleNativeUIMenu.md)
-- [ContainerMenu](container/ContainerMenu.md)
-- [CookingMenu](craft/CookingMenu.md)
-- [CreditsMenu](credits/CreditsMenu.md)
-- [CursorMenu](cursor/CursorMenu.md)
-- [DialogueMenu](dialogue/DialogueMenu.md)
-- [ExamineMenu](craft/ExamineMenu.md)
-- [FaderMenu](fader/FaderMenu.md)
-- [FavoritesMenu](favorites/FavoritesMenu.md)
-- [GenericMenu](generic/GenericMenu.md)
-- [HUDMenu](hud/HUDMenu.md)
-- [LevelUpMenu](levelup/LevelUpMenu.md)
-- [LoadingMenu](loading/LoadingMenu.md)
-- [LockpickingMenu](lockpicking/LockpickingMenu.md)
-- [LooksMenu](looks/LooksMenu.md)
-- [MainMenu](main/MainMenu.md)
-- [MessageBoxMenu](messagebox/MessageBoxMenu.md)
-- [MultiActivateMenu](multi-activate/MultiActivateMenu.md)
-- [PauseMenu](pause/PauseMenu.md)
-- [PipboyMenu](pipboy/PipboyMenu.md)
-- [PromptMenu](prompt/PromptMenu.md)
-- [ScopeMenu](scope/ScopeMenu.md)
-- [SitWaitMenu](wait-sit/SitWaitMenu.md)
-- [SleepWaitMenu](wait-sleep/SleepWaitMenu.md)
-- [SPECIALMenu](special/SPECIALMenu.md)
-- [TerminalHolotapeMenu](terminal-holotape/TerminalHolotapeMenu.md)
-- [TerminalMenu](terminal/TerminalMenu.md)
-- [VATSMenu](vats/VATSMenu.md)
-- [VignetteMenu](vignette/VignetteMenu.md)
-- [Workshop_CaravanMenu](workshop-caravan/Workshop_CaravanMenu.md)
-- [WorkshopMenu](workshop/WorkshopMenu.md)
 
-
-
-# Menu Information
+## Menu Information
 Types:
 - Root
 - Loaded
@@ -118,12 +81,10 @@ Types:
 | `Data\Programs\`  | `TurretHack.swf`                  |                        | Holo   |
 
 
-
-# Fallout 4 Deprecated Menus
+## Fallout 4 Deprecated Menus
 Several menus that were present in previous Bethesda titles, particularly Skyrim, have possibly become deprecated or have had their functionalities altered or merged with other menus.
 This documentation serves to provide an overview of such menus, detailing their status and the changes they've undergone in the transition to Fallout 4.
 
-## Deprecated Menus List
 The following table outlines menus that are believed to be deprecated in Fallout 4:
 
 | Menu Name      | Status        | Notes                                                                                      |
@@ -138,10 +99,6 @@ The following table outlines menus that are believed to be deprecated in Fallout
 | StatsMenu      | Integrated                | Stats are now accessed through a tab in the Pipboy interface, not a separate menu.         |
 | SWFLoaderMenu  | Not Registered | Exists but is not used in normal gameplay; not registered in the game's UI system.        |
 
-
 - **Integration and Replacement**: Some menus from previous games were integrated into new interfaces in Fallout 4, reflecting the game's unique UI design. For example, the `InventoryMenu` and `StatsMenu` have been subsumed into the Pipboy interface, a central element of Fallout 4's UI.
 - **Redundancy and Removal**: Certain menus were deemed redundant or irrelevant in the context of Fallout 4's gameplay and setting. The `MagicMenu` and `GiftMenu` are examples of interfaces that have no direct application in Fallout 4.
 - **Developmental Menus**: Menus like `BSOverlayMenu` and `DebugTextMenu` were likely used during the game's development phase and do not have a role in the final, retail version of the game.
-
-## Conclusion
-The evolution of the Fallout 4 UI reflects both the game's unique aesthetic and functional design as well as a departure from some of the interface elements familiar to players of previous Bethesda titles. Understanding these changes is crucial for mod developers and players interested in the game's interface design.

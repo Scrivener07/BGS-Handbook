@@ -1,0 +1,178 @@
+---
+title: "PipboyMenu"
+---
+
+The in-game Pip-Boy device serves as the primary menu for managing inventory, quests, maps, stats, and more.
+It features a diegetic design, meaning that it exists within the game world and is used by the player character, adding to the overall immersion.
+
+The **Pipboy Menu** is rendered onto the 3D surface of the *Pipboy* item.
+This is one of the primary menus used by the Player to interact with Fallout 4.
+
+## AS3
+- `var Header_mc:Pipboy_Header`
+- `var BottomBar_mc:Pipboy_BottomBar`
+- `var ButtonHintBar_mc:BSButtonHintBar`
+- `var BGSCodeObj:Object`
+- `var DataObj:Pipboy_DataObj`
+- `var READ_ONLY_WARNING_NONE = 0`
+- `var READ_ONLY_WARNING_DEFAULT = 1`
+- `var READ_ONLY_WARNING_OFFLINE = 2`
+- `var READ_ONLY_WARNING_DEMO = 3`
+- `function get CurrentPage():PipboyPage`
+- `function onCodeObjCreate():*`
+- `function onCodeObjDestruction():*`
+- `function InvalidateData():void`
+- `function InvalidatePartialData(param1:uint):*`
+- `function ProcessUserEvent(param1:String, param2:Boolean):Boolean`
+- `function gotoNextPage():*`
+- `function gotoPrevPage():*`
+- `function TryToSetPage(param1:uint):*`
+- `function gotoNextTab():*`
+- `function gotoPrevTab():*`
+- `function TryToSetTab(param1:uint):*`
+- `function onRightThumbstickInput(param1:uint):*`
+- `function onMobileBackButtonPressed():void`
+- `function onMobileItemPress(param1:Event):void`
+
+#### BGSCodeObj
+- `PlaySound(name:String):void`
+- `PlaySmallTransition` `1`
+- `PopulatePipboyInfoObj` `2`
+- `onNewPage` `3`
+- `onNewTab` `4`
+- `toggleMovementToDirectional` `0x28`
+- `UseStimpak` `5`
+- `UseRadaway` `6`
+- `ShowPerksMenu` `7`
+- `PlayPerkSound` `8`
+- `StopPerkSound` `9`
+- `onPerksTabOpen` `0xA`
+- `onPerksTabClose` `0xB`
+- `SelectItem` `0xC`
+- `onInvItemSelection` `0xD`
+- `updateItem3D` `0xE`
+- `SetQuickkey` `0xF`
+- `ItemDrop` `0x10`
+- `SortItemList` `0x11`
+- `ExamineItem` `0x12`
+- `onComponentViewToggle` `0x13`
+- `ToggleComponentFavorite` `0x14`
+- `onShowHotKeys` `0x27`
+- `onQuestSelection` `0x16`
+- `SetQuestActive` `0x15`
+- `ShowQuestOnMap` `0x17`
+- `ShowWorkshopOnMap` `0x18`
+- `RegisterMap` `0x19`
+- `UnregisterMap` `0x1A`
+- `FastTravel` `0x1D`
+- `HasSetPlayerMarkerRequest` `0x20`
+- `SetPlayerMarker` `0x21`
+- `ClearPlayerMarker` `0x22`
+- `onSwitchBetweenWorldLocalMap` `0x23`
+- `CenterMarkerRequest` `0x24`
+- `onModalOpen` `0x25`
+- `CheckHardcoreModeFastTravel` `0x1E`
+- `RefreshMapMarkers` `0x1F`
+- `ToggleRadioStationActiveStatus` `0x26`
+
+#### DataObj
+- `static const NUM_PAGES:uint = 5`
+- `static const NUM_SPECIAL:uint = 7`
+- `function get CurrentPage():uint`
+- `function get CurrentTab():uint`
+- `function get PlayerName():String`
+- `function get ActiveEffects():Array`
+- `function get StimpakCount() : uint`
+- `function get RadawayCount() : uint`
+- `function get CurrHP() : Number`
+- `function get MaxHP() : Number`
+- `function get CurrAP() : Number`
+- `function get MaxAP() : Number`
+- `function get CurrWeight() : Number`
+- `function get MaxWeight() : Number`
+- `function get CurrentHPGain() : Number`
+- `function get SelectedItemHPGain() : Number`
+- `function get TotalDamages() : Array`
+- `function get TotalResists() : Array`
+- `function get SlotResists() : Array`
+- `function get UnderwearType() : uint`
+- `function get Caps() : uint`
+- `function get DateMonth() : uint`
+- `function get DateDay() : uint`
+- `function get DateYear() : uint`
+- `function get TimeHour() : Number`
+- `function get CurrLocationName() : String`
+- `function get XPLevel() : uint`
+- `function get XPProgressPct() : Number`
+- `function get InvItems() : Array`
+- `function get InvComponents() : Array`
+- `function get InvFilter() : int`
+- `function get InvSelectedItems() : Array`
+- `function get HolotapePlaying() : Boolean`
+- `function get SortMode() : uint`
+- `function get FavoritesList() : Array`
+- `function get HeadCondition() : Number`
+- `function get TorsoCondition() : Number`
+- `function get LArmCondition() : Number`
+- `function get RArmCondition() : Number`
+- `function get LLegCondition() : Number`
+- `function get RLegCondition() : Number`
+- `function get BodyFlags() : uint`
+- `function get HeadFlags() : uint`
+- `function get SPECIALList() : Array`
+- `function get PerksList() : Array`
+- `function get PerkPoints() : uint`
+- `function get QuestsList() : Array`
+- `function get GeneralStatsList() : Array`
+- `function get WorkshopsList() : Array`
+- `function get WorldMapMarkers() : Array`
+- `function get LocalMapMarkers() : Array`
+- `function get WorldMapTextureName() : String`
+- `function get WorldMapNWCorner() : Point`
+- `function get WorldMapNECorner() : Point`
+- `function get WorldMapSWCorner() : Point`
+- `function get LocalMapNWCorner() : Point`
+- `function get LocalMapNECorner() : Point`
+- `function get LocalMapSWCorner() : Point`
+- `function get RadioList() : Array`
+- `function get ReadOnlyMode() : int`
+- `function get RemovedMapMarkerIds() : Array`
+- `function get RemoveAllMapMarkers() : Boolean`
+- `function set CurrentPage(param1:uint) : *`
+- `function set CurrentTab(param1:uint) : *`
+- `function set PlayerName(param1:String) : *`
+- `function set StimpakCount(param1:uint) : *`
+- `function set RadawayCount(param1:uint) : *`
+- `function set CurrHP(param1:Number) : *`
+- `function set MaxHP(param1:Number) : *`
+- `function set CurrAP(param1:Number) : *`
+- `function set MaxAP(param1:Number) : *`
+- `function set CurrWeight(param1:Number) : *`
+- `function set MaxWeight(param1:Number) : *`
+- `function set CurrentHPGain(param1:Number) : *`
+- `function set SelectedItemHPGain(param1:Number) : *`
+- `function set DateMonth(param1:uint) : *`
+- `function set DateDay(param1:uint) : *`
+- `function set DateYear(param1:uint) : *`
+- `function set TimeHour(param1:Number) : *`
+- `function set CurrLocationName(param1:String) : *`
+- `function set UnderwearType(param1:uint) : *`
+- `function set Caps(param1:uint) : *`
+- `function set XPLevel(param1:uint) : *`
+- `function set XPProgressPct(param1:Number) : *`
+- `function set InvItems(param1:Array) : *`
+- `function set InvFilter(param1:int) : *`
+- `function set HolotapePlaying(param1:Boolean) : *`
+- `function set SortMode(param1:uint) : *`
+- `function set HeadCondition(param1:Number) : *`
+- `function set TorsoCondition(param1:Number) : *`
+- `function set LArmCondition(param1:Number) : *`
+- `function set RArmCondition(param1:Number) : *`
+- `function set LLegCondition(param1:Number) : *`
+- `function set RLegCondition(param1:Number) : *`
+- `function set BodyFlags(param1:uint) : *`
+- `function set HeadFlags(param1:uint) : *`
+- `function set PerkPoints(param1:uint) : *`
+- `function set WorldMapTextureName(param1:String) : *`
+- `function set ReadOnlyMode(param1:int) : *`
+- `function set RemoveAllMapMarkers(param1:Boolean) : *`

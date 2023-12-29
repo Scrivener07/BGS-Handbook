@@ -1,8 +1,10 @@
-# `MessageBoxButtonList` Documentation
+---
+title: "MessageBoxButtonList"
+---
 
 The `MessageBoxButtonList` class is an extension of the `BSScrollingList` class, which is designed to handle a list of message box button entries with dynamic border widths based on the content.
 
-### Filename: `MessageBoxButtonList.as`
+Filename: `MessageBoxButtonList.as`
 
 ## Class Declaration
 
