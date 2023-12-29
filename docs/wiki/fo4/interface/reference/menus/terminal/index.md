@@ -6,6 +6,9 @@ The `Terminal` class is an ActionScript 3.0 class that is designed to function a
 
 It inherits from `IMenu` and contains numerous elements for text display, input handling, and visual feedback such as blinking cursors and highlights.
 
+In summary, the `Terminal` class is a complex and feature-rich class designed to manage and animate a terminal-like interface in an ActionScript 3.0 environment.
+It includes support for text display and animations, sound playback, input handling, and hacking game mechanics.
+
 The following documentation provides an overview of the properties and methods within the `Terminal` class.
 
 ## Properties
@@ -110,7 +113,8 @@ var terminalInstance:Terminal = new Terminal();
 addChild(terminalInstance);
 ```
 
-Once created, you can interact with the terminal through its public methods and properties. For instance, to start animating some display text, you would set the `displayText` property:
+Once created, you can interact with the terminal through its public methods and properties.
+For instance, to start animating some display text, you would set the `displayText` property:
 
 ```as3
 terminalInstance.displayText = "Welcome to the Terminal Interface!";
@@ -123,7 +127,3 @@ terminalInstance.StartTimer();
 ```
 
 It's important to note that you would also need to provide the necessary artwork, sounds, and other resources for the terminal to function fully within your user interface implementation.
-
-## Conclusion
-
-In summary, the `Terminal` class is a complex and feature-rich class designed to manage and animate a terminal-like interface in an ActionScript 3.0 environment. It includes support for text display and animations, sound playback, input handling, and hacking game mechanics.

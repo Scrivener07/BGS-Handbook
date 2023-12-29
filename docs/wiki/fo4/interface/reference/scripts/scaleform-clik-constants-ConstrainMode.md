@@ -1,4 +1,4 @@
-# ConstrainMode Class
+# ConstrainMode
 The `ConstrainMode.as` file contains a class that provides constants for different constraint modes in the Scaleform CLIK (Common Lightweight Interface Kit) library.
 Below is the detailed documentation of the `ConstrainMode` class, which is part of the `scaleform.clik.constants` package.
 

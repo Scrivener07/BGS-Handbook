@@ -1,6 +1,7 @@
-# DisplayImage.as Documentation
+---
+title: "DisplayImage"
+---
 
-## Overview
 `DisplayImage.as` is an ActionScript file that defines a `DisplayImage` class which extends the `MovieClip` class from the Flash display library.
 This class serves as a dynamic class that can be used to instantiate movie clips with additional properties and methods at runtime.
 
@@ -62,6 +63,5 @@ imageDisplay.customFunction(); // Outputs: Custom function called!
 ```
 
 ## 📌 Note
-The `DisplayImage` class itself does not contain image display functionality beyond that provided by the `MovieClip` class. Additional functionality may be added through subclassing or by dynamically adding properties and methods to instances of this class.
-
-**Remember**: The ActionScript 3.0 language and the Flash platform are not actively developed by Adobe since the announcement of the end of Flash support at the end of 2020. However, projects using legacy code or targeting Adobe AIR may still require documentation and knowledge of ActionScript 3.0 classes like `DisplayImage`.
+The `DisplayImage` class itself does not contain image display functionality beyond that provided by the `MovieClip` class.
+Additional functionality may be added through subclassing or by dynamically adding properties and methods to instances of this class.

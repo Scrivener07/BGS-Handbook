@@ -1,6 +1,7 @@
-# EntryHolder Documentation
+---
+title: "EntryHolder"
+---
 
-## Overview
 `EntryHolder.as` is an ActionScript file defining a dynamic class named `EntryHolder` which extends the `MovieClip` class from the Flash API.
 This class is designed to manage multiple `FavoritesEntry` objects, providing specific settings for each one.
 

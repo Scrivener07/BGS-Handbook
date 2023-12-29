@@ -1,4 +1,6 @@
-# ContainerListEntry.as
+---
+title: "ContainerListEntry"
+---
 
 The `ContainerListEntry` class is a dynamic ActionScript class defined in the file `ContainerListEntry.as`.
 This class extends the `ItemListEntry` class, providing the functionalities of an item list with the additional capabilities of a container.

@@ -1,6 +1,7 @@
-# FavoritesCross Documentation
+---
+title: "FavoritesCross"
+---
 
-## Overview
 `FavoritesCross.as` is an ActionScript class that extends the `BSUIComponent` from the `Shared.AS3` package. It is responsible for managing a user interface component that likely deals with a selection system, probably for a favorite items list in a game or application. The component handles selection updates, item presses, and keyboard navigation.
 
 ## Table of Contents

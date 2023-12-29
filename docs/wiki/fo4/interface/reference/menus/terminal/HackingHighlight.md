@@ -1,4 +1,6 @@
-# HackingHighlight Documentation
+---
+title: "HackingHighlight"
+---
 
 The `HackingHighlight.as` file contains a class definition for `HackingHighlight`, which is an extension of the `MovieClip` class from the `flash.display` package.
 This class is designed to work with Flash/ActionScript 3.0 and is meant to visually highlight an element, presumably for a hacking-themed interface, with both a border and text elements.
@@ -7,7 +9,8 @@ This class is designed to work with Flash/ActionScript 3.0 and is meant to visua
 
 ### Description
 
-The `HackingHighlight` class serves as a dynamic class that extends `MovieClip`. It is equipped with two primary components:
+The `HackingHighlight` class serves as a dynamic class that extends `MovieClip`.
+It is equipped with two primary components:
 
 - A border, represented by `HackingHighlightBorder_mc`
 - A text field, represented by `HackingHighlightText_tf`
@@ -38,7 +41,8 @@ public dynamic class HackingHighlight extends MovieClip {
 
 ### Example Usage
 
-To use the `HackingHighlight` class, you would typically create an instance of it within your Flash project. The exact implementation details would depend on the larger context of your project.
+To use the `HackingHighlight` class, you would typically create an instance of it within your Flash project.
+The exact implementation details would depend on the larger context of your project.
 
 ```actionscript
 var highlight:HackingHighlight = new HackingHighlight();
@@ -61,15 +65,3 @@ highlight.HackingHighlightText_tf.text = "Target Acquired";
 
 - `flash.display.MovieClip`
 - `flash.text.TextField`
-
-**🛠️ How to Compile**: Compilation requires a Flash development environment like Adobe Animate or Flash Builder that can handle ActionScript 3.0 code.
-
-**🔧 Required Tools**: Adobe Flash Player or a compatible platform for running SWF files generated from Flash projects.
-
-### Version
-
-The documentation does not include version information. It is recommended to maintain version history for better tracking of changes.
-
----
-
-This markdown documentation provides an overview of the `HackingHighlight.as` file, its structure, and usage within a Flash project. It is important to note that actual implementation details will vary based on the specific requirements of the project it is being used in.

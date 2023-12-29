@@ -1,4 +1,7 @@
-# FavoritesEntry.as Documentation
+---
+title: "FavoritesEntry"
+---
+
 This documentation details the core functionalities of `FavoritesEntry.as`, a class within the ActionScript 3 (AS3) environment for managing interactive elements often referred to as "favorites entries".
 The class inherits from `BSUIComponent` and therefore, provides a user interface element within the context of a larger application—likely a game or a multimedia application.
 

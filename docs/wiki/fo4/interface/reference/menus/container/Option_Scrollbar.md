@@ -1,6 +1,6 @@
-# Option_Scrollbar Documentation
-
-## Overview
+---
+title: "Option_Scrollbar"
+---
 
 The `Option_Scrollbar` AS3 (ActionScript 3.0) class provides functionality to create a custom scrollbar within a Flash application.
 This class extends the `MovieClip` class, and includes interactivity through mouse and keyboard events.
