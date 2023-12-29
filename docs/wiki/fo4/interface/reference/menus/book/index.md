@@ -5,12 +5,14 @@ title: "BookMenu"
 The `BookMenu` class extends the `IMenu` class and is responsible for managing the book menu within the game, which includes pagination and button hints for navigation.
 
 ### Constants
+
 | **Name**           | **Type** | **Description**                     |
 |--------------------|----------|-------------------------------------|
 | `PAGE_BREAK_TAG`   | `String` | Tag used to indicate a page break.  |
 | `CACHED_PAGES`     | `Number` | Number of pages to cache.           |
 
 ### Properties
+
 | **Name**                   | **Type**              | **Description**                           |
 |----------------------------|-----------------------|-------------------------------------------|
 | `ButtonHintBar_mc`         | `BSButtonHintBar`     | The movie clip for the button hint bar.   |

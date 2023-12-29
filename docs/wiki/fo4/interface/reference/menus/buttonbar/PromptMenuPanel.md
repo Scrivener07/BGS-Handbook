@@ -1,6 +1,22 @@
-# PromptMenuPanel.as Documentation
+---
+title: "PromptMenuPanel"
+---
+
 `PromptMenuPanel.as` is an ActionScript file that defines a dynamic class named `PromptMenuPanel` which extends the `MovieClip` class from the Flash API.
 This class is responsible for creating a prompt menu panel with a message holder component that can be visually customized.
+
+
+## 📄 File Summary
+- **Filename**: `PromptMenuPanel.as`
+- **Language**: ActionScript
+- **Purpose**: To define a dynamic class for creating and configuring a prompt menu panel in a Flash application.
+- **Class**: `PromptMenuPanel`
+- **Base Class**: `MovieClip`
+- **Visibility**: `public`
+- **Dynamics**: Yes (can be dynamically modified at runtime)
+- **Properties**: 1 (`MessageHolder_mc`)
+- **Methods**: 1 (`InspectorSetting`)
+
 
 ## Class Definition
 Below is the summarized structure of the `PromptMenuPanel` class:
@@ -25,6 +41,7 @@ package {
     }
 }
 ```
+
 
 ## Properties
 
@@ -77,16 +94,6 @@ private function InspectorSetting():* {
 }
 ```
 
-## 📄 File Summary
-- **Filename**: `PromptMenuPanel.as`
-- **Language**: ActionScript
-- **Purpose**: To define a dynamic class for creating and configuring a prompt menu panel in a Flash application.
-- **Class**: `PromptMenuPanel`
-- **Base Class**: `MovieClip`
-- **Visibility**: `public`
-- **Dynamics**: Yes (can be dynamically modified at runtime)
-- **Properties**: 1 (`MessageHolder_mc`)
-- **Methods**: 1 (`InspectorSetting`)
 
 **Note**:
 The code contains traces for debugging, which output messages to the console to indicate the execution of the constructor and the `InspectorSetting` method.

@@ -1,4 +1,7 @@
-# MessageHolder.as Documentation
+---
+title: "MessageHolder"
+---
+
 **MessageHolder.as** is an ActionScript file that defines a dynamic class named `MessageHolder` which extends the `BSUIComponent` class from the `Shared.AS3` package.
 
 ## Class Definition
