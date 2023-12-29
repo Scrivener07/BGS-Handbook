@@ -55,10 +55,6 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-# DELETE ME
-exclude:
-  - wiki/fo4/interface/reference/menus/
-  - wiki/fo4/interface/reference/scripts/
 
 # Defaults
 # https://jekyllrb.com/docs/configuration/front-matter-defaults/
