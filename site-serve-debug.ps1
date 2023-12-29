@@ -42,7 +42,7 @@ try
 	Start-Process "http://localhost:4000/"
 
 	# Run Jekyll serve with development configurations and parameters.
-	bundle exec jekyll serve --verbose --trace --watch --livereload --incremental --baseurl="" --config "_config.yml,_config.debug.yml"
+	bundle exec jekyll serve --trace --watch --livereload --incremental --baseurl="" --config "_config.yml,_config.debug.yml"
 }
 finally
 {
