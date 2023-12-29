@@ -1,4 +1,4 @@
-# BGSExternalInterface Documentation
+# BGSExternalInterface
 The `BGSExternalInterface.as` file contains the `BGSExternalInterface` class within the `Shared` package.
 This class is designed to provide an interface to call functions on a given object dynamically.
 

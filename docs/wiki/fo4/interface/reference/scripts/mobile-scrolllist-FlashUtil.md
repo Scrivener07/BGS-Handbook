@@ -1,8 +1,8 @@
-# FlashUtil.as Documentation
+# FlashUtil
+`FlashUtil.as` is an ActionScript class stored within the package `Mobile.ScrollList`.
+This class provides utility functions to work with library items in Flash.
 
-## Overview
-
-`FlashUtil.as` is an ActionScript class stored within the package `Mobile.ScrollList`. This class provides utility functions to work with library items in Flash. It allows the retrieval of library items as `DisplayObject`s and provides a way to obtain class references from a given `MovieClip`'s library.
+It allows the retrieval of library items as `DisplayObject`s and provides a way to obtain class references from a given `MovieClip`'s library.
 
 ## Table of Contents
 

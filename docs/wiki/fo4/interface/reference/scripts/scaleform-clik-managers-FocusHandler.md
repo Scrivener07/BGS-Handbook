@@ -1,5 +1,4 @@
-# FocusHandler.as Documentation
-
+# FocusHandler
 The `FocusHandler.as` file is part of the `scaleform.clik.managers` package and is responsible for managing focus within the Scaleform CLIK (Common Lightweight Interface Kit) UI components.
 It handles the focus transitions between UI components, specifically when working with different input devices like game controllers or the keyboard.
 

@@ -1,5 +1,4 @@
-# CustomEvent.as Documentation
-
+# CustomEvent
 The `CustomEvent` class is a custom event type that extends the Flash `Event` class, allowing users to pass a parameters object along with the event.
 
 ## Table of Contents

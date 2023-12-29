@@ -1,5 +1,4 @@
-# BSReversedScrollingList Documentation
-
+# BSReversedScrollingList
 `BSReversedScrollingList.as` is an ActionScript 3.0 class file which defines a custom list element with reversed scrolling functionality.
 This class extends the `BSScrollingList` class, providing additional features specific for reversed list behavior.
 

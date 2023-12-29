@@ -1,8 +1,5 @@
-# Constraints.as Documentation
-
+# Constraints
 This Markdown documentation provides an overview and detailed description of the `Constraints` class found in the `scaleform.clik.utils` package.
-
-## Overview
 
 The `Constraints` class in ActionScript 3 is used to manage constraints on DisplayObjects within a UIComponent.
 It allows elements to be anchored to different sides of a container or aligned centrally, and to adjust their size and position based on the container's size changes.

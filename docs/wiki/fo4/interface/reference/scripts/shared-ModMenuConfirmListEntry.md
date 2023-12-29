@@ -1,5 +1,4 @@
-# ModMenuConfirmListEntry Module
-
+# ModMenuConfirmListEntry
 This document provides information about the `ModMenuConfirmListEntry` ActionScript class located in the `Shared` package.
 The class is used within the context of a Flash application to represent a confirmation list entry within a mod menu interface.
 

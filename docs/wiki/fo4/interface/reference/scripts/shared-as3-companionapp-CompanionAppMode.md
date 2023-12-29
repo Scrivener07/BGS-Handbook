@@ -1,10 +1,11 @@
-# CompanionAppMode.as Documentation
+# CompanionAppMode
+This document provides details about the `CompanionAppMode` class found in the `CompanionAppMode.as` file.
 
-This document provides details about the `CompanionAppMode` class found in the `CompanionAppMode.as` file. This class is part of the `Shared.AS3.COMPANIONAPP` package.
+This class is part of the `Shared.AS3.COMPANIONAPP` package.
 
-## Overview
+The `CompanionAppMode` class is a simple class that contains a static boolean variable indicating whether the companion app mode is active (`true`) or not (`false`).
+This class does not contain any methods other than a constructor.
 
-The `CompanionAppMode` class is a simple class that contains a static boolean variable indicating whether the companion app mode is active (`true`) or not (`false`). This class does not contain any methods other than a constructor.
 
 ## Class Definition
 

@@ -1,6 +1,6 @@
-# ItemCard_MultiEntry_Value.as Documentation
-
-The `ItemCard_MultiEntry_Value` class is an ActionScript file that is part of a package named `Components`. This class extends the `ItemCard_Entry` class and includes an additional member, `Icon_mc`, which is a `MovieClip` object.
+# ItemCard_MultiEntry_Value
+The `ItemCard_MultiEntry_Value` class is an ActionScript file that is part of a package named `Components`.
+This class extends the `ItemCard_Entry` class and includes an additional member, `Icon_mc`, which is a `MovieClip` object.
 
 ## Table of Contents
 - [Class Overview](#class-overview)

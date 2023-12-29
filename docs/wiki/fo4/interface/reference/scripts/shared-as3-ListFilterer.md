@@ -1,5 +1,4 @@
-# `ListFilterer` Class Documentation
-
+# ListFilterer
 The `ListFilterer` class is part of the **Shared.AS3** package and is used to manage and apply filters to lists.
 It extends the `EventDispatcher` class from the Flash API, allowing it to dispatch events when the filter changes.
 

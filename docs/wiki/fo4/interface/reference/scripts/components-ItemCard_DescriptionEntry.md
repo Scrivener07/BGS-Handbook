@@ -1,10 +1,9 @@
-# `ItemCard_DescriptionEntry` Documentation
+# ItemCard_DescriptionEntry
+This is the markdown documentation for the ActionScript class `ItemCard_DescriptionEntry`, which is contained in the file `ItemCard_DescriptionEntry.as`.
+The `ItemCard_DescriptionEntry` class is part of the `Components` package and extends the `ItemCard_Entry` class.
 
-This is the markdown documentation for the ActionScript class `ItemCard_DescriptionEntry`, which is contained in the file `ItemCard_DescriptionEntry.as`. The `ItemCard_DescriptionEntry` class is part of the `Components` package and extends the `ItemCard_Entry` class.
-
-## Overview
-
-`ItemCard_DescriptionEntry` is designed to handle the display of text within an entry that is part of an item card. This class includes properties for the background movie clip and overrides a method to populate the entry with data.
+`ItemCard_DescriptionEntry` is designed to handle the display of text within an entry that is part of an item card.
+This class includes properties for the background movie clip and overrides a method to populate the entry with data.
 
 ### Class Definition
 

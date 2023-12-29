@@ -1,6 +1,7 @@
-# InputDetails.as Documentation
+# InputDetails
+This documentation provides a detailed overview of the `InputDetails` class found within the `scaleform.clik.ui` package.
 
-This documentation provides a detailed overview of the `InputDetails` class found within the `scaleform.clik.ui` package. The `InputDetails` class represents the details of a user's input and provides a structure for storing and retrieving information about specific interactions.
+The `InputDetails` class represents the details of a user's input and provides a structure for storing and retrieving information about specific interactions.
 
 ## Class Definition
 

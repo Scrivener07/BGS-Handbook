@@ -1,5 +1,4 @@
-# ComponentEvent.as Documentation
-
+# ComponentEvent.as
 The `ComponentEvent` class is part of the `scaleform.clik.events` package and is an extension of the `Event` class from the ActionScript 3 (AS3) Flash API.
 It is designed to handle state changes and visibility changes of components within the Scaleform CLIK (Common Lightweight Interface Kit) framework.
 

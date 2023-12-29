@@ -1,4 +1,4 @@
-# BSButtonHintBar Documentation
+# BSButtonHintBar
 This is a component that renders a list of multi-platform button.
 
 The `BSButtonHintBar` class is a dynamic subclass of `BSUIComponent` designed for displaying a bar containing button hints.

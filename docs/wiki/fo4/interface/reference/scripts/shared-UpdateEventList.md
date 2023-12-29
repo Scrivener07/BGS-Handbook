@@ -1,4 +1,4 @@
-# `UpdateEventList` Markdown Documentation
+# UpdateEventList
 
 ## Filename
 

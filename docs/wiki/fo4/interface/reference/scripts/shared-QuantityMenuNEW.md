@@ -1,8 +1,7 @@
-# QuantityMenuNEW.as Documentation
+# QuantityMenuNEW
+The `QuantityMenuNEW` class is a user interface component that allows users to select a quantity value through both a slider and text input.
 
-## Overview
-
-The `QuantityMenuNEW` class is a user interface component that allows users to select a quantity value through both a slider and text input. It extends the `BSUIComponent` from the Shared package, which suggests a foundation for UI components in a larger system, possibly a game.
+It extends the `BSUIComponent` from the Shared package, which suggests a foundation for UI components in a larger system, possibly a game.
 
 ### Features
 

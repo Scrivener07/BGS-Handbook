@@ -1,5 +1,4 @@
-# SwipeZone.as Documentation
-
+# SwipeZone
 The `SwipeZone` class belongs to the `Shared.AS3.COMPANIONAPP` package and is built for handling swipe gestures within a specified area on the display object.
 It extends the `EventDispatcher` class to allow the dispatching of events when a swipe is detected.
 

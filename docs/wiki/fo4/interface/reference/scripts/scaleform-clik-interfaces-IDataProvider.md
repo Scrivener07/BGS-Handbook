@@ -1,6 +1,6 @@
-# IDataProvider Interface Documentation
-
+# IDataProvider
 The `IDataProvider` interface is an essential component within the Scaleform CLIK (Common Lightweight Interface Kit) framework, used for managing data in a structured and consistent way across various user interface elements like lists, dropdown menus, etc.
+
 Below is the detailed documentation for the `IDataProvider` interface.
 
 ## Filename

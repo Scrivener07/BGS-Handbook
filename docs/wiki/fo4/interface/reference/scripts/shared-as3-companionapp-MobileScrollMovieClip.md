@@ -1,6 +1,7 @@
-# MobileScrollMovieClip.as Documentation
+# MobileScrollMovieClip
+The `MobileScrollMovieClip` class is part of the `Shared.AS3.COMPANIONAPP` package and provides functionality to add scroll behavior to MovieClip objects on mobile platforms.
 
-The `MobileScrollMovieClip` class is part of the `Shared.AS3.COMPANIONAPP` package and provides functionality to add scroll behavior to MovieClip objects on mobile platforms. Below is the detailed documentation of the class along with its methods and properties.
+Below is the detailed documentation of the class along with its methods and properties.
 
 ## Class Definition
 

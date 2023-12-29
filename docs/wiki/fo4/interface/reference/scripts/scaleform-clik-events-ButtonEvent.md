@@ -1,5 +1,4 @@
-# ButtonEvent.as Documentation
-
+# ButtonEvent
 The `ButtonEvent` class is a part of the `scaleform.clik.events` package and is an extension of the `flash.events.Event` class tailored for button-related interactions within the Scaleform CLIK framework.
 
 ## Table of Contents

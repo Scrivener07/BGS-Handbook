@@ -1,5 +1,4 @@
-# UIComponent.as Documentation
-
+# UIComponent
 This documentation details the `UIComponent` class, which extends the `MovieClip` class from the Flash display list.
 The `UIComponent` class is part of the Scaleform CLIK (Common Lightweight Interface Kit) library used for creating user interfaces in games.
 

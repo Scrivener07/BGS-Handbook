@@ -1,10 +1,9 @@
-# MobileButtonHint.as Documentation
-
+# MobileButtonHint
 The `MobileButtonHint.as` file is an ActionScript class part of the `Shared.AS3.COMPANIONAPP` package, which extends the functionality of the `BSButtonHint` class to handle mobile button hints with visual feedback on different button states.
 
-## Class Overview
+The `MobileButtonHint` class provides visual enhancements for button hints specifically tailored for a mobile interface.
+It includes state management for normal, pressed, and disabled button appearances.
 
-The `MobileButtonHint` class provides visual enhancements for button hints specifically tailored for a mobile interface. It includes state management for normal, pressed, and disabled button appearances.
 
 ### Properties and Constants
 

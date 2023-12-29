@@ -1,5 +1,4 @@
-# IMenu Class Documentation
-
+# IMenu
 The `IMenu` class is part of the `Shared` package.
 This class extends the `MovieClip` class from the Flash API and provides functionality for handling platform requests, stage initialization, font resizing, and focus management within a user interface context.
 
