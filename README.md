@@ -1,7 +1,7 @@
 # Scrivener's BGS Handbook
 - Website: https://scrivener07.github.io/BGS-Handbook/
 
-View [this](site/index.md) for site information and debugging previews.
+View [this](docs/site/index.md) for site information and debugging previews.
 
 
 ### See Also
@@ -64,3 +64,16 @@ Incremental regeneration in Jekyll is an experimental feature that can help shor
 While incremental regeneration works well for common cases, it may not handle every scenario perfectly.
 One such case would be that edits to `_includes` would not trigger a regeneration for associated pages.
 This would require a full rebuild that incremental build mode doesn't work well with.
+
+
+# Development
+To get proper linting for the correct grammars in VS Code, associate these file extensions with their respective Liquid varieties.
+```json
+"settings": {
+    "files.associations": {
+        "*.js": "liquid-javascript",
+        "*.css": "liquid-css",
+        "*.scss": "liquid-scss"
+    }
+}
+```

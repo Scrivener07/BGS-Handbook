@@ -30,6 +30,13 @@ baseurl: "/BGS-Handbook" # the subpath of your site, e.g. /blog
 # Build settings
 # https://pages.github.com/themes/
 theme: minima
+
+# Minima: Navigation settings
+header_pages:
+  - about.md
+  - site/index.md
+  - wiki/index.md
+
 plugins:
   - jekyll-feed
 
@@ -55,10 +62,6 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-# DELETE ME
-exclude:
-  - wiki/fo4/interface/reference/menus/
-  - wiki/fo4/interface/reference/scripts/
 
 # Defaults
 # https://jekyllrb.com/docs/configuration/front-matter-defaults/
