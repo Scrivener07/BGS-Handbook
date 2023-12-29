@@ -1,4 +1,4 @@
-# GlobalFunc.as Documentation
+# GlobalFunc
 Mainly used for backend operations in UI and HUD elements of Scaleform GFX in games.
 
 `GlobalFunc` is a utility class in the `Shared` package, providing a collection of static functions to facilitate various operations in Scaleform and game interfaces.
@@ -16,8 +16,6 @@ Includes methods for linear interpolation (`Lerp`), rounding decimals, checking 
 // Example usage for setting text
 GlobalFunc.SetText(myTextField, "Example Text", false, true);
 ```
-
-
 
 ## Constants
 

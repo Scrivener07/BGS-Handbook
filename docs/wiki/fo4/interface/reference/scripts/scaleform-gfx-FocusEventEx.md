@@ -1,5 +1,4 @@
-# `FocusEventEx.as` Documentation
-
+# FocusEventEx
 The `FocusEventEx.as` file contains a single class, `FocusEventEx`, within the `scaleform.gfx` package.
 This class extends the native `FocusEvent` class provided by Flash's `events` package.
 

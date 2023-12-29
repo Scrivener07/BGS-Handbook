@@ -1,7 +1,6 @@
-# ButtonGroup.as Documentation
-
-## Overview
+# ButtonGroup
 `ButtonGroup` is a class used within the Scaleform CLIK (Common Lightweight Interface Kit) framework.
+
 This class manages a group of buttons, allowing for the tracking and control of states such as which button is selected.
 It extends the `EventDispatcher` to provide event-driven functionality to the button group.
 

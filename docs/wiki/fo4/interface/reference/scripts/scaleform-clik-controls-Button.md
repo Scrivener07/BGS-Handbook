@@ -1,5 +1,4 @@
-# Button.as - Scaleform CLIK Button Documentation
-
+# Button
 The `Button` class in the Scaleform CLIK framework is designed to provide interactive button functionality for user interfaces in Flash-based applications, particularly in video game HUDs.
 Below is a comprehensive documentation of the `Button` class, detailing its properties, methods, and usage.
 

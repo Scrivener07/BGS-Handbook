@@ -1,4 +1,4 @@
-# ConstrainedElement.as Documentation
+# ConstrainedElement
 
 This documentation provides detailed information about the `ConstrainedElement` class found within the `scaleform.clik.utils` package.
 

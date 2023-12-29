@@ -1,5 +1,4 @@
-# PlatformChangeEvent Documentation
-
+# PlatformChangeEvent
 The `PlatformChangeEvent` class is a custom event used to signal a change in the platform input method within a Flash application.
 It extends the `flash.events.Event` class.
 

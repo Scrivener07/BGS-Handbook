@@ -1,5 +1,4 @@
-# BSUIComponent.as Documentation
-
+# BSUIComponent
 The `BSUIComponent` class is a dynamic subclass of `MovieClip` that provides an interface for user interface components within the Shared ActionScript 3 (AS3) package.
 It includes features for platform-specific behavior, bracket drawing for visual elements, and shaded background management.
 

@@ -1,10 +1,7 @@
-# VaultBoyImageLoader Documentation
-
+# VaultBoyImageLoader
 The `VaultBoyImageLoader` is a dynamic class extending `BSUIComponent` responsible for loading, displaying, and managing a Vault Boy image within a Flash/ActionScript 3.0 environment.
 
 The default vault-boy is `Components/Quest Vault Boys/Miscellaneous Quests/DefaultBoy.swf`.
-
-## Overview
 
 This class allows for the dynamic loading of SWF files that depict Vault Boy animations from the Fallout video game series.
 It provides properties to configure the playback and appearance of the loaded SWF animations.

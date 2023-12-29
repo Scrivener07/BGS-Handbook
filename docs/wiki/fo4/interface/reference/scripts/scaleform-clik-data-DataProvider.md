@@ -1,8 +1,6 @@
-# DataProvider Documentation
-
-## Overview
-
+# DataProvider
 `DataProvider` is a dynamic class that extends the `Array` class and implements the `IDataProvider` and `IEventDispatcher` interfaces.
+
 It serves as a data storage system capable of dispatching events when data changes.
 This class is part of the `scaleform.clik.data` package and is typically used within the Scaleform CLIK (Common Lightweight Interface Kit) UI framework for Adobe Flash.
 

@@ -1,4 +1,4 @@
-# FocusMode.as Documentation
+# FocusMode
 
 The `FocusMode.as` file contains a public class `FocusMode` within the `scaleform.clik.constants` package.
 This class defines several constants that represent different focus modes.

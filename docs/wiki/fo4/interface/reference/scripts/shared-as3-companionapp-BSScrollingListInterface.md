@@ -1,7 +1,8 @@
-# BSScrollingListInterface Documentation
+# BSScrollingListInterface
+The `BSScrollingListInterface` class is a part of the **Shared.AS3.COMPANIONAPP** package.
 
-## Overview
-The `BSScrollingListInterface` class is a part of the **Shared.AS3.COMPANIONAPP** package. It provides constants for linkage IDs used by the scrolling list interface and a method to map these linkage IDs to their corresponding properties for the mobile scrolling list.
+It provides constants for linkage IDs used by the scrolling list interface and a method to map these linkage IDs to their corresponding properties for the mobile scrolling list.
+
 
 ## Constants
 The class defines several constants for linkage IDs. These are identifiers for list entries and their corresponding renderers within the mobile application.

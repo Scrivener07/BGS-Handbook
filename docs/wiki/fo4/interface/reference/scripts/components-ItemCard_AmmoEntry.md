@@ -1,4 +1,4 @@
-# ItemCard_AmmoEntry.as Documentation
+# ItemCard_AmmoEntry
 
 `ItemCard_AmmoEntry.as` is an ActionScript file that defines a class extending the functionality of another class named `ItemCard_Entry`.
 This file is likely part of a larger application dealing with items or cards, possibly for a game or inventory system. Below is the detailed documentation for this class.

@@ -1,18 +1,10 @@
-# CLIK Documentation
-
-## File Overview
-
+# CLIK
 Filename: `CLIK.as`
 
 The `CLIK` class is part of the `scaleform.clik.core` package and is responsible for integrating Scaleform CLIK (Common Lightweight Interface Kit) components into a Flash environment.
 It provides static methods to initialize components, manage focus, pop-ups, and also allows for callback queuing to ensure components are initialized at the appropriate time.
 
 ## Class Details
-
-### **CLIK**
-
-#### Description
-
 This dynamic class contains static members and functions to handle the initialization and management of UI components within the Scaleform framework.
 
 #### Properties

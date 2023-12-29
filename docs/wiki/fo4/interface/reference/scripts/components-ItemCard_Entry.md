@@ -1,6 +1,6 @@
-# ItemCard_Entry.as Documentation
-
-This documentation explains the `ItemCard_Entry` class found in the `ItemCard_Entry.as` file, which resides within the `Components` package. This class extends the `MovieClip` class and is responsible for managing individual entries in an item card, including their label, value, and comparison indicators.
+# ItemCard_Entry
+This documentation explains the `ItemCard_Entry` class found in the `ItemCard_Entry.as` file, which resides within the `Components` package.
+This class extends the `MovieClip` class and is responsible for managing individual entries in an item card, including their label, value, and comparison indicators.
 
 ## Class Hierarchy
 

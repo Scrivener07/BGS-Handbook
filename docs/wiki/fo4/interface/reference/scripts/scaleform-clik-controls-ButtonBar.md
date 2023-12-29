@@ -1,5 +1,4 @@
-# ButtonBar.as Documentation
-
+# ButtonBar
 The `ButtonBar` class is a component that creates a navigable bar of buttons, which is commonly used in user interfaces.
 This class is part of the Scaleform CLIK (Common Lightweight Interface Kit) controls and extends the `UIComponent` class to provide additional functionality for button navigation and management.
 

@@ -1,8 +1,7 @@
-# MobileScrollListProperties.as Documentation
+# MobileScrollListProperties
+The `MobileScrollListProperties` class defines properties for a mobile scroll list component within the `Shared.AS3.COMPANIONAPP` package.
 
-## Overview
-
-The `MobileScrollListProperties` class defines properties for a mobile scroll list component within the `Shared.AS3.COMPANIONAPP` package. It contains several configurable attributes that affect the appearance and behavior of the scroll list.
+It contains several configurable attributes that affect the appearance and behavior of the scroll list.
 
 ## Class Definition
 

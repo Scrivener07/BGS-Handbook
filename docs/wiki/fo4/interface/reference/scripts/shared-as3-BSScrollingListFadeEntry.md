@@ -1,5 +1,4 @@
-# BSScrollingListFadeEntry Documentation
-
+# BSScrollingListFadeEntry
 The `BSScrollingListFadeEntry` class extends the `BSScrollingListEntry` class to provide functionality for a scrolling list entry with fade effect on its border based on focus and selection.
 
 ## Table of Contents

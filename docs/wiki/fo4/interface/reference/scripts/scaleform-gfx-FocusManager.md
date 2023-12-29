@@ -1,6 +1,7 @@
-# FocusManager.as Documentation
+# FocusManager
+The `FocusManager` class is part of the `scaleform.gfx` package and provides a suite of static methods designed to manage focus within Scaleform GFx displays.
 
-The `FocusManager` class is part of the `scaleform.gfx` package and provides a suite of static methods designed to manage focus within Scaleform GFx displays. The class is designed to be used with Scaleform's game development tools and is not intended for use with standard Flash applications.
+The class is designed to be used with Scaleform's game development tools and is not intended for use with standard Flash applications.
 
 ## Class Definition
 

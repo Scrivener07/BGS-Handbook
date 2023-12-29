@@ -1,12 +1,9 @@
-# SWFLoaderClip.as Documentation
+# SWFLoaderClip
+This documentation provides an overview of the `SWFLoaderClip` class, its methods, properties, and usage within a Flash application.
+The class is part of the `Components` package and is designed to load and handle SWF files.
 
-This documentation provides an overview of the `SWFLoaderClip` class, its methods, properties, and usage within a Flash application. The class is part of the `Components` package and is designed to load and handle SWF files.
-
----
-
-## Class: `SWFLoaderClip`
-
-The `SWFLoaderClip` class extends `MovieClip` and allows for the loading and unloading of SWF files as display objects. It provides functionality to set the alpha (transparency) and scale of the loaded SWF as well as an alternative menu loading mechanism in case of an IO error.
+The `SWFLoaderClip` class extends `MovieClip` and allows for the loading and unloading of SWF files as display objects.
+It provides functionality to set the alpha (transparency) and scale of the loaded SWF as well as an alternative menu loading mechanism in case of an IO error.
 
 ### Properties
 

@@ -1,8 +1,8 @@
-# MobileScrollList.as Documentation
+# MobileScrollList
+The **MobileScrollList** is a custom list component designed for mobile applications, extending `MovieClip`.
+It provides a scrollable list functionality, with support for touch input and rendering list items dynamically.
 
-## Overview
-
-**MobileScrollList** is a custom list component designed for mobile applications, extending `MovieClip`. It provides a scrollable list functionality, with support for touch input and rendering list items dynamically. This component is built for use within a wider framework for building user interfaces in Adobe Flash ActionScript 3.0.
+This component is built for use within a wider framework for building user interfaces in Adobe Flash ActionScript 3.0.
 
 ## Class Definition
 

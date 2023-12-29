@@ -1,5 +1,4 @@
-# BSButtonHint Documentation
-
+# BSButtonHint
 The `BSButtonHint` class is a dynamic component in the `Shared.AS3` package used to display button hints in a user interface.
 This class extends `BSUIComponent` and provides functionality to handle the display and behavior of button hints based on user interaction.
 

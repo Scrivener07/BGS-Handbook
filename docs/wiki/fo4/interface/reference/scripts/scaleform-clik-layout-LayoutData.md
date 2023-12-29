@@ -1,5 +1,4 @@
-# LayoutData Documentation
-
+# LayoutData
 The `LayoutData` class is part of the `scaleform.clik.layout` package and is utilized for defining the layout properties related to the Scaleform CLIK (Common Lightweight Interface Kit) framework.
 
 ## Contents

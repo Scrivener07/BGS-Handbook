@@ -1,7 +1,4 @@
-# ItemCard.as Documentation
-
-**`ItemCard` Class Overview**
-
+# ItemCard
 The `ItemCard` class extends `BSUIComponent` to manage and display item information in a user interface.
 This class is part of the `Components` package and it is responsible for organizing and rendering item entries based on various types and attributes.
 
