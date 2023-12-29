@@ -1,6 +1,7 @@
-# `HeaderArrow.as` Documentation
+---
+title: "HeaderArrow"
+---
 
-## Overview
 The `HeaderArrow` class extends the `MovieClip` class and is designed to dispatch a custom event when a mouse-up event is detected on an instance of this class.
 
 ## Class Definition
@@ -17,6 +18,7 @@ package {
 ```
 
 ## Public Constants
+
 | Constant | Type | Description |
 |----------|------|-------------|
 | `MOUSE_UP` | `String` | A custom event type string for the mouse up event. |

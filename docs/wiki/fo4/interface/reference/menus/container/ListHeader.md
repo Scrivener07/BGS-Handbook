@@ -1,4 +1,6 @@
-# ListHeader.as Documentation
+---
+title: "ListHeader"
+---
 
 The `ListHeader.as` file defines the `ListHeader` class which extends the `MovieClip` class from the Adobe Flash library.
 It's primarily used for managing the header section of lists which include the title text and accompanying left and right navigation arrows.

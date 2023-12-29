@@ -1,4 +1,6 @@
-# PlayerList.as Documentation
+---
+title: "PlayerList"
+---
 
 `PlayerList` is a dynamic class that extends the `ItemList` class. It is designed to represent a list of players within a given context.
 

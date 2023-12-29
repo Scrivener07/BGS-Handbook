@@ -1,6 +1,7 @@
-# FilterHolder.as Documentation
+---
+title: "FilterHolder"
+---
 
-## Overview
 The `FilterHolder` class is a dynamic extension of the `MovieClip` class designed to hold a menu filter within a Flash-based user interface.
 This class is responsible for initiating a frame script and handling the completion of an introductory animation for the menu.
 

@@ -1,6 +1,7 @@
-# ItemListEntry Documentation
+---
+title: "ItemListEntry"
+---
 
-## File Overview
 The `ItemListEntry` class extends `BSScrollingListEntry` to provide functionality for displaying item entries with various icons and text manipulation based on the item's properties.
 It is part of the package that can be found in the file `ItemListEntry.as`.
 
@@ -22,6 +23,7 @@ package {
 ## Class Members
 
 ### Public Variables
+
 | Variable Name              | Type        | Description                                                              |
 |----------------------------|-------------|--------------------------------------------------------------------------|
 | `LeftIcon_mc`              | `MovieClip` | MovieClip instance for the left icon.                                    |
@@ -30,6 +32,7 @@ package {
 | `TaggedForSearchIcon_mc`   | `MovieClip` | MovieClip instance for the icon indicating the item is tagged for search.|
 
 ### Private Variables
+
 | Variable Name              | Type        | Description                                                              |
 |----------------------------|-------------|--------------------------------------------------------------------------|
 | `BaseTextFieldWidth`       | `*`         | Stores the original width of the text field.                             |

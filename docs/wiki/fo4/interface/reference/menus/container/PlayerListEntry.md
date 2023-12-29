@@ -1,11 +1,10 @@
-# PlayerListEntry.as Documentation
-
-## Overview
+---
+title: "PlayerListEntry"
+---
 
 The `PlayerListEntry` class is a dynamic class that extends the functionality of `ItemListEntry`.
 It is designed to represent an entry in a player list, providing the foundational structure needed for player list items while allowing for additional properties and methods to be added dynamically.
 
----
 
 ## Code Structure
 
@@ -19,13 +18,13 @@ package {
 }
 ```
 
----
 
 ## Class Definition
 
 ### **PlayerListEntry**
 
-This dynamic class extends the `ItemListEntry` class. As it is dynamic, properties and methods can be added to instances of the class at runtime.
+This dynamic class extends the `ItemListEntry` class.
+As it is dynamic, properties and methods can be added to instances of the class at runtime.
 
 | Constructor          | Description                                           |
 |----------------------|-------------------------------------------------------|
@@ -35,7 +34,8 @@ This dynamic class extends the `ItemListEntry` class. As it is dynamic, properti
 
 ## Usage
 
-To use the `PlayerListEntry` class, you can create an instance of it as part of a player list management system. This instance can then be customized on the fly due to its dynamic nature.
+To use the `PlayerListEntry` class, you can create an instance of it as part of a player list management system.
+This instance can then be customized on the fly due to its dynamic nature.
 
 Here's an example of how to instantiate a `PlayerListEntry` object:
 
@@ -64,7 +64,3 @@ playerEntry.rank = 1;
 ✨ **Dynamic**: Yes
 
 **Bolded Keywords**: `dynamic`, `extends`, `public`, `function`, `super`, `class`, `package`
-
----
-
-Remember that this documentation provides a basic template and should be expanded upon to include more detailed descriptions, usage examples, and any additional methods or properties that may be added to the `PlayerListEntry` class at runtime.

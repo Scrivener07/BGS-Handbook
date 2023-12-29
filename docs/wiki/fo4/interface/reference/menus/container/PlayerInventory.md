@@ -1,4 +1,7 @@
-# PlayerInventory Documentation
+---
+title: "PlayerInventory"
+---
+
 The `PlayerInventory` class is an ActionScript file that extends `MovieClip` to provide a dynamic user interface for a game's player inventory system.
 Below is the detailed documentation of the `PlayerInventory.as` file.
 

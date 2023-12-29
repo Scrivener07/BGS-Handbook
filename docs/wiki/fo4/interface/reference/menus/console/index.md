@@ -2,64 +2,13 @@
 title: "Console"
 ---
 
-The '''Console Menu''' is where [[Console Command]]s may be executed.
-
-== AS3 ==
-* <code>var BGSCodeObj:Object</code>
-* <code>var CommandEntry:TextField</code>
-* <code>var Background:MovieClip</code>
-* <code>var CommandHistory:TextField</code>
-* <code>var CurrentSelection:TextField</code>
-* <code>var CommandPrompt_tf:TextField</code>
-* <code>function get shown():Boolean</code>
-* <code>function get hiding():Boolean</code>
-* <code>function set currentSelection(param1:String):*</code>
-* <code>function set historyCharBufferSize(param1:uint):*</code>
-* <code>function set historyTextColor(param1:uint):*</code>
-* <code>function set textColor(param1:uint):*</code>
-* <code>function set textSize(param1:uint):*</code>
-* <code>function set size(param1:Number):*</code>
-* <code>function PositionTextFields():*</code>
-* <code>function Show():*</code>
-* <code>function ShowComplete():*</code>
-* <code>function Hide():*</code>
-* <code>function HideComplete():*</code>
-* <code>function Minimize():*</code>
-* <code>function PreviousCommand():*</code>
-* <code>function NextCommand():*</code>
-* <code>function AddHistory(param1:String):*</code>
-* <code>function SetCommandPrompt(param1:String):*</code>
-* <code>function ClearHistory():*</code>
-* <code>function ResetCommandEntry():*</code>
-* <code>function onKeyUp(param1:KeyboardEvent):*</code>
-* <code>function onResize():*</code>
-
-==== BGSCodeObj ====
-* <code>function onHideComplete():void</code>
-* <code>function executeCommand(command:String):void</code>
-
-== See Also ==
-*[[Menu]]
-*[[User Interface]]
-*[[Console Command]]
+The **Console Menu** is where *Console Commands* may be executed.
 
 
-[[Category:User Interface]]
-
-
-
-
-
-
-
-# Console.as Documentation
-
----
-
-## Overview
-
+# Class Documentation
 The `Console.as` is an ActionScript 3 class that defines functionality for a console interface within a Flash application.
 It enables users to input commands, navigate command history, and adjust the visual aspects of the console.
+
 
 ## Class Definition
 
@@ -71,6 +20,41 @@ package {
   }
 }
 ```
+
+## AS3
+* `var BGSCodeObj:Object`
+* `var CommandEntry:TextField`
+* `var Background:MovieClip`
+* `var CommandHistory:TextField`
+* `var CurrentSelection:TextField`
+* `var CommandPrompt_tf:TextField`
+* `function get shown():Boolean`
+* `function get hiding():Boolean`
+* `function set currentSelection(param1:String):*`
+* `function set historyCharBufferSize(param1:uint):*`
+* `function set historyTextColor(param1:uint):*`
+* `function set textColor(param1:uint):*`
+* `function set textSize(param1:uint):*`
+* `function set size(param1:Number):*`
+* `function PositionTextFields():*`
+* `function Show():*`
+* `function ShowComplete():*`
+* `function Hide():*`
+* `function HideComplete():*`
+* `function Minimize():*`
+* `function PreviousCommand():*`
+* `function NextCommand():*`
+* `function AddHistory(param1:String):*`
+* `function SetCommandPrompt(param1:String):*`
+* `function ClearHistory():*`
+* `function ResetCommandEntry():*`
+* `function onKeyUp(param1:KeyboardEvent):*`
+* `function onResize():*`
+
+#### BGSCodeObj
+* `function onHideComplete():void`
+* `function executeCommand(command:String):void`
+
 
 ## Properties
 
@@ -89,6 +73,7 @@ package {
 |--------------------------|---------|----------------------------------------------------------|
 | `PREVIOUS_COMMANDS`      | `uint`  | The number of previous commands to store.                |
 | `HistoryCharBufferSize`  | `uint`  | The character buffer size for the command history.       |
+
 
 ## Methods
 
@@ -118,9 +103,10 @@ package {
 - `onKeyUp(event:KeyboardEvent)`: Event handler for key up events.
 - `onResize()`: Event handler for stage resize events.
 
-### Private Methods
 
+### Private Methods
 - None
+
 
 ## Events
 
@@ -129,7 +115,6 @@ package {
 | `Event.RESIZE`      | `onResize`      | Handles stage resize events to adjust the console layout. |
 | `KeyboardEvent.KEY_UP` | `onKeyUp`    | Handles key up events for command execution and navigation. |
 
----
 
 ## Usage Example
 
@@ -138,14 +123,13 @@ var myConsole:Console = new Console();
 addChild(myConsole);
 ```
 
-## Notes
 
+## Notes
 - The `Console` class utilizes the `scaleform.gfx` extension for advanced text field manipulation.
 - The console's interface elements (text fields, movie clips) are assumed to be set up within the Flash environment and linked to the class through instance names.
 - The `BGSCodeObj` object is intended to provide a bridge to the game's or application's code logic for command execution.
 - Customization of the console's appearance and behavior can be achieved through the setter methods provided.
 
----
 
 📂 **Filename**: `Console.as`
 

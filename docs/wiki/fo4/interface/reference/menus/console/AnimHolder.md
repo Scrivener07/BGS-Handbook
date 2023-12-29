@@ -1,4 +1,6 @@
-# AnimHolder.as Documentation
+---
+title: "AnimHolder"
+---
 
 The `AnimHolder.as` file contains an ActionScript class that extends the `MovieClip` class from Adobe Flash/Animate.
 This dynamic class is used to control animations with specific actions tied to frame labels within the timeline of a Flash animation.
@@ -94,9 +96,3 @@ function frame12() : * {
 - **Menu_mc**: An instance of the `Console` class which presumably controls UI elements.
 
 **Note**: The asterisk (`*`) as the return type for the frame methods indicates that the return type is untyped, allowing these methods to return any type of value.
-
----
-
-**💡 Tips**:
-This documentation provides an overview of the `AnimHolder` class.
-To fully leverage this class, you would need access to the `Console` class definition and understand the context in which `AnimHolder` is used within a Flash application.

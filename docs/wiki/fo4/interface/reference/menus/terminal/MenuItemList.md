@@ -1,4 +1,6 @@
-# MenuItemList.as Documentation
+---
+title: "MenuItemList"
+---
 
 The `MenuItemList` class extends the `BSScrollingList` from the package `Shared.AS3`.
 It provides additional functionality to manage and animate text within menu items in a scrollable list format.
@@ -108,7 +110,3 @@ if (animationFinished) {
 - Ensure that `EntriesA` is correctly initialized and populated before calling `AnimateText`.
 - Handle the `animationFinished` state appropriately after calling `AnimateText` to synchronize any dependent logic with the animation state.
 - Be mindful of the visual and interactive states of the list items when manipulating `disableInput`.
-
----
-
-✨ **This documentation provides a clear and concise reference to the `MenuItemList` class and its functionalities.**

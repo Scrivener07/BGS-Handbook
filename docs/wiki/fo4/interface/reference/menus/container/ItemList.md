@@ -1,4 +1,6 @@
-# ItemList.as Documentation
+---
+title: "ItemList"
+---
 
 The `ItemList.as` file is an ActionScript file that defines a custom scrolling list class called `ItemList`.
 This list is designed to be used within a user interface where elements in the list can be selected, and different behaviors such as a transfer arrow visibility are managed upon selection.

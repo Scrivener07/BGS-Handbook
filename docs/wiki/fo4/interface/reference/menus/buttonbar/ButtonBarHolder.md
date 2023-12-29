@@ -1,4 +1,7 @@
-# ButtonBarHolder Documentation
+---
+title: "ButtonBarHolder"
+---
+
 `ButtonBarHolder` is an ActionScript class that extends the `MovieClip` class and is designed to hold and configure a button hint bar within a user interface.
 The class is defined within the ButtonBarHolder.as file and is part of an unnamed package.
 

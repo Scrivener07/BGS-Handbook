@@ -1,4 +1,6 @@
-# MenuItemListEntry.as Documentation
+---
+title: "MenuItemListEntry"
+---
 
 `MenuItemListEntry.as` is an ActionScript file that defines a dynamic class which extends the `BSScrollingListEntry` class.
 This class is used to create menu item entries for a scrolling list in a user interface, likely within a game or an application that uses Scaleform for UI components.
@@ -39,7 +41,8 @@ The `MenuItemListEntry` class inherits from `BSScrollingListEntry`, which means 
 
 ## Usage
 
-To use the `MenuItemListEntry` class, you would typically instantiate it within a user interface that utilizes a scrolling list to represent a collection of options or menu items. The `MenuItemListEntry` would be responsible for representing a single entry within that list.
+To use the `MenuItemListEntry` class, you would typically instantiate it within a user interface that utilizes a scrolling list to represent a collection of options or menu items.
+The `MenuItemListEntry` would be responsible for representing a single entry within that list.
 
 ## Example
 
