@@ -1,5 +1,4 @@
 ---
-layout: wiki_category
 title: "Fallout 4"
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: wiki_category
 title: "Components"
 ---
 
