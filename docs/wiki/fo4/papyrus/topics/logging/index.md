@@ -77,6 +77,69 @@ Ultimately logging is a tool to make your life easier.
 Use it the way that makes your life easier 🙂
 
 
+#### Note: Release Mode Collateral Damage
+Script members with the `DebugOnly` flag are stripped from the final assembly when compiled in release mode.
+When this happens, the entire line is stripped.
+
+If you had a `DebugOnly` function with an inline call to some critical function, this it will also be stripped.
+
+This for example would also strip this important non-debug function when called like that.
+
+```papyrus
+Debug.TraceUser("MyLog", SomeImportantFunction())
+```
+
+
+#### Note: Performance
+It has been known that the release, final, and optimize modes can change code behavior and in some cases cause it to work incorrectly.
+For this reason, never compile with any of the special flag modes such as `Release`, `Final`, or `Optimize`.
+
+With the default compile mode, `DebugOnly` scripts and members are left intact in the assembly.
+Even still these functions will not execute unless an extra step is taken to enable Papyrus debug logging in the game ini files.
+When Papyrus debug logging is not enabled, calls to `DebugOnly` functions will no-op, also known as have no operation.
+
+The `Debug` calls have a small performance penalty even if logging is turned off, though not significantly.
+Many author just leave the debug code in the source as most users have logging turned off anyways.
+
+A benefit to leaving in debug scripts is that when there is a user issue, we can just tell them to enable debugging to send log files.
+If the scripts were compiled in release mode then users would not be able to send any logs for your mod without you providing a recompiled version of the mod for debugging.
+Doing this will likely not work correctly on an already running game save making it an ineffective technique when users logs need to be gathered.
+
+In situations where performance is a concern but you want to have debug code on hand, then just comment out the lines until you need them.
+
+
+### Caution: Rolling Logs
+This is an example which shows opening a user log, writing some lines, and then closing it.
+When you close a log, you cannot reopen it.
+
+This would initially be written to `Fallout4\Logs\User\ExampleMod.0.log`.
+
+The next time this function runs, your old log will "roll" to `Fallout4\Logs\User\ExampleMod.1.log` and the freshly opened log will become the new `Fallout4\Logs\User\ExampleMod.0.log`.
+
+If the event runs again, another fresh `Fallout4\Logs\User\ExampleMod.0.log` is created and the rolling log rename cascades down.
+
+Now your original log is `Fallout4\Logs\User\ExampleMod.2.log`, the second log is `Fallout4\Logs\User\ExampleMod.1.log`, and the freshly created log is now `Fallout4\Logs\User\ExampleMod.0.log`.
+
+This leads us to a problem.
+There is a maximum number of times a log can roll, which I believe is up to `Fallout4\Logs\User\ExampleMod.5.log`, and then it is discarded as not to bloat your storage device.
+
+This can be a problem if your function opens and closes a log 6 or more times as you will end up with missing logs that are discarded in a fraction of a second.
+This problem can show itself even in this isolated single function, but become extremely prominent if you have many places with similar code pointing at the same file.
+
+```papyrus
+ScriptName ExampleMod:ActorOnKillTest extends Actor
+
+Event OnKill(Actor akVictim)
+    Debug.OpenUserLog("ExampleMod")
+
+    ; do work
+
+    Debug.CloseUserLog("ExampleMod")
+EndEvent
+```
+
+
+
 ### Logging Class
 
 ```papyrus
@@ -195,35 +258,4 @@ Function Foo()
     ExampleMod:Log.WriteNotImplemented(self, "Foo", "This foobar function is not implemented yet.")
     ExampleMod:Log.WriteNotImplemented(self, "Foo", "This function is abstract, override and implement this in an extending script.")
 EndFunction
-```
-
-
-### Caution: Rolling Logs
-This is an example which shows opening a user log, writing some lines, and then closing it.
-When you close a log, you cannot reopen it.
-
-This would initially be written to `Fallout4\Logs\User\ExampleMod.0.log`.
-
-The next time this function runs, your old log will "roll" to `Fallout4\Logs\User\ExampleMod.1.log` and the freshly opened log will become the new `Fallout4\Logs\User\ExampleMod.0.log`.
-
-If the event runs again, another fresh `Fallout4\Logs\User\ExampleMod.0.log` is created and the rolling log rename cascades down.
-
-Now your original log is `Fallout4\Logs\User\ExampleMod.2.log`, the second log is `Fallout4\Logs\User\ExampleMod.1.log`, and the freshly created log is now `Fallout4\Logs\User\ExampleMod.0.log`.
-
-This leads us to a problem.
-There is a maximum number of times a log can roll, which I believe is up to `Fallout4\Logs\User\ExampleMod.5.log`, and then it is discarded as not to bloat your storage device.
-
-This can be a problem if your function opens and closes a log 6 or more times as you will end up with missing logs that are discarded in a fraction of a second.
-This problem can show itself even in this isolated single function, but become extremely prominent if you have many places with similar code pointing at the same file.
-
-```papyrus
-ScriptName ExampleMod:ActorOnKillTest extends Actor
-
-Event OnKill(Actor akVictim)
-    Debug.OpenUserLog("ExampleMod")
-
-    ; do work
-
-    Debug.CloseUserLog("ExampleMod")
-EndEvent
 ```
