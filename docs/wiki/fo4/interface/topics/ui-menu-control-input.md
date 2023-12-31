@@ -2,7 +2,8 @@
 title: "UI Menu Control Input"
 ---
 
-## Enable menu control by extending the `IMenu` AS3 class.
+Enable menu control by extending the `IMenu` AS3 class.
+
 A menu needs to extend `IMenu` in order to properly use the `EnableMenuControl:0x08` menu flag.
 
 #### Notes
