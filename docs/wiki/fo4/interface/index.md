@@ -14,7 +14,7 @@ Autodesk Scaleform is a middleware that allows developers integrate Adobe Flash 
 - How do I create edit the vanilla menus?
 - How do I create a custom standalone menu?
 - How do I create HUD Framework widgets?
-- How do I load a custom menu into an existing menu?
+- How do I load a custom UI elements into an existing menu?
 - How do I create new Holotape programs?
 - How do I create new Vault-Boy art?
 
