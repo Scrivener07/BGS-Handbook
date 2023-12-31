@@ -12,6 +12,72 @@ All the rest just format log lines consistently for common messages.
 Also a wrapper for `Notification` and `MessageBox` that traces the messages to the user-log and displays them on screen.
 
 
+### Question: When should I open a log file stream?
+You might ask, so when’s the best time to start logging?
+
+I don't directly start the log at all.
+
+I have a dedicated function that will internally open the log the first time it is called.
+
+Further calls to the function will write straight into the opened log.
+
+So technically, if nothing in the code base calls a log function, then it will never open to begin with.
+
+The `Write()` function wrapper gets called the first time.
+
+On this first call to `Write()`, execution hits this line ... `If (Debug.TraceUser(filename, text))`.
+
+The `TraceUser` function return a FALSE bool if the log failed to write or wasn't opened.
+
+So the execution jumps to the `Else` branch, opens the log, and re-calls `Debug.TraceUser(filename, text)`.
+
+Every call to the `Write()` wrapper after this will succeed on the first attempt.
+
+The ``If (Debug.TraceUser(filename, text))`` conditional statement gets called and then immediately returns.
+
+If you choose to use this logging wrapper technique, then I encourage you to customize the `Write()` function to your needs.
+
+The function I posted there can be adapted in many ways.
+
+Like maybe you want to pass the filename as a parameter, or get ride of the pre-formatting that prefixes your message text.
+
+The meat of the function I explained above :slight_smile:
+
+A more pure implementation with no fluff or extras.
+```papyrus
+bool Function Write(string filename, string text) Global DebugOnly
+    {Writes text as lines in the given log file name.}
+    If (Debug.TraceUser(filename, text))
+        return true
+    Else
+        Debug.OpenUserLog(filename)
+        return Debug.TraceUser(filename, text)
+    EndIf
+EndFunction
+```
+
+
+### Question: When should I close a log file stream?
+You might ask, so when do I close my logs?
+
+I let the game session manager kill the log streams as a mod author.
+As a user, you should have debug logging disabled on the INI unless an author tells you to enable it.
+
+As an author, you want all your logging system to light up and just work.
+
+Generally again, as an author it is easier to make sense of what is happening on a users machine when all your systems are pointing to the same log file, especially when sequences of things play a role.
+
+There are time stamps but its difficult to piece together chunks of timestamps spread over many files when a single file you can see at a glance.
+
+The user log versus the main papyrus log can have that issue too sometimes like how Papyrus errors are emitted there and you have to compare that to your user log to see what line the Papyrus error would fit.
+
+A single log file is also easier for users to pass along to an author.
+Is is also common to see one mod have a log for each game-system, or for a dedicated part of it that makes sense to isolate.
+
+Ultimately logging is a tool to make your life easier.
+Use it the way that makes your life easier 🙂
+
+
 ### Logging Class
 
 ```papyrus
@@ -133,7 +199,7 @@ EndFunction
 ```
 
 
-### Rolling Logs
+### Caution: Rolling Logs
 This is an example which shows opening a user log, writing some lines, and then closing it.
 When you close a log, you cannot reopen it.
 
@@ -162,69 +228,3 @@ Event OnKill(Actor akVictim)
     Debug.CloseUserLog("ExampleMod")
 EndEvent
 ```
-
-
-### Question: When should I open a log file stream?
-You might ask, so when’s the best time to start logging?
-
-I don't directly start the log at all.
-
-I have a dedicated function that will internally open the log the first time it is called.
-
-Further calls to the function will write straight into the opened log.
-
-So technically, if nothing in the code base calls a log function, then it will never open to begin with.
-
-The `Write()` function wrapper gets called the first time.
-
-On this first call to `Write()`, execution hits this line ... `If (Debug.TraceUser(filename, text))`.
-
-The `TraceUser` function return a FALSE bool if the log failed to write or wasn't opened.
-
-So the execution jumps to the `Else` branch, opens the log, and re-calls `Debug.TraceUser(filename, text)`.
-
-Every call to the `Write()` wrapper after this will succeed on the first attempt.
-
-The ``If (Debug.TraceUser(filename, text))`` conditional statement gets called and then immediately returns.
-
-If you choose to use this logging wrapper technique, then I encourage you to customize the `Write()` function to your needs.
-
-The function I posted there can be adapted in many ways.
-
-Like maybe you want to pass the filename as a parameter, or get ride of the pre-formatting that prefixes your message text.
-
-The meat of the function I explained above :slight_smile:
-
-A more pure implementation with no fluff or extras.
-```papyrus
-bool Function Write(string filename, string text) Global DebugOnly
-    {Writes text as lines in the given log file name.}
-    If (Debug.TraceUser(filename, text))
-        return true
-    Else
-        Debug.OpenUserLog(filename)
-        return Debug.TraceUser(filename, text)
-    EndIf
-EndFunction
-```
-
-
-### Question: When should I close a log file stream?
-You might ask, so when do I close my logs?
-
-I let the game session manager kill the log streams as a mod author.
-As a user, you should have debug logging disabled on the INI unless an author tells you to enable it.
-
-As an author, you want all your logging system to light up and just work.
-
-Generally again, as an author it is easier to make sense of what is happening on a users machine when all your systems are pointing to the same log file, especially when sequences of things play a role.
-
-There are time stamps but its difficult to piece together chunks of timestamps spread over many files when a single file you can see at a glance.
-
-The user log versus the main papyrus log can have that issue too sometimes like how Papyrus errors are emitted there and you have to compare that to your user log to see what line the Papyrus error would fit.
-
-A single log file is also easier for users to pass along to an author.
-Is is also common to see one mod have a log for each game-system, or for a dedicated part of it that makes sense to isolate.
-
-Ultimately logging is a tool to make your life easier.
-Use it the way that makes your life easier 🙂
