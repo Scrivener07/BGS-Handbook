@@ -1,8 +1,7 @@
 ---
-title: "Logging"
+title: "Custom debug trace logging"
 ---
 
-## User Logs
 A logging class can be an efficient way to trace information about your mod to help debug issues.
 This logging class will automatically open a user log the first time a logging function is called.
 
