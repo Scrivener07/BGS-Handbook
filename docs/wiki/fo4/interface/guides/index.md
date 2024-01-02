@@ -2,6 +2,36 @@
 title: "Guides"
 ---
 
+See also the [Topics]({% link wiki/fo4/interface/topics/index.md %}) section.
+
+
+#### Notes
+I may need to cover how to decompile vanilla menus early on.
+This is because many UI features require the base Bethesda and Scaleform menu code.
+
+
+### How to topics
+- [How do I modify the vanilla menus?](#vanilla)
+- [How do I create a custom standalone menu?](#custom)
+- [How do I load a custom UI document into an existing menu?](#injection)
+- [How do I create new Holotape programs?](#holotapes)
+- [How do I create new Vault-Boy art?](#vaultboys)
+- [How do I create HUD Framework widgets?](#widgets)
+
+
+## Flash Primer {#primer}
+Provides a Flash primer focused on Fallout 4 Scaleform GFx.
+
+
+## Vault Boy Art {#vaultboys}
+Covers the creation of new Vault Boy art.
+
+
+## Modify Vanilla Menus {#vanilla}
+Provides a guide on modifying the vanilla menus.
+
+
+## Custom Menu {#custom}
 The goal of this project is to create a custom menu which can display information about any provided game data.
 It will be capable of describing game references, Papyrus script data, diagnostic information about the UI, and some other odds and ends.
 
@@ -23,43 +53,26 @@ When a menu is selected, show useful information like registered name, file path
 For a script type, use f4se to reflect the members.
 
 
-# Features
+#### Features
 - A *describer* UI view for Player reference information.
 - A *describer* UI view for game items.
 - A *describer* UI view for reflecting the members of a Papyrus script.
 - A *describer* UI view for tracing a target menu's display hierarchy.
 
-# Topics
-- Adding the base source directory to the Flash document source imports.
-- Add a package namespace for `Diagnostics`.
-- Show how static unconfigured font symbols will appear fine, but turn to rectangles if you change the text through code.
 
-# Topics
-- How to open the menu by key press.
-- How to open the menu by object activation.
-- How to open the menu by item activation/consumption.
-- How to open the menu by equipped item type.
-
-# Data Communication
-- Send and display game object data.
-- Send and display script object data.
-- Send and display an array of a single type.
-- Send and display an array of arrays.
-
-# User Interface
-- Explain the menu flags and their combinations.
-- Menu persistence with `DoNotDeleteOnClose` menu flag.
-- Explain menu depth layers and application domains.
-- Explain the injected `f4se` object and root/first-level callback.
-- Explain how to runtime inject Flash documents into other menus.
-
-# Other
-- Input for Keyboard, Mouse, and controller.
-- How to read TXT, XML, JSON, and other files on disk.
-- Explain how the UI resolution scaling works and the effects on ultra-wide.
+### Menu Injection {#injection}
+This section will cover loading a custom UI document into an existing menu.
 
 
-# Links
+## Holotape Programs {#holotapes}
+This section covers the creation of Holotape programs.
+
+
+## HUD Framework Widgets {#widgets}
+This section covers the creation of HUD Framework widgets.
+
+
+## Links
 - https://falloutck.uesp.net/wiki/MenuData_Struct_-_UI
 - https://github.com/F4CF/Creation-Framework/blob/master/System.XSE/Interface/Source/System.XSE/F4SE/XSE.as
 - https://github.com/ianpatt/f4se
