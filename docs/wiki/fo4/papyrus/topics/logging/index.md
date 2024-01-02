@@ -139,6 +139,10 @@ EndEvent
 ```
 
 
+### Log Tailing
+Use "log tailing" programs such as https://snakenest.com/snaketail/ to read game logs.
+These are live log viewers which are useful because normal text editors cant handle the rapid changes of a log.
+
 
 ### Logging Class
 
