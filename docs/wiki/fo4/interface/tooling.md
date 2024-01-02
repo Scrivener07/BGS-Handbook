@@ -6,13 +6,13 @@ These page provides links to software projects and documentation useful for work
 
 
 ## Resources
-- http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/standalone.zip
-- https://theflashstudioblog.blogspot.com/p/actionscript-3-resources.html
+- <http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/standalone.zip>
+- <https://theflashstudioblog.blogspot.com/p/actionscript-3-resources.html>
 
 
 ## Adobe
 - [Creative Cloud Apps](https://helpx.adobe.com/download-install/kb/creative-cloud-apps-download.html)
-- https://helpx.adobe.com/air/archived-docs-download.html
+- <https://helpx.adobe.com/air/archived-docs-download.html>
 
 ## Adobe Animate
 Adobe Flash was rebranded as Adobe Animate.
@@ -57,7 +57,7 @@ Adobe Flash was rebranded as Adobe Animate.
 - [Flash Builder Profiling Tools](https://www.adobe.com/devnet/flash-builder/articles/flash-builder-profiling-tools.html)
 
 #### Adobe Air
-- https://airsdk.harman.com/
+- <https://airsdk.harman.com/>
 
 
 ## Adobe Illustrator
