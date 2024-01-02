@@ -9,17 +9,9 @@ This tool also offers a scripting language called ActionScript which allows for 
 
 Autodesk Scaleform is a middleware that allows developers integrate Adobe Flash based technology with their game engine.
 
-# How to topics
-- How do I create edit the vanilla menus?
-- How do I create a custom standalone menu?
-- How do I create HUD Framework widgets?
-- How do I load a custom UI elements into an existing menu?
-- How do I create new Holotape programs?
-- How do I create new Vault-Boy art?
-
 
 # Interface Files
-The in game [[User Interface]] and [[Menu]]s are vector based animations created with Adobe Flash via [https://en.wikipedia.org/wiki/Scaleform_GFx Scaleform].
+The in game *User Interface* and *Menus* are vector based animations created with Adobe Flash via [https://en.wikipedia.org/wiki/Scaleform_GFx Scaleform].
 These are commonly referred to as *Flash Files* or *Interface Files*.
 
 There are several kinds flash files with very different purposes.
