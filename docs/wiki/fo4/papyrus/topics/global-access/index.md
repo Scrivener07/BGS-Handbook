@@ -1,4 +1,7 @@
-### Sample: Global access to a Papyrus struct instance
+---
+title: "Access script instance globally"
+---
+
 This sample demonstrates global access to an instance of a Papyrus `Struct`.
 A Papyrus `Struct` is a reference type, meaning `DataStruct::Text` and `DataStruct::Number` should update as references do.
 
