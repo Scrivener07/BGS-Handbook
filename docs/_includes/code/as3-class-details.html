@@ -1,0 +1,70 @@
+{% comment %}
+Displays AS3 class information.
+- object: The object type name.
+- package: The package namespace for this type.
+- modifiers: The modifiers for this type.
+- inheritance: The inheritance of this type.
+- implements: The interfaces this type implements.
+- subclasses: The classes that derive from this type.
+{% endcomment %}
+
+<div>
+	{% assign object = page.object %}
+	{% assign package = page.package %}
+	{% assign modifiers = page.modifiers %}
+	{% assign implements = page.implements %}
+	{% assign inheritance = page.inheritance %}
+	{% assign subclasses = page.subclasses %}
+
+	<h2>Details</h2>
+	<ul>
+		<li><b>Name:</b> <code>{{package}}.{{object}}</code></li>
+		<li><b>Object:</b> <code>{{object}}</code></li>
+		<li><b>Package:</b> <code>{{package}}</code></li>
+
+		<li>
+			<b>Modifiers: </b>
+			{% for item in modifiers %}
+				{% if forloop.last %}
+					<code>{{item}}</code>
+				{% else %}
+					<code>{{item}}</code>,
+				{% endif %}
+			{% endfor %}
+		</li>
+
+		<li>
+			<b>Inheritance: </b>
+			{% for item in inheritance reversed %}
+				{% if forloop.last %}
+					<code>{{item}}</code>
+				{% else %}
+					<code>{{item}}</code> &#8594;
+				{% endif %}
+			{% endfor %}
+		</li>
+
+		<li>
+			<b>Implements: </b>
+			{% for item in implements %}
+				{% if forloop.last %}
+					<code>{{item}}</code>
+				{% else %}
+					<code>{{item}}</code>,
+				{% endif %}
+			{% endfor %}
+		</li>
+
+		<li>
+			<b>Subclasses: </b>
+			{% for item in subclasses %}
+				{% if forloop.last %}
+					<code>{{item}}</code>
+				{% else %}
+					<code>{{item}}</code>,
+				{% endif %}
+			{% endfor %}
+		</li>
+
+	</ul>
+</div>
