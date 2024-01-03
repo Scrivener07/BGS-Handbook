@@ -27,24 +27,15 @@ subclasses:
 {% include code/as3-class-details.html %}
 
 
-# Description
+## Description
 A description of the class goes here.
 
-
-## Constructor
-> `public function MovieClip()`
-
-Creates a new MovieClip instance.
-After creating the MovieClip, call the `addChild()` or `addChildAt()` method of a display object container that is onstage.
-
+## Constructor {#constructor}
 
 ## Methods {#methods}
 
+## Properties {#properties }
 
-## Properties
+## Events {#events}
 
-
-## Events
-
-
-## Constants
+## Constants {#constants }
