@@ -34,8 +34,8 @@ A description of the class goes here.
 
 ## Methods {#methods}
 
-## Properties {#properties }
+## Properties {#properties}
 
 ## Events {#events}
 
-## Constants {#constants }
+## Constants {#constants}
