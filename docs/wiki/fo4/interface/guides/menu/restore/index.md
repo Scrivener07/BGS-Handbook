@@ -259,7 +259,9 @@ Well done!
 
 
 ### Organizing the library objects.
-- Optionally: Rename each layer to match the stage instance name.
+Organizing the library objects and layers is not critical to the functionality of the menu, but you will be happier for it.
+Consider this optional suggestions.
+- Rename each layer to match the stage instance name.
 - - If the layer holds a `Shape`, name the layer "Shape" or "Foo Shape".
 - - If the layer holds a `Graphic` name it "Graphic" or "Foo Graphic".
 - - Lock every layer you are not actively editing to avoid wild or dirty edits. Relock the layer when done editing.
@@ -275,13 +277,64 @@ To make the in-game test exciting, go to the root stage and add a new topmost la
 On the Adobe Animate **Tools** strip, select some of the shape, pencil, or brush tools and go crazy scribbling on top of the menu to make it obvious our version of the menu is running.
 Press the keyboard shortcut `ALT + SHIFT + F12` to publish your document.
 
-Start Fallout 4 and `coc` into your favorite test cell.
-Cause a `Message` to be displayed and see that our SWF created from the restored menu source is running.
+Start Fallout 4 and `COC` into your favorite test cell.
+Once the game has finished loading it will be time to test our progress.
+Open the message box menu in Fallout 4 by executing this console command.
 
+```
+CFG "Debug.MessageBox" "Hello World!"
+```
+
+It works, amazing!
 Now, without exiting Fallout 4, switch your focus back to Adobe Animate and delete the silly test layer.
 Republish your menu and switch your focus back to Fallout 4.
-When you re-show the `Message` via `MessageBoxMenu` we see that the game is capable of hot-reloading non-persisted game menus.
+Re-execute the previous console command and see that the game is capable of hot-reloading non-persisted game menus.
+
+With that, this tutorial is concluded.
+Check out the guides and tutorials for more advanced topics.
+
+
+## Notes
+These are some additional notes on topics covered here.
+
+### Flash Hot-Reloading
 Hot-reloading does not work on every menu such as the HUD menu.
 This is because persisted menus like the HUD are loaded once per game session, and then stay alive for the remainder.
 If you are developing a persisted menu then the SWF your started the game with will be baked into the remainder of that game session.
 This simply means you only need to restart the game to test changes to your menu, so no hot-reloading for these.
+
+
+### Using COC from the main menu
+If you use the developer console to execute the `COC` (center-on-cell) command from the Fallout 4 main menu, then take caution.
+Keep in mind that doing this will not initialize the game into a fully playable state.
+Regardless, using the `COC` command from the main menu is a useful testing technique for developers.
+
+If you use `COC` from the main menu then be aware of the following limitations.
+
+**Broken quests:**
+Many storyline and game system related quests will not properly start.
+
+**Broken interior cell path finding:**
+The AI path finding system for navmeshes will be non-functional if you `COC` directly to an interior cell.
+Actors will refuse to move.
+The game uses the the transition from an interior cell to an exterior as a signal to begin normal game startup.
+There are still more problems with `COC` from the main menu, but these examples get the point across well enough.
+
+#### Skyrim main menu notes
+In Skyrim, Bethesda literally let the cell void be fully visible at the main menu!
+
+It features a 3D mesh of the Skyrim logo, a light source, and a mist effect all dangling in front of the player camera.
+Yea, the *Player* is loaded at the main menu too.
+You can even execute console commands on your own *Player* reference.
+
+The main menu cell in Skyrim.
+The only thing you will see in the Creation Kit is a `COCMarkerHeading`.
+
+Instead, look at default object manager in the Creation Kit and you can see that the "Use" property called `Main Menu Cell` that binds to the `MainMenuCell` EditorID, which is the `Cell`.
+Default objects are special properties that the Creation Kit exposes directly to the game engine for use.
+This explains some of the magic behind some objects having unexplained or special behavior.
+The engine probably uses this default object property to register for cell transition events to trigger game startup.
+
+- Default Object: `Main Menu Cell` :: `MainMenuCell`
+- Cell EditorID: `MainMenuCell`
+- Cell Name: `Main Menu Cell`
