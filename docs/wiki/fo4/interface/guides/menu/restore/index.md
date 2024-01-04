@@ -114,6 +114,7 @@ Fallout 4\Data\Interface\Source\MessageMarkdown\MessageBoxMenu.fla
                 MobileScrollListProperties.as
 ```
 
+### Fixing the errors
 Now open the `MessageBoxMenu.fla` file with Adobe Animate and wait for it to finish loading.
 Once the document is loaded you will see that the `MessageBoxMenu` is relatively simple compared to the other menus.
 This menu features a scrolling list of button entries and a `TextField` for the message body text.
@@ -144,7 +145,8 @@ The target Flash player version is usually *Flash Player 11.2*.
 The script type is always *ActionScript 3.0*.
 
 Now we will set the *Output name* to publish the SWF file to `Fallout 4\Data\Interface\MessageBoxMenu.swf` which will override the original version stored in `Fallout4 - Interface.ba2`.
-When setting the *Output name* for your Flash document, be sure to always use a relative path, and not a full path with a drive letter on the front.
+When setting the *Output name* for your Flash document, be sure to always use a relative path.
+Do not use a full path with a drive letter on the front.
 
 For this menu, use an *Output name* of `../../MessageBoxMenu` which will put the file two directories above its current directory.
 Or in others words, two folders above relative to itself.
@@ -157,6 +159,8 @@ Press *Ok* to close the **ActionScript Settings** window, and then press *Ok* ag
 
 Now again, press the keyboard shortcut `ALT + SHIFT + F12` to publish your document.
 
+
+### Fixing the warnings
 Our SWF file was successfully published and the **Compiler Errors** panel no longer has errors.
 Although no errors are present, we have 3 new warnings.
 Lets take a look at these ActionScript files to see what the warnings are telling us.
@@ -233,24 +237,51 @@ Use the Text > Font Embedding command to embed fonts.
 ```
 
 
-### Font Imports
+### Fixing the fonts
 Our menu has almost reached a functional state.
 The last task will be repairing the font resource linkage pointing to the shared `fonts_en.swf`.
-This fonts library contains all the fonts used by the game and is read by each menu at runtime.
+This fonts library contains all the fonts used by the game and is imported by each menu at runtime.
 
 The `TextField` types in our Flash document will not be able to render text properly without either re-linking the runtime shared library (RSL) information for `fonts_en.swf`, or by directly embedding fonts into our menu.
 We will be loading our fonts from `fonts_en.swf` as the vanilla menu does.
 
-**TODO:** Link to the font topic which describes the font embed values to use.
+**TODO: Link to the font topic which describes the font embed values to use.**
 
 Now that the fonts are setup correctly for runtime sharing we must tell each of our `TextField` instances to use this imported font instead of a system installed font.
 Your system installed fonts are not accessible by the game and will render as vertical rectangles if you do not change the font.
 
-
-### TextField Fonts
 There are two `TextField` types on this menu which need to be updated.
 - Symbol 4: `textField`, with `MessageBoxButtonEntry`, and `$MAIN_Font_Bold`
 - Symbol 13: `Body_tf`, with `MessageBoxMenu`, and `$MAIN_Font`
 
 Once you have updated the font used by each `TextField` you will have successfully restored the source files for the vanilla `MessageBoxMenu`.
 Well done!
+
+
+### Organizing the library objects.
+- Optionally: Rename each layer to match the stage instance name.
+- - If the layer holds a `Shape`, name the layer "Shape" or "Foo Shape".
+- - If the layer holds a `Graphic` name it "Graphic" or "Foo Graphic".
+- - Lock every layer you are not actively editing to avoid wild or dirty edits. Relock the layer when done editing.
+- Give all library symbols meaningful names. If a library object has class linkage, use that as the library object name.
+
+
+### Testing the menu in-game
+So far the objective has been to restore the source files for the `MessageBoxMenu` for the purpose of republishing a visually and functionally identical to the vanilla menu.
+This gives our project a starting point for customizations.
+A challenge for testing such a thing in game is that if our new `MessageBoxMenu.swf` is visually and functionally identical to the vanilla menu then its hard to tell if its working or not.
+
+To make the in-game test exciting, go to the root stage and add a new topmost layer.
+On the Adobe Animate **Tools** strip, select some of the shape, pencil, or brush tools and go crazy scribbling on top of the menu to make it obvious our version of the menu is running.
+Press the keyboard shortcut `ALT + SHIFT + F12` to publish your document.
+
+Start Fallout 4 and `coc` into your favorite test cell.
+Cause a `Message` to be displayed and see that our SWF created from the restored menu source is running.
+
+Now, without exiting Fallout 4, switch your focus back to Adobe Animate and delete the silly test layer.
+Republish your menu and switch your focus back to Fallout 4.
+When you re-show the `Message` via `MessageBoxMenu` we see that the game is capable of hot-reloading non-persisted game menus.
+Hot-reloading does not work on every menu such as the HUD menu.
+This is because persisted menus like the HUD are loaded once per game session, and then stay alive for the remainder.
+If you are developing a persisted menu then the SWF your started the game with will be baked into the remainder of that game session.
+This simply means you only need to restart the game to test changes to your menu, so no hot-reloading for these.
