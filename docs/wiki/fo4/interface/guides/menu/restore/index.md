@@ -22,15 +22,12 @@ This document provides a guide on restoring source files for the Fallout 4 game 
 
 The menus in Fallout 4 are each distributed as a published `*.swf` file that is playable by the game.
 Although FFDec provides a way to patch modifications directly into a published `*.swf` file, this is not the conventional way to edit such a file.
-
 A `*.swf` files starts its life as an `*.fla` file which is not playable by the game.
 
-~~We might want to do this if we want to add or modify the functionality or visuals or an existing menu for which you do not have the source files.~~
-~~To demonstrate the process we will restore and modify `MessageBoxMenu.swf` menu.~~
-
+We might want to do this if we want to add or modify the functionality or visuals or an existing menu for which you do not have the source files.
+To demonstrate the process we will restore and modify `MessageBoxMenu.swf` menu.
 Getting these source files requires decompiling `MessageBoxMenu.swf` into a `MessageBoxMenu.fla` and it's associated `*.as` files.
 For this task we will use a tool called [FFDec](/wiki/tooling/FFDec), also known as JPEXS Free Flash Decompiler.
-
 
 
 ### Decompiling with FFDec
