@@ -232,14 +232,25 @@ Fonts should be embedded for any text that may be edited at runtime, other than 
 Use the Text > Font Embedding command to embed fonts.
 ```
 
-Our final task for restoring the vanilla menu to a functional state is almost complete.
-The last task will be repairing the font resource linkage to the shared `fonts_en.swf`.
+
+### Font Imports
+Our menu has almost reached a functional state.
+The last task will be repairing the font resource linkage pointing to the shared `fonts_en.swf`.
 This fonts library contains all the fonts used by the game and is read by each menu at runtime.
 
 The `TextField` types in our Flash document will not be able to render text properly without either re-linking the runtime shared library (RSL) information for `fonts_en.swf`, or by directly embedding fonts into our menu.
 We will be loading our fonts from `fonts_en.swf` as the vanilla menu does.
 
+**TODO:** Link to the font topic which describes the font embed values to use.
+
+Now that the fonts are setup correctly for runtime sharing we must tell each of our `TextField` instances to use this imported font instead of a system installed font.
+Your system installed fonts are not accessible by the game and will render as vertical rectangles if you do not change the font.
 
 
-## WIP
-This document is a work in progress.
+### TextField Fonts
+There are two `TextField` types on this menu which need to be updated.
+- Symbol 4: `textField`, with `MessageBoxButtonEntry`, and `$MAIN_Font_Bold`
+- Symbol 13: `Body_tf`, with `MessageBoxMenu`, and `$MAIN_Font`
+
+Once you have updated the font used by each `TextField` you will have successfully restored the source files for the vanilla `MessageBoxMenu`.
+Well done!
