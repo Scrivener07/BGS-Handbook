@@ -300,6 +300,11 @@ This is because persisted menus like the HUD are loaded once per game session, a
 If you are developing a persisted menu then the SWF your started the game with will be baked into the remainder of that game session.
 This simply means you only need to restart the game to test changes to your menu, so no hot-reloading for these.
 
+A limitation for non-persistent menus is that if the game is loading your SWF as a loose file, then you cannot delete the menu and have it fallback to the BA2 archived version if you are overriding a another menu.
+The game will crash if you try to make it fallback from a loose file to an archived one when hot-reloading Flash assets.
+
+
+
 
 ### Using COC from the main menu
 If you use the developer console to execute the `COC` (center-on-cell) command from the Fallout 4 main menu, then take caution.
