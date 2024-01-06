@@ -12,7 +12,8 @@
 .nav_sidebar {
 	background-color: #f3f3f3;
 	padding: 20px;
-	width: 25%;
+	min-width: 150px;
+	max-width: 25%;
 }
 
 .nav_content {
