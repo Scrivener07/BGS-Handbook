@@ -12,6 +12,7 @@ These page provides links to software projects and documentation useful for work
 
 ## Adobe
 - [Creative Cloud Apps](https://helpx.adobe.com/download-install/kb/creative-cloud-apps-download.html)
+- <https://helpx.adobe.com/download-install/kb/downloaded-older-app.html>
 - <https://helpx.adobe.com/air/archived-docs-download.html>
 
 ## Adobe Animate

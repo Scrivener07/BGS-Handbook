@@ -2,35 +2,16 @@
 title: "Menu Restoration"
 ---
 
-
-#### Objectives
-- This example will be fully Xbox compatible.
-- Demonstrate the built in HTML text capability of Flash text fields.
-- Restore the `MessageBoxMenu` source files for editing in Adobe Animate.
-- Add custom rendering support for formatted `Message` forms.
-- - Simple markdown support for the body text of a `Message` form.
-- - Create a runtime shared emoji art library to support rendering emoji text tags. Such as writing `:smile:` in the body text of a `Message` form.
-
-#### Uses
-- [FFDec](/wiki/tooling/FFDec) (using v20.1.0)
-- Adobe Animate (CC 2024)
-- Emojis (<https://openmoji.org/>)
-
-
-## Guide
 This document provides a guide on restoring source files for the Fallout 4 game menus.
 
 The menus in Fallout 4 are each distributed as a published `*.swf` file that is playable by the game.
 Although FFDec provides a way to patch modifications directly into a published `*.swf` file, this is not the conventional way to edit such a file.
-
 A `*.swf` files starts its life as an `*.fla` file which is not playable by the game.
 
-~~We might want to do this if we want to add or modify the functionality or visuals or an existing menu for which you do not have the source files.~~
-~~To demonstrate the process we will restore and modify `MessageBoxMenu.swf` menu.~~
-
+We might want to do this if we want to add or modify the functionality or visuals or an existing menu for which you do not have the source files.
+To demonstrate the process we will restore and modify `MessageBoxMenu.swf` menu.
 Getting these source files requires decompiling `MessageBoxMenu.swf` into a `MessageBoxMenu.fla` and it's associated `*.as` files.
 For this task we will use a tool called [FFDec](/wiki/tooling/FFDec), also known as JPEXS Free Flash Decompiler.
-
 
 
 ### Decompiling with FFDec
@@ -302,6 +283,9 @@ Hot-reloading does not work on every menu such as the HUD menu.
 This is because persisted menus like the HUD are loaded once per game session, and then stay alive for the remainder.
 If you are developing a persisted menu then the SWF your started the game with will be baked into the remainder of that game session.
 This simply means you only need to restart the game to test changes to your menu, so no hot-reloading for these.
+
+A limitation for non-persistent menus is that if the game is loading your SWF as a loose file, then you cannot delete the menu and have it fallback to the BA2 archived version if you are overriding a another menu.
+The game will crash if you try to make it fallback from a loose file to an archived one when hot-reloading Flash assets.
 
 
 ### Using COC from the main menu
