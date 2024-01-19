@@ -43,7 +43,7 @@ Some of the fonts can be downloaded for free off the internet.
 #### Font Information
 The imported class name should be one of these class names.
 A leading `$` is a valid AS3 identifier.
-For example, we would use `$MAIN_Font` with an RSL path to `font_en.swf` as the font name instead of `Monofonto`.
+For example, we would use `$MAIN_Font` with an RSL path to `font_en.swf` as the font name.
 
 <https://github.com/F4CF/Interface/tree/master/Data/Interface/Source/Bethesda/Shared/Fonts>
 
@@ -231,7 +231,7 @@ I haven't inspected to see if other font properties are corrupted, but its a pos
 
 
 As a secondary issue, while using the Adobe Animate editor, it will constantly reset the chosen font of my TextFields to "Times New Roman".
-You can reproduce this my setting a TextField to use an RSL, then drag the textfield on the stage to move it slightly and the font is reset again.
+You can reproduce this by setting a TextField to use an RSL, then drag the textfield on the stage to move it slightly and the font is reset again.
 This agrees with the other posters here that have issues with non-RSL fonts.
 
 This is a major issue on large projects with lots of embedded fonts.

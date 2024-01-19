@@ -10,7 +10,6 @@ When the menu is started by the debug function it will display a single-button "
 
 
 #### Components
-
 - [ItemList](/wiki/fo4/interface/reference/components/ItemList.html)
 
 
@@ -45,15 +44,8 @@ MessageBoxMenu.BGSCodeObj
 
 
 #### Creation Kit
-
 - <https://falloutck.uesp.net/wiki/Message>
 - <https://falloutck.uesp.net/wiki/Message_Script>
 - <https://falloutck.uesp.net/wiki/MessageBox_-_Debug>
 - <https://falloutck.uesp.net/wiki/Text_Replacement>
 - <https://falloutck.uesp.net/wiki/Button_Tag_Replacement>
-
-
-#### Note on `initDisableInputCounter`
-
-This method is a frame enter event that occurs 4 times.
-This is used as a count down timer to disable list input after 4 *frames*.

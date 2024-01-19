@@ -53,6 +53,8 @@ The following table outlines the main components of the `MessageBoxMenu` class:
 
 - **initDisableInputCounter()**
   - A frame-based counter to delay input enabling for the list, ensuring it is not immediately selectable.
+This method handles a frame-enter event that occurs 4 times.
+This is used as a count down timer to disable list input after 4 *frames*.
 
 - **onItemPress(`Event`)**
   - Event handler for when a list item is pressed. It calls an external interface function for button press logic.
