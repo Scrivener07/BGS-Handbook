@@ -2,7 +2,7 @@
 title: "MessageBoxMenu"
 ---
 
-`MessageBoxMenu.as` is an ActionScript file that defines a custom menu interface for displaying a message box with an associated list of selectable options.
+`MessageBoxMenu.as` is an ActionScript file that defines a menu interface for displaying a message box with an associated list of selectable options.
 This menu is an extension of the `IMenu` class and contains various components such as a text field for the body message, a scrolling list for options, and movie clips for background elements.
 
 
