@@ -5,20 +5,6 @@ This section provides details for the font libraries used by Fallout 4.
 - [Font Forge](https://fontforge.github.io/en-US/) & [Font Forge - Common Problems](https://fontforge.github.io/problems.html)
 
 
-#### Font Symbol Mappings
-```
-map "$HandwrittenFont" = "Handwritten_Institute" Normal
-map "$MAIN_Font" = "Roboto Condensed" Normal
-map "$MAIN_Font_Bold" = "Roboto Condensed" Bold
-map "$Terminal_Font" = "Share-TechMono" Normal
-map "$Controller_Buttons" = "Controller  Buttons" Normal
-map "$Controller_Buttons_inverted" = "Controller  Buttons inverted" Normal
-map "$ConsoleFont" = "Arial" Normal
-map "$DebugTextFont" = "Consolas" Normal
-map "$BRODY" = "Brody" Bold
-map "$CClub_Font" = "Eurostile LT Std" Roman
-map "$CClub_Font_Bold" = "Eurostile LT Std" Demi
-```
 
 
 # Font Libraries
@@ -48,76 +34,34 @@ For example, we would use `$MAIN_Font` with an RSL path to `font_en.swf` as the 
 <https://github.com/F4CF/Interface/tree/master/Data/Interface/Source/Bethesda/Shared/Fonts>
 
 
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $MAIN_Font
-- - **Font Family:** Roboto Condensed
-- - **Font Style:** Normal
-<BR>
+# Fonts
+The fonts displayed in game are stored in a *Flash File* font library.
+These font libraries are shared between menus during runtime.
+The current font configuration can be found in `Fallout 4\Data\Interface\FontConfig.txt`.
 
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $MAIN_Font_Bold
-- - **Font Family:** Roboto Condensed
-- - **Font Style:** Bold
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $HandwrittenFont
-- - **Font Family:** Handwritten_Institute
-- - **Font Style:** Normal
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $BRODY
-- - **Font Family:** "Brody"
-- - **Font Style:** Bold
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $Terminal_Font
-- - **Font Family:** Share-TechMono
-- - **Font Style:** Normal
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $Controller_Buttons
-- - **Font Family:** Controller  Buttons
-- - **Font Style:** Normal
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $Controller_Buttons_inverted
-- - **Font Family:** Controller  Buttons inverted
-- - **Font Style:** Normal
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $CClub_Font
-- - **Font Family:** Eurostile LT Std Roman
-- - **Font Style:** None
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $CClub_Font_Bold
-- - **Font Family:** Eurostile Cyr Std Bold
-- - **Font Style:** None
-<BR>
-
-- **Library:** Interface\fonts_console.swf
-- - **Font Class:** $ConsoleFont
-- - **Font Family:** Arial
-- - **Font Style:** Normal
-<BR>
-
-- **Library:** Interface\fonts_console.swf
-- - **Font Class:** $DebugTextFont
-- - **Font Family:** Consolas
-- - **Font Style:** Normal
-<BR>
+| Class                          | Family                       | Style  | File                           |
+|--------------------------------|------------------------------|--------|--------------------------------|
+| `$MAIN_Font`                   | Roboto Condensed             | Normal | `Interface\fonts_en.swf`       |
+| `$MAIN_Font_Bold`              | Roboto Condensed             | Bold   | `Interface\fonts_en.swf`       |
+| `$HandwrittenFont`             | Handwritten_Institute        | Normal | `Interface\fonts_en.swf`       |
+| `$BRODY`                       | Brody                        | Bold   | `Interface\fonts_en.swf`       |
+| `$Terminal_Font`               | Share-TechMono               | Normal | `Interface\fonts_en.swf`       |
+| `$Controller_Buttons`          | Controller  Buttons          | Normal | `Interface\fonts_en.swf`       |
+| `$Controller_Buttons_inverted` | Controller  Buttons inverted | Normal | `Interface\fonts_en.swf`       |
+| `$CClub_Font`                  | Eurostile LT Std Roman       | Roman  | `Interface\fonts_en.swf`       |
+| `$CClub_Font_Bold`             | Eurostile Cyr Std Bold       | Demi   | `Interface\fonts_en.swf`       |
+| `$ConsoleFont`                 | Arial                        | Normal | `Interface\fonts_console.swf`  |
+| `$DebugTextFont`               | Consolas                     | Normal | `Interface\fonts_console.swf`  |
+| `$Terminal_Font`               | Share-TechMono               | Normal | `Programs\fonts_programs.swf`  |
+| `$AtomicCommand_HUD`           | vir2L_Medium                 |        | `Programs\fonts_programs.swf`  |
+| `$Grognak`                     | Press Start 2P               |        | `Programs\fonts_programs.swf`  |
+| `$PipFallHUD`                  | vir2L_Medium                 |        | `Programs\fonts_programs.swf`  |
+| `$PipFallSplashScreen`         | Adventure                    |        | `Programs\fonts_programs.swf`  |
 
 
 # Missing Font Error
 An example of a missing font error.
-The errors are logged into the F4SE.log file.
+The errors are logged into the `F4SE.log` file.
 ```
 Missing font "Times New Roman" in ".root1.Menu_mc.CreditsContainer.instance18". Search log:
    Searching for font: "Times New Roman" [Device]

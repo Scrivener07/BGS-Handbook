@@ -34,11 +34,11 @@ Some text fields support a variety of **Markup** tags used with formatting.
 <b><i><u>This is bold, italic, and underlined.</u></i></b>
 <BR>These are some colors I like.
 <ul>
-<li>Black</li>
-<li>White</li>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
+    <li>Black</li>
+    <li>White</li>
+    <li>Red</li>
+    <li>Green</li>
+    <li>Blue</li>
 </ul>
 [pagebreak]
 <!--A new page has starts here-->
@@ -62,29 +62,52 @@ Some text fields support a variety of **Markup** tags used with formatting.
 
 
 ## Comment Tag
-- Tag: `&lt;!--Comment text--&gt;`
 Comments tell the renderer not display the text wrapped within the tags while still retaining the text in the editor.
+
+Tag:
+```html
+&lt;!--Comment text--&gt;
+```
 
 
 ## Bold Tag
-- Tag: `<b></b>`
 Text surrounded by bold tags will be **bolded**.
+
+Tag:
+```html
+<b></b>
+```
 
 
 ## Italic Tag
-- Tag: `<i></i>`
 Text surrounded by italics tags will be *italicized*.
+
+Tag:
+```html
+<i></i>
+```
 
 
 ## Underline Tag
-- Tag: `<u></u>`
 Text surrounded by underline tags will be `<u>underlined</u>`.
+
+Tag:
+```html
+<u></u>
+```
 
 
 ## List Tag
-- Tag: `<ul><li>ITEM 1</li><li>ITEM 2</li></ul>`
 Creates list items with an empty square for the icon.
 Each list item is indented and separated by an empty line.
+
+Tag:
+```html
+<ul>
+    <li>ITEM 1</li>
+    <li>ITEM 2</li>
+</ul>
+```
 
 Example:
 ```html
@@ -97,60 +120,99 @@ Example:
 
 
 ## Line-Break Tag
-- Tag: `<br>`
 Breaks the text to the next line.
 Strictly speaking, this tag isn't necessary.
 You can just as easily add blank lines to the book text.
 
+Tag:
+```html
+<br>
+```
 
-## Page-Break
-- Tag: `[pagebreak]`
+
+## Page-Break Tag
 Breaks to the next page.
 Must be on its own line.
 Text automatically breaks to the next page once it reaches the end.
 
-Note: images do not, so if you notice your images running off the edge of the page, manually place a page-break or reduce the size of your image.
+Images do not automatically break to the next page, so if you notice your images running off the edge of the page, manually place a page-break or reduce the size of your image.
+
+Tag:
+```md
+[pagebreak]
+```
+
 
 
 
 ## Paragraph Tag
-- Tag: `<p>`
 Aligns and delineates a block of text as a paragraph.
 
-**Alignment**
-- Tag: `<p align='center'>`
+Tag:
+```html
+<p>
+```
+
+#### **Alignment**
 Aligns the surrounded text.  Valid values are 'left', 'right', 'justify', 'center'.
 
-Note: If you want to place an image within some text so that it wraps around it, the text containing the image needs to be within paragraph tags.
+If you want to place an image within some text so that it wraps around it, the text containing the image needs to be within paragraph tags.
 
+Tag:
+```html
+<p align='center'>
+```
 
 
 
 
 ## Font Tags
-- Tag: `<font>`
 Changes the font attributes of the surrounded text.
 
-**Color**
-- Tag: `<font color='#FFFFFF'></font>`
+Tag:
+```html
+<font>
+```
+
+#### **Color**
 Changes the font's color.
 
-**Face**
-- Tag: `<font face='$HandwrittenFont'></font>`
-Changes the typeface of the font. See the fonts section for valid typeface names.
+Tag:
+```html
+<font color='#FFFFFF'></font>
+```
 
-**Point Size**
-- Tag: `<font size='20'></font>`
-Changes the font size. See below for the line lengths you can accommodate using different font sizes.
+#### **Face**
+Changes the typeface of the font.
+See the fonts section for valid typeface names.
 
-**Alpha**
-- Tag: `<font alpha='#FF'></font>`
-Changes the font's transparency. Two-digit hexadecimal values from `'#00'` (fully transparent) through `'#FF'` (fully opaque) are supported.
+Tag:
+```html
+<font face='$HandwrittenFont'></font>
+```
+
+#### **Point Size**
+Changes the font size.
+See below for the line lengths you can accommodate using different font sizes.
+
+Tag:
+```html
+<font size='20'></font>
+```
+
+#### **Alpha**
+Changes the font's transparency.
+Two-digit hexadecimal values from `'#00'` (fully transparent) through `'#FF'` (fully opaque) are supported.
+
+Tag:
+```html
+<font alpha='#FF'></font>
+```
 
 
 
 
-## Image tags
+## Image Tags
 Places an image on the page.
 
 Tag:
@@ -187,72 +249,6 @@ Tag:
 ```
 
 
-# Fonts
-The fonts displayed in game are stored in a [[Flash File]] font library.
-These font libraries are shared between menus during runtime.
-The current font configuration can be found in ''`Fallout 4\Data\Interface\FontConfig.txt`''
-
-#### **Library:** Interface\fonts_en.swf
-Example of the main Fallout 4 font
-- **Font Class:** $MAIN_Font
-- **Font Family:** Roboto Condensed
-- **Font Style:** Normal
-
-#### **Library:** Interface\fonts_en.swf
-Example of the main Fallout 4 font, bolded.
-- **Font Class:** $MAIN_Font_Bold
-- **Font Family:** Roboto Condensed
-- **Font Style:** Bold
-
-#### **Library:** Interface\fonts_en.swf
-Example of the handwritten font in Fallout 4
-- **Font Class:** $HandwrittenFont
-- **Font Family:** Handwritten_Institute
-- **Font Style:** Normal
-
-#### **Library:** Interface\fonts_en.swf
-Example of the Brody font in Fallout 4.
-- **Font Class:** $BRODY
-- **Font Family:** "Brody"
-- **Font Style:** Bold
-
-#### **Library:** Interface\fonts_en.swf
-Example of the terminal font in Fallout 4.
-- **Font Class:** $Terminal_Font
-- **Font Family:** Share-TechMono
-- **Font Style:** Normal
-
-#### **Library:** Interface\fonts_en.swf
-- **Font Class:** $Controller_Buttons
-- **Font Family:** Controller  Buttons
-- **Font Style:** Normal
-
-#### **Library:** Interface\fonts_en.swf
-- **Font Class:** $Controller_Buttons_inverted
-- **Font Family:** Controller  Buttons inverted
-- **Font Style:** Normal
-
-#### **Library:** Interface\fonts_en.swf
-- **Font Class:** $CClub_Font
-- **Font Family:** Eurostile LT Std Roman
-- **Font Style:** None
-
-#### **Library:** Interface\fonts_en.swf
-- **Font Class:** $CClub_Font_Bold
-- **Font Family:** Eurostile Cyr Std Bold
-- **Font Style:** None
-
-#### **Library:** Interface\fonts_console.swf
-Example of the console font in Fallout 4
-- **Font Class:** $ConsoleFont
-- **Font Family:** Arial
-- **Font Style:** Normal
-
-#### **Library:** Interface\fonts_console.swf
-Example of the console debug font in Fallout 4
-- **Font Class:** $DebugTextFont
-- **Font Family:** Consolas
-- **Font Style:** Normal
 
 
 # Sample Book Text
