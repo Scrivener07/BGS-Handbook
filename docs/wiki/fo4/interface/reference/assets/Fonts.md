@@ -43,7 +43,8 @@ Because Adobe Animate cannot show previews for missing fonts, a substitute font 
 Fallout 4 on the other hand can only be to use embedded fonts.
 If you want the editor preview to match the game view of fonts, you must install the game fonts to your OS.
 
-The system installable game fonts are an extractable SWF resource using FFDec.
+The system installable game fonts can be exported from each `font*.swf` using FFDec.
+Some of these have been exported and made available here for download.
 
 Download: <https://github.com/F4CF/Interface/tree/master/Data/Interface/Source/Bethesda/Shared/Fonts/Resources>
 
@@ -51,24 +52,19 @@ Download: <https://github.com/F4CF/Interface/tree/master/Data/Interface/Source/B
 - Arial: <https://docs.microsoft.com/en-us/typography/font-list/arial>
 - Courier New: <https://docs.microsoft.com/en-us/typography/font-list/courier-new>
 - Consolas: <https://learn.microsoft.com/en-us/typography/font-list/consolas>
-- Brody: <>
+- Brody:
 - Share-TechMono: <https://fonts.google.com/specimen/Share+Tech+Mono>
-- Handwritten_Institute: <>
-- Controller  Buttons: <>
-- Controller  Buttons inverted: <>
+- Handwritten_Institute:
+- Controller  Buttons:
+- Controller  Buttons inverted:
 - Eurostile LT Std Roman: <https://learn.microsoft.com/en-us/typography/font-list/eurostile>
 - Eurostile Cyr Std Bold: <https://learn.microsoft.com/en-us/typography/font-list/eurostile>
 - Press Start 2P: <https://fonts.google.com/specimen/Press+Start+2P>, <https://github.com/codeman38/PressStart2P>
 - Adventure by Neale Davidson: <https://www.pixelsagas.com/?download=adventure>
-- vir2L_Medium: <>, <https://en.uesp.net/wiki/General:Oblivion_Mobile_Interview>
+- vir2L_Medium: <https://en.uesp.net/wiki/General:Oblivion_Mobile_Interview>
 
 
-#### Adobe Animate JSFL
-There is an Adobe Animate IDE script (jsfl) for tracing diagnostic information about fonts to the editor Output window.
 
-Download: <https://github.com/F4CF/Interface/blob/master/--Tools/Adobe%20Animate/Configuration/Commands/Scaleform/Report%20-%20Textfield%20Font%20Configuration.jsfl>
-
-Run: On the Adobe Animate main tool bar, select *Commands > Run Command...* and choose the `Report - Textfield Font Configuration.jsfl` script.
 
 
 ## Flash Fonts
@@ -76,7 +72,7 @@ There are three methods for loading fonts.
 The last option is how the game works, and is preferable.
 
 #### **Font: Embedded**
-One is to bake the font directly into your swf, by just making a new font in your library window.
+One is to embed the font directly into your swf by creating a new font symbol in the Adobe Animate library window.
 
 #### **Font: Authortime Shared Library (ASL)**
 To have your fonts loaded from a separate **FLA** file as a library with ASL (authortime shared library).
@@ -85,6 +81,17 @@ In this mode, the FLA is statically baked into the user assembly (SWF).
 #### **Font: Runtime Shared Library (RSL)**
 To have your fonts loaded from a separate **FLA** file as a library with RSL (runtime shared library).
 In this mode, the font library produces its own SWF, and is runtime loaded by the user SWF when the menu loads.
+
+
+
+## Adobe Animate JSFL
+There is an Adobe Animate IDE script (jsfl) for tracing diagnostic information about fonts to the editor Output window.
+
+Download: <https://github.com/F4CF/Interface/blob/master/--Tools/Adobe%20Animate/Configuration/Commands/Scaleform/Report%20-%20Textfield%20Font%20Configuration.jsfl>
+
+Run: On the Adobe Animate main tool bar, select *Commands > Run Command...* and choose the `Report - Textfield Font Configuration.jsfl` script.
+
+
 
 
 ## Common Problems
@@ -110,7 +117,6 @@ Missing font "Times New Roman" in ".root1.Menu_mc.CreditsContainer.instance18". 
          Registered fonts: "Times New Roman" not found.
    Font not found.
 ```
-
 
 #### Font was not setup correctly on the textbox
 Another problem might be that the textbox itself is not linked to the correct version of the font.
