@@ -1,123 +1,106 @@
-# Fonts
-This section provides details for the font libraries used by Fallout 4.
+---
+title: "Font"
+---
 
-### Tools
-- [Font Forge](https://fontforge.github.io/en-US/) & [Font Forge - Common Problems](https://fontforge.github.io/problems.html)
+This section provides details about the font libraries used in Fallout 4.
 
-
-#### Font Symbol Mappings
-```
-map "$HandwrittenFont" = "Handwritten_Institute" Normal
-map "$MAIN_Font" = "Roboto Condensed" Normal
-map "$MAIN_Font_Bold" = "Roboto Condensed" Bold
-map "$Terminal_Font" = "Share-TechMono" Normal
-map "$Controller_Buttons" = "Controller  Buttons" Normal
-map "$Controller_Buttons_inverted" = "Controller  Buttons inverted" Normal
-map "$ConsoleFont" = "Arial" Normal
-map "$DebugTextFont" = "Consolas" Normal
-map "$BRODY" = "Brody" Bold
-map "$CClub_Font" = "Eurostile LT Std" Roman
-map "$CClub_Font_Bold" = "Eurostile LT Std" Demi
-```
-
-
-# Font Libraries
-The fonts displayed in game are stored in a font library.
+The fonts displayed in game are stored in a *Flash File* font library.
 These font libraries are shared between menus during runtime.
-The current font configuration can be found in `Fallout 4\Data\Interface\FontConfig.txt`
+The current font configuration can be found in `Fallout 4\Data\Interface\FontConfig.txt`.
 
-#### True Type Fonts
-Some of the fonts can be downloaded for free off the internet.
-- [Arial](https://docs.microsoft.com/en-us/typography/font-list/arial)
-- [Courier New](https://docs.microsoft.com/en-us/typography/font-list/courier-new)
-- [Roboto Condensed](https://fonts.google.com/specimen/Roboto+Condensed)
-- - `RobotoCondensed-Regular.ttf`
-- - `RobotoCondensed-Bold.ttf`
-
-#### Embedded Fonts
-- `Adventure.ttf`
-- `Press Start 2P.ttf`
-- `vir2L_Medium.ttf`
-
-
-#### Font Information
 The imported class name should be one of these class names.
 A leading `$` is a valid AS3 identifier.
-For example, we would use `$MAIN_Font` with an RSL path to `font_en.swf` as the font name.
-
-<https://github.com/F4CF/Interface/tree/master/Data/Interface/Source/Bethesda/Shared/Fonts>
+For example, we would use `$MAIN_Font` as the font name with an RSL path to `font_en.swf`.
 
 
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $MAIN_Font
-- - **Font Family:** Roboto Condensed
-- - **Font Style:** Normal
-<BR>
+### Font Mappings
 
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $MAIN_Font_Bold
-- - **Font Family:** Roboto Condensed
-- - **Font Style:** Bold
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $HandwrittenFont
-- - **Font Family:** Handwritten_Institute
-- - **Font Style:** Normal
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $BRODY
-- - **Font Family:** "Brody"
-- - **Font Style:** Bold
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $Terminal_Font
-- - **Font Family:** Share-TechMono
-- - **Font Style:** Normal
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $Controller_Buttons
-- - **Font Family:** Controller  Buttons
-- - **Font Style:** Normal
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $Controller_Buttons_inverted
-- - **Font Family:** Controller  Buttons inverted
-- - **Font Style:** Normal
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $CClub_Font
-- - **Font Family:** Eurostile LT Std Roman
-- - **Font Style:** None
-<BR>
-
-- **Library:** Interface\fonts_en.swf
-- - **Font Class:** $CClub_Font_Bold
-- - **Font Family:** Eurostile Cyr Std Bold
-- - **Font Style:** None
-<BR>
-
-- **Library:** Interface\fonts_console.swf
-- - **Font Class:** $ConsoleFont
-- - **Font Family:** Arial
-- - **Font Style:** Normal
-<BR>
-
-- **Library:** Interface\fonts_console.swf
-- - **Font Class:** $DebugTextFont
-- - **Font Family:** Consolas
-- - **Font Style:** Normal
-<BR>
+| Class                          | Family                       | Style  | Library                        |
+|--------------------------------|------------------------------|--------|--------------------------------|
+| `$ConsoleFont`                 | Arial                        | Normal | `Interface\fonts_console.swf`  |
+| `$DebugTextFont`               | Consolas                     | Normal | `Interface\fonts_console.swf`  |
+| `$MAIN_Font`                   | Roboto Condensed             | Normal | `Interface\fonts_en.swf`       |
+| `$MAIN_Font_Bold`              | Roboto Condensed             | Bold   | `Interface\fonts_en.swf`       |
+| `$HandwrittenFont`             | Handwritten_Institute        | Normal | `Interface\fonts_en.swf`       |
+| `$BRODY`                       | Brody                        | Bold   | `Interface\fonts_en.swf`       |
+| `$Terminal_Font`               | Share-TechMono               | Normal | `Interface\fonts_en.swf`       |
+| `$Controller_Buttons`          | Controller  Buttons          | Normal | `Interface\fonts_en.swf`       |
+| `$Controller_Buttons_inverted` | Controller  Buttons inverted | Normal | `Interface\fonts_en.swf`       |
+| `$CClub_Font`                  | Eurostile LT Std Roman       | Roman  | `Interface\fonts_en.swf`       |
+| `$CClub_Font_Bold`             | Eurostile Cyr Std Bold       | Demi   | `Interface\fonts_en.swf`       |
+| `$Terminal_Font`               | Share-TechMono               | Normal | `Programs\fonts_programs.swf`  |
+| `$Grognak`                     | Press Start 2P               |        | `Programs\fonts_programs.swf`  |
+| `$AtomicCommand_HUD`           | vir2L_Medium                 |        | `Programs\fonts_programs.swf`  |
+| `$PipFallHUD`                  | vir2L_Medium                 |        | `Programs\fonts_programs.swf`  |
+| `$PipFallSplashScreen`         | Adventure                    |        | `Programs\fonts_programs.swf`  |
 
 
-# Missing Font Error
+#### Installing Fonts
+If you are working with Adobe Animate then be sure to install the game fonts to your operating system.
+Adobe Animate can only show previews for fonts installed to your operating system.
+Because Adobe Animate cannot show previews for missing fonts, a substitute font is prompted for when you open some files.
+
+Fallout 4 on the other hand can only be to use embedded fonts.
+If you want the editor preview to match the game view of fonts, you must install the game fonts to your OS.
+
+The system installable game fonts can be exported from each `font*.swf` using FFDec.
+Some of these have been exported and made available here for download.
+
+Download: <https://github.com/F4CF/Interface/tree/master/Data/Interface/Source/Bethesda/Shared/Fonts/Resources>
+
+- Roboto Condensed: <https://fonts.google.com/specimen/Roboto+Condensed>
+- Arial: <https://docs.microsoft.com/en-us/typography/font-list/arial>
+- Courier New: <https://docs.microsoft.com/en-us/typography/font-list/courier-new>
+- Consolas: <https://learn.microsoft.com/en-us/typography/font-list/consolas>
+- Brody:
+- Share-TechMono: <https://fonts.google.com/specimen/Share+Tech+Mono>
+- Handwritten_Institute:
+- Controller  Buttons:
+- Controller  Buttons inverted:
+- Eurostile LT Std Roman: <https://learn.microsoft.com/en-us/typography/font-list/eurostile>
+- Eurostile Cyr Std Bold: <https://learn.microsoft.com/en-us/typography/font-list/eurostile>
+- Press Start 2P: <https://fonts.google.com/specimen/Press+Start+2P>, <https://github.com/codeman38/PressStart2P>
+- Adventure by Neale Davidson: <https://www.pixelsagas.com/?download=adventure>
+- vir2L_Medium: <https://en.uesp.net/wiki/General:Oblivion_Mobile_Interview>
+
+
+
+
+
+## Flash Fonts
+There are three methods for loading fonts.
+The last option is how the game works, and is preferable.
+
+#### **Font: Embedded**
+One is to embed the font directly into your swf by creating a new font symbol in the Adobe Animate library window.
+
+#### **Font: Authortime Shared Library (ASL)**
+To have your fonts loaded from a separate **FLA** file as a library with ASL (authortime shared library).
+In this mode, the FLA is statically baked into the user assembly (SWF).
+
+#### **Font: Runtime Shared Library (RSL)**
+To have your fonts loaded from a separate **FLA** file as a library with RSL (runtime shared library).
+In this mode, the font library produces its own SWF, and is runtime loaded by the user SWF when the menu loads.
+
+
+
+## Adobe Animate JSFL
+There is an Adobe Animate IDE script (jsfl) for tracing diagnostic information about fonts to the editor Output window.
+
+Download: <https://github.com/F4CF/Interface/blob/master/--Tools/Adobe%20Animate/Configuration/Commands/Scaleform/Report%20-%20Textfield%20Font%20Configuration.jsfl>
+
+Run: On the Adobe Animate main tool bar, select *Commands > Run Command...* and choose the `Report - Textfield Font Configuration.jsfl` script.
+
+
+
+
+## Common Problems
+A cause of the problem might be that the relative RSL path is not correct.
+
+
+#### Missing Font Runtime Error
 An example of a missing font error.
-The errors are logged into the F4SE.log file.
+The errors are logged into the `F4SE.log` file.
 ```
 Missing font "Times New Roman" in ".root1.Menu_mc.CreditsContainer.instance18". Search log:
    Searching for font: "Times New Roman" [Device]
@@ -134,38 +117,6 @@ Missing font "Times New Roman" in ".root1.Menu_mc.CreditsContainer.instance18". 
          Registered fonts: "Times New Roman" not found.
    Font not found.
 ```
-
-
-# Flash: Fonts
-There are three methods for loading fonts.
-The last option is how the game works, and is preferable.
-
-#### **Font: Embedded**
-One is to bake the font directly into your swf, by just making a new font in your library window.
-
-#### **Font: Authortime Shared Library (ASL)**
-To have your fonts loaded from a separate **FLA** file as a library with ASL (authortime shared library).
-In this mode, the FLA is statically baked into the user assembly (SWF).
-
-#### **Font: Runtime Shared Library (RSL)**
-To have your fonts loaded from a separate **FLA** file as a library with RSL (runtime shared library).
-In this mode, the font library produces its own SWF, and is runtime loaded by the user SWF when the menu loads.
-
-
-
-### OS Installed Editor Fonts
-Keep in mind that the *editor view* usings the fonts installed to your OS.
-The game on the other hand will only be able to use embedded or linked fonts.
-The editor cannot always determine the runtime loaded font as a preview in the editor, so a substitute font is prompted for when you open some files, as you may have seen.
-If you want the editor preview to match the game view of fonts, you must install the game fonts to your OS. This is easy as system installable fonts are an extractable resource from SWF.
-
-These are the actual fonts which can be installed to your OS.
-- <https://github.com/F4CF/Interface/tree/master/Data/Interface/Source/Bethesda/Shared/Fonts/Resources>
-
-
-
-### Common Problems
-A cause of the problem might be that the relative RSL path is not correct.
 
 #### Font was not setup correctly on the textbox
 Another problem might be that the textbox itself is not linked to the correct version of the font.
@@ -184,13 +135,7 @@ Another problem might be that the font information was not entered into the Flas
 - possibly the font set of available characters was nto enabled
 
 
-
-### Diagnostics Editor Scripts
-I have an IDE script for tracing diagnostic info about fonts to the editor Output window if it turns out to be a textbox issue.
-
-
-
-# Adobe Font Issue
+## Adobe Font Issue
 I am running Windows 10 with the latest Adobe Animate.
 I do not have my font library SWF's embedded fonts installed to my Windows operation system.
 
@@ -237,6 +182,10 @@ This agrees with the other posters here that have issues with non-RSL fonts.
 This is a major issue on large projects with lots of embedded fonts.
 
 
-### Solution
+#### Solution
 It appears that this problem can be avoided by having the fonts in question installed to your operating system.
 Though the controller button inverted font has been problematic.
+
+
+## Tools
+- [Font Forge](https://fontforge.github.io/en-US/) & [Font Forge - Common Problems](https://fontforge.github.io/problems.html)

@@ -1,0 +1,75 @@
+[
+  {
+    "name": "Actor",
+    "type": "NPC_",
+    "script": "ActorBase",
+    "script_reference": "Actor",
+    "icon": "/assets/object_icon/NPC_.png",
+    "wiki": "https://falloutck.uesp.net/wiki/Quest",
+    "category": "Character"
+  },
+  {
+    "name": "Actor Action",
+    "type": "AACT",
+    "script": null,
+    "script_reference": null,
+    "icon": "/assets/object_icon/AACT.png",
+    "wiki": "https://falloutck.uesp.net/wiki/Actor_Action"
+  },
+  {
+    "name": "Actor Value",
+    "type": "AVIF",
+    "script": null,
+    "script_reference": null,
+    "icon": "/assets/object_icon/default.png",
+    "wiki": "https://falloutck.uesp.net/wiki/Actor_Value"
+  },
+  {
+    "name": "Activator",
+    "type": "ACTI",
+    "script": "Activator",
+    "script_reference": null,
+    "icon": "/assets/object_icon/default.png",
+    "wiki": "https://falloutck.uesp.net/wiki/Activator"
+  },
+  {
+    "name": "Quest",
+    "type": "QUST",
+    "script": "Quest",
+    "script_reference": null,
+    "icon": "/assets/object_icon/QUST.png",
+    "wiki": "https://falloutck.uesp.net/wiki/Quest"
+  },
+  {
+    "name": "Global",
+    "type": "GLOB",
+    "script": "GlobalVariable",
+    "script_reference": null,
+    "icon": "/assets/object_icon/GLOB.png",
+    "wiki": "https://falloutck.uesp.net/wiki/Global"
+  },
+  {
+    "name": "Message",
+    "type": "MESG",
+    "script": "Message",
+    "script_reference": null,
+    "icon": "/assets/object_icon/MESG.png",
+    "wiki": "https://falloutck.uesp.net/wiki/Message"
+  },
+  {
+    "name": "Book",
+    "type": "BOOK",
+    "script": "Book",
+    "script_reference": "ObjectReference",
+    "icon": "/assets/object_icon/BOOK.png",
+    "wiki": "https://falloutck.uesp.net/wiki/Book"
+  },
+  {
+    "name": "Terminal",
+    "type": "TERM",
+    "script": "Terminal",
+    "script_reference": "ObjectReference",
+    "icon": "/assets/object_icon/default.png",
+    "wiki": "https://falloutck.uesp.net/wiki/Terminal"
+  }
+]

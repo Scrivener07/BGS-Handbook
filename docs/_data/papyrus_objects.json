@@ -1,0 +1,68 @@
+[
+  {
+    "name": "ScriptObject",
+    "object": null,
+    "extends": "ScriptObject",
+    "wiki": "https://falloutck.uesp.net/wiki/ScriptObject_Script"
+  },
+  {
+    "name": "Form",
+    "object": null,
+    "extends": "ScriptObject"
+  },
+  {
+    "name": "ObjectReference",
+    "object": "Reference",
+    "extends": "Form"
+  },
+  {
+    "name": "Actor",
+    "object": "Actor",
+    "extends": "ObjectReference"
+  },
+  {
+    "name": "ActorBase",
+    "object": null,
+    "extends": "Form"
+  },
+  {
+    "name": "ActorValue",
+    "object": null,
+    "extends": "Form"
+  },
+  {
+    "name": "Action",
+    "object": null,
+    "extends": "Form"
+  },
+  {
+    "name": "Activator",
+    "object": "Activator",
+    "extends": "Form"
+  },
+  {
+    "name": "Quest",
+    "object": "Quest",
+    "extends": "Form"
+  },
+  {
+    "name": "GlobalVariable",
+    "object": "Global",
+    "extends": "Form"
+  },
+  {
+    "name": "Message",
+    "object": "Message",
+    "extends": "ScriptObject"
+  },
+  {
+    "name": "Book",
+    "object": "Book",
+    "extends": "Form"
+  },
+  {
+    "name": "Terminal",
+    "object": "Terminal",
+    "extends": "Form"
+  }
+]
