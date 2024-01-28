@@ -1,0 +1,52 @@
+[
+  {
+    "name": "ScriptObject",
+    "object": null,
+    "extends": "ScriptObject"
+  },
+  {
+    "name": "Form",
+    "object": null,
+    "extends": "ScriptObject"
+  },
+  {
+    "name": "ObjectReference",
+    "object": "Reference",
+    "extends": "Form"
+  },
+  {
+    "name": "Actor",
+    "object": "Actor",
+    "extends": "ObjectReference"
+  },
+  {
+    "name": "ActorBase",
+    "object": null,
+    "extends": "Form"
+  },
+  {
+    "name": "ActorValue",
+    "object": null,
+    "extends": "Form"
+  },
+  {
+    "name": "Action",
+    "object": null,
+    "extends": "Form"
+  },
+  {
+    "name": "Activator",
+    "object": "Activator",
+    "extends": "Form"
+  },
+  {
+    "name": "Message",
+    "object": null,
+    "extends": "ScriptObject"
+  },
+  {
+    "name": "Terminal",
+    "object": null,
+    "extends": "Form"
+  }
+]
