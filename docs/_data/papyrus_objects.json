@@ -2,7 +2,8 @@
   {
     "name": "ScriptObject",
     "object": null,
-    "extends": "ScriptObject"
+    "extends": "ScriptObject",
+    "wiki": "https://falloutck.uesp.net/wiki/ScriptObject_Script"
   },
   {
     "name": "Form",
@@ -40,13 +41,28 @@
     "extends": "Form"
   },
   {
+    "name": "Quest",
+    "object": "Quest",
+    "extends": "Form"
+  },
+  {
+    "name": "GlobalVariable",
+    "object": "Global",
+    "extends": "Form"
+  },
+  {
     "name": "Message",
-    "object": null,
+    "object": "Message",
     "extends": "ScriptObject"
   },
   {
+    "name": "Book",
+    "object": "Book",
+    "extends": "Form"
+  },
+  {
     "name": "Terminal",
-    "object": null,
+    "object": "Terminal",
     "extends": "Form"
   }
 ]

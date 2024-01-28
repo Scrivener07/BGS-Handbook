@@ -2,15 +2,7 @@
 title: "Site"
 ---
 
-#### Site
-- [Theme](theme)
-- [Layout Default](layout-default)
-- [Layout Home](layout-home)
-- [Layout Page](layout-page)
-- [Layout Post](layout-post)
-- [Layout Wiki](layout-wiki)
-
-# Site Information
+## Site Information
 This is the base Jekyll theme.
 You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
@@ -26,7 +18,7 @@ You can find the source code for Jekyll at GitHub:
 [jekyll-organization]: https://github.com/jekyll
 
 
-# Theme Information
+## Theme Information
 This project uses the [Minima](https://github.com/jekyll/minima) theme.
 - **Source:** https://github.com/jekyll/minima
 - - **Version:** https://github.com/jekyll/minima/tree/v2.5.1/
@@ -39,3 +31,12 @@ This project uses the [Minima](https://github.com/jekyll/minima) theme.
 This project uses components of Michael Currin's *Nested Jekyll Menus*.
 - Source: https://github.com/MichaelCurrin/nested-jekyll-menus/
 - Found via: https://talk.jekyllrb.com/t/how-to-list-subpages/5051/4
+
+
+## Site
+<b>Debug Pages ({{ site.site_debug.size }})</b>
+<ul>
+{%- for value in site.site_debug -%}
+  <li><a href="{{ value.url }}">{{ value.title}}</a></li>
+{%- endfor -%}
+</ul>

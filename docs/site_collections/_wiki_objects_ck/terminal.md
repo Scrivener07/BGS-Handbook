@@ -1,10 +1,12 @@
 ---
 title: "Terminal"
-wiki: https://falloutck.uesp.net/wiki/Terminal
+object_wiki: https://falloutck.uesp.net/wiki/Terminal
 object_type: TERM
 object_script: Terminal
 object_reference: true
 ---
+
+{% include code/ck-object-details.html %}
 
 ### See Also
 - [TerminalMenu](/wiki/fo4/interface/reference/menus/terminal)

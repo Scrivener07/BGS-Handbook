@@ -5,7 +5,8 @@
     "script": "ActorBase",
     "script_reference": "Actor",
     "icon": "/assets/object_icon/NPC_.png",
-    "wiki": "https://falloutck.uesp.net/wiki/Quest"
+    "wiki": "https://falloutck.uesp.net/wiki/Quest",
+    "category": "Character"
   },
   {
     "name": "Actor Action",

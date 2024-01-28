@@ -4,11 +4,11 @@ title: "Text"
 
 ### See Also
 - [Fonts](/wiki/fo4/interface/reference/assets/Fonts)
-- [Message](/wiki/fo4/creation-kit/objects/message)
+- [Message](/wiki_objects_ck/message)
 - [MessageBoxMenu](/wiki/fo4/interface/reference/menus/messagebox)
-- [Book](/wiki/fo4/creation-kit/objects/book)
+- [Book](/wiki_objects_ck/book)
 - [BookMenu](/wiki/fo4/interface/reference/menus/book)
-- [Terminal](/wiki/fo4/creation-kit/objects/terminal)
+- [Terminal](/wiki_objects_ck/terminal)
 - [TerminalMenu](/wiki/fo4/interface/reference/menus/terminal)
 
 
@@ -66,13 +66,6 @@ Scaleform supports HTML text that be used to apply formatting to specific parts 
 <FONT FACE="Title" SIZE="14" COLOR="#2010ff" LETTERSPACING="0" KERNING="0">dolor sit amet.</FONT>
 </P>
 ```
-
-
-
-
-
-
-
 
 
 ### Comment Tag
@@ -189,13 +182,6 @@ List items are used by surrounding text with an opening `<li>` tag and a closing
 ```
 
 
-
-
-
-
-
-
-
 ### Font Tags
 Changes the font attributes of the surrounded text.
 
@@ -303,28 +289,6 @@ For other cases you should make your strings more unique if possible.
 - Localized strings, internally `BGSLocalizedString`, are also vulnerable to string pool limitations.
 - [UI Script](https://falloutck.uesp.net/wiki/UI_Script) function calls to Scaleform are affected by this string casing limitation.
 - [Initialization File](https://falloutck.uesp.net/wiki/Initialization_File) related function calls are affected by this string casing limitation.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
