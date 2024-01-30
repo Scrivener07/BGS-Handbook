@@ -30,7 +30,7 @@ title: "Script Objects"
 
 <https://falloutck.uesp.net/wiki/Category:Script_Objects>
 
-See also the [Creation Kit Objects](/wiki/fo4/creation-kit/objects) page.
+See also the [Creation Kit Objects]({{ site.baseurl }}{% link _wiki/fo4/creation-kit/objects.md %}) page.
 
 <section>
 {%- for value in site.data.papyrus_objects -%}

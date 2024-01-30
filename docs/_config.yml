@@ -70,6 +70,9 @@ collections:
   site_debug:
     output: true
     permalink: /site/:name
+  wiki:
+    output: true
+    permalink: /:collection/:name
   wiki_objects_ck:
     output: true
     permalink: /:collection/:name
@@ -93,6 +96,12 @@ defaults:
     scope:
       path: "wiki"
       type: "pages"
+    values:
+      layout: "site/wiki"
+  -
+    scope:
+      path: ""
+      type: "wiki"
     values:
       layout: "site/wiki"
   -

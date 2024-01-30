@@ -2,7 +2,7 @@
 title: "Guides"
 ---
 
-See also the [Topics]({{ site.baseurl }}{% link wiki/fo4/interface/topics/index.md %}) section.
+See also the [Topics]({{ site.baseurl }}{% link _wiki/fo4/interface/topics/index.md %}) section.
 
 
 #### Notes

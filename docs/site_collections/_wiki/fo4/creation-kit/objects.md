@@ -30,7 +30,7 @@ title: "Data Objects"
 
 <https://falloutck.uesp.net/wiki/Category:Object_Classes>
 
-See also the [Papyrus Objects](/wiki/fo4/papyrus/scripts) page.
+See also the [Papyrus Objects]({{ site.baseurl }}{% link _wiki/fo4/papyrus/objects.md %}) page.
 
 <section>
 {%- for value in site.data.ck_objects -%}
