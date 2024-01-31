@@ -101,6 +101,12 @@ defaults:
   -
     scope:
       path: ""
+      type: "site_debug"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
       type: "wiki"
     values:
       layout: "site/wiki"
