@@ -30,7 +30,7 @@ title: "Data Objects"
 
 <https://falloutck.uesp.net/wiki/Category:Object_Classes>
 
-See also the [Papyrus Objects]({{ site.baseurl }}{% link _wiki/fo4/papyrus/objects.md %}) page.
+See also the [Papyrus Objects]({{ site.baseurl }}{%- link _wiki/fo4/papyrus/objects.md -%}) page.
 
 <section>
 {%- for value in site.data.ck_objects -%}
@@ -49,18 +49,18 @@ See also the [Papyrus Objects]({{ site.baseurl }}{% link _wiki/fo4/papyrus/objec
   {%- endif -%}
 
   <dt>Icon</dt>
-  <dd><img src="{{ value.icon | default: '/assets/object_icon/default.png' }}" alt="Icon"></dd>
+  <dd><img src="{{ site.baseurl }}{{ value.icon | default: '/assets/object_icon/default.png' }}" alt="Icon"></dd>
 
   <dt>Script</dt>
   {%- if value.script -%}
-      <dd><a href="/wiki_objects_papyrus/{{ value.script }}.html">{{ value.script }}</a></dd>
+      <dd><a href="{{ site.baseurl }}/wiki_objects_papyrus/{{ value.script }}.html">{{ value.script }}</a></dd>
   {%- else -%}
       <dd>no script type</dd>
   {%- endif -%}
 
   <dt>Script Reference</dt>
   {%- if value.script_reference -%}
-    <dd><a href="/wiki_objects_papyrus/{{ value.script_reference }}.html">{{ value.script_reference }}</a></dd>
+    <dd><a href="{{ site.baseurl }}/wiki_objects_papyrus/{{ value.script_reference }}.html">{{ value.script_reference }}</a></dd>
   {%- else -%}
       <dd>no reference script type</dd>
   {%- endif -%}

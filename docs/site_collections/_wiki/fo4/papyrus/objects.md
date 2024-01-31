@@ -39,11 +39,11 @@ See also the [Creation Kit Objects]({{ site.baseurl }}{% link _wiki/fo4/creation
   <dd><code>{{ value.name }}</code></dd>
 
   <dt>Icon</dt>
-  <dd><img src="{{ value.icon | default: '/assets/object_icon/default.png' }}" alt="Icon"></dd>
+  <dd><img src="{{ site.baseurl }}{{ value.icon | default: '/assets/object_icon/default.png' }}" alt="Icon"></dd>
 
   <dt>Object</dt>
   {%- if value.object -%}
-    <dd><a href="/wiki_objects_ck/{{ value.object }}.html">{{ value.object }}</a></dd>
+    <dd><a href="{{ site.baseurl }}/_wiki_objects_ck/{{ value.object }}.html">{{ value.object }}</a></dd>
   {%- else -%}
       <dd>no data object</dd>
   {%- endif -%}
