@@ -38,7 +38,7 @@ try
 	Start-Process "http://localhost:4000/"
 
 	# Run Jekyll serve with development configurations and parameters.
-	bundle exec jekyll serve --trace --watch --livereload --incremental --baseurl=""
+	bundle exec jekyll serve --trace --watch --livereload --incremental --baseurl="" --drafts --future
 }
 finally
 {

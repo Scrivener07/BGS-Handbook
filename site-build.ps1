@@ -8,7 +8,7 @@ try
 	Set-Location -Path .\docs
 
 	# Run Jekyll serve with development configurations and parameters.
-	bundle exec jekyll build --trace
+	bundle exec jekyll build --trace --drafts --future
 }
 finally
 {
