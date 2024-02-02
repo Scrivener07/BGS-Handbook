@@ -1,5 +1,6 @@
 ---
 title: "Menu Editing"
+categories: fo4 interface guides menu-replace edit
 ---
 
 This guide demonstrates how to add simple Markdown rendering support for the body text of `Message` forms in the Creation Kit.

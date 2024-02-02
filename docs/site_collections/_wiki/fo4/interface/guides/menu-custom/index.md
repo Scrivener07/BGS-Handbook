@@ -1,3 +1,7 @@
+---
+title: "Custom Menu"
+categories: fo4 interface guides menu-custom
+---
 # Custom Menu
 This guide details the process of creating a custom menu in Fallout 4.
 This guide was written for authors who want to add interactive, dynamic menus to their Fallout 4 mods.
@@ -89,7 +93,7 @@ For this example, we will leave the "Document class" blank.
 ### Option 1: Add class linkage to a Flash document
 Now lets create the main class for our new Flash document.
 
-See [Adding class linkage to the Flash document]({% link wiki/fo4/interface/topics/flash-add-class-document/index.md %}) to learn how to add class linkage to a Flash document.
+See [Adding class linkage to the Flash document]({% link _wiki/fo4/interface/topics/flash-add-class-document/index.md %}) to learn how to add class linkage to a Flash document.
 
 
 ### Designing the menu elements
@@ -112,7 +116,7 @@ Create symbols, text boxes, and other UI elements as needed.
 Organize your library objects in Flash.
 This includes creating symbols and text boxes for your menu.
 
-See also [Add class linkage to MovieClip]({% link wiki/fo4/interface/topics/flash-add-class-linkage/index.md %}) to learn how to add class linkage to a `MovieClip` library object.
+See also [Add class linkage to MovieClip]({% link _wiki/fo4/interface/topics/flash-add-class-linkage/index.md %}) to learn how to add class linkage to a `MovieClip` library object.
 
 ### Embed Fonts
 Embed the required fonts into your SWF file to ensure text displays correctly in-game.

@@ -1,5 +1,6 @@
 ---
 title: "Getting Started"
+categories: fo4 interface guides getting-started
 ---
 
 This section is intended for authors getting started with user interface development for Fallout 4.

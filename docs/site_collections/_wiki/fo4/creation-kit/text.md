@@ -1,5 +1,6 @@
 ---
 title: "Text"
+categories: fo4 creation-kit
 ---
 
 ### See Also

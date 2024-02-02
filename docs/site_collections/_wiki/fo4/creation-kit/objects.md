@@ -1,5 +1,6 @@
 ---
 title: "Data Objects"
+categories: fo4 creation-kit
 ---
 
 <style type="text/css">

@@ -1,5 +1,6 @@
 ---
 title: "Menu Replacer"
+categories: fo4 interface guides menu-replace
 ---
 
 Learning how to modify the existing Fallout 4 menus will open many possibilities for an author.

@@ -1,8 +1,9 @@
 ---
 title: "JPEXS Free Flash Decompiler"
+categories: tooling
 ---
 
-- Download: https://github.com/jindrapetrik/jpexs-decompiler/releases
+- Download: <https://github.com/jindrapetrik/jpexs-decompiler/releases>
 - Source: <https://github.com/jindrapetrik/jpexs-decompiler>
 - Blog: <https://blog.free-decompiler.com/>
 

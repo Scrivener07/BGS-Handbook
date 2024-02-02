@@ -1,5 +1,6 @@
 ---
 title: "UI Menu Custom Popup"
+categories: fo4 interface topics
 ---
 
 A `MessageBoxPopup` is easy to create.

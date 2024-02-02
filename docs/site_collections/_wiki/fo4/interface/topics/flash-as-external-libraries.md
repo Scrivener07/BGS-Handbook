@@ -1,5 +1,6 @@
 ---
 title: "Flash AS3 External Libraries"
+categories: fo4 interface topics
 ---
 
 It is possible to use many external ActionScript 3.0 libraries from all across the web.

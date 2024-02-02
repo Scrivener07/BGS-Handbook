@@ -1,5 +1,6 @@
 ---
 title: "Menu Restoration"
+categories: fo4 interface guides menu-replace restore
 ---
 
 This document provides a guide on restoring source files for the Fallout 4 game menus.

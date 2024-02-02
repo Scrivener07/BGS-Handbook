@@ -1,5 +1,6 @@
 ---
 title: "Adding class linkage to library objects"
+categories: fo4 interface topics flash-add-class-linkage
 ---
 
 This document covers the process of adding class linkage to library objects.

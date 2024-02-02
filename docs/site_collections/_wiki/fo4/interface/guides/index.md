@@ -1,5 +1,6 @@
 ---
 title: "Guides"
+categories: fo4 interface guides
 ---
 
 See also the [Topics]({{ site.baseurl }}{% link _wiki/fo4/interface/topics/index.md %}) section.

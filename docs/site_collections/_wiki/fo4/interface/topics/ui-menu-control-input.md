@@ -1,5 +1,6 @@
 ---
 title: "UI Menu Control Input"
+categories: fo4 interface topics
 ---
 
 Enable menu control by extending the `IMenu` AS3 class.

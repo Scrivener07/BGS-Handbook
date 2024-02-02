@@ -1,5 +1,6 @@
 ---
 title: "Scaleform GFx"
+categories: tes5 interface topics
 ---
 
 The Skyrim UI is built on Adobe Flash and the ActionScript 2.0 scripting language.

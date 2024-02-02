@@ -1,5 +1,6 @@
 ---
 title: "Script Objects"
+categories: fo4 papyrus
 ---
 
 <style type="text/css">

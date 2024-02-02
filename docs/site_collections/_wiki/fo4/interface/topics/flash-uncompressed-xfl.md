@@ -1,5 +1,6 @@
 ---
 title: "Flash Uncompressed XFL"
+categories: fo4 interface topics
 ---
 
 If these are intended to be version controlled, then use the XFL format instead of FLA.

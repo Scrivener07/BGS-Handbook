@@ -1,5 +1,6 @@
 ---
 title: "Flash Restoring Menus"
+categories: fo4 interface topics
 ---
 
 This document explains how to restore a decompiled menu by fixing common errors.

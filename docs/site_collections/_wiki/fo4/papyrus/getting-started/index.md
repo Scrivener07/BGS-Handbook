@@ -1,5 +1,6 @@
 ---
 title: "Getting Started"
+categories: fo4 papyrus
 ---
 
 ### Game Directory

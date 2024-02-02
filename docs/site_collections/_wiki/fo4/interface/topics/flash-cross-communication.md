@@ -1,5 +1,6 @@
 ---
 title: "Flash Cross Communication"
+categories: fo4 interface topics
 ---
 
 Cross communication *directly* between menus is not possible in this way, such as `stage.focus(MessageBoxMenu)`.

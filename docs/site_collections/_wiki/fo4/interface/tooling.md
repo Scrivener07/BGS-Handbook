@@ -1,5 +1,6 @@
 ---
 title: "Tooling"
+categories: fo4 interface
 ---
 
 These page provides links to software projects and documentation useful for working with flash files.
