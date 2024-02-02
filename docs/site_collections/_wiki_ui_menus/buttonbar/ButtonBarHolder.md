@@ -1,5 +1,6 @@
 ---
 title: "ButtonBarHolder"
+categories: fo4 interface menus buttonbar
 ---
 
 `ButtonBarHolder` is an ActionScript class that extends the `MovieClip` class and is designed to hold and configure a button hint bar within a user interface.

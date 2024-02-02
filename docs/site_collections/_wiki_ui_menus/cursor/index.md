@@ -1,5 +1,6 @@
 ---
 title: "CursorMenu"
+categories: fo4 interface menus cursor
 ---
 
 # CursorMenu Documentation

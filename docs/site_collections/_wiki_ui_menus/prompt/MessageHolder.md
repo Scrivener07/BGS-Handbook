@@ -1,5 +1,6 @@
 ---
 title: "MessageHolder"
+categories: fo4 interface menus prompt
 ---
 
 This documentation details the `MessageHolder` ActionScript file, which is part of an application that utilizes the Adobe Flash technology.

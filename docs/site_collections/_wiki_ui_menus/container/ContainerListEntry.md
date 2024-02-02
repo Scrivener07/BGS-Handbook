@@ -1,5 +1,6 @@
 ---
 title: "ContainerListEntry"
+categories: fo4 interface menus container
 ---
 
 The `ContainerListEntry` class is a dynamic ActionScript class defined in the file `ContainerListEntry.as`.

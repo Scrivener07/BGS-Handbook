@@ -1,5 +1,6 @@
 ---
 title: "FavoritesEntry"
+categories: fo4 interface menus favorites
 ---
 
 This documentation details the core functionalities of `FavoritesEntry.as`, a class within the ActionScript 3 (AS3) environment for managing interactive elements often referred to as "favorites entries".

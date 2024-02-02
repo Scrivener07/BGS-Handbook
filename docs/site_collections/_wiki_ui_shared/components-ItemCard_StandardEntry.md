@@ -1,3 +1,5 @@
+---
+---
 # ItemCard_StandardEntry
 The `ItemCard_StandardEntry.as` file defines a single AS3 class, `ItemCard_StandardEntry`, which extends the `ItemCard_Entry` class.
 This class is part of the `Components` package and is a dynamic class, meaning that properties can be dynamically added to instances of it at runtime.

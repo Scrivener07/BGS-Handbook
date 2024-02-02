@@ -1,3 +1,5 @@
+---
+---
 # NavigationCode
 The `NavigationCode` class, part of the `scaleform.clik.constants` package, provides constants to represent various navigation commands that might be used in a user interface, particularly one that responds to keyboard and gamepad input.
 

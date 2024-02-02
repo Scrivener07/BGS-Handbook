@@ -1,3 +1,5 @@
+---
+---
 # ItemCard_ComponentEntry_Entry
 The `ItemCard_ComponentEntry_Entry` class is an ActionScript file designated to handle the visual representation of a list entry within a scrollable list component.
 It extends the functionality of `BSScrollingListEntry` to accommodate the specific needs of Item Cards in a user interface.

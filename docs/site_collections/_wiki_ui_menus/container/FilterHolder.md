@@ -1,5 +1,6 @@
 ---
 title: "FilterHolder"
+categories: fo4 interface menus container
 ---
 
 The `FilterHolder` class is a dynamic extension of the `MovieClip` class designed to hold a menu filter within a Flash-based user interface.

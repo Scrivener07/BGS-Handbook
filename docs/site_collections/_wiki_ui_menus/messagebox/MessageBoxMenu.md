@@ -1,5 +1,6 @@
 ---
 title: "MessageBoxMenu"
+categories: fo4 interface menus messagebox
 ---
 
 `MessageBoxMenu.as` is an ActionScript file that defines a menu interface for displaying a message box with an associated list of selectable options.

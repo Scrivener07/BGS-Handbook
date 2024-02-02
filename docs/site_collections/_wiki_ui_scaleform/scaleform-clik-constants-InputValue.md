@@ -1,3 +1,5 @@
+---
+---
 # InputValue
 The `InputValue` class within the `scaleform.clik.constants` package is a simple class that defines constants representing various states of keyboard input.
 These constants can be used to identify the type of keyboard interaction occurring, such as a key being pressed down, released, or held down.

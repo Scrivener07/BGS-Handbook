@@ -1,5 +1,6 @@
 ---
 title: "FavoritesMenu"
+categories: fo4 interface menus favorites
 ---
 
 `FavoritesMenu.as` is an ActionScript 3.0 file that defines the `FavoritesMenu` class, which extends the `IMenu` class from the Shared library.

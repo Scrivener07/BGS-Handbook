@@ -1,5 +1,6 @@
 ---
 title: "Option_Scrollbar"
+categories: fo4 interface menus container
 ---
 
 The `Option_Scrollbar` AS3 (ActionScript 3.0) class provides functionality to create a custom scrollbar within a Flash application.

@@ -1,5 +1,6 @@
 ---
 title: "Custom debug trace logging"
+categories: fo4 papyrus topics logging
 ---
 
 A logging class can be an efficient way to trace information about your mod to help debug issues.

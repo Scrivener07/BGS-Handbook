@@ -1,5 +1,6 @@
 ---
 title: "Console"
+categories: fo4 interface menus console
 ---
 
 The **Console Menu** is where *Console Commands* may be executed.

@@ -1,5 +1,6 @@
 ---
 title: "BookMenu"
+categories: fo4 interface menus book
 ---
 
 The `BookMenu` class extends the `IMenu` class and is responsible for managing the book menu within the game, which includes pagination and button hints for navigation.

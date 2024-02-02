@@ -75,10 +75,10 @@ collections:
     permalink: /:collection/:categories/:name
   wiki_objects_ck:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:categories/:name
   wiki_objects_papyrus:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:categories/:name
   wiki_ui_scaleform:
     output: true
     permalink: /:collection/:categories/:name

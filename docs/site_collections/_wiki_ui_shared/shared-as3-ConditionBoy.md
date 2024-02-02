@@ -1,3 +1,5 @@
+---
+---
 # ConditionBoy
 This is the vault-boy which visually displays your limb conditions.
 The `ConditionClips` are used by the `ConditionBoy` component.

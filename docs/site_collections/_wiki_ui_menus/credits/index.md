@@ -1,5 +1,6 @@
 ---
 title: "CreditsMenu"
+categories: fo4 interface menus credits
 ---
 
 The **Credits Menu** is a scrolling list of names which recognize the Bethesda Studios team behind Fallout 4 and the Creation Kit.

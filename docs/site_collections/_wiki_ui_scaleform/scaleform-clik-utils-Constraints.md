@@ -1,3 +1,5 @@
+---
+---
 # Constraints
 This Markdown documentation provides an overview and detailed description of the `Constraints` class found in the `scaleform.clik.utils` package.
 

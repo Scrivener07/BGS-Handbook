@@ -1,5 +1,6 @@
 ---
 title: "PromptMenu"
+categories: fo4 interface menus prompt
 ---
 
 The `PromptMenu` class extends `IMenu` and is used to display a prompt in a user interface within a Flash-based project.

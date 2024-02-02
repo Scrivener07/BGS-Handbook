@@ -1,3 +1,5 @@
+---
+---
 # Slider
 `Slider.as` is a code file containing the definition for a customizable Slider control, which is a user interface component within the Scaleform CLIK (Common Lightweight Interface Kit) framework.
 The component allows users to select a value by moving a slider thumb along a track.

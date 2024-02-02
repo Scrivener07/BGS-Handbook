@@ -1,3 +1,5 @@
+---
+---
 # WeakReference
 The `WeakReference` class provides a mechanism to hold a reference to an object without preventing the object from being collected by the garbage collector.
 This can be particularly useful when you want to keep a reference to an object without affecting its lifecycle.

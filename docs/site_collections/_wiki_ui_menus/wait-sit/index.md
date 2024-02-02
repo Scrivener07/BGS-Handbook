@@ -1,5 +1,6 @@
 ---
 title: "SitWaitMenu"
+categories: fo4 interface menus wait-sit
 ---
 
 The **Sit Wait Menu** is where the *Player* may sit or wait in game.

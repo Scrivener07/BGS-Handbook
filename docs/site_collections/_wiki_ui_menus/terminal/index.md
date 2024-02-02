@@ -1,5 +1,6 @@
 ---
 title: "TerminalMenu"
+categories: fo4 interface menus terminal
 ---
 
 The `Terminal` class is an ActionScript 3.0 class that is designed to function as an interactive terminal within a user interface system.

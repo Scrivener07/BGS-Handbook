@@ -1,3 +1,5 @@
+---
+---
 # BSScrollingList
 The `BSScrollingList` class is an ActionScript 3 class that manages a scrolling list component in a Flash-based user interface.
 It extends the `MovieClip` class and provides functionality for item selection, scrolling, and event handling.

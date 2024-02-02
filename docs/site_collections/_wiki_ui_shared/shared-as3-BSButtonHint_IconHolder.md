@@ -1,3 +1,5 @@
+---
+---
 # BSButtonHint_IconHolder
 The ActionScript file `BSButtonHint_IconHolder.as` contains a dynamic class extending the `MovieClip` class from the Flash library.
 It is designed to manage an icon within a button hint component, providing functionality to control animation frames.

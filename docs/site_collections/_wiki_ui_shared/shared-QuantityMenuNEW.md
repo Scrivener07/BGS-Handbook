@@ -1,3 +1,5 @@
+---
+---
 # QuantityMenuNEW
 The `QuantityMenuNEW` class is a user interface component that allows users to select a quantity value through both a slider and text input.
 

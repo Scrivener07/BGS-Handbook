@@ -1,3 +1,5 @@
+---
+---
 # InputDetails
 This documentation provides a detailed overview of the `InputDetails` class found within the `scaleform.clik.ui` package.
 

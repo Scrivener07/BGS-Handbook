@@ -1,3 +1,5 @@
+---
+---
 # ResizeEvent
 The `ResizeEvent` class, defined within the `scaleform.clik.events` package, is an extension of the `flash.events.Event` class.
 It is specifically crafted for handling resize-related events within the Scaleform CLIK (Common Lightweight Interface Kit) framework.

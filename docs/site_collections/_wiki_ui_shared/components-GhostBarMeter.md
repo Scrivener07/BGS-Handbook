@@ -1,3 +1,5 @@
+---
+---
 # GhostBarMeter
 The `GhostBarMeter` class is a component used to display a meter with dual fill levels—one showing the current value and another indicating a secondary 'ghost' value.
 This class is part of the `Components` package and extends the `BSUIComponent` class.

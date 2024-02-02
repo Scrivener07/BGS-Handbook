@@ -1,5 +1,6 @@
 ---
 title: "HackingHighlight"
+categories: fo4 interface menus terminal
 ---
 
 The `HackingHighlight.as` file contains a class definition for `HackingHighlight`, which is an extension of the `MovieClip` class from the `flash.display` package.

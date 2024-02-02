@@ -1,3 +1,5 @@
+---
+---
 # InvalidationType
 This documentation provides an overview of the `InvalidationType` class contained within the `InvalidationType.as` file.
 This class is part of the `scaleform.clik.constants` package and includes a series of constant values representing different types of invalidation states that can be used within the Scaleform CLIK framework.

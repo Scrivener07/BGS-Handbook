@@ -1,5 +1,6 @@
 ---
 title: "AnimHolder"
+categories: fo4 interface menus console
 ---
 
 The `AnimHolder.as` file contains an ActionScript class that extends the `MovieClip` class from Adobe Flash/Animate.

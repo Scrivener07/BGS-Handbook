@@ -1,5 +1,6 @@
 ---
 title: "MessageBoxButtonEntry"
+categories: fo4 interface menus messagebox
 ---
 
 The `MessageBoxButtonEntry` class is an ActionScript file that extends the functionality of `BSScrollingListEntry` typically used in a modding context for Bethesda Game Studios titles.

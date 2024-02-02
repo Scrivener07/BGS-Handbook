@@ -1,5 +1,6 @@
 ---
 title: "ItemListEntry"
+categories: fo4 interface menus container
 ---
 
 The `ItemListEntry` class extends `BSScrollingListEntry` to provide functionality for displaying item entries with various icons and text manipulation based on the item's properties.

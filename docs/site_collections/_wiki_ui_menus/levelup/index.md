@@ -1,5 +1,6 @@
 ---
 title: "LevelUpMenu"
+categories: fo4 interface menus levelup
 ---
 
 The *Level Up Menu* is where the *Player* may spend points to add or improve *Perks* and attributes.

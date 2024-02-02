@@ -1,3 +1,5 @@
+---
+---
 # ItemCard_MultiEntry
 
 The `ItemCard_MultiEntry.as` file is part of the Components package and contains the `ItemCard_MultiEntry` class, which extends `ItemCard_Entry`. This class manages multiple entries for an item card, such as displaying damage or armor ratings for various conditions. Below is a detailed markdown documentation of the `ItemCard_MultiEntry` class.

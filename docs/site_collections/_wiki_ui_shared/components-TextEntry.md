@@ -1,3 +1,5 @@
+---
+---
 # TextEntry
 `TextEntry.as` is part of the `Components` package and provides a text entry component for use with Flash-based applications.
 It extends the functionality of `MovieClip` and allows the user to input and retrieve text.

@@ -1,5 +1,6 @@
 ---
 title: "DialogueMenu"
+categories: fo4 interface menus dialogue
 ---
 
 The `DialogueMenu` class extends the `IMenu` class and is responsible for handling the dialogue menu within a game, consisting of four button hints for positive, negative, neutral, and question responses.

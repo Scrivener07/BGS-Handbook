@@ -1,5 +1,6 @@
 ---
 title: "MessageBoxButtonList"
+categories: fo4 interface menus messagebox
 ---
 
 The `MessageBoxButtonList` class is an extension of the `BSScrollingList` class, which is designed to handle a list of message box button entries with dynamic border widths based on the content.

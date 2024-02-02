@@ -1,3 +1,5 @@
+---
+---
 # ItemCard_DescriptionEntry
 This is the markdown documentation for the ActionScript class `ItemCard_DescriptionEntry`, which is contained in the file `ItemCard_DescriptionEntry.as`.
 The `ItemCard_DescriptionEntry` class is part of the `Components` package and extends the `ItemCard_Entry` class.

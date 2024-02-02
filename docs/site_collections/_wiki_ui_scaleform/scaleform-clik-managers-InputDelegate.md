@@ -1,3 +1,5 @@
+---
+---
 # InputDelegate
 The `InputDelegate` class is part of the `scaleform.clik.managers` package, which is used to manage input events in Scaleform user interfaces, commonly used in video game development.
 The `InputDelegate` class is designed to handle keyboard input and dispatch custom input events within the Scaleform CLIK framework.

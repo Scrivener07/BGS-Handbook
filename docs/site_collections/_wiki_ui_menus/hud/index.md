@@ -1,5 +1,6 @@
 ---
 title: "HUDMenu"
+categories: fo4 interface menus hud
 ---
 
 The Heads-Up Display is an essential part of the UI, displaying vital information such as health, action points, ammo, and a compass.

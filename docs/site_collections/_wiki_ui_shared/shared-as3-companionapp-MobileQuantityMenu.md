@@ -1,3 +1,5 @@
+---
+---
 # MobileQuantityMenu
 `MobileQuantityMenu` is a custom quantity selection component designed for use in companion apps.
 It extends the `QuantityMenuNEW` class to provide a user interface for selecting a quantity value using slider and button controls.

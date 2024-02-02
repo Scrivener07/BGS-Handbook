@@ -1,5 +1,6 @@
 ---
 title: "ExamineMenu"
+categories: fo4 interface menus craft
 ---
 
 The **Examine Menu** is used to craft items on a *Workbench*.

@@ -1,5 +1,6 @@
 ---
 title: "TerminalHolotapeMenu"
+categories: fo4 interface menus terminal-holotape
 ---
 
 The **Terminal Holotape Menu** is where *Holotapes* are played.

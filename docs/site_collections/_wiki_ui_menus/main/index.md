@@ -1,5 +1,6 @@
 ---
 title: "MainMenu"
+categories: fo4 interface menus main
 ---
 
 The **Main Menu** is where the *Player* can load a save or start a new game.

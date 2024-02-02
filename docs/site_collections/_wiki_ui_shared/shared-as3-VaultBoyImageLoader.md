@@ -1,3 +1,5 @@
+---
+---
 # VaultBoyImageLoader
 The `VaultBoyImageLoader` is a dynamic class extending `BSUIComponent` responsible for loading, displaying, and managing a Vault Boy image within a Flash/ActionScript 3.0 environment.
 

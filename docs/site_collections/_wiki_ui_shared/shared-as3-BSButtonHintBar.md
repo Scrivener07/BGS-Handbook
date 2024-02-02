@@ -1,3 +1,5 @@
+---
+---
 # BSButtonHintBar
 This is a component that renders a list of multi-platform button.
 

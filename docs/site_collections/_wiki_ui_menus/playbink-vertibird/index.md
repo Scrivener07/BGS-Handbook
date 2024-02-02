@@ -1,5 +1,6 @@
 ---
 title: "VertibirdMenu"
+categories: fo4 interface menus playbink-vertibird
 ---
 
 This documentation provides a detailed look at the `VertibirdMenu.as` ActionScript file.

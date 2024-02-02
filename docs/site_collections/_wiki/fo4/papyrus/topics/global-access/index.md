@@ -1,5 +1,6 @@
 ---
 title: "Access script instance globally"
+categories: fo4 papyrus topics global-access
 ---
 
 This sample demonstrates global access to an instance of a Papyrus `Struct`.

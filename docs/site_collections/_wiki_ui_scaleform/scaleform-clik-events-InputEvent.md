@@ -1,3 +1,5 @@
+---
+---
 # InputEvent
 The `InputEvent` class is a custom event type used within the `scaleform.clik.events` package, which is part of the Scaleform CLIK (Common Lightweight Input Keyboard) UI toolkit for Flash.
 It extends the native Flash `Event` class and is designed to handle input details in user interface elements.

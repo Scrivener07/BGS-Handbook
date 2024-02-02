@@ -1,5 +1,6 @@
 ---
 title: "ContainerList"
+categories: fo4 interface menus container
 ---
 
 `ContainerList.as` is an ActionScript file that defines a dynamic class named `ContainerList`.

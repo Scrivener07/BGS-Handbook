@@ -1,5 +1,6 @@
 ---
 title: "ButtonBarMenu"
+categories: fo4 interface menus buttonbar
 ---
 
 `ButtonBarMenu.as` is an ActionScript class that extends the `IMenu` class.

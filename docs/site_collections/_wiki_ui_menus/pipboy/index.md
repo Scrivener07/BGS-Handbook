@@ -1,5 +1,6 @@
 ---
 title: "PipboyMenu"
+categories: fo4 interface menus pipboy
 ---
 
 The in-game Pip-Boy device serves as the primary menu for managing inventory, quests, maps, stats, and more.

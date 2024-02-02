@@ -1,3 +1,5 @@
+---
+---
 # IndexEvent
 The `IndexEvent` class extends the `flash.events.Event` class and is part of the `scaleform.clik.events` package.
 `IndexEvent` is designed to handle index-based events within the Scaleform CLIK (Common Lightweight Interface Kit) framework, which is often used for UI components in games.

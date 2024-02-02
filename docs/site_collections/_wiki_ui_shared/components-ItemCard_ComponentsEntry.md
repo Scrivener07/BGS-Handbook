@@ -1,3 +1,5 @@
+---
+---
 # ItemCard_ComponentsEntry
 Below is the documentation for the `ItemCard_ComponentsEntry` class located in the file `ItemCard_ComponentsEntry.as` within the `Components` package.
 

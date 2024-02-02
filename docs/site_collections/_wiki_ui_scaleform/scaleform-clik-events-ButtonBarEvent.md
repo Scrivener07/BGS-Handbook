@@ -1,3 +1,5 @@
+---
+---
 # ButtonBarEvent
 ButtonBarEvent.as is a custom ActionScript event class defined within the `scaleform.clik.events` package.
 This class extends the native Flash `Event` class and is specifically designed for events related to button selections in a button bar control.

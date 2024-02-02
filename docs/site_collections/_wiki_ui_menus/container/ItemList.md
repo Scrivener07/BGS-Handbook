@@ -1,5 +1,6 @@
 ---
 title: "ItemList"
+categories: fo4 interface menus container
 ---
 
 The `ItemList.as` file is an ActionScript file that defines a custom scrolling list class called `ItemList`.

@@ -1,3 +1,5 @@
+---
+---
 # Extensions
 The *Extensions.as* file is part of the `scaleform.gfx` package and provides a set of static properties and methods related to Scaleform extensions in Flash.
 These extensions include additional functionality beyond the standard Flash API, tailored for UI elements in games that use Scaleform technology.

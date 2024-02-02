@@ -1,5 +1,6 @@
 ---
 title: "FaderMenu"
+categories: fo4 interface menus fader
 ---
 
 The `FaderMenu` class extends the `IMenu` class, providing functionality for managing fades and display of a spinner icon during loading or transitions.

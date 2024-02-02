@@ -1,3 +1,5 @@
+---
+---
 # GlobalFunc
 Mainly used for backend operations in UI and HUD elements of Scaleform GFX in games.
 

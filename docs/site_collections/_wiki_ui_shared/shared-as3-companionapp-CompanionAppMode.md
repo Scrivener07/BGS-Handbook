@@ -1,3 +1,5 @@
+---
+---
 # CompanionAppMode
 This document provides details about the `CompanionAppMode` class found in the `CompanionAppMode.as` file.
 

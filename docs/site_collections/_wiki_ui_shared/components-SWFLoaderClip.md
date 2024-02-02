@@ -1,3 +1,5 @@
+---
+---
 # SWFLoaderClip
 This documentation provides an overview of the `SWFLoaderClip` class, its methods, properties, and usage within a Flash application.
 The class is part of the `Components` package and is designed to load and handle SWF files.

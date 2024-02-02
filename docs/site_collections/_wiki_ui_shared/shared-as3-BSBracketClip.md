@@ -1,3 +1,5 @@
+---
+---
 # BSBracketClip
 `BSBracketClip` is an ActionScript 3.0 class extending `MovieClip` to provide functionality for drawing bracket shapes around UI components in different styles.
 

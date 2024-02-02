@@ -1,5 +1,6 @@
 ---
 title: "PowerArmorHUDMenu"
+categories: fo4 interface menus hud-pa
 ---
 
 

@@ -1,3 +1,5 @@
+---
+---
 # FocusHandlerEvent
 `FocusHandlerEvent.as` is an ActionScript class within the `scaleform.clik.events` package.
 It is designed to handle focus events in a Scaleform CLIK context, extending the native Flash `Event` class with additional functionality specific to focus management.

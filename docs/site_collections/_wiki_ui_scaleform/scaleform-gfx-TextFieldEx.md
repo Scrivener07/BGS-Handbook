@@ -1,3 +1,5 @@
+---
+---
 # TextFieldEx
 The `TextFieldEx` class provides an enhanced version of the `TextField` interactive object with additional functionalities for text fields within the Scaleform GFX framework.
 It extends the `InteractiveObjectEx` class.

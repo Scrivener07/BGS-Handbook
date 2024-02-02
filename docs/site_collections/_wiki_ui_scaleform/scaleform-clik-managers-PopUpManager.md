@@ -1,3 +1,5 @@
+---
+---
 # PopUpManager
 The `PopUpManager` class is part of the `scaleform.clik.managers` package.
 It is responsible for managing pop-up elements within the user interface, such as dialogs and modal windows.

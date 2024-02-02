@@ -1,3 +1,5 @@
+---
+---
 # ItemCard_TimedEntry
 The file `ItemCard_TimedEntry.as` contains an ActionScript class that extends the functionality of an `ItemCard_Entry` by adding a timer icon to the visual representation of an item card.
 This class is part of the Components package.

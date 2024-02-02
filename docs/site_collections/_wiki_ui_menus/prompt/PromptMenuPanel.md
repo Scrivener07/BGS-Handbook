@@ -1,5 +1,6 @@
 ---
 title: "PromptMenuPanel_1"
+categories: fo4 interface menus prompt
 ---
 
 `PromptMenuPanel_1` is a dynamic class extending `MovieClip` from the ActionScript package `PromptMenu_fla`.

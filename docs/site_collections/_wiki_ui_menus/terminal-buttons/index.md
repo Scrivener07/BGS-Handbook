@@ -1,5 +1,6 @@
 ---
 title: "TerminalButtons"
+categories: fo4 interface menus terminal-buttons
 ---
 
 The `TerminalButtons` class is defined within the `TerminalButtons.as` file and is responsible for managing button hints on a terminal interface, typically for a video game.

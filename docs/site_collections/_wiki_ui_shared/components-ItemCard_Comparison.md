@@ -1,3 +1,5 @@
+---
+---
 # ItemCard_Comparison
 The `ItemCard_Comparison` class is a dynamic extension of the `MovieClip` class from the `flash.display` package.
 This class is designed to represent an item card within a Flash application that likely stops its timeline at the first frame to display static content.

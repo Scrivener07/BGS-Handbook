@@ -1,5 +1,6 @@
 ---
 title: "SWFLoaderMenu"
+categories: fo4 interface menus swfloader
 ---
 
 The `SWFLoaderMenu` class extends `IMenu` and is responsible for the dynamic loading and unloading of SWF files.

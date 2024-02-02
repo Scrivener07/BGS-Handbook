@@ -1,3 +1,5 @@
+---
+---
 # BSButtonHintData
 The `BSButtonHintData` class is part of the `Shared.AS3` package and extends the `EventDispatcher` class to manage button hints data in a user interface.
 This class is used to describe the properties of a button, such as its labels, associated keys, and states (enabled, visible, flashing).

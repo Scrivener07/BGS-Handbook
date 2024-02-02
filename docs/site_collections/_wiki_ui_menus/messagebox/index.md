@@ -1,5 +1,6 @@
 ---
 title: "MessageBoxMenu"
+categories: fo4 interface menus messagebox
 ---
 
 The `MessageBoxMenu` is used to display the content of a Creation Kit [`Message`](https://falloutck.uesp.net/wiki/Message) object.

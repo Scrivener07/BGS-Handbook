@@ -1,5 +1,6 @@
 ---
 title: "PlayerInventory"
+categories: fo4 interface menus container
 ---
 
 The `PlayerInventory` class is an ActionScript file that extends `MovieClip` to provide a dynamic user interface for a game's player inventory system.

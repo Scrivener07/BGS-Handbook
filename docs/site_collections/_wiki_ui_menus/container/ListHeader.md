@@ -1,5 +1,6 @@
 ---
 title: "ListHeader"
+categories: fo4 interface menus container
 ---
 
 The `ListHeader.as` file defines the `ListHeader` class which extends the `MovieClip` class from the Adobe Flash library.

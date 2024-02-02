@@ -1,3 +1,5 @@
+---
+---
 # QuantityMenu
 The `QuantityMenu` class, located in the `QuantityMenu.as` file, is an ActionScript 3 class that extends the `MovieClip` class from the `flash.display` package.
 This class is responsible for managing a quantity menu, which allows users to adjust the quantity of an item, typically within a user interface for a game or similar application.

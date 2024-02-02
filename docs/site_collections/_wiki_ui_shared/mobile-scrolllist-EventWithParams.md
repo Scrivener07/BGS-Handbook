@@ -1,3 +1,5 @@
+---
+---
 # EventWithParams
 The `EventWithParams` class, located in the `Mobile.ScrollList` package, is an extension of the Flash `Event` class.
 This class allows users to create events with additional parameters that can be passed along with the event itself.

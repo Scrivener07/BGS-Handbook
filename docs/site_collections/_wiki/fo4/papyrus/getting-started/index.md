@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-categories: fo4 papyrus
+categories: fo4 papyrus getting-started
 ---
 
 ### Game Directory

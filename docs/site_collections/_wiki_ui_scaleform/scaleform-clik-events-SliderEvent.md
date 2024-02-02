@@ -1,3 +1,5 @@
+---
+---
 # SliderEvent
 `SliderEvent` is a custom event class that extends the Flash `Event` class.
 It represents events that are specifically related to slider components within the Scaleform CLIK (Common Lightweight Interface Kit) framework.

@@ -1,3 +1,5 @@
+---
+---
 # ButtonGroup
 `ButtonGroup` is a class used within the Scaleform CLIK (Common Lightweight Interface Kit) framework.
 

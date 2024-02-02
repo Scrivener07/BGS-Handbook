@@ -1,5 +1,6 @@
 ---
 title: "MenuItemList"
+categories: fo4 interface menus terminal
 ---
 
 The `MenuItemList` class extends the `BSScrollingList` from the package `Shared.AS3`.

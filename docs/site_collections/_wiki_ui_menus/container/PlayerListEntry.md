@@ -1,5 +1,6 @@
 ---
 title: "PlayerListEntry"
+categories: fo4 interface menus container
 ---
 
 The `PlayerListEntry` class is a dynamic class that extends the functionality of `ItemListEntry`.

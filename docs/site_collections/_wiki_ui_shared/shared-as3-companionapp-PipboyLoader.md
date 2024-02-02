@@ -1,3 +1,5 @@
+---
+---
 # PipboyLoader
 The `PipboyLoader` class extends the functionality of the Flash `Loader` class, enabling conditional asset loading depending on whether the Companion App Mode is active or not.
 When active, it uses an external interface to retrieve asset paths before performing the load operation.

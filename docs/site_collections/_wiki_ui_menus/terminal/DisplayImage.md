@@ -1,5 +1,6 @@
 ---
 title: "DisplayImage"
+categories: fo4 interface menus terminal
 ---
 
 `DisplayImage.as` is an ActionScript file that defines a `DisplayImage` class which extends the `MovieClip` class from the Flash display library.

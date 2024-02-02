@@ -1,5 +1,6 @@
 ---
 title: "Papyrus threading during menu mode"
+categories: fo4 papyrus topics threading-menu-mode
 ---
 
 You might be in a situation where you have received an F4SE event using `f4se.SendExternalEvent()` from AS3.

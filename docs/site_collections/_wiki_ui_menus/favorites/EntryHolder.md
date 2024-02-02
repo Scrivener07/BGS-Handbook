@@ -1,5 +1,6 @@
 ---
 title: "EntryHolder"
+categories: fo4 interface menus favorites
 ---
 
 `EntryHolder.as` is an ActionScript file defining a dynamic class named `EntryHolder` which extends the `MovieClip` class from the Flash API.

@@ -1,5 +1,6 @@
 ---
 title: "PlayBinkMenu"
+categories: fo4 interface menus playbink
 ---
 
 `PlayBinkMenu` is an ActionScript class file that seems to be part of a user interface system, specifically designed for displaying and controlling video playback in a game or application.

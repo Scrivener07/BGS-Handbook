@@ -1,3 +1,5 @@
+---
+---
 # DisplayObjectEx
 The `DisplayObjectEx` class resides within the `scaleform.gfx` package and extends the functionality of the `flash.display.DisplayObject` class, providing static methods for advanced rendering controls.
 

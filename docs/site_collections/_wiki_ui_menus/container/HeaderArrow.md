@@ -1,5 +1,6 @@
 ---
 title: "HeaderArrow"
+categories: fo4 interface menus container
 ---
 
 The `HeaderArrow` class extends the `MovieClip` class and is designed to dispatch a custom event when a mouse-up event is detected on an instance of this class.

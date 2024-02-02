@@ -1,5 +1,6 @@
 ---
 title: "PlayerList"
+categories: fo4 interface menus container
 ---
 
 `PlayerList` is a dynamic class that extends the `ItemList` class. It is designed to represent a list of players within a given context.

@@ -1,5 +1,6 @@
 ---
 title: "PromptMenuPanel"
+categories: fo4 interface menus buttonbar
 ---
 
 `PromptMenuPanel.as` is an ActionScript file that defines a dynamic class named `PromptMenuPanel` which extends the `MovieClip` class from the Flash API.

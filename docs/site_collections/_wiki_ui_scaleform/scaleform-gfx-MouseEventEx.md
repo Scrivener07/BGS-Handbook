@@ -1,3 +1,5 @@
+---
+---
 # MouseEventEx
 The `MouseEventEx` class is an extension of the `MouseEvent` class within the `scaleform.gfx` package.
 It provides additional information about mouse events, specifically tailored for Scaleform implementations.

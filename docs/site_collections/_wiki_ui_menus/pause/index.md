@@ -1,5 +1,6 @@
 ---
 title: "PauseMenu"
+categories: fo4 interface menus pause
 ---
 
 The **Pause Menu** is where game settings and saves may be interacted with.

@@ -1,5 +1,6 @@
 ---
 title: "MultiActivateMenu"
+categories: fo4 interface menus multi-activatemenu
 ---
 
 `MultiActivateMenu.as` is an ActionScript file providing functionality for a user interface menu with multiple activatable buttons.

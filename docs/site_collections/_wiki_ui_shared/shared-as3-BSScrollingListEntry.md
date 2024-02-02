@@ -1,3 +1,5 @@
+---
+---
 # BSScrollingListEntry
 The `BSScrollingListEntry` class extends the `MovieClip` class and is used to create entries for a scrolling list within a user interface.
 It manages the text display and selection state of each entry, as well as dynamic height adjustments based on the content.

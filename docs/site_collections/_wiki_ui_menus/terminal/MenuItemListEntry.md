@@ -1,5 +1,6 @@
 ---
 title: "MenuItemListEntry"
+categories: fo4 interface menus terminal
 ---
 
 `MenuItemListEntry.as` is an ActionScript file that defines a dynamic class which extends the `BSScrollingListEntry` class.

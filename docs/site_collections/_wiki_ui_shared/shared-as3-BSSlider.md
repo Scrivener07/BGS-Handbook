@@ -1,3 +1,5 @@
+---
+---
 # BSSlider
 The `BSSlider.as` class is a custom slider component for ActionScript 3 that extends the `BSUIComponent` class.
 

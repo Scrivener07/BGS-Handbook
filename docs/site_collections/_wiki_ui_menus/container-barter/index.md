@@ -1,5 +1,6 @@
 ---
 title: "BarterMenu"
+categories: fo4 interface menus container-barter
 ---
 
 The **Barter Menu** is used to trade items between the *Player* and an *Actor*.

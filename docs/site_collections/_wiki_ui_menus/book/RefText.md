@@ -1,5 +1,6 @@
 ---
 title: "RefText"
+categories: fo4 interface menus book
 ---
 
 This documentation provides an overview of the `RefText.as` ActionScript file.

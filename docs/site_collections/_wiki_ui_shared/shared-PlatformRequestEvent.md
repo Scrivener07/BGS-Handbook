@@ -1,3 +1,5 @@
+---
+---
 # PlatformRequestEvent
 The `PlatformRequestEvent` class is part of the `Shared` package and is responsible for handling platform request events within a Flash application.
 Below is the detailed documentation for the `PlatformRequestEvent.as` file.

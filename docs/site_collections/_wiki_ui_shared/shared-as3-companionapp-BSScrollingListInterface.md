@@ -1,3 +1,5 @@
+---
+---
 # BSScrollingListInterface
 The `BSScrollingListInterface` class is a part of the **Shared.AS3.COMPANIONAPP** package.
 

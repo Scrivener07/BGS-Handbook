@@ -1,5 +1,6 @@
 ---
 title: "Usage of Game.GetFormFromFile"
+categories: fo4 papyrus topics
 ---
 
 This document attempts to explain the appropriate usage of the `Game.GetFormFromFile()` function.

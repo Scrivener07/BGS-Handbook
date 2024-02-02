@@ -1,3 +1,5 @@
+---
+---
 # InteractiveObjectEx
 `InteractiveObjectEx.as` is an ActionScript file that is part of the Scaleform GFX package.
 It extends the capabilities of `InteractiveObject` class by incorporating additional functionality related to hit testing and display list ordering.

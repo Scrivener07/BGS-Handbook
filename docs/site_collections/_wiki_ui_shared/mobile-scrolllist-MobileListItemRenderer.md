@@ -1,3 +1,5 @@
+---
+---
 # MobileListItemRenderer
 `MobileListItemRenderer` is an ActionScript class designed for handling the rendering and interaction logic for list items in a mobile scroll list.
 This class extends `MovieClip` and manages user input events such as mouse presses and releases.

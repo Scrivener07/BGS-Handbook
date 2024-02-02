@@ -1,5 +1,6 @@
 ---
 title: "MessageHolder"
+categories: fo4 interface menus buttonbar
 ---
 
 **MessageHolder.as** is an ActionScript file that defines a dynamic class named `MessageHolder` which extends the `BSUIComponent` class from the `Shared.AS3` package.

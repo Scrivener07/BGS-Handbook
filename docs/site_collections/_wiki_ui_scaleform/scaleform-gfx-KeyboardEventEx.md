@@ -1,3 +1,5 @@
+---
+---
 # KeyboardEventEx
 The `KeyboardEventEx` class is an extension of the standard Flash `KeyboardEvent` and is part of the `scaleform.gfx` package.
 This class adds functionality for handling keyboard events with an additional property to identify the controller index.

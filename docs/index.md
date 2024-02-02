@@ -5,22 +5,23 @@ layout: home
 title: "Home"
 ---
 
-
-<h2>site.posts ({{ site.posts.size }})</h2>
+<h3>site.posts ({{ site.posts.size }})</h3>
 <ul>
 {%- for value in site.posts -%}
   <li>{{ value.title }}</li>
 {%- endfor -%}
 </ul>
 
-<h2>site.categories ({{ site.categories.size }})</h2>
+<h3>site.categories ({{ site.categories.size }})</h3>
+Only posts with categories are stored in this array.
 <ul>
   {%- for category in site.categories -%}
     <li>{{ category[0] }} (used by {{ category[1].size }})</li>
   {%- endfor -%}
 </ul>
 
-<h2>site.tags ({{ site.tags.size }})</h2>
+<h3>site.tags ({{ site.tags.size }})</h3>
+Only posts with tags are stored in this array.
 <ul>
   {%- for tag in site.tags -%}
     <li>{{ tag[0] }} (used by {{ tag[1].size }})</li>
@@ -29,14 +30,14 @@ title: "Home"
 
 <hr>
 
-<h2>site.data.ck_objects ({{ site.data.ck_objects.size }})</h2>
+<h3>site.data.ck_objects ({{ site.data.ck_objects.size }})</h3>
 <ul>
 {%- for value in site.data.ck_objects -%}
   <li>Name: <code>{{ value.type }}</code></li>
 {%- endfor -%}
 </ul>
 
-<h2>site.data.papyrus_objects ({{ site.data.papyrus_objects.size }})</h2>
+<h3>site.data.papyrus_objects ({{ site.data.papyrus_objects.size }})</h3>
 <ul>
 {%- for value in site.data.papyrus_objects -%}
   <li>Name: <code>{{ value.name }}</code></li>
@@ -45,37 +46,58 @@ title: "Home"
 
 <hr>
 
-<h2>site.site_debug ({{ site.site_debug.size }})</h2>
+<h3>site.site_debug ({{ site.site_debug.size }})</h3>
 <ul>
 {%- for value in site.site_debug -%}
   <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
 {%- endfor -%}
 </ul>
 
-<h2>site.wiki_objects_ck ({{ site.wiki_objects_ck.size }})</h2>
-<ul>
-{%- for value in site.wiki_objects_ck -%}
-  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
-{%- endfor -%}
-</ul>
-
-<h2>site.wiki_objects_papyrus ({{ site.wiki_objects_papyrus.size }})</h2>
-<ul>
-{%- for value in site.wiki_objects_papyrus -%}
-  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
-{%- endfor -%}
-</ul>
-
-<h2>site.wiki ({{ site.wiki.size }})</h2>
+<h3>site.wiki ({{ site.wiki.size }})</h3>
 <ul>
 {%- for value in site.wiki -%}
   <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
 {%- endfor -%}
 </ul>
 
+<h3>site.wiki_objects_ck ({{ site.wiki_objects_ck.size }})</h3>
+<ul>
+{%- for value in site.wiki_objects_ck -%}
+  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
+{%- endfor -%}
+</ul>
+
+<h3>site.wiki_objects_papyrus ({{ site.wiki_objects_papyrus.size }})</h3>
+<ul>
+{%- for value in site.wiki_objects_papyrus -%}
+  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
+{%- endfor -%}
+</ul>
+
+<h3>site.wiki_ui_scaleform ({{ site.wiki_ui_scaleform.size }})</h3>
+<ul>
+{%- for value in site.wiki_ui_scaleform -%}
+  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
+{%- endfor -%}
+</ul>
+
+<h3>site.wiki_ui_shared ({{ site.wiki_ui_shared.size }})</h3>
+<ul>
+{%- for value in site.wiki_ui_shared -%}
+  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
+{%- endfor -%}
+</ul>
+
+<h3>site.wiki_ui_menus ({{ site.wiki_ui_menus.size }})</h3>
+<ul>
+{%- for value in site.wiki_ui_menus -%}
+  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
+{%- endfor -%}
+</ul>
+
 <hr>
 
-<h2>site.static_files ({{ site.static_files.size }})</h2>
+<h3>site.static_files ({{ site.static_files.size }})</h3>
 <ul>
 {%- for file in site.static_files -%}
   <li>{{ file.basename }} : <code>{{ file.path }}</code></li>

@@ -1,3 +1,5 @@
+---
+---
 # DataProvider
 `DataProvider` is a dynamic class that extends the `Array` class and implements the `IDataProvider` and `IEventDispatcher` interfaces.
 

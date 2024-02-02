@@ -1,5 +1,6 @@
 ---
 title: "ContainerMenu"
+categories: fo4 interface menus container
 ---
 
 The **Container Menu** is used to move items between the *Player* and a *Container*.
