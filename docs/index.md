@@ -5,6 +5,17 @@ layout: home
 title: "Home"
 ---
 
+<h3>site.pages ({{ site.pages.size }})</h3>
+<ul>
+{%- for value in site.pages -%}
+  {%- if value.title -%}
+    <li>{{ value.baseurl }}{{ value.url }} : {{ value.title }}</li>
+  {%- else -%}
+    <li>{{ value.url }}</li>
+  {%- endif -%}
+{%- endfor -%}
+</ul>
+
 <h3>site.posts ({{ site.posts.size }})</h3>
 <ul>
 {%- for value in site.posts -%}
