@@ -79,6 +79,15 @@ collections:
   wiki_objects_papyrus:
     output: true
     permalink: /:collection/:name
+  wiki_ui_scaleform:
+    output: true
+    permalink: /:collection/:categories/:name
+  wiki_ui_shared:
+    output: true
+    permalink: /:collection/:categories/:name
+  wiki_ui_menus:
+    output: true
+    permalink: /:collection/:categories/:name
 
 
 # Defaults
@@ -108,6 +117,24 @@ defaults:
     scope:
       path: ""
       type: "wiki_objects_papyrus"
+    values:
+      layout: "wiki/page"
+  -
+    scope:
+      path: ""
+      type: "wiki_ui_scaleform"
+    values:
+      layout: "wiki/page"
+  -
+    scope:
+      path: ""
+      type: "wiki_ui_shared"
+    values:
+      layout: "wiki/page"
+  -
+    scope:
+      path: ""
+      type: "wiki_ui_menus"
     values:
       layout: "wiki/page"
   -
