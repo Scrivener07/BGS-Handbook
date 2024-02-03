@@ -1,5 +1,5 @@
 ---
-layout: site/wiki
+layout: wiki/page
 title: "Preview Wiki"
 ---
 

@@ -34,8 +34,6 @@ theme: minima
 # Minima: Navigation settings
 header_pages:
   - about.md
-  - site/index.md
-  - wiki/index.md
 
 plugins:
   - jekyll-feed
@@ -70,12 +68,24 @@ collections:
   site_debug:
     output: true
     permalink: /site/:name
+  wiki:
+    output: true
+    permalink: /:collection/:categories/:name
   wiki_objects_ck:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:categories/:name
   wiki_objects_papyrus:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:categories/:name
+  wiki_ui_scaleform:
+    output: true
+    permalink: /:collection/:categories/:name
+  wiki_ui_shared:
+    output: true
+    permalink: /:collection/:categories/:name
+  wiki_ui_menus:
+    output: true
+    permalink: /:collection/:categories/:name
 
 
 # Defaults
@@ -86,27 +96,45 @@ defaults:
   -
     scope:
       path: ""
-      type: "pages"
+      type: "site_debug"
     values:
       layout: "default"
   -
     scope:
-      path: "wiki"
-      type: "pages"
+      path: ""
+      type: "wiki"
     values:
-      layout: "site/wiki"
+      layout: "wiki/page"
   -
     scope:
       path: ""
       type: "wiki_objects_ck"
     values:
-      layout: "site/data-object"
+      layout: "wiki/page"
   -
     scope:
       path: ""
       type: "wiki_objects_papyrus"
     values:
-      layout: "site/wiki"
+      layout: "wiki/page"
+  -
+    scope:
+      path: ""
+      type: "wiki_ui_scaleform"
+    values:
+      layout: "wiki/page"
+  -
+    scope:
+      path: ""
+      type: "wiki_ui_shared"
+    values:
+      layout: "wiki/page"
+  -
+    scope:
+      path: ""
+      type: "wiki_ui_menus"
+    values:
+      layout: "wiki/page"
   -
     scope:
       path: "assets/object_icon"
