@@ -9,7 +9,7 @@ title: "Home"
 <ul>
 {%- for value in site.pages -%}
   {%- if value.title -%}
-    <li>{{ value.baseurl }}{{ value.url }} : {{ value.title }}</li>
+    <li>{{ value.url }} : {{ value.title }}</li>
   {%- else -%}
     <li>{{ value.url }}</li>
   {%- endif -%}

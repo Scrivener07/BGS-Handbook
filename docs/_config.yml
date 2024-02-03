@@ -34,8 +34,6 @@ theme: minima
 # Minima: Navigation settings
 header_pages:
   - about.md
-  - site/index.md
-  - wiki/index.md
 
 plugins:
   - jekyll-feed
