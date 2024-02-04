@@ -1,0 +1,44 @@
+{% comment %}
+  The wiki navigation sidebar.
+{% endcomment %}
+
+<!-- The wiki navigation sidebar. -->
+<nav class="main-sidebar">
+
+  <h2>Current</h2>
+
+  {%- assign categoryFirst = page.categories | first -%}
+  {%- assign categoryLast = page.categories | last -%}
+
+  <dl class="wiki">
+    <dt>categoryFirst</dt>
+    <dd>{{ categoryFirst | default: "none" }}</dd>
+    <dt>categoryLast</dt>
+    <dd>{{ categoryLast | default: "none" }}</dd>
+  </dl>
+
+  <!-- Query pages with a matching category. -->
+  {%- for collection in site.collections -%}
+    {%- assign documents = collection.docs | where: "categories", categoryLast -%}
+    {%- if documents -%}
+      {%- assign items = items | concat: documents -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  <ul>
+    {%- for item in items -%}
+      <li>
+        {%- assign title = item.title | default: item.name -%}
+        <a href="{{ site.baseurl }}{{ item.url }}">{{ title }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+
+  <h2>Sibling Pages</h2>
+  {%- include nav/list-pages.html -%}
+
+  <h2>Child Folders</h2>
+  {%- include nav/list-sections.html -%}
+
+</nav>

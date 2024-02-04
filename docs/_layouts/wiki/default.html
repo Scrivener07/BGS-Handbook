@@ -6,14 +6,7 @@ layout: default
 <div class="main-container">
 
   <!-- The main left sidebar -->
-  <nav class="main-sidebar">
-    <h3>Pages</h3>
-    {%- include nav/list-pages.html -%}
-
-    <h3>Sections</h3>
-    {%- include nav/list-sections.html -%}
-  </nav>
-
+  {%- include wiki/sidebar.html -%}
 
   <!-- The main content area. -->
   <div class="main-content">
@@ -32,6 +25,7 @@ layout: default
     <nav class="main-breadcrumb">
       {%- include nav/breadcrumbs.html -%}
     </nav>
+
   </div>
 
 </div>
