@@ -31,10 +31,6 @@ baseurl: "/BGS-Handbook" # the subpath of your site, e.g. /blog
 # https://pages.github.com/themes/
 theme: minima
 
-# Minima: Navigation settings
-header_pages:
-  - about.md
-
 plugins:
   - jekyll-feed
 
@@ -98,7 +94,7 @@ defaults:
       path: ""
       type: "site_debug"
     values:
-      layout: "default"
+      layout: "page"
   -
     scope:
       path: ""
