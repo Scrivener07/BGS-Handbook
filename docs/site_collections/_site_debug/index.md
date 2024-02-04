@@ -1,5 +1,6 @@
 ---
 title: "Site"
+site_nav: true
 ---
 
 ## Site Information
