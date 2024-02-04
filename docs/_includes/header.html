@@ -29,9 +29,8 @@
 
         <div class="trigger">
           {%- for navPage in navPages -%}
-            {%- if navPage.title -%}
-              <a class="page-link" href="{{ site.baseurl }}{{ navPage.url }}">{{ navPage.title | escape }}</a>
-            {%- endif -%}
+            {% assign title = navPage.title | default: navPage.name %}
+            <a class="page-link" href="{{ site.baseurl }}{{ navPage.url }}">{{ title | escape }}</a>
           {%- endfor -%}
         </div>
 
