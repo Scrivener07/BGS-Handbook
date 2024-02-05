@@ -6,20 +6,7 @@
 <nav class="main-sidebar">
 
   <h2>Current</h2>
-  <table>
-    <tr>
-      <td>Title</td>
-      <td>{{ page.title | default: "none" }}</td>
-    </tr>
-    <tr>
-      <td>URL</td>
-      <td>{{ page.url | default: "none" }}</td>
-    </tr>
-    <tr>
-      <td>Categories</td>
-      <td>{{ page.categories | default: "none" }}</td>
-    </tr>
-  </table>
+  {%- include site/info-page.html -%}
 
   <h2>Sibling Pages</h2>
   <ul>

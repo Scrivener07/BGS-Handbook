@@ -1,0 +1,49 @@
+{% comment %}
+  Prints a description list of information for the current site configuration.
+{% endcomment %}
+
+<dl>
+  <dt>site.title</dt>
+  <dd>{{ site.title }}</dd>
+  <dt>site.email</dt>
+  <dd>{{ site.email }}</dd>
+  <dt>site.github_username</dt>
+  <dd>{{ site.github_username }}</dd>
+  <dt>site.description</dt>
+  <dd>{{ site.description }}</dd>
+  <dt>site.url</dt>
+  <dd>{{ site.url }}</dd>
+  <dt>site.baseurl</dt>
+  <dd>{{ site.baseurl }}</dd>
+  <dt>site.theme</dt>
+  <dd>{{ site.theme }}</dd>
+  <dt>site.header_pages</dt>
+  <dd>{{ site.header_pages }}</dd>
+  <dt>site.plugins ({{ site.plugins.size }})</dt>
+  <dd>
+    <ul>
+      {%- for plugin in site.plugins -%}
+        <li>{{ plugin }}</li>
+      {%- endfor -%}
+    </ul>
+  </dd>
+  <dt>site.collections_dir</dt>
+  <dd>{{ site.collections_dir }}</dd>
+  <dt>site.collections ({{ site.collections.size }})</dt>
+  <dd>
+    <ul>
+      {%- for collection in site.collections -%}
+        <li>{{ collection.label }}
+          <ul>
+            <li>label: {{ collection.label }}</li>
+            <li>docs: {{ collection.docs.size }}</li>
+            <li>files: {{ collection.files.size }}</li>
+            <li>relative_directory: {{ collection.relative_directory }}</li>
+            <li>directory: {{ collection.directory }}</li>
+            <li>output: {{ collection.output }}</li>
+          </ul>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </dd>
+</dl>

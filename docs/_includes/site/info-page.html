@@ -1,0 +1,18 @@
+{% comment %}
+  Prints a table of information for the current page.
+{% endcomment %}
+
+<table>
+  <tr>
+    <td>Title</td>
+    <td>{{ page.title | default: "none" }}</td>
+  </tr>
+  <tr>
+    <td>URL</td>
+    <td>{{ page.url | default: "none" }}</td>
+  </tr>
+  <tr>
+    <td>Categories</td>
+    <td>{{ page.categories | default: "none" }}</td>
+  </tr>
+</table>
