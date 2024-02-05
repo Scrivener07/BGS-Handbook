@@ -22,8 +22,8 @@
   </table>
 
   <h2>Sibling Pages</h2>
+  <ul>
   {%- for current in site.collections -%}
-    <ul>
     {%- for doc in current.docs -%}
       {%- if doc.categories == page.categories -%}
         <li>
@@ -32,8 +32,8 @@
         </li>
       {%- endif -%}
     {%- endfor -%}
-    </ul>
   {%- endfor -%}
+  </ul>
 
 
   <h2>Child Folders</h2>
