@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2023-12-25 09:51:42 -0500
 categories: jekyll update
-tags: tag-a
+tags: tag-a hello-world web testing
 ---
 
 {%- include site/info-page.html -%}

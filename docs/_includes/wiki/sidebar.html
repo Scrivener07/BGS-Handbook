@@ -1,5 +1,5 @@
 {% comment %}
-  The wiki navigation sidebar.
+The wiki navigation sidebar.
 {% endcomment %}
 
 <!-- The wiki navigation sidebar. -->
@@ -10,20 +10,30 @@
 
   <h2>Sibling Pages</h2>
   <ul>
-  {%- for current in site.collections -%}
-    {%- for doc in current.docs -%}
-      {%- if doc.categories == page.categories -%}
-        <li>
-          {%- assign title = doc.title | default: doc.name -%}
-          <a href="{{ site.baseurl }}{{ doc.url }}">{{ title }}</a>
-        </li>
-      {%- endif -%}
+    {%- for collection in site.collections -%}
+    {%- for document in collection.docs -%}
+    {%- if document.categories == page.categories and document.url != page.url -%}
+    <li>
+      {%- assign title = document.title | default: document.name -%}
+      <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
+    </li>
+    {%- endif -%}
     {%- endfor -%}
-  {%- endfor -%}
+    {%- endfor -%}
   </ul>
 
-
-  <h2>Child Folders</h2>
-  {%- include nav/list-sections.html -%}
+  <h2>Child Pages</h2>
+  <ul>
+    {%- assign category_sibling = page.categories | last -%}
+    {%- for collection in site.collections -%}
+      {%- assign query = collection.docs | where_exp: "document", "document.categories contains category_sibling" -%}
+      {%- for document in query -%}
+      <li>
+        {%- assign title = document.title | default: document.name -%}
+        <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
+      </li>
+      {%- endfor -%}
+    {%- endfor -%}
+  </ul>
 
 </nav>

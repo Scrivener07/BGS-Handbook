@@ -61,9 +61,9 @@ plugins:
 # https://jekyllrb.com/docs/collections/
 collections_dir: site_collections
 collections:
-  site_debug:
+  info:
     output: true
-    permalink: /site/:name
+    permalink: /:collection/:name
   wiki:
     output: true
     permalink: /:collection/:categories/:name
@@ -92,7 +92,7 @@ defaults:
   -
     scope:
       path: ""
-      type: "site_debug"
+      type: "info"
     values:
       layout: "page"
   -

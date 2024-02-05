@@ -2,6 +2,38 @@
 <h1>Configuration</h1>
 {%- include site/info-site.html -%}
 
+<h3>site.plugins</h3>
+<li>size: {{ site.plugins.size }}</li>
+<ul>
+  {%- for plugin in site.plugins -%}
+  <li>{{ plugin }}</li>
+  {%- endfor -%}
+</ul>
+
+<h3>site.include</h3>
+<li>size: {{ site.include.size }}</li>
+<ul>
+  {%- for item in site.include -%}
+  <li>{{ item }}</li>
+  {%- endfor -%}
+</ul>
+
+<h3>site.exclude</h3>
+<li>size: {{ site.exclude.size }}</li>
+<ul>
+  {%- for item in site.exclude -%}
+  <li>{{ item }}</li>
+  {%- endfor -%}
+</ul>
+
+<h3>site.defaults</h3>
+<li>size: {{ site.defaults.size }}</li>
+<ul>
+  {%- for item in site.defaults -%}
+  <li>{{ item }}</li>
+  {%- endfor -%}
+</ul>
+
 <hr>
 
 <h3>site.pages ({{ site.pages.size }})</h3>
@@ -51,57 +83,6 @@ Only posts with tags are stored in this array.
 <ul>
 {%- for value in site.data.papyrus_objects -%}
   <li>Name: <code>{{ value.name }}</code></li>
-{%- endfor -%}
-</ul>
-
-<hr>
-
-<h3>site.site_debug ({{ site.site_debug.size }})</h3>
-<ul>
-{%- for value in site.site_debug -%}
-  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
-{%- endfor -%}
-</ul>
-
-<h3>site.wiki ({{ site.wiki.size }})</h3>
-<ul>
-{%- for value in site.wiki -%}
-  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
-{%- endfor -%}
-</ul>
-
-<h3>site.wiki_objects_ck ({{ site.wiki_objects_ck.size }})</h3>
-<ul>
-{%- for value in site.wiki_objects_ck -%}
-  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
-{%- endfor -%}
-</ul>
-
-<h3>site.wiki_objects_papyrus ({{ site.wiki_objects_papyrus.size }})</h3>
-<ul>
-{%- for value in site.wiki_objects_papyrus -%}
-  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
-{%- endfor -%}
-</ul>
-
-<h3>site.wiki_ui_scaleform ({{ site.wiki_ui_scaleform.size }})</h3>
-<ul>
-{%- for value in site.wiki_ui_scaleform -%}
-  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
-{%- endfor -%}
-</ul>
-
-<h3>site.wiki_ui_shared ({{ site.wiki_ui_shared.size }})</h3>
-<ul>
-{%- for value in site.wiki_ui_shared -%}
-  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
-{%- endfor -%}
-</ul>
-
-<h3>site.wiki_ui_menus ({{ site.wiki_ui_menus.size }})</h3>
-<ul>
-{%- for value in site.wiki_ui_menus -%}
-  <li><a href="{{ site.baseurl }}{{ value.url }}">{{ value.title }}</a></li>
 {%- endfor -%}
 </ul>
 

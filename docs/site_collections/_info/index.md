@@ -1,7 +1,6 @@
 ---
 title: "Site"
 site_nav: true
-categories: site
 layout: wiki/page
 ---
 
@@ -19,15 +18,6 @@ You can find the source code for Jekyll at GitHub:
 
 
 [jekyll-organization]: https://github.com/jekyll
-
-
-## Theme Information
-This project uses the [Minima](https://github.com/jekyll/minima) theme.
-- **Source:** https://github.com/jekyll/minima
-- - **Version:** https://github.com/jekyll/minima/tree/v2.5.1/
-- **Preview:** https://jekyll.github.io/minima/
-- **Identifier:** `minima`
-- **Command:** `bundle info --path minima`
 
 
 ### Michael Currin's Nested Jekyll Menus

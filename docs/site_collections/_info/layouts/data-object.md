@@ -1,6 +1,6 @@
 ---
-title: "Collection: Objects"
-categories: site
+title: "Site.Layouts: Data Object"
+categories: layouts
 ---
 
 <h2>Collection: wiki_objects_ck ({{ site.wiki_objects_ck.size }})</h2>
