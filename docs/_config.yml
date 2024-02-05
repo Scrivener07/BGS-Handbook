@@ -119,18 +119,21 @@ defaults:
       type: "wiki_ui_scaleform"
     values:
       layout: "wiki/page"
+      categories: "fo4 interface reference scripts"
   -
     scope:
       path: ""
       type: "wiki_ui_shared"
     values:
       layout: "wiki/page"
+      categories: "fo4 interface reference scripts"
   -
     scope:
       path: ""
       type: "wiki_ui_menus"
     values:
       layout: "wiki/page"
+      categories: "fo4 interface reference menus"
   -
     scope:
       path: "assets/object_icon"
