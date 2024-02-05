@@ -1,5 +1,5 @@
 {% comment %}
-  Prints a table of information for the current page.
+  Prints a table of current page information.
 {% endcomment %}
 
 <table>
@@ -8,11 +8,27 @@
     <td>{{ page.title | default: "none" }}</td>
   </tr>
   <tr>
-    <td>URL</td>
-    <td>{{ page.url | default: "none" }}</td>
+    <td>Layout</td>
+    <td>{{ page.layout | default: "none" }}</td>
+  </tr>
+  <tr>
+    <td>Collection</td>
+    <td>{{ page.collection | default: "none" }}</td>
   </tr>
   <tr>
     <td>Categories</td>
-    <td>{{ page.categories | default: "none" }}</td>
+    <td>{{ page.categories | array_to_sentence_string | default: "none" }}</td>
+  </tr>
+  <tr>
+    <td>Tags</td>
+    <td>{{ page.tags | array_to_sentence_string | default: "none" }}</td>
+  </tr>
+  <tr>
+    <td>Path</td>
+    <td>{{ page.path | default: "none" }}</td>
+  </tr>
+  <tr>
+    <td>URL</td>
+    <td>{{ page.url | default: "none" }}</td>
   </tr>
 </table>
