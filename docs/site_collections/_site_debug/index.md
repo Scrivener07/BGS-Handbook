@@ -2,6 +2,7 @@
 title: "Site"
 site_nav: true
 categories: site
+layout: wiki/page
 ---
 
 ## Site Information
