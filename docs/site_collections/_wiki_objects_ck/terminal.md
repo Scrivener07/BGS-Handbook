@@ -1,5 +1,6 @@
 ---
 title: "Terminal"
+categories: fo4 creation-kit objects
 object_wiki: https://falloutck.uesp.net/wiki/Terminal
 object_type: TERM
 object_script: Terminal
