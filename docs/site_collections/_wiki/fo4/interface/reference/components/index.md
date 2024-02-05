@@ -1,5 +1,6 @@
 ---
 title: "Components"
+categories: fo4 interface reference components
 ---
 
 # UI Components

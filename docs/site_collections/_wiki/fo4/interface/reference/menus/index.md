@@ -1,5 +1,6 @@
 ---
 title: "Menus"
+categories: fo4 interface reference menus
 ---
 
 These are the User Interface menus that Players interact with in game.

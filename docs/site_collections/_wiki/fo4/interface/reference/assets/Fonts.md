@@ -1,5 +1,6 @@
 ---
 title: "Font"
+categories: fo4 interface reference assets
 ---
 
 This section provides details about the font libraries used in Fallout 4.

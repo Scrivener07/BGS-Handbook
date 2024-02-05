@@ -1,6 +1,7 @@
 ---
 title: "Site"
 site_nav: true
+categories: site
 ---
 
 ## Site Information

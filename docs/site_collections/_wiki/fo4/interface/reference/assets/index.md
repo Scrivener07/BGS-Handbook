@@ -1,5 +1,6 @@
 ---
 title: "Assets"
+categories: fo4 interface reference assets
 ---
 
 # UI Assets
