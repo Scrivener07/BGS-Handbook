@@ -1,5 +1,6 @@
 ---
 title: "Scripts"
+categories: fo4 interface reference scripts
 ---
 
 ## UI Scripts

@@ -1,5 +1,7 @@
 ---
 title: "Site"
+site_nav: true
+categories: site
 ---
 
 ## Site Information
@@ -33,10 +35,4 @@ This project uses components of Michael Currin's *Nested Jekyll Menus*.
 - Found via: https://talk.jekyllrb.com/t/how-to-list-subpages/5051/4
 
 
-## Site
-<b>Debug Pages ({{ site.site_debug.size }})</b>
-<ul>
-{%- for value in site.site_debug -%}
-  <li><a href="{{ value.url }}">{{ value.title}}</a></li>
-{%- endfor -%}
-</ul>
+{%- include site/info.html -%}

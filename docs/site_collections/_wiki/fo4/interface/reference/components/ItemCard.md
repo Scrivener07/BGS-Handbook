@@ -1,3 +1,7 @@
+---
+categories: fo4 interface reference components
+---
+
 # ItemCard
 Represents an item card that can display various properties of an item, such as stats or descriptions.
 

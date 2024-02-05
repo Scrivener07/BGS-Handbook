@@ -1,5 +1,6 @@
 ---
 title: "Message"
+categories: fo4 creation-kit objects
 object_wiki: https://falloutck.uesp.net/wiki/Message
 object_type: MESG
 object_script: Message

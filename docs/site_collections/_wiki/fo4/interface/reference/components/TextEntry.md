@@ -1,3 +1,7 @@
+---
+categories: fo4 interface reference components
+---
+
 # TextEntry
 
 ### ActionScript

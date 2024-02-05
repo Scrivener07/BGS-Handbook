@@ -1,6 +1,6 @@
 ---
 title: "Collection: Objects"
-layout: default
+categories: site
 ---
 
 <h2>Collection: wiki_objects_ck ({{ site.wiki_objects_ck.size }})</h2>

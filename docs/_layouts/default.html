@@ -1,45 +1,29 @@
 ---
 ---
+
+{% comment %}
+https://github.com/jekyll/minima/blob/v2.5.1/_layouts/default.html
+{% endcomment %}
+
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: " en" }}">
 
-  <!-- The head for this layout's HTML document. -->
-  {%- include head.html -%}
+<!-- The head for this layout's HTML document. -->
+{%- include head.html -%}
 
-  <body>
+<body>
 
-    <!-- The header area for this layout. -->
-    {%- include header.html -%}
+  <!-- The header area for this layout. -->
+  {%- include header.html -%}
 
-    <!-- Inserts the templating system content area. -->
-    <div class="nav_container">
+  <!-- The main content area of the page. -->
+  <main class="page-content" aria-label="Content">
+    {{ content }}
+  </main>
 
-    <nav class="nav_sidebar">
-      <h3>Pages</h3>
-      {%- include nav/list-pages.html -%}
+  <!-- The footer area for this layout. -->
+  {%- include footer.html -%}
 
-      <h3>Sections</h3>
-      {%- include nav/list-sections.html -%}
-    </nav>
+</body>
 
-    <div class="nav_content">
-      <nav>
-        {%- include nav/breadcrumbs.html -%}
-      </nav>
-
-      <main class="page-content" aria-label="Content">
-        {{ content }}
-      </main>
-
-      <nav>
-        {%- include nav/breadcrumbs.html -%}
-      </nav>
-    </div>
-
-  </div>
-
-    <!-- The footer area for this layout. -->
-    {%- include footer.html -%}
-
-  </body>
 </html>

@@ -1,5 +1,6 @@
 ---
 title: "Preview AS3"
+categories: site
 object: MovieClip
 package: flash.display
 modifiers:
@@ -23,9 +24,7 @@ subclasses:
   - DerivedClass3
 ---
 
-
 {% include code/as3-class-details.html %}
-
 
 ## Description
 A description of the class goes here.

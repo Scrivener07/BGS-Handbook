@@ -1,3 +1,7 @@
+---
+categories: fo4 interface reference components
+---
+
 # Slider
 A slider component to select a numeric value within a range.
 

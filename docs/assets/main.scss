@@ -1,23 +1,78 @@
 ---
 ---
 
+/* https://github.com/jekyll/minima/blob/v2.5.1/_sass/minima */
 @import "minima";
 
-/* Supports the left aligned sidebar navigation. */
 
-.nav_container {
-	display: flex;
+/* Site */
+/* These are the site styles. */
+
+.main-container {
+	/* Enables Flexbox layout */
+  display: flex;
 }
 
-.nav_sidebar {
-	background-color: #f3f3f3;
+.main-content {
+	/* Allows the middle column to grow and fill the remaining space */
+	flex-grow: 1;
+	padding: 20px;
+	background-color: #ffffff;
+}
+
+.main-sidebar {
+	/* Do not grow, can shrink, and is automatically sized according to content */
+  flex: 0 1 auto;
 	padding: 20px;
 	min-width: 150px;
 	max-width: 25%;
+	background-color: #f3f3f3;
 }
 
-.nav_content {
-	flex-grow: 2;
-	padding: 20px;
-	background-color: #ffffff;
+.main-breadcrumb {
+	padding: 10px;
+	background-color: #f3f3f3;
+}
+
+
+/* Common */
+/* These are the common styles. */
+
+dt {
+	font-weight: bold;
+}
+dt:after {
+	content: ":";
+}
+dd {
+	margin: 0;
+	padding: 0 0 0.5em 0;
+}
+
+
+/* Wiki */
+/* These are the wiki styles. */
+
+/* https://www.the-art-of-web.com/css/format-dl/ */
+
+.wiki dl {
+	border: 3px double #ccc;
+	padding: 0.5em;
+}
+
+.wiki dt {
+	float: left;
+	clear: left;
+	width: 100px;
+	text-align: right;
+	font-weight: bold;
+}
+
+.wiki dt::after {
+	content: ":";
+}
+
+.wiki dd {
+	margin: 0 0 0 110px;
+	padding: 0 0 0.5em 0;
 }

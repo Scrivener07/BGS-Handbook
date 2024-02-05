@@ -1,5 +1,6 @@
 ---
 title: "Link Test"
+categories: site
 ---
 
 ## External Links

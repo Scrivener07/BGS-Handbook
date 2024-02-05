@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<!-- Inserts the templating system content area. -->
+<div class="main-container">
+
+  <!-- The main left sidebar -->
+  {%- include wiki/sidebar.html -%}
+
+  <!-- The main content area. -->
+  <div class="main-content">
+
+    <!-- Breadcrumb for the top of page. -->
+    <nav class="main-breadcrumb">
+      {%- include nav/breadcrumbs.html -%}
+    </nav>
+
+    <!-- The main content area of the page. -->
+    <div>
+      {{ content }}
+    </div>
+
+    <!-- Breadcrumb for the bottom of page. -->
+    <nav class="main-breadcrumb">
+      {%- include nav/breadcrumbs.html -%}
+    </nav>
+
+  </div>
+
+</div>

@@ -1,3 +1,7 @@
+---
+categories: fo4 interface reference components
+---
+
 # ButtonHintBar
 The `ButtonHintBar` displays a bar of button hints, which could be controller buttons or keyboard keys.
 
