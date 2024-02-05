@@ -1,9 +1,16 @@
 ---
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-title: "Theme Preview"
-categories: site
+title: "Site.Theme"
 ---
+
+## Theme Information
+This project uses the [Minima](https://github.com/jekyll/minima) theme.
+- **Source:** https://github.com/jekyll/minima
+- - **Version:** https://github.com/jekyll/minima/tree/v2.5.1/
+- **Preview:** https://jekyll.github.io/minima/
+- **Identifier:** `minima`
+- **Command:** `bundle info --path minima`
 
 # Theme Demonstration
 This is a preview for this site's current theme.
@@ -15,9 +22,45 @@ Text can be **bold**, _italic_, ~~strike-through~~, <u>underline</u>, and ==high
 **Note**: Some of these formats (like "highlighted" and "underline") depend on specific CSS rules which may or may not be present in all themes.
 
 ## Links
-
 - [Link to home page](/index.md).
 - [Link to Microsoft .NET Documentation](https://docs.microsoft.com/en-us/dotnet/).
+
+### External Links
+- Text Link: https://github.com/Scrivener07
+- Hyper Link: <https://github.com/Scrivener07>
+- Masked Link: [Scrivener07 on GitHub.com](https://github.com/Scrivener07)
+
+### Markdown: Internal Link: Rooted
+- [Wiki](/wiki/)
+- - [Fallout 4](/wiki/fo4/)
+- - - [Interface](/wiki/fo4/interface/)
+- - - - [Tooling](/wiki/fo4/interface/tooling.md)
+- - - - - [Reference](/wiki/fo4/interface/reference/)
+- - [Skyrim](/wiki/tes5/)
+- - - [Interface](/wiki/tes5/interface/)
+- - - - [Topics](/wiki/tes5/interface/topics/)
+
+### Markdown: Internal Link: Relative
+- [Wiki](../wiki/)
+- - [Fallout 4](../wiki/fo4/)
+- - - [Interface](../wiki/fo4/interface/)
+- - - - [Tooling](../wiki/fo4/interface/tooling.md)
+- - - - - [Reference](../wiki/fo4/interface/reference/)
+- - [Skyrim](../wiki/tes5/)
+- - - [Interface](../wiki/tes5/interface/)
+- - - - [Topics](../wiki/tes5/interface/topics/)
+
+### Liquid: Internal Link
+The Liquid syntax for internal links is verified at build time.
+
+- [Wiki]({{ site.baseurl }}{% link _wiki/index.md %})
+- - [Fallout 4]({{ site.baseurl }}{% link _wiki/fo4/index.md %})
+- - - [Interface]({{ site.baseurl }}{% link _wiki/fo4/interface/index.md %})
+- - - - [Tooling]({{ site.baseurl }}{% link _wiki/fo4/interface/tooling.md %})
+- - - - - [Reference]({{ site.baseurl }}{% link _wiki/fo4/interface/reference/index.md %})
+- - [Skyrim]({{ site.baseurl }}{% link _wiki/tes5/index.md %})
+- - - [Interface]({{ site.baseurl }}{% link _wiki/tes5/interface/index.md %})
+- - - - [Topics]({{ site.baseurl }}{% link _wiki/tes5/interface/topics/index.md %})
 
 ## Paragraphs
 

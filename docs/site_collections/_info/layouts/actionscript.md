@@ -1,6 +1,6 @@
 ---
-title: "Preview AS3"
-categories: site
+title: "Site.Layouts: ActionScript"
+categories: layouts
 object: MovieClip
 package: flash.display
 modifiers:
