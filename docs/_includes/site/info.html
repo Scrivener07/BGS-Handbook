@@ -1,20 +1,453 @@
+{% comment %} 
+  Prints a table of current site configuration. 
+  - https://jekyllrb.com/docs/configuration/environments/ 
+{% endcomment %}
 
-<h1>Configuration</h1>
-{%- include site/info-site.html -%}
+<h4>Site</h4>
+<table>
+  <tr>
+    <td>site.title</td>
+    <td>{{ site.title }}</td>
+  </tr>
+  <tr>
+    <td>site.email</td>
+    <td>{{ site.email }}</td>
+  </tr>
+  <tr>
+    <td>site.github_username</td>
+    <td>{{ site.github_username }}</td>
+  </tr>
+  <tr>
+    <td>site.description</td>
+    <td>{{ site.description }}</td>
+  </tr>
+  <tr>
+    <td>site.url</td>
+    <td>{{ site.url }}</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="{{ site.baseurl }}{% link _info/theme.md %}">site.theme</a>
+    </td>
+    <td>{{ site.theme }}</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="{{ site.baseurl }}{% link _info/plugins.md %}">site.plugins</a>
+    </td>
+    <td>{{ site.plugins.size }}</td>
+  </tr>
+  <tr>
+    <td>site.collections_dir</td>
+    <td>{{ site.collections_dir }}</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="{{ site.baseurl }}{% link _info/collections.md %}">site.collections</a>
+    </td>
+    <td>{{ site.collections.size }}</td>
+  </tr>
+  <tr>
+    <td>site.defaults</td>
+    <td>{{ site.defaults.size }}</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="{{ site.baseurl }}{% link _info/data.md %}">site.data</a>
+    </td>
+    <td>{{ site.data.size }}</td>
+  </tr>
+  <tr>
+    <td>site.pages</td>
+    <td>{{ site.pages.size }}</td>
+  </tr>
+  <tr>
+    <td>site.posts</td>
+    <td>{{ site.posts.size }}</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="{{ site.baseurl }}{% link _info/static_files.md %}">site.static_files</a>
+    </td>
+    <td>{{ site.static_files.size }}</td>
+  </tr>
+  <tr>
+    <td>site.categories</td>
+    <td>{{ site.categories.size }}</td>
+  </tr>
+  <tr>
+    <td>site.tags</td>
+    <td>{{ site.tags.size }}</td>
+  </tr>
+</table>
 
-<h3>site.plugins</h3>
-<li>size: {{ site.plugins.size }}</li>
-<ul>
-  {%- for plugin in site.plugins -%}
-  <li>{{ plugin }}</li>
-  {%- endfor -%}
-</ul>
+
+<h4>Global Configuration</h4>
+<table>
+  <tr>
+    <td>site.source</td>
+    <td>{{ site.source }}</td>
+  </tr>
+  <tr>
+    <td>site.destination</td>
+    <td>{{ site.destination }}</td>
+  </tr>
+  <tr>
+    <td>site.safe</td>
+    <td>{{ site.safe }}</td>
+  </tr>
+  <tr>
+    <td>site.disable_disk_cache</td>
+    <td>{{ site.disable_disk_cache }}</td>
+  </tr>
+  <tr>
+    <td>site.ignore_theme_config</td>
+    <td>{{ site.ignore_theme_config }}</td>
+  </tr>
+  <tr>
+    <td>site.include</td>
+    <td>{{ site.include.size }}</td>
+  </tr>
+  <tr>
+    <td>site.exclude</td>
+    <td>{{ site.exclude.size }}</td>
+  </tr>
+  <tr>
+    <td>site.keep_files</td>
+    <td>{{ site.keep_files.size }}</td>
+  </tr>
+  <tr>
+    <td>site.timezone</td>
+    <td>{{ site.timezone }}</td>
+  </tr>
+  <tr>
+    <td>site.encoding</td>
+    <td>{{ site.encoding }}</td>
+  </tr>
+</table>
+
+
+<h4>Build Command Options</h4>
+<table>
+  <tr>
+    <td>site.baseurl</td>
+    <td>{{ site.baseurl }}</td>
+  </tr>
+  <tr>
+    <td>site.plugins_dir</td>
+    <td>{{ site.plugins_dir }}</td>
+  </tr>
+  <tr>
+    <td>site.layouts_dir</td>
+    <td>{{ site.layouts_dir }}</td>
+  </tr>
+  <tr>
+    <td>site.show_drafts</td>
+    <td>{{ site.show_drafts }}</td>
+  </tr>
+  <tr>
+    <td>site.future</td>
+    <td>{{ site.future }}</td>
+  </tr>
+  <tr>
+    <td>site.unpublished</td>
+    <td>{{ site.unpublished }}</td>
+  </tr>
+  <tr>
+    <td>site.lsi</td>
+    <td>{{ site.lsi }}</td>
+  </tr>
+  <tr>
+    <td>site.limit_posts</td>
+    <td>{{ site.limit_posts }}</td>
+  </tr>
+  <tr>
+    <td>site.force_polling</td>
+    <td>{{ site.force_polling }}</td>
+  </tr>
+  <tr>
+    <td>site.verbose</td>
+    <td>{{ site.verbose }}</td>
+  </tr>
+  <tr>
+    <td>site.quiet</td>
+    <td>{{ site.quiet }}</td>
+  </tr>
+  <tr>
+    <td>site.incremental</td>
+    <td>{{ site.incremental }}</td>
+  </tr>
+  <tr>
+    <td>site.profile</td>
+    <td>{{ site.profile }}</td>
+  </tr>
+  <tr>
+    <td>site.strict_front_matter</td>
+    <td>{{ site.strict_front_matter }}</td>
+  </tr>
+</table>
+
+
+<h4>Serve Command Options</h4>
+<table>
+  <tr>
+    <td>site.port</td>
+    <td>{{ site.port }}</td>
+  </tr>
+  <tr>
+    <td>site.host</td>
+    <td>{{ site.host }}</td>
+  </tr>
+  <tr>
+    <td>site.livereload</td>
+    <td>{{ site.livereload }}</td>
+  </tr>
+  <tr>
+    <td>site.livereload_ignore</td>
+    <td>{{ site.livereload_ignore }}</td>
+  </tr>
+  <tr>
+    <td>site.livereload_min_delay</td>
+    <td>{{ site.livereload_min_delay }}</td>
+  </tr>
+  <tr>
+    <td>site.livereload_max_delay</td>
+    <td>{{ site.livereload_max_delay }}</td>
+  </tr>
+  <tr>
+    <td>site.open_url</td>
+    <td>{{ site.open_url }}</td>
+  </tr>
+  <tr>
+    <td>site.detach</td>
+    <td>{{ site.detach }}</td>
+  </tr>
+  <tr>
+    <td>site.skip_initial_build</td>
+    <td>{{ site.skip_initial_build }}</td>
+  </tr>
+  <tr>
+    <td>site.show_dir_listing</td>
+    <td>{{ site.show_dir_listing }}</td>
+  </tr>
+</table>
+
+
+<h4>Environment</h4>
+<table>
+  <tr>
+    <td>jekyll.environment</td>
+    <td>{{ jekyll.environment }}</td>
+  </tr>
+</table>
+
+
+<h4>Unsorted</h4>
+<table>
+  {% comment %} Directories {% endcomment %}
+  <tr>
+    <td>site.data_dir</td>
+    <td>{{ site.data_dir }}</td>
+  </tr>
+  <tr>
+    <td>site.includes_dir</td>
+    <td>{{ site.includes_dir }}</td>
+  </tr>
+
+  {% comment %} Handles Reading {% endcomment %}
+  <tr>
+    <td>site.markdown_ext</td>
+    <td>{{ site.markdown_ext }}</td>
+  </tr>
+  <tr>
+    <td>site.markdown</td>
+    <td>{{ site.markdown }}</td>
+  </tr>
+  <tr>
+    <td>site.highlighter</td>
+    <td>{{ site.highlighter }}</td>
+  </tr>
+  <tr>
+    <td>site.excerpt_separator</td>
+    <td>{{ site.excerpt_separator }}</td>
+  </tr>
+
+  {% comment %} Plugins {% endcomment %}
+  <tr>
+    <td>site.whitelist</td>
+    <td>{{ site.whitelist }}</td>
+  </tr>
+
+  {% comment %} Unsorted {% endcomment %}
+  <tr>
+    <td>site.permalink</td>
+    <td>{{ site.permalink }}</td>
+  </tr>
+  <tr>
+    <td>site.paginate_path</td>
+    <td>{{ site.paginate_path }}</td>
+  </tr>
+</table>
+
+
+<h4>Liquid</h4>
+<table>
+  <tr>
+    <td>site.liquid</td>
+    <td>{{ site.liquid.size }}</td>
+  </tr>
+  <tr>
+    <td>site.liquid.error_mode</td>
+    <td>{{ site.liquid.error_mode }}</td>
+  </tr>
+  <tr>
+    <td>site.liquid.strict_filters</td>
+    <td>{{ site.liquid.strict_filters }}</td>
+  </tr>
+  <tr>
+    <td>site.liquid.strict_variables</td>
+    <td>{{ site.liquid.strict_variables }}</td>
+  </tr>
+</table>
+
+
+<h4>Sass/SCSS</h4>
+{% comment %} 
+  https://jekyllrb.com/docs/configuration/sass/
+  https://github.com/jekyll/jekyll-sass-converter#usage 
+{% endcomment %}
+<table>
+  <tr>
+    <td>site.sass</td>
+    <td>{{ site.sass }}</td>
+  </tr>
+  <tr>
+    <td>site.sass.style</td>
+    <td>{{ site.sass.style }}</td>
+  </tr>
+  <tr>
+    <td>site.sass.sass_dir</td>
+    <td>{{ site.sass.sass_dir }}</td>
+  </tr>
+  <tr>
+    <td>site.sass.load_paths</td>
+    <td>{{ site.sass.load_paths }}</td>
+  </tr>
+  <tr>
+    <td>site.sass.sourcemap</td>
+    <td>{{ site.sass.sourcemap }}</td>
+  </tr>
+  <tr>
+    <td>site.sass.quiet_deps</td>
+    <td>{{ site.sass.quiet_deps }}</td>
+  </tr>
+  <tr>
+    <td>site.sass.verbose</td>
+    <td>{{ site.sass.verbose }}</td>
+  </tr>
+</table>
+
+
+<h4>Markdown Processors</h4>
+{% comment %} 
+  https://jekyllrb.com/docs/configuration/markdown/
+  https://kramdown.gettalong.org/parser/kramdown.html
+  https://kramdown.gettalong.org/options.html 
+{% endcomment %}
+<table>
+  {% comment %} Markdown Processors {% endcomment %}
+  <tr>
+    <td>site.kramdown</td>
+    <td>{{ site.kramdown.size }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.input</td>
+    <td>{{ site.kramdown.input }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.gfm_quirks</td>
+    <td>{{ site.kramdown.gfm_quirks }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.auto_ids</td>
+    <td>{{ site.kramdown.auto_ids }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.entity_output</td>
+    <td>{{ site.kramdown.entity_output }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.toc_levels</td>
+    <td>{{ site.kramdown.toc_levels }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.smart_quotes</td>
+    <td>{{ site.kramdown.smart_quotes }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.hard_wrap</td>
+    <td>{{ site.kramdown.hard_wrap }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.footnote_nr</td>
+    <td>{{ site.kramdown.footnote_nr }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.show_warnings</td>
+    <td>{{ site.kramdown.show_warnings }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.header_offset</td>
+    <td>{{ site.kramdown.header_offset }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.syntax_highlighter</td>
+    <td>{{ site.kramdown.syntax_highlighter }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.syntax_highlighter_opts</td>
+    <td>{{ site.kramdown.syntax_highlighter_opts }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.syntax_highlighter_opts.default_lang</td>
+    <td>{{ site.kramdown.syntax_highlighter_opts.default_lang }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.syntax_highlighter_opts.guess_lang</td>
+    <td>{{ site.kramdown.syntax_highlighter_opts.guess_lang }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.syntax_highlighter_opts.line_numbers</td>
+    <td>{{ site.kramdown.syntax_highlighter_opts.line_numbers }}</td>
+  </tr>
+  <tr>
+    <td>site.kramdown.syntax_highlighter_opts.bold_every</td>
+    <td>{{ site.kramdown.syntax_highlighter_opts.bold_every }}</td>
+  </tr>
+</table>
+
+
+<h4>WEBrick</h4>
+<table>
+  <tr>
+    <td>site.webrick</td>
+    <td>{{ site.webrick.size }}</td>
+  </tr>
+  <tr>
+    <td>site.webrick.headers</td>
+    <td>{{ site.webrick.headers }}</td>
+  </tr>
+</table>
+
+
+<h2>Values</h2>
+
 
 <h3>site.include</h3>
 <li>size: {{ site.include.size }}</li>
 <ul>
   {%- for item in site.include -%}
-  <li>{{ item }}</li>
+    <li>{{ item }}</li>
   {%- endfor -%}
 </ul>
 
@@ -22,7 +455,7 @@
 <li>size: {{ site.exclude.size }}</li>
 <ul>
   {%- for item in site.exclude -%}
-  <li>{{ item }}</li>
+    <li>{{ item }}</li>
   {%- endfor -%}
 </ul>
 
@@ -30,7 +463,7 @@
 <li>size: {{ site.defaults.size }}</li>
 <ul>
   {%- for item in site.defaults -%}
-  <li>{{ item }}</li>
+    <li>{{ item }}</li>
   {%- endfor -%}
 </ul>
 
@@ -38,20 +471,20 @@
 
 <h3>site.pages ({{ site.pages.size }})</h3>
 <ul>
-{%- for value in site.pages -%}
-  {%- if value.title -%}
-    <li>{{ value.url }} : {{ value.title }}</li>
-  {%- else -%}
-    <li>{{ value.url }}</li>
-  {%- endif -%}
-{%- endfor -%}
+  {%- for value in site.pages -%}
+    {%- if value.title -%}
+      <li>{{ value.url }} : {{ value.title }}</li>
+    {%- else -%}
+      <li>{{ value.url }}</li>
+    {%- endif -%}
+  {%- endfor -%}
 </ul>
 
 <h3>site.posts ({{ site.posts.size }})</h3>
 <ul>
-{%- for value in site.posts -%}
-  <li>{{ value.title }}</li>
-{%- endfor -%}
+  {%- for value in site.posts -%}
+    <li>{{ value.title }}</li>
+  {%- endfor -%}
 </ul>
 
 <h3>site.categories ({{ site.categories.size }})</h3>
@@ -68,29 +501,4 @@ Only posts with tags are stored in this array.
   {%- for tag in site.tags -%}
     <li>{{ tag[0] }} (used by {{ tag[1].size }})</li>
   {%- endfor -%}
-</ul>
-
-<hr>
-
-<h3>site.data.ck_objects ({{ site.data.ck_objects.size }})</h3>
-<ul>
-{%- for value in site.data.ck_objects -%}
-  <li>Name: <code>{{ value.type }}</code></li>
-{%- endfor -%}
-</ul>
-
-<h3>site.data.papyrus_objects ({{ site.data.papyrus_objects.size }})</h3>
-<ul>
-{%- for value in site.data.papyrus_objects -%}
-  <li>Name: <code>{{ value.name }}</code></li>
-{%- endfor -%}
-</ul>
-
-<hr>
-
-<h3>site.static_files ({{ site.static_files.size }})</h3>
-<ul>
-{%- for file in site.static_files -%}
-  <li>{{ file.basename }} : <code>{{ file.path }}</code></li>
-{%- endfor -%}
 </ul>
