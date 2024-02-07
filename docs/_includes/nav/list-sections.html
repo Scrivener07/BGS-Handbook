@@ -1,23 +1,23 @@
-{% comment %}
-	https://github.com/MichaelCurrin/nested-jekyll-menus/blob/master/_includes/list-sections.html
-
-	List directories which are in the current directory.
-
-	Edited by Scrivener:
-	The modification introduces a fallback mechanism for the link text.
-	If item.title is not available or is empty, the file name of the page (item.name) is used instead.
-	This change ensures that every link will have some descriptive text, either the specified title or the file name.
+{% comment %} 
+  https://github.com/MichaelCurrin/nested-jekyll-menus/blob/master/_includes/list-sections.html
+ 
+  List directories which are in the current directory.
+ 
+  Edited by Scrivener:
+  The modification introduces a fallback mechanism for the link text.
+  If item.title is not available or is empty, the file name of the page (item.name) is used instead.
+  This change ensures that every link will have some descriptive text, either the specified title or the file name. 
 {% endcomment %}
 
 <ul>
-	{% for item in site.pages %}
-		{% assign item_crumbs = item.url | remove_first: page.dir | split: '/' %}
+  {% for item in site.pages %}
+    {% assign item_crumbs = item.url | remove_first: page.dir | split: '/' %}
 
-		{% if item_crumbs.size == 1 and item.name == 'index.md' %}
-		<li>
-			{% assign title = item.title | default: item.name %}
-			<a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-		</li>
-		{% endif %}
-	{% endfor %}
+    {% if item_crumbs.size == 1 and item.name == 'index.md' %}
+      <li>
+        {% assign title = item.title | default: item.name %}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
 </ul>
