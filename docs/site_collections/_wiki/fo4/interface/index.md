@@ -43,7 +43,7 @@ Design full screen menus with the dimensions of `1280x720` which are scaled to t
 - **Standard:** A standard full screen scaleform document uses a size of `1280x720` at `30` frames per second.
 - **Pipboy:** The Pipboy and Pipboy Tab documents use a size of `876x700` at `30` frames per second.
 - **Terminal:** A Terminal document uses a size of `826x700` at `24` frames per second.
-- **Vault Boy:**
+- **Vault Boy:** A Vault Boy document uses a size of `550x400` at `24`, `28`, `30`, or `32` frames per second.
 
 
 # External Resources : Scaleform Relative Paths
