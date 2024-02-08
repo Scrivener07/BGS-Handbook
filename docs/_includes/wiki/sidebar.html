@@ -7,7 +7,27 @@
 <!-- The wiki navigation sidebar. -->
 <nav class="main-sidebar">
   {%- assign wikis = site.collections | where_exp: "collection", "collection.label contains 'wiki'" -%}
-  {%- assign depth_next = page.categories.size | plus: 1 -%}
+  {%- assign depth_parent = page.categories.size | minus: 1 -%}
+  {%- assign depth_children = page.categories.size | plus: 1 -%}
+
+  <h2>Parent</h2>
+  <ul>
+    {%- for wiki in wikis -%}
+      {%- assign documents = wiki.docs -%}
+      {% assign categories_parent = page.categories | pop %}
+      {%- for category in categories_parent -%}
+        {%- assign documents = documents | where_exp: "document", "document.categories contains category" -%}
+      {%- endfor -%}
+      {%- assign documents = documents | where_exp: "document", "document.categories.size == depth_parent" -%}
+      {%- assign documents = documents | where_exp: "document", "document.url contains 'index'" -%}
+      {%- for document in documents -%}
+        <li>
+          {%- assign title = document.title | default: document.name -%}
+          <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
+        </li>
+      {%- endfor -%}
+    {%- endfor -%}
+  </ul>
 
   <h2>Siblings</h2>
   <ul>
@@ -31,7 +51,7 @@
       {%- for category in page.categories -%}
         {%- assign documents = documents | where_exp: "document", "document.categories contains category" -%}
       {%- endfor -%}
-      {%- assign documents = documents | where_exp: "document", "document.categories.size == depth_next" -%}
+      {%- assign documents = documents | where_exp: "document", "document.categories.size == depth_children" -%}
       {%- assign documents = documents | where_exp: "document", "document.url contains 'index'" -%}
       {%- for document in documents -%}
         <li>

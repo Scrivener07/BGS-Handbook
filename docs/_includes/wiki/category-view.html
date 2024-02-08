@@ -9,18 +9,6 @@
   <ul>
     {%- for wiki in wikis -%}
       {%- assign documents = wiki.docs -%}
-
-
-      {%- for category in page.categories -%}
-        {%- assign documents = documents | where_exp: "document", "document.categories contains category" -%}
-      {%- endfor -%}
-
-
-      {% comment %} 
-        {%- assign documents = documents | where_exp: "document", "document.categories != page.categories" -%}
-        {%- assign documents = documents | where_exp: "document", "document.url contains 'index'" -%} 
-      {% endcomment %}
-
       {%- for category in page.categories -%}
         {%- assign documents = documents | where_exp: "document", "document.categories contains category" -%}
       {%- endfor -%}
