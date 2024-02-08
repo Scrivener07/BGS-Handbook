@@ -1,8 +1,10 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 title: "Site.Theme"
 ---
+
+#### Jekyll Documentation
+- <https://jekyllrb.com/docs/themes/>
+
 
 ## Theme Information
 This project uses the [Minima](https://github.com/jekyll/minima) theme.

@@ -1,7 +1,6 @@
 ---
 title: "Site"
 site_nav: true
-layout: wiki/page
 ---
 
 ## Site Information
@@ -25,5 +24,10 @@ This project uses components of Michael Currin's *Nested Jekyll Menus*.
 - Source: https://github.com/MichaelCurrin/nested-jekyll-menus/
 - Found via: https://talk.jekyllrb.com/t/how-to-list-subpages/5051/4
 
+
+
+<h3>Configuration</h3>
+
+<https://jekyllrb.com/docs/configuration/>
 
 {%- include site/info.html -%}

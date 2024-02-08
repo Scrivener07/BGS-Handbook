@@ -1,37 +1,43 @@
-{% comment %}
-The wiki navigation sidebar.
+{% comment %} 
+  The wiki navigation sidebar.
+  TODO: 
+  - Add support for pages within collections other than ones named "wiki*". 
 {% endcomment %}
 
 <!-- The wiki navigation sidebar. -->
 <nav class="main-sidebar">
+  {%- assign wikis = site.collections | where_exp: "collection", "collection.label contains 'wiki'" -%}
+  {%- assign depth_next = page.categories.size | plus: 1 -%}
 
-  <h2>Current</h2>
-  {%- include site/info-page.html -%}
-
-  <h2>Sibling Pages</h2>
+  <h2>Siblings</h2>
   <ul>
-    {%- for collection in site.collections -%}
-    {%- for document in collection.docs -%}
-    {%- if document.categories == page.categories and document.url != page.url -%}
-    <li>
-      {%- assign title = document.title | default: document.name -%}
-      <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
-    </li>
-    {%- endif -%}
-    {%- endfor -%}
+    {%- for wiki in wikis -%}
+      {%- assign documents = wiki.docs -%}
+      {%- assign documents = documents | where_exp: "document", "document.categories == page.categories" -%}
+      {%- assign documents = documents | where_exp: "document", "document.url != page.url" -%}
+      {%- for document in documents -%}
+        <li>
+          {%- assign title = document.title | default: document.name -%}
+          <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
+        </li>
+      {%- endfor -%}
     {%- endfor -%}
   </ul>
 
-  <h2>Child Pages</h2>
+  <h2>Children</h2>
   <ul>
-    {%- assign category_sibling = page.categories | last -%}
-    {%- for collection in site.collections -%}
-      {%- assign query = collection.docs | where_exp: "document", "document.categories contains category_sibling" -%}
-      {%- for document in query -%}
-      <li>
-        {%- assign title = document.title | default: document.name -%}
-        <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
-      </li>
+    {%- for wiki in wikis -%}
+      {%- assign documents = wiki.docs -%}
+      {%- for category in page.categories -%}
+        {%- assign documents = documents | where_exp: "document", "document.categories contains category" -%}
+      {%- endfor -%}
+      {%- assign documents = documents | where_exp: "document", "document.categories.size == depth_next" -%}
+      {%- assign documents = documents | where_exp: "document", "document.url contains 'index'" -%}
+      {%- for document in documents -%}
+        <li>
+          {%- assign title = document.title | default: document.name -%}
+          <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
+        </li>
       {%- endfor -%}
     {%- endfor -%}
   </ul>

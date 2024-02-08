@@ -94,7 +94,7 @@ defaults:
       path: ""
       type: "info"
     values:
-      layout: "page"
+      layout: "wiki/page"
   -
     scope:
       path: ""

@@ -1,7 +1,10 @@
 ---
 title: "Site.Collections"
-layout: wiki/page
 ---
+
+#### Jekyll Documentation
+- <https://jekyllrb.com/docs/collections/>
+
 
 <h3>site.collections</h3>
 <li>size: {{ site.collections.size }}</li>
