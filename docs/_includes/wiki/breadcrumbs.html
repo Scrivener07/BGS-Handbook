@@ -1,0 +1,67 @@
+{% comment %} 
+  WIP 
+{% endcomment %}
+
+
+<!-- dev -->
+<section style="border: black; border-style: dotted; padding: 8px;">
+
+  {%- assign wikis = site.collections | where_exp: "collection", "collection.label contains 'wiki'" -%}
+
+  {%- assign depth_parent = page.categories.size | minus: 1 -%}
+  {%- assign depth_self = page.categories.size -%}
+  {%- assign depth_children = page.categories.size | plus: 1 -%}
+
+
+  <li>url: {{ page.url | inspect }}</li>
+  <li>collection: {{ page.collection | inspect }}</li>
+  <li>categories: {{ page.categories | inspect }}</li>
+  <li>
+    {% capture my_link %}_{{ page.collection }}/{{ page.categories | join: '/' }}/index.md{% endcapture %}
+    <span>my_link:</span>
+    <span>{{ my_link | inspect }}</span>
+  </li>
+
+
+  {%- assign title = page.title | default: page.name -%}
+  <a href="{{ site.baseurl }}{{ page.url }}">{{ title }}</a>
+</section>
+
+
+<br>
+
+
+<!-- The wiki navigation bread crumbs. -->
+<div id="breadcrumbs" style="border: black; border-style: dotted; padding: 8px;">
+
+  {%- assign crumbs = page.url | remove: '/index.html' | split: '/' -%}
+  <li>crumbs: {{ crumbs | inspect }}</li>
+
+
+  <a href="{{ '/' | relative_url }}">Home</a>
+
+  {%- for crumb in crumbs offset: 1 -%}
+    <span></span>
+    <span>/</span>
+
+    {%- if forloop.last -%}
+      {{ page.title }}
+
+
+    {%- else -%}
+      {%- assign crumb_limit = forloop.index | plus: 1 -%}
+
+      <a href="{{ site.baseurl }}
+        {%- for crumb in crumbs limit: crumb_limit -%}
+          {{ crumb | append: '/' }}
+        {%- endfor -%}">
+        {{ crumb | replace: '-', ' ' | remove: '.html' | capitalize }}
+      </a>
+
+    {%- endif -%}
+
+
+  {%- endfor -%}
+
+
+</div>
