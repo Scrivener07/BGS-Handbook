@@ -1,15 +1,15 @@
 {% comment %} 
-  The wiki navigation sidebar. 
+  The wiki navigation sidebar.
+  TODO: 
+  - Add support for pages within collections other than ones named "wiki*". 
 {% endcomment %}
 
 <!-- The wiki navigation sidebar. -->
 <nav class="main-sidebar">
-
-  {%- assign devShow = false -%}
   {%- assign wikis = site.collections | where_exp: "collection", "collection.label contains 'wiki'" -%}
+  {%- assign depth_next = page.categories.size | plus: 1 -%}
 
-
-  <h2>Sibling Pages</h2>
+  <h2>Siblings</h2>
   <ul>
     {%- for wiki in wikis -%}
       {%- assign documents = wiki.docs -%}
@@ -24,52 +24,15 @@
     {%- endfor -%}
   </ul>
 
-  <h2>Child Pages</h2>
+  <h2>Children</h2>
   <ul>
     {%- for wiki in wikis -%}
       {%- assign documents = wiki.docs -%}
-
-
-      {%- assign documents = documents | where_exp: "document", "document.categories != page.categories" -%}
-      {%- if jekyll.environment == "development" and devShow -%}
-        <br>
-        <span>
-          <b>{{ wiki.label }}: Filter 1</b>
-          <span>Found {{ documents.size }}</span>
-        </span>
-        <br>
-      {%- endif -%}
-
-
-      {%- assign documents = documents | where_exp: "document", "document.url contains 'index'" -%}
-      {%- if jekyll.environment == "development" and devShow -%}
-        <span>
-          <b>{{ wiki.label }}: Filter 2</b>
-          <span>Found {{ documents.size }}</span>
-        </span>
-        <br>
-      {%- endif -%}
-
-
-      {%- assign counter = 0 -%}
-
       {%- for category in page.categories -%}
-
         {%- assign documents = documents | where_exp: "document", "document.categories contains category" -%}
-
-        {%- if jekyll.environment == "development" and devShow -%}
-          {%- assign counter = counter | plus: 1 -%}
-          <span>
-            <b>{{ wiki.label }}: Filter 3-{{ counter }}</b>
-            <i>{{ category }}:</i>
-            <span>Found {{ documents.size }}</span>
-          </span>
-          <br>
-        {%- endif -%}
-
       {%- endfor -%}
-
-
+      {%- assign documents = documents | where_exp: "document", "document.categories.size == depth_next" -%}
+      {%- assign documents = documents | where_exp: "document", "document.url contains 'index'" -%}
       {%- for document in documents -%}
         <li>
           {%- assign title = document.title | default: document.name -%}

@@ -24,6 +24,10 @@ layout: default
       {%- endif -%}
 
       {{ content }}
+
+      {%- if jekyll.environment == "development" -%}
+        {%- include wiki/category-view.html -%}
+      {%- endif -%}
     </div>
 
     <!-- Breadcrumb for the bottom of page. -->

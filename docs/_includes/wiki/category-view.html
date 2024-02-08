@@ -1,0 +1,35 @@
+{% comment %} 
+  Displays all pages that match the category of the current page. 
+{% endcomment %}
+
+<section>
+  {%- assign wikis = site.collections | where_exp: "collection", "collection.label contains 'wiki'" -%}
+
+  <h2>Category</h2>
+  <ul>
+    {%- for wiki in wikis -%}
+      {%- assign documents = wiki.docs -%}
+
+
+      {%- for category in page.categories -%}
+        {%- assign documents = documents | where_exp: "document", "document.categories contains category" -%}
+      {%- endfor -%}
+
+
+      {% comment %} 
+        {%- assign documents = documents | where_exp: "document", "document.categories != page.categories" -%}
+        {%- assign documents = documents | where_exp: "document", "document.url contains 'index'" -%} 
+      {% endcomment %}
+
+      {%- for category in page.categories -%}
+        {%- assign documents = documents | where_exp: "document", "document.categories contains category" -%}
+      {%- endfor -%}
+      {%- for document in documents -%}
+        <li>
+          {%- assign title = document.title | default: document.name -%}
+          <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
+        </li>
+      {%- endfor -%}
+    {%- endfor -%}
+  </ul>
+</section>
