@@ -1,37 +1,80 @@
-{% comment %}
-The wiki navigation sidebar.
+{% comment %} 
+  The wiki navigation sidebar. 
 {% endcomment %}
 
 <!-- The wiki navigation sidebar. -->
 <nav class="main-sidebar">
 
-  <h2>Current</h2>
-  {%- include site/info-page.html -%}
+  {%- assign devShow = false -%}
+  {%- assign wikis = site.collections | where_exp: "collection", "collection.label contains 'wiki'" -%}
+
 
   <h2>Sibling Pages</h2>
   <ul>
-    {%- for collection in site.collections -%}
-    {%- for document in collection.docs -%}
-    {%- if document.categories == page.categories and document.url != page.url -%}
-    <li>
-      {%- assign title = document.title | default: document.name -%}
-      <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
-    </li>
-    {%- endif -%}
-    {%- endfor -%}
+    {%- for wiki in wikis -%}
+      {%- assign documents = wiki.docs -%}
+      {%- assign documents = documents | where_exp: "document", "document.categories == page.categories" -%}
+      {%- assign documents = documents | where_exp: "document", "document.url != page.url" -%}
+      {%- for document in documents -%}
+        <li>
+          {%- assign title = document.title | default: document.name -%}
+          <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
+        </li>
+      {%- endfor -%}
     {%- endfor -%}
   </ul>
 
   <h2>Child Pages</h2>
   <ul>
-    {%- assign category_sibling = page.categories | last -%}
-    {%- for collection in site.collections -%}
-      {%- assign query = collection.docs | where_exp: "document", "document.categories contains category_sibling" -%}
-      {%- for document in query -%}
-      <li>
-        {%- assign title = document.title | default: document.name -%}
-        <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
-      </li>
+    {%- for wiki in wikis -%}
+      {%- assign documents = wiki.docs -%}
+
+
+      {%- assign documents = documents | where_exp: "document", "document.categories != page.categories" -%}
+      {%- if jekyll.environment == "development" and devShow -%}
+        <br>
+        <span>
+          <b>{{ wiki.label }}: Filter 1</b>
+          <span>Found {{ documents.size }}</span>
+        </span>
+        <br>
+      {%- endif -%}
+
+
+      {%- assign documents = documents | where_exp: "document", "document.url contains 'index'" -%}
+      {%- if jekyll.environment == "development" and devShow -%}
+        <span>
+          <b>{{ wiki.label }}: Filter 2</b>
+          <span>Found {{ documents.size }}</span>
+        </span>
+        <br>
+      {%- endif -%}
+
+
+      {%- assign counter = 0 -%}
+
+      {%- for category in page.categories -%}
+
+        {%- assign documents = documents | where_exp: "document", "document.categories contains category" -%}
+
+        {%- if jekyll.environment == "development" and devShow -%}
+          {%- assign counter = counter | plus: 1 -%}
+          <span>
+            <b>{{ wiki.label }}: Filter 3-{{ counter }}</b>
+            <i>{{ category }}:</i>
+            <span>Found {{ documents.size }}</span>
+          </span>
+          <br>
+        {%- endif -%}
+
+      {%- endfor -%}
+
+
+      {%- for document in documents -%}
+        <li>
+          {%- assign title = document.title | default: document.name -%}
+          <a href="{{ site.baseurl }}{{ document.url }}">{{ title }}</a>
+        </li>
       {%- endfor -%}
     {%- endfor -%}
   </ul>
