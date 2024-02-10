@@ -24,14 +24,14 @@ RunAssembler(assembler, pexFiles);
 
 // Deserialize assembly into CLR type.
 IEnumerable<string> pasFiles = FindTargetFiles(pexDirectory, "pas", targets);
-IEnumerable<ScriptObject> scriptObjects = CreateScriptObjects(pasFiles);
+IEnumerable<AssemblyScript> assemblyObjects = CreateAssemblyScripts(pasFiles);
 
 // Serialize CLR type to a json file.
 JsonSerializerOptions options = new()
 {
 	WriteIndented = true
 };
-string json = JsonSerializer.Serialize(scriptObjects, options);
+string json = JsonSerializer.Serialize(assemblyObjects, options);
 string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "papyrus.json");
 File.WriteAllText(filepath, json);
 
@@ -111,50 +111,91 @@ static void AssemblerDecompile(string executable, string file)
 
 #region Deserialization
 
-static IEnumerable<ScriptObject> CreateScriptObjects(IEnumerable<string> pasFiles)
+static IEnumerable<AssemblyScript> CreateAssemblyScripts(IEnumerable<string> pasFiles)
 {
-	List<ScriptObject> list = new();
+	List<AssemblyScript> scripts = new();
 	foreach (string file in pasFiles)
 	{
-		ScriptObject script = NewType(file);
-		list.Add(script);
+		if (NewScript(file) is AssemblyScript script)
+		{
+			scripts.Add(script);
+		}
 	}
-	return list;
+	return scripts;
 }
 
 
-static ScriptObject NewType(string file)
+static AssemblyScript? NewScript(string file)
 {
-	ScriptObject script = new ScriptObject();
+	if (!File.Exists(file)) return null;
 
-	if (File.Exists(file))
+	string[]? lines = null;
+
+	try
 	{
-		try
-		{
-			var lines = File.ReadAllLines(file);
-			for (var index = 0; index < lines.Length; index++)
-			{
-				string line = lines[index].Trim();
-
-				if (line.StartsWith(".source "))
-				{
-					script.File = line.Split(' ').Skip(1).FirstOrDefault();
-				}
-
-				if (line.StartsWith(".object "))
-				{
-					script.Name = line.Split(' ').Skip(1).FirstOrDefault();
-				}
-			}
-		}
-		catch (IOException exception)
-		{
-			Console.WriteLine("The file could not be read:");
-			Console.WriteLine(exception.Message);
-		}
+		lines = File.ReadAllLines(file);
+	}
+	catch (IOException exception)
+	{
+		Console.WriteLine("The file could not be read:");
+		Console.WriteLine(exception.Message);
 	}
 
-	return script;
+	if (lines != null)
+	{
+		AssemblyScript script = new();
+		List<string> members = new List<string>();
+
+		for (int index = 0; index < lines.Length; index++)
+		{
+			string line = lines[index].Trim();
+			var spans = line.Split(' ');
+
+			if (line.StartsWith(".source "))
+			{
+				if (spans.Length > 1)
+					script.Info.Source = spans[1];
+			}
+			else if (line.StartsWith(".modifyTime "))
+			{
+				if (spans.Length > 1)
+					script.Info.ModifyTime = int.Parse(spans[1]);
+			}
+			else if (line.StartsWith(".compileTime "))
+			{
+				if (spans.Length > 1)
+					script.Info.CompileTime = int.Parse(spans[1]);
+			}
+			else if (line.StartsWith(".user "))
+			{
+				if (spans.Length > 1)
+					script.Info.User = spans[1];
+			}
+			else if (line.StartsWith(".computer "))
+			{
+				if (spans.Length > 1)
+					script.Info.Computer = spans[1];
+			}
+			else if (line.StartsWith(".object "))
+			{
+				if (spans.Length > 1)
+					script.Table.Object.ScriptName = spans[1];
+
+				if (spans.Length > 2)
+					script.Table.Object.ScriptExtends = spans[2];
+			}
+			else if (line.StartsWith(".function "))
+			{
+				if (spans.Length > 1)
+					members.Add(spans[1]);
+			}
+		}
+
+		script.Members = members;
+		return script;
+	}
+
+	return null;
 }
 
 #endregion
@@ -162,19 +203,63 @@ static ScriptObject NewType(string file)
 
 namespace Papyrus
 {
-	public class ScriptObject
+	public sealed class AssemblyScript
 	{
-		public string File { get; set; }
+		public AssemblyInfo Info { get; set; }
 
-		public string Name { get; set; }
+		public AssemblyObjectTable Table { get; set; }
 
 		public IEnumerable<string> Members { get; set; }
 
-		public ScriptObject()
+		public AssemblyScript()
 		{
-			File = string.Empty;
-			Name = string.Empty;
+			Info = new AssemblyInfo();
+			Table = new AssemblyObjectTable();
 			Members = Array.Empty<string>();
 		}
 	}
+
+	public sealed class AssemblyInfo
+	{
+		public string Source { get; set; }
+		public int ModifyTime { get; set; }
+		public int CompileTime { get; set; }
+		public string User { get; set; }
+		public string Computer { get; set; }
+
+		public AssemblyInfo()
+		{
+			Source = string.Empty;
+			ModifyTime = 0;
+			CompileTime = 0;
+			User = string.Empty;
+			Computer = string.Empty;
+		}
+	}
+
+
+	public sealed class AssemblyObjectTable
+	{
+		public AssemblyObject Object { get; set; }
+
+		public AssemblyObjectTable()
+		{
+			Object = new AssemblyObject();
+		}
+	}
+
+
+	public sealed class AssemblyObject
+	{
+		public string ScriptName { get; set; }
+		public string ScriptExtends { get; set; }
+
+		public AssemblyObject()
+		{
+			ScriptName = string.Empty;
+			ScriptExtends = string.Empty;
+		}
+	}
+
+
 }
