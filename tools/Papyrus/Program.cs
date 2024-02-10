@@ -148,7 +148,10 @@ static AssemblyScript? NewScript(string file)
 
 		for (int index = 0; index < lines.Length; index++)
 		{
-			string line = lines[index].Trim();
+			string line = lines[index]
+				.Trim()
+				.Replace("\u0022", string.Empty)
+				.Replace("\\\\", "/");;
 			var spans = line.Split(' ');
 
 			if (line.StartsWith(".source "))
