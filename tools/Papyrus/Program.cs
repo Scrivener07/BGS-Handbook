@@ -128,74 +128,69 @@ static IEnumerable<AssemblyScript> CreateAssemblyScripts(IEnumerable<string> pas
 static AssemblyScript? NewScript(string file)
 {
 	if (!File.Exists(file)) return null;
-
-	string[]? lines = null;
-
 	try
-	{
-		lines = File.ReadAllLines(file);
-	}
-	catch (IOException exception)
-	{
-		Console.WriteLine("The file could not be read:");
-		Console.WriteLine(exception.Message);
-	}
-
-	if (lines != null)
 	{
 		AssemblyScript script = new();
 		List<string> members = new List<string>();
 
-		for (int index = 0; index < lines.Length; index++)
+		using (StreamReader stream = new(file))
 		{
-			string line = lines[index]
-				.Trim()
-				.Replace("\u0022", string.Empty)
-				.Replace("\\\\", "/");;
-			var spans = line.Split(' ');
+			while (stream.ReadLine() is string line)
+			{
+				line = line.Trim()
+					.Replace("\u0022", string.Empty)
+					.Replace("\\\\", "/");
 
-			if (line.StartsWith(".source "))
-			{
-				if (spans.Length > 1)
-					script.Info.Source = spans[1];
-			}
-			else if (line.StartsWith(".modifyTime "))
-			{
-				if (spans.Length > 1)
-					script.Info.ModifyTime = int.Parse(spans[1]);
-			}
-			else if (line.StartsWith(".compileTime "))
-			{
-				if (spans.Length > 1)
-					script.Info.CompileTime = int.Parse(spans[1]);
-			}
-			else if (line.StartsWith(".user "))
-			{
-				if (spans.Length > 1)
-					script.Info.User = spans[1];
-			}
-			else if (line.StartsWith(".computer "))
-			{
-				if (spans.Length > 1)
-					script.Info.Computer = spans[1];
-			}
-			else if (line.StartsWith(".object "))
-			{
-				if (spans.Length > 1)
-					script.Table.Object.ScriptName = spans[1];
+				var spans = line.Split(' ');
 
-				if (spans.Length > 2)
-					script.Table.Object.ScriptExtends = spans[2];
-			}
-			else if (line.StartsWith(".function "))
-			{
-				if (spans.Length > 1)
-					members.Add(spans[1]);
+				if (line.StartsWith(".source "))
+				{
+					if (spans.Length > 1)
+						script.Info.Source = spans[1];
+				}
+				else if (line.StartsWith(".modifyTime "))
+				{
+					if (spans.Length > 1)
+						script.Info.ModifyTime = int.Parse(spans[1]);
+				}
+				else if (line.StartsWith(".compileTime "))
+				{
+					if (spans.Length > 1)
+						script.Info.CompileTime = int.Parse(spans[1]);
+				}
+				else if (line.StartsWith(".user "))
+				{
+					if (spans.Length > 1)
+						script.Info.User = spans[1];
+				}
+				else if (line.StartsWith(".computer "))
+				{
+					if (spans.Length > 1)
+						script.Info.Computer = spans[1];
+				}
+				else if (line.StartsWith(".object "))
+				{
+					if (spans.Length > 1)
+						script.Table.Object.ScriptName = spans[1];
+
+					if (spans.Length > 2)
+						script.Table.Object.ScriptExtends = spans[2];
+				}
+				else if (line.StartsWith(".function "))
+				{
+					if (spans.Length > 1)
+						members.Add(spans[1]);
+				}
 			}
 		}
 
 		script.Members = members;
 		return script;
+	}
+	catch (IOException exception)
+	{
+		Console.WriteLine("The file could not be read:");
+		Console.WriteLine(exception.Message);
 	}
 
 	return null;
