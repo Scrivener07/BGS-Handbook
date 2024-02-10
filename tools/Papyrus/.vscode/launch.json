@@ -1,0 +1,23 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": ".NET Core Launch (console)",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "build",
+			"program": "${workspaceFolder}/bin/Debug/net8.0/Papyrus.dll",
+			"args": [
+				"D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Papyrus Compiler\\PapyrusAssembler.exe",
+				"D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Data\\Scripts\\Source\\Base",
+				"G:\\Bethesda.Wiki\\BGS-Handbook\\tools\\Papyrus\\temp\\PEX"
+			],
+			"cwd": "${workspaceFolder}",
+			"stopAtEntry": false,
+			"console": "internalConsole"
+		}
+	]
+}
