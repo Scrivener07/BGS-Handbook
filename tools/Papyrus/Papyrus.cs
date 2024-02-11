@@ -58,6 +58,7 @@ namespace Papyrus
 		}
 	}
 
+
 	public sealed class AssemblyInfo
 	{
 		public string Source { get; set; }
@@ -76,6 +77,7 @@ namespace Papyrus
 		}
 	}
 
+
 	public sealed class AssemblyUserFlag
 	{
 		public string Name { get; set; }
@@ -87,6 +89,7 @@ namespace Papyrus
 			Value = 0;
 		}
 	}
+
 
 	public sealed class AssemblyObject
 	{
@@ -115,6 +118,7 @@ namespace Papyrus
 			StateTable = Array.Empty<AssemblyState>();
 		}
 	}
+
 
 	public sealed class AssemblyStructure
 	{
@@ -162,39 +166,41 @@ namespace Papyrus
 	}
 
 
-
-
-
-
 	public sealed class AssemblyState
 	{
 		public string Name { get; set; }
-		public int UserFlags { get; set; }
-		public string DocString { get; set; }
+
+		public IEnumerable<AssemblyFunction> Functions { get; set; }
 
 		public AssemblyState()
 		{
 			Name = string.Empty;
-			UserFlags = 0;
-			DocString = string.Empty;
+			Functions = Array.Empty<AssemblyFunction>();
 		}
 	}
+
 
 	public sealed class AssemblyFunction
 	{
 		public string Name { get; set; }
+		public bool Static { get; set; }
 		public int UserFlags { get; set; }
 		public string DocString { get; set; }
 		public string Return { get; set; }
 		public IEnumerable<AssemblyParameter> ParamTable { get; set; }
+		public IEnumerable<AssemblyLocal> LocalTable { get; set; }
+		public string Code { get; set; }
 
 		public AssemblyFunction()
 		{
 			Name = string.Empty;
+			Static = false;
 			UserFlags = 0;
 			DocString = string.Empty;
 			Return = string.Empty;
 			ParamTable = Array.Empty<AssemblyParameter>();
+			LocalTable = Array.Empty<AssemblyLocal>();
+			Code = string.Empty;
 		}
 	}
 
@@ -210,5 +216,19 @@ namespace Papyrus
 			Type = string.Empty;
 		}
 	}
+
+
+	public sealed class AssemblyLocal
+	{
+		public string Name { get; set; }
+		public string Type { get; set; }
+
+		public AssemblyLocal()
+		{
+			Name = string.Empty;
+			Type = string.Empty;
+		}
+	}
+
 
 }
