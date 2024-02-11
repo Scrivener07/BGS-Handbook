@@ -24,17 +24,30 @@ RunAssembler(assembler, pexFiles);
 
 // Deserialize assembly into CLR type.
 IEnumerable<string> pasFiles = FindTargetFiles(pexDirectory, "pas", targets);
+pasFiles = MoveFiles(pasFiles, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PAS"));
 IEnumerable<AssemblyScript> assemblyObjects = CreateAssemblyScripts(pasFiles);
 
 // Serialize CLR type to a json file.
-JsonSerializerOptions options = new()
-{
-	WriteIndented = true
-};
-string json = JsonSerializer.Serialize(assemblyObjects, options);
-string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "papyrus.json");
-File.WriteAllText(filepath, json);
+Save(assemblyObjects);
 
+
+
+#region Common
+
+static IEnumerable<string> MoveFiles(IEnumerable<string> files, string destination)
+{
+	List<string> values = new();
+	foreach (string file in files)
+	{
+		Directory.CreateDirectory(destination);
+		string filepath = Path.Combine(destination, Path.GetFileName(file));
+		File.Move(file, filepath, true);
+		values.Add(filepath);
+	}
+	return values;
+}
+
+#endregion
 
 
 #region Targets
@@ -130,8 +143,14 @@ static AssemblyScript? NewScript(string file)
 	if (!File.Exists(file)) return null;
 	try
 	{
-		AssemblyScript script = new();
-		List<string> members = new List<string>();
+		AssemblyObject assemblyObject = new();
+		AssemblyScript script = new()
+		{
+			ObjectTable = [assemblyObject]
+		};
+
+		// temp
+		List<string> members = new();
 
 		using (StreamReader stream = new(file))
 		{
@@ -171,10 +190,10 @@ static AssemblyScript? NewScript(string file)
 				else if (line.StartsWith(".object "))
 				{
 					if (spans.Length > 1)
-						script.Table.Object.ScriptName = spans[1];
+						assemblyObject.Name = spans[1];
 
 					if (spans.Length > 2)
-						script.Table.Object.ScriptExtends = spans[2];
+						assemblyObject.Extends = spans[2];
 				}
 				else if (line.StartsWith(".function "))
 				{
@@ -199,65 +218,17 @@ static AssemblyScript? NewScript(string file)
 #endregion
 
 
-namespace Papyrus
+#region Serialization
+
+static void Save(IEnumerable<AssemblyScript> assemblyObjects)
 {
-	public sealed class AssemblyScript
+	JsonSerializerOptions options = new()
 	{
-		public AssemblyInfo Info { get; set; }
-
-		public AssemblyObjectTable Table { get; set; }
-
-		public IEnumerable<string> Members { get; set; }
-
-		public AssemblyScript()
-		{
-			Info = new AssemblyInfo();
-			Table = new AssemblyObjectTable();
-			Members = Array.Empty<string>();
-		}
-	}
-
-	public sealed class AssemblyInfo
-	{
-		public string Source { get; set; }
-		public int ModifyTime { get; set; }
-		public int CompileTime { get; set; }
-		public string User { get; set; }
-		public string Computer { get; set; }
-
-		public AssemblyInfo()
-		{
-			Source = string.Empty;
-			ModifyTime = 0;
-			CompileTime = 0;
-			User = string.Empty;
-			Computer = string.Empty;
-		}
-	}
-
-
-	public sealed class AssemblyObjectTable
-	{
-		public AssemblyObject Object { get; set; }
-
-		public AssemblyObjectTable()
-		{
-			Object = new AssemblyObject();
-		}
-	}
-
-
-	public sealed class AssemblyObject
-	{
-		public string ScriptName { get; set; }
-		public string ScriptExtends { get; set; }
-
-		public AssemblyObject()
-		{
-			ScriptName = string.Empty;
-			ScriptExtends = string.Empty;
-		}
-	}
-
-
+		WriteIndented = true
+	};
+	string json = JsonSerializer.Serialize(assemblyObjects, options);
+	string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "papyrus.json");
+	File.WriteAllText(filepath, json);
 }
+
+#endregion
