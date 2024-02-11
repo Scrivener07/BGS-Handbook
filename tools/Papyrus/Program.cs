@@ -143,62 +143,58 @@ static AssemblyScript? NewScript(string file)
 	if (!File.Exists(file)) return null;
 	try
 	{
+		List<string> members = new();
 		AssemblyObject assemblyObject = new();
 		AssemblyScript script = new()
 		{
 			ObjectTable = [assemblyObject]
 		};
 
-		// temp
-		List<string> members = new();
-
 		using (StreamReader stream = new(file))
 		{
 			while (stream.ReadLine() is string line)
 			{
-				line = line.Trim()
-					.Replace("\u0022", string.Empty)
-					.Replace("\\\\", "/");
-
-				var spans = line.Split(' ');
+				line = Normalize(line);
+				string[] tokens = Tokenize(line);
 
 				if (line.StartsWith(".source "))
 				{
-					if (spans.Length > 1)
-						script.Info.Source = spans[1];
+					if (tokens.Length > 1)
+						script.Info.Source = tokens[1];
 				}
 				else if (line.StartsWith(".modifyTime "))
 				{
-					if (spans.Length > 1)
-						script.Info.ModifyTime = int.Parse(spans[1]);
+					if (tokens.Length > 1)
+						script.Info.ModifyTime = int.Parse(tokens[1]);
 				}
 				else if (line.StartsWith(".compileTime "))
 				{
-					if (spans.Length > 1)
-						script.Info.CompileTime = int.Parse(spans[1]);
+					if (tokens.Length > 1)
+						script.Info.CompileTime = int.Parse(tokens[1]);
 				}
 				else if (line.StartsWith(".user "))
 				{
-					if (spans.Length > 1)
-						script.Info.User = spans[1];
+					if (tokens.Length > 1)
+						script.Info.User = tokens[1];
 				}
 				else if (line.StartsWith(".computer "))
 				{
-					if (spans.Length > 1)
-						script.Info.Computer = spans[1];
+					if (tokens.Length > 1)
+						script.Info.Computer = tokens[1];
 				}
-				else if (line.StartsWith(".object "))
-				{
-					if (spans.Length > 1)
-						assemblyObject.Name = spans[1];
 
-					if (spans.Length > 2)
-						assemblyObject.Extends = spans[2];
+				if (line.StartsWith(".object "))
+				{
+					if (tokens.Length > 1)
+						assemblyObject.Name = tokens[1];
+
+					if (tokens.Length > 2)
+						assemblyObject.Extends = tokens[2];
 				}
 				else if (line.StartsWith(".function "))
 				{
-					if (spans.Length > 1)
-						members.Add(spans[1]);
+					if (tokens.Length > 1)
+						members.Add(tokens[1]);
 				}
 			}
 		}
@@ -213,6 +209,37 @@ static AssemblyScript? NewScript(string file)
 	}
 
 	return null;
+}
+
+
+static string Normalize(string line)
+{
+	return line.Trim().Replace("\u0022", string.Empty).Replace("\\\\", "/");
+}
+
+
+static string[] Tokenize(string line)
+{
+	line = Cut(line, ';', out string? comment).Trim();
+	string[] tokens = line.Split(' ');
+
+	if (!string.IsNullOrWhiteSpace(comment))
+		return tokens.Concat([comment]).ToArray();
+	else
+		return tokens;
+}
+
+
+static string Cut(string line, char value, out string? cut)
+{
+	cut = null;
+	int index = line.IndexOf(value);
+	if (index > -1)
+	{
+		cut = line.Substring(index);
+		line = line.Remove(index);
+	}
+	return line;
 }
 
 #endregion
