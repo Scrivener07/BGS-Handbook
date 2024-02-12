@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Papyrus": {
+      "commandName": "Project",
+      "commandLineArgs": "\"D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Papyrus Compiler\\PapyrusAssembler.exe\"\r\n\"D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Data\\Scripts\\Source\\Base\"\r\n\"G:\\Bethesda.Wiki\\BGS-Handbook\\tools\\Papyrus\\temp\\PEX\"",
+      "workingDirectory": "G:\\Bethesda.Wiki\\BGS-Handbook\\tools\\Papyrus"
+    }
+  }
+}

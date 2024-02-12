@@ -24,16 +24,11 @@ RunAssembler(assembler, pexFiles);
 
 // Deserialize assembly into CLR type.
 IEnumerable<string> pasFiles = FindTargetFiles(pexDirectory, "pas", targets);
-IEnumerable<ScriptObject> scriptObjects = CreateScriptObjects(pasFiles);
+pasFiles = Extensions.MoveFiles(pasFiles, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PAS"));
+IEnumerable<AssemblyScript> assemblyObjects = CreateAssemblyScripts(pasFiles);
 
 // Serialize CLR type to a json file.
-JsonSerializerOptions options = new()
-{
-	WriteIndented = true
-};
-string json = JsonSerializer.Serialize(scriptObjects, options);
-string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "papyrus.json");
-File.WriteAllText(filepath, json);
+Save(assemblyObjects);
 
 
 
@@ -109,72 +104,28 @@ static void AssemblerDecompile(string executable, string file)
 #endregion
 
 
-#region Deserialization
 
-static IEnumerable<ScriptObject> CreateScriptObjects(IEnumerable<string> pasFiles)
+static IEnumerable<AssemblyScript> CreateAssemblyScripts(IEnumerable<string> pasFiles)
 {
-	List<ScriptObject> list = new();
+	List<AssemblyScript> scripts = new();
 	foreach (string file in pasFiles)
 	{
-		ScriptObject script = NewType(file);
-		list.Add(script);
+		if (AssemblyFile.New(file) is AssemblyScript script)
+		{
+			scripts.Add(script);
+		}
 	}
-	return list;
+	return scripts;
 }
 
 
-static ScriptObject NewType(string file)
+static void Save(IEnumerable<AssemblyScript> assemblyObjects)
 {
-	ScriptObject script = new ScriptObject();
-
-	if (File.Exists(file))
+	JsonSerializerOptions options = new()
 	{
-		try
-		{
-			var lines = File.ReadAllLines(file);
-			for (var index = 0; index < lines.Length; index++)
-			{
-				string line = lines[index].Trim();
-
-				if (line.StartsWith(".source "))
-				{
-					script.File = line.Split(' ').Skip(1).FirstOrDefault();
-				}
-
-				if (line.StartsWith(".object "))
-				{
-					script.Name = line.Split(' ').Skip(1).FirstOrDefault();
-				}
-			}
-		}
-		catch (IOException exception)
-		{
-			Console.WriteLine("The file could not be read:");
-			Console.WriteLine(exception.Message);
-		}
-	}
-
-	return script;
-}
-
-#endregion
-
-
-namespace Papyrus
-{
-	public class ScriptObject
-	{
-		public string File { get; set; }
-
-		public string Name { get; set; }
-
-		public IEnumerable<string> Members { get; set; }
-
-		public ScriptObject()
-		{
-			File = string.Empty;
-			Name = string.Empty;
-			Members = Array.Empty<string>();
-		}
-	}
+		WriteIndented = true
+	};
+	string json = JsonSerializer.Serialize(assemblyObjects, options);
+	string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "papyrus.json");
+	File.WriteAllText(filepath, json);
 }
