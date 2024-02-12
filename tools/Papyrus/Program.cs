@@ -24,30 +24,12 @@ RunAssembler(assembler, pexFiles);
 
 // Deserialize assembly into CLR type.
 IEnumerable<string> pasFiles = FindTargetFiles(pexDirectory, "pas", targets);
-pasFiles = MoveFiles(pasFiles, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PAS"));
+pasFiles = Extensions.MoveFiles(pasFiles, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PAS"));
 IEnumerable<AssemblyScript> assemblyObjects = CreateAssemblyScripts(pasFiles);
 
 // Serialize CLR type to a json file.
 Save(assemblyObjects);
 
-
-
-#region Common
-
-static IEnumerable<string> MoveFiles(IEnumerable<string> files, string destination)
-{
-	List<string> values = new();
-	foreach (string file in files)
-	{
-		Directory.CreateDirectory(destination);
-		string filepath = Path.Combine(destination, Path.GetFileName(file));
-		File.Move(file, filepath, true);
-		values.Add(filepath);
-	}
-	return values;
-}
-
-#endregion
 
 
 #region Targets
@@ -122,14 +104,13 @@ static void AssemblerDecompile(string executable, string file)
 #endregion
 
 
-#region Deserialization
 
 static IEnumerable<AssemblyScript> CreateAssemblyScripts(IEnumerable<string> pasFiles)
 {
 	List<AssemblyScript> scripts = new();
 	foreach (string file in pasFiles)
 	{
-		if (NewScript(file) is AssemblyScript script)
+		if (AssemblyParser.New(file) is AssemblyScript script)
 		{
 			scripts.Add(script);
 		}
@@ -137,115 +118,6 @@ static IEnumerable<AssemblyScript> CreateAssemblyScripts(IEnumerable<string> pas
 	return scripts;
 }
 
-
-static AssemblyScript? NewScript(string file)
-{
-	if (!File.Exists(file)) return null;
-	try
-	{
-		List<string> members = new();
-		AssemblyObject assemblyObject = new();
-		AssemblyScript script = new()
-		{
-			ObjectTable = [assemblyObject]
-		};
-
-		using (StreamReader stream = new(file))
-		{
-			while (stream.ReadLine() is string line)
-			{
-				line = Normalize(line);
-				string[] tokens = Tokenize(line);
-
-				if (line.StartsWith(".source "))
-				{
-					if (tokens.Length > 1)
-						script.Info.Source = tokens[1];
-				}
-				else if (line.StartsWith(".modifyTime "))
-				{
-					if (tokens.Length > 1)
-						script.Info.ModifyTime = int.Parse(tokens[1]);
-				}
-				else if (line.StartsWith(".compileTime "))
-				{
-					if (tokens.Length > 1)
-						script.Info.CompileTime = int.Parse(tokens[1]);
-				}
-				else if (line.StartsWith(".user "))
-				{
-					if (tokens.Length > 1)
-						script.Info.User = tokens[1];
-				}
-				else if (line.StartsWith(".computer "))
-				{
-					if (tokens.Length > 1)
-						script.Info.Computer = tokens[1];
-				}
-
-				if (line.StartsWith(".object "))
-				{
-					if (tokens.Length > 1)
-						assemblyObject.Name = tokens[1];
-
-					if (tokens.Length > 2)
-						assemblyObject.Extends = tokens[2];
-				}
-				else if (line.StartsWith(".function "))
-				{
-					if (tokens.Length > 1)
-						members.Add(tokens[1]);
-				}
-			}
-		}
-
-		script.Members = members;
-		return script;
-	}
-	catch (IOException exception)
-	{
-		Console.WriteLine("The file could not be read:");
-		Console.WriteLine(exception.Message);
-	}
-
-	return null;
-}
-
-
-static string Normalize(string line)
-{
-	return line.Trim().Replace("\u0022", string.Empty).Replace("\\\\", "/");
-}
-
-
-static string[] Tokenize(string line)
-{
-	line = Cut(line, ';', out string? comment).Trim();
-	string[] tokens = line.Split(' ');
-
-	if (!string.IsNullOrWhiteSpace(comment))
-		return tokens.Concat([comment]).ToArray();
-	else
-		return tokens;
-}
-
-
-static string Cut(string line, char value, out string? cut)
-{
-	cut = null;
-	int index = line.IndexOf(value);
-	if (index > -1)
-	{
-		cut = line.Substring(index);
-		line = line.Remove(index);
-	}
-	return line;
-}
-
-#endregion
-
-
-#region Serialization
 
 static void Save(IEnumerable<AssemblyScript> assemblyObjects)
 {
@@ -257,5 +129,3 @@ static void Save(IEnumerable<AssemblyScript> assemblyObjects)
 	string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "papyrus.json");
 	File.WriteAllText(filepath, json);
 }
-
-#endregion
