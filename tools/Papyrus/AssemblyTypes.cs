@@ -2,59 +2,15 @@ namespace Papyrus;
 
 public sealed class AssemblyScript
 {
-	private static IEnumerable<AssemblyUserFlag> FlagsReference { get; set; }
-
 	public AssemblyInfo Info { get; set; }
 	public IEnumerable<AssemblyUserFlag> UserFlagsRef { get; set; }
 	public IEnumerable<AssemblyObject> ObjectTable { get; set; }
 
-	[Obsolete]
-	public IEnumerable<string> Members { get; set; }
-
-
-	static AssemblyScript()
-	{
-		FlagsReference = new AssemblyUserFlag[]
-		{
-			new AssemblyUserFlag()
-			{
-				Name = "hidden",
-				Value = 0
-			},
-			new AssemblyUserFlag()
-			{
-				Name = "conditional",
-				Value = 1
-			},
-			new AssemblyUserFlag()
-			{
-				Name = "default",
-				Value = 2
-			},
-			new AssemblyUserFlag()
-			{
-				Name = "collapsedonref",
-				Value = 3
-			},
-			new AssemblyUserFlag()
-			{
-				Name = "collapsedonbase",
-				Value = 4
-			},
-			new AssemblyUserFlag()
-			{
-				Name = "mandatory",
-				Value = 5
-			}
-		};
-	}
-
 	public AssemblyScript()
 	{
 		Info = new AssemblyInfo();
-		UserFlagsRef = FlagsReference;
+		UserFlagsRef = Array.Empty<AssemblyUserFlag>();
 		ObjectTable = Array.Empty<AssemblyObject>();
-		Members = Array.Empty<string>();
 	}
 }
 

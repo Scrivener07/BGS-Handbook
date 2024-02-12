@@ -110,7 +110,7 @@ static IEnumerable<AssemblyScript> CreateAssemblyScripts(IEnumerable<string> pas
 	List<AssemblyScript> scripts = new();
 	foreach (string file in pasFiles)
 	{
-		if (AssemblyParser.New(file) is AssemblyScript script)
+		if (AssemblyFile.New(file) is AssemblyScript script)
 		{
 			scripts.Add(script);
 		}
