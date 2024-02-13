@@ -37,7 +37,7 @@ internal static class AssemblyFile
 
 	private static AssemblyInfo Info(AssemblyReader stream)
 	{
-		AssemblyInfo info = new();
+		AssemblyInfo element = new();
 
 		while (stream.ReadTokens() is string[] tokens)
 		{
@@ -48,40 +48,40 @@ internal static class AssemblyFile
 			else if (tokens[Tag] == ".source")
 			{
 				if (tokens.Length > 1)
-				{ info.Source = tokens[1]; }
+				{ element.Source = tokens[1]; }
 			}
 			else if (tokens[Tag] == ".modifyTime")
 			{
 				if (tokens.Length > 1)
-				{ info.ModifyTime = int.Parse(tokens[1]); }
+				{ element.ModifyTime = int.Parse(tokens[1]); }
 			}
 			else if (tokens[Tag] == ".compileTime")
 			{
 				if (tokens.Length > 1)
-				{ info.CompileTime = int.Parse(tokens[1]); }
+				{ element.CompileTime = int.Parse(tokens[1]); }
 			}
 			else if (tokens[Tag] == ".user")
 			{
 				if (tokens.Length > 1)
-				{ info.User = tokens[1]; }
+				{ element.User = tokens[1]; }
 			}
 			else if (tokens[Tag] == ".computer")
 			{
 				if (tokens.Length > 1)
-				{ info.Computer = tokens[1]; }
+				{ element.Computer = tokens[1]; }
 			}
 			else if (tokens[Tag] == ".endInfo")
 			{
-				return info;
+				return element;
 			}
 			else
 			{
 				Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
-				return info;
+				return element;
 			}
 		}
 
-		return info;
+		return element;
 	}
 
 
@@ -95,35 +95,17 @@ internal static class AssemblyFile
 			{
 				continue;
 			}
-			else if (tokens[Tag] == ".flag")
-			{
-				AssemblyUserFlag flag = new();
-
-				for (int index = 1; index < tokens.Length; index++)
-				{
-					if (index == 1)
-					{
-						flag.Name = tokens[index];
-					}
-					else if (index == 2)
-					{
-						flag.Value = int.Parse(tokens[index]);
-					}
-					else if (index == 3)
-					{
-						flag.Debug = tokens[index];
-					}
-					else
-					{
-						break;
-					}
-				}
-
-				flags.Add(flag);
-			}
 			else if (tokens[Tag] == ".endUserFlagsRef")
 			{
 				return flags;
+			}
+			else if (tokens[Tag] == ".flag")
+			{
+				if (UserFlag(tokens) is AssemblyUserFlag flag)
+				{
+					flags.Add(flag);
+				}
+				continue;
 			}
 			else
 			{
@@ -133,6 +115,41 @@ internal static class AssemblyFile
 		}
 
 		return flags;
+	}
+
+
+	private static AssemblyUserFlag? UserFlag(string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".flag")
+		{
+			AssemblyUserFlag element = new();
+
+			for (int index = 1; index < arguments.Length; index++)
+			{
+				if (index == 1)
+				{
+					element.Name = arguments[index];
+				}
+				else if (index == 2)
+				{
+					element.Value = int.Parse(arguments[index]);
+				}
+				else if (index == 3)
+				{
+					element.Debug = arguments[index];
+				}
+				else
+				{
+					return element;
+				}
+			}
+
+			return element;
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 
@@ -151,69 +168,10 @@ internal static class AssemblyFile
 			}
 			else if (tokens[Tag] == ".object")
 			{
-				AssemblyObject? assemblyObject = new AssemblyObject();
-
-				// Get the object fields.
-				for (int index = 1; index < tokens.Length; index++)
+				if (Object(stream, tokens) is AssemblyObject assemblyObject)
 				{
-					if (index == 1)
-					{
-						assemblyObject.Name = tokens[index];
-					}
-					else if (index == 2)
-					{
-						assemblyObject.Extends = tokens[index];
-					}
-					else
-					{
-						break;
-					}
+					table.Add(assemblyObject);
 				}
-
-				// Get the object elements.
-				while (stream.ReadTokens() is string[] objectTokens)
-				{
-					if (objectTokens[Tag] == ".endObject")
-					{
-						table.Add(assemblyObject);
-						break;
-					}
-					else if (objectTokens[Tag] == ".userFlags")
-					{
-						if (objectTokens.Length > 1)
-						{
-							assemblyObject.UserFlags = int.Parse(objectTokens[1]);
-						}
-						continue;
-					}
-					else if (objectTokens[Tag] == ".docString")
-					{
-						if (objectTokens.Length > 1)
-						{
-							assemblyObject.DocString = objectTokens[1];
-						}
-						continue;
-					}
-					else if (objectTokens[Tag] == ".autoState")
-					{
-						if (objectTokens.Length > 1)
-						{
-							assemblyObject.AutoState = objectTokens[1];
-						}
-						continue;
-					}
-					else if (objectTokens[Tag] == ".stateTable")
-					{
-						assemblyObject.StateTable = StateTable(stream);
-						continue;
-					}
-					else
-					{ // TODO: parse the member tables
-						Console.WriteLine($"Encountered an unexpected {tokens[Tag]}{objectTokens[Tag]} token tag.");
-						continue; // skip until `.endObject` tag.
-					}
-				}
-
 				continue;
 			}
 			else
@@ -224,6 +182,79 @@ internal static class AssemblyFile
 		}
 
 		return table;
+	}
+
+
+	private static AssemblyObject? Object(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".object")
+		{
+			AssemblyObject? element = new();
+
+			for (int index = 1; index < arguments.Length; index++)
+			{
+				if (index == 1)
+				{
+					element.Name = arguments[index];
+				}
+				else if (index == 2)
+				{
+					element.Extends = arguments[index];
+				}
+				else
+				{
+					break;
+				}
+			}
+
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endObject")
+				{
+					return element;
+				}
+				else if (tokens[Tag] == ".userFlags")
+				{
+					if (tokens.Length > 1)
+					{
+						element.UserFlags = int.Parse(tokens[1]);
+					}
+					continue;
+				}
+				else if (tokens[Tag] == ".docString")
+				{
+					if (tokens.Length > 1)
+					{
+						element.DocString = tokens[1];
+					}
+					continue;
+				}
+				else if (tokens[Tag] == ".autoState")
+				{
+					if (tokens.Length > 1)
+					{
+						element.AutoState = tokens[1];
+					}
+					continue;
+				}
+				else if (tokens[Tag] == ".stateTable")
+				{
+					element.StateTable = StateTable(stream);
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
+					continue;
+				}
+			}
+
+			return element;
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 
@@ -242,120 +273,10 @@ internal static class AssemblyFile
 			}
 			else if (tokens[Tag] == ".state")
 			{
-				AssemblyState? assemblyState = new AssemblyState();
-
-				// Get the object fields.
-				for (int index = 1; index < tokens.Length; index++)
+				if (State(stream, tokens) is AssemblyState element)
 				{
-					if (index == 1)
-					{
-						assemblyState.Name = tokens[index];
-					}
-					else
-					{
-						break;
-					}
+					table.Add(element);
 				}
-
-				List<AssemblyFunction> functions = new List<AssemblyFunction>();
-				assemblyState.Functions = functions;
-
-				// Get the object elements.
-				// TODO: Only the function names are read for now.
-				while (stream.ReadTokens() is string[] stateTokens)
-				{
-					if (stateTokens[Tag] == ".endState")
-					{
-						table.Add(assemblyState);
-						break;
-					}
-					else if (stateTokens[Tag] == ".function")
-					{
-						AssemblyFunction function = new AssemblyFunction();
-
-						// Get the object fields.
-						for (int index = 1; index < stateTokens.Length; index++)
-						{
-							if (index == 1)
-							{
-								function.Name = stateTokens[index];
-							}
-							else if (index == 2)
-							{
-								function.Static = stateTokens[index] == "static";
-							}
-							else
-							{
-								break;
-							}
-						}
-
-						// Get the object elements.
-						while (stream.ReadTokens() is string[] functionTokens)
-						{
-							if (functionTokens[Tag] == ".function")
-							{
-								continue;
-							}
-							else if (functionTokens[Tag] == ".endFunction")
-							{
-								functions.Add(function);
-								break;
-							}
-							else if (functionTokens[Tag] == ".userFlags")
-							{
-								if (functionTokens.Length > 1)
-								{
-									function.UserFlags = int.Parse(functionTokens[1]);
-								}
-								continue;
-							}
-							else if (functionTokens[Tag] == ".docString")
-							{
-								if (functionTokens.Length > 1)
-								{
-									function.DocString = functionTokens[1];
-								}
-								continue;
-							}
-							else if (functionTokens[Tag] == ".return")
-							{
-								if (functionTokens.Length > 1)
-								{
-									function.Return = functionTokens[1];
-								}
-								continue;
-							}
-							else if (functionTokens[Tag] == ".paramTable")
-							{
-
-								function.ParamTable = ParameterTable(stream);
-								continue;
-							}
-							else if (functionTokens[Tag] == ".localTable")
-							{ // skip
-								continue;
-							}
-							else if (functionTokens[Tag] == ".code")
-							{ // skip
-								continue;
-							}
-							else
-							{
-								Console.WriteLine($"Encountered an unexpected {functionTokens[Tag]} token tag.");
-								continue;
-							}
-						}
-
-						continue;
-					}
-					else
-					{
-						Console.WriteLine($"Encountered an unexpected {stateTokens[Tag]} token tag.");
-						continue;
-					}
-				}
-
 				continue;
 			}
 			else
@@ -364,8 +285,140 @@ internal static class AssemblyFile
 				continue;
 			}
 		}
-
 		return table;
+	}
+
+
+	private static AssemblyState? State(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".state")
+		{
+			AssemblyState element = new();
+
+			// Get the object fields.
+			if (arguments.Length > 1)
+			{
+				element.Name = arguments[1];
+			}
+
+			List<AssemblyFunction> functions = new();
+			element.Functions = functions;
+
+			// Get the object elements.
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endState")
+				{
+					return element;
+				}
+				else if (tokens[Tag] == ".function")
+				{
+					if (Function(stream, tokens) is AssemblyFunction function)
+					{
+						functions.Add(function);
+					}
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					continue;
+				}
+			}
+
+			return element;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+
+	private static AssemblyFunction? Function(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".function")
+		{
+			AssemblyFunction element = new();
+
+			// Get the object fields.
+			for (int index = 1; index < arguments.Length; index++)
+			{
+				if (index == 1)
+				{
+					element.Name = arguments[index];
+				}
+				else if (index == 2)
+				{
+					element.Static = arguments[index] == "static";
+				}
+				else
+				{
+					break;
+				}
+			}
+
+			// Get the object elements.
+			while (stream.ReadTokens() is string[] functionTokens)
+			{
+				if (functionTokens[Tag] == ".function")
+				{
+					continue;
+				}
+				else if (functionTokens[Tag] == ".endFunction")
+				{
+					return element;
+				}
+				else if (functionTokens[Tag] == ".userFlags")
+				{
+					if (functionTokens.Length > 1)
+					{
+						element.UserFlags = int.Parse(functionTokens[1]);
+					}
+					continue;
+				}
+				else if (functionTokens[Tag] == ".docString")
+				{
+					if (functionTokens.Length > 1)
+					{
+						element.DocString = functionTokens[1];
+					}
+					continue;
+				}
+				else if (functionTokens[Tag] == ".return")
+				{
+					if (functionTokens.Length > 1)
+					{
+						element.Return = functionTokens[1];
+					}
+					continue;
+				}
+				else if (functionTokens[Tag] == ".paramTable")
+				{
+					element.ParamTable = ParameterTable(stream);
+					continue;
+				}
+				else if (functionTokens[Tag] == ".localTable")
+				{ // skip
+					continue;
+				}
+				else if (functionTokens[Tag] == ".code")
+				{ // skip
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {functionTokens[Tag]} token tag.");
+					continue;
+				}
+			}
+
+			return element;
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 
