@@ -113,6 +113,10 @@ internal static class AssemblyFile
 					{
 						flag.Debug = tokens[index];
 					}
+					else
+					{
+						break;
+					}
 				}
 
 				flags.Add(flag);
@@ -160,6 +164,10 @@ internal static class AssemblyFile
 					{
 						assemblyObject.Extends = tokens[index];
 					}
+					else
+					{
+						break;
+					}
 				}
 
 				// Get the object elements.
@@ -172,7 +180,7 @@ internal static class AssemblyFile
 					}
 					else if (objectTokens[Tag] == ".userFlags")
 					{
-						if (objectTokens.Length >= 2)
+						if (objectTokens.Length > 1)
 						{
 							assemblyObject.UserFlags = int.Parse(objectTokens[1]);
 						}
@@ -180,7 +188,7 @@ internal static class AssemblyFile
 					}
 					else if (objectTokens[Tag] == ".docString")
 					{
-						if (objectTokens.Length >= 2)
+						if (objectTokens.Length > 1)
 						{
 							assemblyObject.DocString = objectTokens[1];
 						}
@@ -188,7 +196,7 @@ internal static class AssemblyFile
 					}
 					else if (objectTokens[Tag] == ".autoState")
 					{
-						if (objectTokens.Length >= 2)
+						if (objectTokens.Length > 1)
 						{
 							assemblyObject.AutoState = objectTokens[1];
 						}
@@ -221,7 +229,7 @@ internal static class AssemblyFile
 
 	private static IEnumerable<AssemblyState> StateTable(AssemblyReader stream)
 	{
-		List<AssemblyState> table = new List<AssemblyState>();
+		List<AssemblyState> table = new();
 		while (stream.ReadTokens() is string[] tokens)
 		{
 			if (tokens[Tag] == ".stateTable")
@@ -235,8 +243,6 @@ internal static class AssemblyFile
 			else if (tokens[Tag] == ".state")
 			{
 				AssemblyState? assemblyState = new AssemblyState();
-				List<AssemblyFunction> functions = new List<AssemblyFunction>();
-				assemblyState.Functions = functions;
 
 				// Get the object fields.
 				for (int index = 1; index < tokens.Length; index++)
@@ -245,7 +251,14 @@ internal static class AssemblyFile
 					{
 						assemblyState.Name = tokens[index];
 					}
+					else
+					{
+						break;
+					}
 				}
+
+				List<AssemblyFunction> functions = new List<AssemblyFunction>();
+				assemblyState.Functions = functions;
 
 				// Get the object elements.
 				// TODO: Only the function names are read for now.
@@ -258,12 +271,83 @@ internal static class AssemblyFile
 					}
 					else if (stateTokens[Tag] == ".function")
 					{
-						if (stateTokens.Length > 1)
+						AssemblyFunction function = new AssemblyFunction();
+
+						// Get the object fields.
+						for (int index = 1; index < stateTokens.Length; index++)
 						{
-							AssemblyFunction function = new AssemblyFunction();
-							function.Name = stateTokens[1];
-							functions.Add(function);
+							if (index == 1)
+							{
+								function.Name = stateTokens[index];
+							}
+							else if (index == 2)
+							{
+								function.Static = stateTokens[index] == "static";
+							}
+							else
+							{
+								break;
+							}
 						}
+
+						// Get the object elements.
+						while (stream.ReadTokens() is string[] functionTokens)
+						{
+							if (functionTokens[Tag] == ".function")
+							{
+								continue;
+							}
+							else if (functionTokens[Tag] == ".endFunction")
+							{
+								functions.Add(function);
+								break;
+							}
+							else if (functionTokens[Tag] == ".userFlags")
+							{
+								if (functionTokens.Length > 1)
+								{
+									function.UserFlags = int.Parse(functionTokens[1]);
+								}
+								continue;
+							}
+							else if (functionTokens[Tag] == ".docString")
+							{
+								if (functionTokens.Length > 1)
+								{
+									function.DocString = functionTokens[1];
+								}
+								continue;
+							}
+							else if (functionTokens[Tag] == ".return")
+							{
+								if (functionTokens.Length > 1)
+								{
+									function.Return = functionTokens[1];
+								}
+								continue;
+							}
+							else if (functionTokens[Tag] == ".paramTable")
+							{
+
+								function.ParamTable = ParameterTable(stream);
+								continue;
+							}
+							else if (functionTokens[Tag] == ".localTable")
+							{ // skip
+								continue;
+							}
+							else if (functionTokens[Tag] == ".code")
+							{ // skip
+								continue;
+							}
+							else
+							{
+								Console.WriteLine($"Encountered an unexpected {functionTokens[Tag]} token tag.");
+								continue;
+							}
+						}
+
+						continue;
 					}
 					else
 					{
@@ -273,6 +357,51 @@ internal static class AssemblyFile
 				}
 
 				continue;
+			}
+			else
+			{
+				Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+				continue;
+			}
+		}
+
+		return table;
+	}
+
+
+	private static IEnumerable<AssemblyParameter> ParameterTable(AssemblyReader stream)
+	{
+		List<AssemblyParameter> table = new();
+
+		while (stream.ReadTokens() is string[] tokens)
+		{
+			if (tokens[Tag] == ".paramTable")
+			{
+				continue;
+			}
+			else if (tokens[Tag] == ".endParamTable")
+			{
+				return table;
+			}
+			else if (tokens[Tag] == ".param")
+			{
+				AssemblyParameter assemblyParameter = new();
+				for (int index = 1; index < tokens.Length; index++)
+				{
+					if (index == 1)
+					{
+						assemblyParameter.Name = tokens[index];
+					}
+					else if (index == 2)
+					{
+						assemblyParameter.Type = tokens[index];
+					}
+					else
+					{
+						break;
+					}
+				}
+				table.Add(assemblyParameter);
 			}
 			else
 			{
