@@ -61,3 +61,12 @@ See also the [Creation Kit Objects]({{ site.baseurl }}{% link _wiki/fo4/creation
 </dl>
 {%- endfor -%}
 </section>
+
+<section>
+<b>Size: </b><span>{{ site.data.papyrus.size }}</span>
+<ul>
+  {%- for script in site.data.papyrus -%}
+  <li>{{ script.ObjectTable[0].Name | inspect }} extends {{ script.ObjectTable[0].Extends | inspect }}</li>
+  {%- endfor -%}
+</ul>
+</section>
