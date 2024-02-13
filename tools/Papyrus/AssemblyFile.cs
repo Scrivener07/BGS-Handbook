@@ -17,12 +17,23 @@ internal static class AssemblyFile
 		{
 			using (AssemblyReader stream = new(file))
 			{
-				return new AssemblyScript()
+				AssemblyScript script = new();
+				while (stream.ReadTokens() is string[] tokens)
 				{
-					Info = Info(stream),
-					UserFlagsRef = UserFlags(stream),
-					ObjectTable = ObjectTable(stream)
-				};
+					if (Info(stream, tokens) is AssemblyInfo info)
+					{
+						script.Info = info;
+					}
+					else if (UserFlags(stream, tokens) is IEnumerable<AssemblyUserFlag> flags)
+					{
+						script.UserFlagsRef = flags;
+					}
+					else if (ObjectTable(stream, tokens) is IEnumerable<AssemblyObject> table)
+					{
+						script.ObjectTable = table;
+					}
+				}
+				return script;
 			}
 		}
 		catch (IOException exception)
@@ -35,86 +46,92 @@ internal static class AssemblyFile
 	}
 
 
-	private static AssemblyInfo Info(AssemblyReader stream)
+	private static AssemblyInfo? Info(AssemblyReader stream, string[] arguments)
 	{
-		AssemblyInfo element = new();
-
-		while (stream.ReadTokens() is string[] tokens)
+		if (arguments.Length > Tag && arguments[Tag] == ".info")
 		{
-			if (tokens[Tag] == ".info")
-			{
-				continue;
-			}
-			else if (tokens[Tag] == ".source")
-			{
-				if (tokens.Length > 1)
-				{ element.Source = tokens[1]; }
-			}
-			else if (tokens[Tag] == ".modifyTime")
-			{
-				if (tokens.Length > 1)
-				{ element.ModifyTime = int.Parse(tokens[1]); }
-			}
-			else if (tokens[Tag] == ".compileTime")
-			{
-				if (tokens.Length > 1)
-				{ element.CompileTime = int.Parse(tokens[1]); }
-			}
-			else if (tokens[Tag] == ".user")
-			{
-				if (tokens.Length > 1)
-				{ element.User = tokens[1]; }
-			}
-			else if (tokens[Tag] == ".computer")
-			{
-				if (tokens.Length > 1)
-				{ element.Computer = tokens[1]; }
-			}
-			else if (tokens[Tag] == ".endInfo")
-			{
-				return element;
-			}
-			else
-			{
-				Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
-				return element;
-			}
-		}
+			AssemblyInfo element = new();
 
-		return element;
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endInfo")
+				{
+					return element;
+				}
+				else if (tokens[Tag] == ".source")
+				{
+					if (tokens.Length > 1)
+					{ element.Source = tokens[1]; }
+				}
+				else if (tokens[Tag] == ".modifyTime")
+				{
+					if (tokens.Length > 1)
+					{ element.ModifyTime = int.Parse(tokens[1]); }
+				}
+				else if (tokens[Tag] == ".compileTime")
+				{
+					if (tokens.Length > 1)
+					{ element.CompileTime = int.Parse(tokens[1]); }
+				}
+				else if (tokens[Tag] == ".user")
+				{
+					if (tokens.Length > 1)
+					{ element.User = tokens[1]; }
+				}
+				else if (tokens[Tag] == ".computer")
+				{
+					if (tokens.Length > 1)
+					{ element.Computer = tokens[1]; }
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					return element;
+				}
+			}
+
+			return element;
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 
-	private static IEnumerable<AssemblyUserFlag> UserFlags(AssemblyReader stream)
+	private static IEnumerable<AssemblyUserFlag>? UserFlags(AssemblyReader stream, string[] arguments)
 	{
-		List<AssemblyUserFlag> flags = new();
-
-		while (stream.ReadTokens() is string[] tokens)
+		if (arguments.Length > Tag && arguments[Tag] == ".userFlagsRef")
 		{
-			if (tokens[Tag] == ".userFlagsRef")
-			{
-				continue;
-			}
-			else if (tokens[Tag] == ".endUserFlagsRef")
-			{
-				return flags;
-			}
-			else if (tokens[Tag] == ".flag")
-			{
-				if (UserFlag(tokens) is AssemblyUserFlag flag)
-				{
-					flags.Add(flag);
-				}
-				continue;
-			}
-			else
-			{
-				Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
-				return flags;
-			}
-		}
+			List<AssemblyUserFlag> list = new();
 
-		return flags;
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endUserFlagsRef")
+				{
+					return list;
+				}
+				else if (tokens[Tag] == ".flag")
+				{
+					if (UserFlag(tokens) is AssemblyUserFlag element)
+					{
+						list.Add(element);
+					}
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					return list;
+				}
+			}
+
+			return list;
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 
@@ -153,35 +170,42 @@ internal static class AssemblyFile
 	}
 
 
-	private static IEnumerable<AssemblyObject> ObjectTable(AssemblyReader stream)
+	private static IEnumerable<AssemblyObject>? ObjectTable(AssemblyReader stream, string[] arguments)
 	{
-		List<AssemblyObject> table = new();
-		while (stream.ReadTokens() is string[] tokens)
+		if (arguments.Length > Tag && arguments[Tag] == ".objectTable")
 		{
-			if (tokens[Tag] == ".objectTable")
+			List<AssemblyObject> list = new();
+			while (stream.ReadTokens() is string[] tokens)
 			{
-				continue;
-			}
-			else if (tokens[Tag] == ".endObjectTable")
-			{
-				return table;
-			}
-			else if (tokens[Tag] == ".object")
-			{
-				if (Object(stream, tokens) is AssemblyObject assemblyObject)
+				if (tokens[Tag] == ".objectTable")
 				{
-					table.Add(assemblyObject);
+					continue;
 				}
-				continue;
+				else if (tokens[Tag] == ".endObjectTable")
+				{
+					return list;
+				}
+				else if (tokens[Tag] == ".object")
+				{
+					if (Object(stream, tokens) is AssemblyObject element)
+					{
+						list.Add(element);
+					}
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					continue;
+				}
 			}
-			else
-			{
-				Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
-				continue;
-			}
-		}
 
-		return table;
+			return list;
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 
@@ -237,9 +261,32 @@ internal static class AssemblyFile
 					}
 					continue;
 				}
+				else if (tokens[Tag] == ".structTable")
+				{
+					if (StructureTable(stream, tokens) is IEnumerable<AssemblyStructure> structures)
+					{
+						element.StructTable = structures;
+					}
+					continue;
+				}
+				else if (tokens[Tag] == ".variableTable")
+				{
+					continue;
+				}
+				else if (tokens[Tag] == ".propertyTable")
+				{
+					continue;
+				}
+				else if (tokens[Tag] == ".propertyGroupTable")
+				{
+					continue;
+				}
 				else if (tokens[Tag] == ".stateTable")
 				{
-					element.StateTable = StateTable(stream);
+					if (StateTable(stream, tokens) is IEnumerable<AssemblyState> states)
+					{
+						element.StateTable = states;
+					}
 					continue;
 				}
 				else
@@ -258,34 +305,37 @@ internal static class AssemblyFile
 	}
 
 
-	private static IEnumerable<AssemblyState> StateTable(AssemblyReader stream)
+	private static IEnumerable<AssemblyState>? StateTable(AssemblyReader stream, string[] arguments)
 	{
-		List<AssemblyState> table = new();
-		while (stream.ReadTokens() is string[] tokens)
+		if (arguments.Length > Tag && arguments[Tag] == ".stateTable")
 		{
-			if (tokens[Tag] == ".stateTable")
+			List<AssemblyState> list = new();
+			while (stream.ReadTokens() is string[] tokens)
 			{
-				continue;
-			}
-			else if (tokens[Tag] == ".endStateTable")
-			{
-				return table;
-			}
-			else if (tokens[Tag] == ".state")
-			{
-				if (State(stream, tokens) is AssemblyState element)
+				if (tokens[Tag] == ".endStateTable")
 				{
-					table.Add(element);
+					return list;
 				}
-				continue;
+				else if (tokens[Tag] == ".state")
+				{
+					if (State(stream, tokens) is AssemblyState element)
+					{
+						list.Add(element);
+					}
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					continue;
+				}
 			}
-			else
-			{
-				Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
-				continue;
-			}
+			return list;
 		}
-		return table;
+		else
+		{
+			return null;
+		}
 	}
 
 
@@ -361,11 +411,7 @@ internal static class AssemblyFile
 			// Get the object elements.
 			while (stream.ReadTokens() is string[] functionTokens)
 			{
-				if (functionTokens[Tag] == ".function")
-				{
-					continue;
-				}
-				else if (functionTokens[Tag] == ".endFunction")
+				if (functionTokens[Tag] == ".endFunction")
 				{
 					return element;
 				}
@@ -395,7 +441,10 @@ internal static class AssemblyFile
 				}
 				else if (functionTokens[Tag] == ".paramTable")
 				{
-					element.ParamTable = ParameterTable(stream);
+					if (ParameterTable(stream, functionTokens) is IEnumerable<AssemblyParameter> parameters)
+					{
+						element.ParamTable = parameters;
+					}
 					continue;
 				}
 				else if (functionTokens[Tag] == ".localTable")
@@ -422,48 +471,200 @@ internal static class AssemblyFile
 	}
 
 
-	private static IEnumerable<AssemblyParameter> ParameterTable(AssemblyReader stream)
+	private static IEnumerable<AssemblyParameter>? ParameterTable(AssemblyReader stream, string[] arguments)
 	{
-		List<AssemblyParameter> table = new();
-
-		while (stream.ReadTokens() is string[] tokens)
+		if (arguments.Length > Tag && arguments[Tag] == ".paramTable")
 		{
-			if (tokens[Tag] == ".paramTable")
+			List<AssemblyParameter> list = new();
+
+			while (stream.ReadTokens() is string[] tokens)
 			{
-				continue;
-			}
-			else if (tokens[Tag] == ".endParamTable")
-			{
-				return table;
-			}
-			else if (tokens[Tag] == ".param")
-			{
-				AssemblyParameter assemblyParameter = new();
-				for (int index = 1; index < tokens.Length; index++)
+				if (tokens[Tag] == ".endParamTable")
 				{
-					if (index == 1)
+					return list;
+				}
+				else if (tokens[Tag] == ".param")
+				{
+					AssemblyParameter assemblyParameter = new();
+					for (int index = 1; index < tokens.Length; index++)
 					{
-						assemblyParameter.Name = tokens[index];
+						if (index == 1)
+						{
+							assemblyParameter.Name = tokens[index];
+						}
+						else if (index == 2)
+						{
+							assemblyParameter.Type = tokens[index];
+						}
+						else
+						{
+							break;
+						}
 					}
-					else if (index == 2)
+					list.Add(assemblyParameter);
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					continue;
+				}
+			}
+
+			return list;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+
+	private static IEnumerable<AssemblyStructure>? StructureTable(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".structTable")
+		{
+			List<AssemblyStructure> list = new();
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endStructTable")
+				{
+					return list;
+				}
+				else if (tokens[Tag] == ".struct")
+				{
+					if (Structure(stream, tokens) is AssemblyStructure element)
 					{
-						assemblyParameter.Type = tokens[index];
+						list.Add(element);
 					}
-					else
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					continue;
+				}
+			}
+			return list;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+
+	// WIP
+	private static AssemblyStructure? Structure(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".struct")
+		{
+			AssemblyStructure element = new();
+
+			// Get the object fields.
+			if (arguments.Length > 1)
+			{
+				element.Name = arguments[1];
+			}
+
+			// Get the object elements.
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endStruct")
+				{
+					return element;
+				}
+				else if (tokens[Tag] == ".variable")
+				{
+					continue;
+
+					// ignore for now
+					if (VariableList(stream, tokens) is IEnumerable<AssemblyVariable> variables)
 					{
-						break;
+						element.Variables = variables;
 					}
 				}
-				table.Add(assemblyParameter);
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					continue;
+				}
 			}
-			else
-			{
-				Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
-				continue;
-			}
-		}
 
-		return table;
+			return element;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+
+	// WIP
+	private static IEnumerable<AssemblyVariable>? VariableList(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".variable")
+		{
+			List<AssemblyVariable> list = new();
+
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				//if (tokens[Tag] == ".variable")
+				//{
+				//}
+				if (Variable(stream, tokens) is AssemblyVariable element)
+				{
+					list.Add(element);
+					continue;
+				}
+				else if (tokens[Tag] == ".endVariable")
+				{
+					return list;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					continue;
+				}
+			}
+			return list;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+
+	// WIP
+	private static AssemblyVariable? Variable(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".variable")
+		{
+			AssemblyVariable element = new();
+
+			// Get the object fields.
+			for (int index = 1; index < arguments.Length; index++)
+			{
+				if (index == 1)
+				{
+					element.Name = arguments[index];
+				}
+				else if (index == 2)
+				{
+					element.Type = arguments[index];
+				}
+				else
+				{
+					break;
+				}
+			}
+
+			return element;
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 
