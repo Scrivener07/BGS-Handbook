@@ -82,9 +82,12 @@ public sealed class AssemblyStructure
 {
 	public string Name { get; set; }
 
+	public IEnumerable<AssemblyVariable> Variables { get; set; }
+
 	public AssemblyStructure()
 	{
 		Name = string.Empty;
+		Variables = Array.Empty<AssemblyVariable>();
 	}
 }
 
@@ -93,9 +96,12 @@ public sealed class AssemblyVariable
 {
 	public string Name { get; set; }
 
+	public string Type { get; set; }
+
 	public AssemblyVariable()
 	{
 		Name = string.Empty;
+		Type = string.Empty;
 	}
 }
 
