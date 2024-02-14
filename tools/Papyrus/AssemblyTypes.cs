@@ -115,11 +115,19 @@ public sealed class AssemblyProperty
 {
 	public string Name { get; set; }
 	public string Type { get; set; }
+	public bool IsAuto { get; set; }
+	public int UserFlags { get; set; }
+	public string DocString { get; set; }
+	public string AutoVar { get; set; }
 
 	public AssemblyProperty()
 	{
 		Name = string.Empty;
 		Type = string.Empty;
+		IsAuto = false;
+		UserFlags = 0;
+		AutoVar = string.Empty;
+		DocString = string.Empty;
 	}
 }
 

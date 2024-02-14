@@ -279,6 +279,10 @@ internal static class AssemblyFile
 				}
 				else if (tokens[Tag] == ".propertyTable")
 				{
+					if (PropertyTable(stream, tokens) is IEnumerable<AssemblyProperty> properties)
+					{
+						element.PropertyTable = properties;
+					}
 					continue;
 				}
 				else if (tokens[Tag] == ".propertyGroupTable")
@@ -349,7 +353,7 @@ internal static class AssemblyFile
 		{
 			AssemblyState element = new();
 
-			// Get the object fields.
+			// Get object attributes.
 			if (arguments.Length > 1)
 			{
 				element.Name = arguments[1];
@@ -395,7 +399,7 @@ internal static class AssemblyFile
 		{
 			AssemblyFunction element = new();
 
-			// Get the object fields.
+			// Get object attributes.
 			for (int index = 1; index < arguments.Length; index++)
 			{
 				if (index == 1)
@@ -563,7 +567,7 @@ internal static class AssemblyFile
 		{
 			AssemblyStructure element = new();
 
-			// Get the object fields.
+			// Get object attributes.
 			if (arguments.Length > 1)
 			{
 				element.Name = arguments[1];
@@ -644,7 +648,7 @@ internal static class AssemblyFile
 		{
 			AssemblyVariable element = new();
 
-			// Get the object fields.
+			// Get object attributes.
 			for (int index = 1; index < arguments.Length; index++)
 			{
 				if (index == 1)
@@ -689,6 +693,133 @@ internal static class AssemblyFile
 					if (tokens.Length > 1)
 					{
 						element.DocString = tokens[1];
+					}
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					continue;
+				}
+			}
+
+			return element;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private static IEnumerable<AssemblyProperty>? PropertyTable(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".propertyTable")
+		{
+			List<AssemblyProperty> list = new();
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endPropertyTable")
+				{
+					return list;
+				}
+				else if (tokens[Tag] == ".property")
+				{
+					if (Property(stream, tokens) is AssemblyProperty element)
+					{
+						list.Add(element);
+					}
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					continue;
+				}
+			}
+			return list;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+
+	private static AssemblyProperty? Property(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".property")
+		{
+			AssemblyProperty element = new();
+
+			// Get object attributes.
+			for (int index = 1; index < arguments.Length; index++)
+			{
+				if (index == 1)
+				{
+					element.Name = arguments[index];
+				}
+				else if (index == 2)
+				{
+					element.Type = arguments[index];
+				}
+				else if (index == 3)
+				{
+					element.IsAuto = arguments[index] == "auto";
+				}
+				else
+				{
+					break;
+				}
+			}
+
+			// Get the object elements.
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endVariable")
+				{
+					return element;
+				}
+				else if (tokens[Tag] == ".userFlags")
+				{
+					if (tokens.Length > 1)
+					{
+						element.UserFlags = int.Parse(tokens[1]);
+					}
+					continue;
+				}
+				else if (tokens[Tag] == ".docString")
+				{
+					if (tokens.Length > 1)
+					{
+						element.DocString = tokens[1];
+					}
+					continue;
+				}
+				else if (tokens[Tag] == ".autoVar")
+				{
+					if (tokens.Length > 1)
+					{
+						element.AutoVar = tokens[1];
 					}
 					continue;
 				}
