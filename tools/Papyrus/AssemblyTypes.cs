@@ -95,13 +95,18 @@ public sealed class AssemblyStructure
 public sealed class AssemblyVariable
 {
 	public string Name { get; set; }
-
 	public string Type { get; set; }
+	public int UserFlags { get; set; }
+	public string InitialValue { get; set; }
+	public string DocString { get; set; }
 
 	public AssemblyVariable()
 	{
 		Name = string.Empty;
 		Type = string.Empty;
+		UserFlags = 0;
+		InitialValue = string.Empty;
+		DocString = string.Empty;
 	}
 }
 

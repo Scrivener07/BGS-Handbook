@@ -553,7 +553,6 @@ internal static class AssemblyFile
 	}
 
 
-	// WIP
 	private static AssemblyStructure? Structure(AssemblyReader stream, string[] arguments)
 	{
 		if (arguments.Length > Tag && arguments[Tag] == ".struct")
@@ -566,6 +565,10 @@ internal static class AssemblyFile
 				element.Name = arguments[1];
 			}
 
+
+			List<AssemblyVariable> variables = new();
+			element.Variables = variables;
+
 			// Get the object elements.
 			while (stream.ReadTokens() is string[] tokens)
 			{
@@ -575,13 +578,11 @@ internal static class AssemblyFile
 				}
 				else if (tokens[Tag] == ".variable")
 				{
-					continue;
-
-					// ignore for now
-					if (VariableList(stream, tokens) is IEnumerable<AssemblyVariable> variables)
+					if (Variable(stream, tokens) is AssemblyVariable variable)
 					{
-						element.Variables = variables;
+						variables.Add(variable);
 					}
+					continue;
 				}
 				else
 				{
@@ -599,43 +600,6 @@ internal static class AssemblyFile
 	}
 
 
-	// WIP
-	private static IEnumerable<AssemblyVariable>? VariableList(AssemblyReader stream, string[] arguments)
-	{
-		if (arguments.Length > Tag && arguments[Tag] == ".variable")
-		{
-			List<AssemblyVariable> list = new();
-
-			while (stream.ReadTokens() is string[] tokens)
-			{
-				//if (tokens[Tag] == ".variable")
-				//{
-				//}
-				if (Variable(stream, tokens) is AssemblyVariable element)
-				{
-					list.Add(element);
-					continue;
-				}
-				else if (tokens[Tag] == ".endVariable")
-				{
-					return list;
-				}
-				else
-				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
-					continue;
-				}
-			}
-			return list;
-		}
-		else
-		{
-			return null;
-		}
-	}
-
-
-	// WIP
 	private static AssemblyVariable? Variable(AssemblyReader stream, string[] arguments)
 	{
 		if (arguments.Length > Tag && arguments[Tag] == ".variable")
@@ -656,6 +620,44 @@ internal static class AssemblyFile
 				else
 				{
 					break;
+				}
+			}
+
+			// Get the object elements.
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endVariable")
+				{
+					return element;
+				}
+				else if (tokens[Tag] == ".userFlags")
+				{
+					if (tokens.Length > 1)
+					{
+						element.UserFlags = int.Parse(tokens[1]);
+					}
+					continue;
+				}
+				else if (tokens[Tag] == ".initialValue")
+				{
+					if (tokens.Length > 1)
+					{
+						element.InitialValue = tokens[1];
+					}
+					continue;
+				}
+				else if (tokens[Tag] == ".docString")
+				{
+					if (tokens.Length > 1)
+					{
+						element.DocString = tokens[1];
+					}
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					continue;
 				}
 			}
 
