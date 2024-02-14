@@ -271,6 +271,10 @@ internal static class AssemblyFile
 				}
 				else if (tokens[Tag] == ".variableTable")
 				{
+					if (VariableTable(stream, tokens) is IEnumerable<AssemblyVariable> variables)
+					{
+						element.VariableTable = variables;
+					}
 					continue;
 				}
 				else if (tokens[Tag] == ".propertyTable")
@@ -592,6 +596,40 @@ internal static class AssemblyFile
 			}
 
 			return element;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+
+	private static IEnumerable<AssemblyVariable>? VariableTable(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".variableTable")
+		{
+			List<AssemblyVariable> list = new();
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endVariableTable")
+				{
+					return list;
+				}
+				else if (tokens[Tag] == ".variable")
+				{
+					if (Variable(stream, tokens) is AssemblyVariable element)
+					{
+						list.Add(element);
+					}
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					continue;
+				}
+			}
+			return list;
 		}
 		else
 		{
