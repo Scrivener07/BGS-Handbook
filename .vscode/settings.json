@@ -1,11 +1,7 @@
 {
-  "liquid.engine": "jekyll",
-  "liquid.config.baseDir": "./docs",
-  "[liquid]": {
-    "editor.defaultFormatter": "sissel.shopify-liquid",
-    "editor.formatOnSave": true
-  },
+  "editor.tabSize": 2,
   "files.associations": {
+    "*.md": "liquid",
     "*.html": "liquid",
     "*.js": "liquid-javascript",
     "*.css": "liquid-css",
@@ -22,7 +18,16 @@
     "**/$RECYCLE.BIN": true,
     "**/System Volume Information": true
   },
-  "editor.tabSize": 2,
+  "liquid.engine": "jekyll",
+  "liquid.config.baseDir": "./docs",
+  "[liquid]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": true
+  },
+  "[liquid-scss]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": false
+  },
   "cSpell.ignoreWords": [
     "AACT",
     "ACTI",
