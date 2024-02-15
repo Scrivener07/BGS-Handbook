@@ -1,0 +1,147 @@
+<style type="text/css">
+  dl {
+    border-style: groove;
+    border-width: 1px;
+    padding: 0.5em;
+  }
+
+  dt {
+    float: left;
+    clear: left;
+    width: 200px;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+
+  dt::after {
+    content: ":";
+  }
+
+  dd {
+    margin: 0 0 0 110px;
+    padding: 0 0 0.5em;
+  }
+</style>
+
+<section>
+  <b>Scripts:</b>
+  <span>{{ site.data.papyrus.size }}</span>
+
+  {%- for script in site.data.papyrus -%}
+    <h3>{{ script.ObjectTable[0].Name | inspect }}</h3>
+
+    <dl>
+      <dt>Info.Source</dt>
+      <dd>
+        <code>{{ script.Info.Source | inspect }}</code>
+      </dd>
+
+      <dt>Info.ModifyTime</dt>
+      <dd>
+        <code>{{ script.Info.ModifyTime | inspect }}</code>
+      </dd>
+
+      <dt>Info.CompileTime</dt>
+      <dd>
+        <code>{{ script.Info.CompileTime | inspect }}</code>
+      </dd>
+
+      <dt>Info.User</dt>
+      <dd>
+        <code>{{ script.Info.User | inspect }}</code>
+      </dd>
+
+      <dt>Info.Computer</dt>
+      <dd>
+        <code>{{ script.Info.Computer | inspect }}</code>
+      </dd>
+    </dl>
+
+    <section>
+      {%- for object in script.ObjectTable -%}
+        <dl>
+          <dt>Name</dt>
+          <dd>
+            <code>{{ object.Name | inspect }}</code>
+          </dd>
+
+          <dt>Extends</dt>
+          <dd>{{ object.Extends | inspect }}</dd>
+
+          <dt>Icon</dt>
+          <dd><img src="{{ site.baseurl }}{{ value.icon | default: '/assets/object_icon/default.png' }}" alt="Icon"></dd>
+
+          <dt>Object</dt>
+          {%- if value.object -%}
+            <dd>
+              <a href="{{ site.baseurl }}/_wiki_objects_ck/{{ value.object }}.html">{{ value.object }}</a>
+            </dd>
+          {%- else -%}
+            <dd>no data object</dd>
+          {%- endif -%}
+
+          <dt>Wiki</dt>
+          {%- if value.wiki -%}
+            <dd>
+              <a href="{{ value.wiki }}" target="_blank">{{ value.wiki }}</a>
+            </dd>
+          {%- else -%}
+            <dd>no wiki link</dd>
+          {%- endif -%}
+
+          <dt>Documentation</dt>
+          <dd>{{ object.DocString | inspect }}</dd>
+
+          <dt>AutoState</dt>
+          <dd>{{ object.AutoState | inspect }}</dd>
+        </dl>
+
+        <h4>Structures ({{ object.StructTable.size }})</h4>
+        <ul>
+          {%- for structure in object.StructTable -%}
+            <li>{{ structure.Name | inspect }}</li>
+          {%- endfor -%}
+        </ul>
+
+        <h4>Variables ({{ object.VariableTable.size }})</h4>
+        <ul>
+          {%- for variable in object.VariableTable -%}
+            <li>{{ variable.Name | inspect }}</li>
+          {%- endfor -%}
+        </ul>
+
+        <h4>Properties ({{ object.PropertyTable.size }})</h4>
+        <ul>
+          {%- for property in object.PropertyTable -%}
+            <li>{{ property.Name | inspect }}</li>
+          {%- endfor -%}
+        </ul>
+
+        <h4>Property Groups ({{ object.PropertyGroupTable.size }})</h4>
+        <ul>
+          {%- for propertyGroup in object.PropertyGroupTable -%}
+            <li>{{ propertyGroup.Name | inspect }}</li>
+          {%- endfor -%}
+        </ul>
+
+        <h4>States ({{ object.StateTable.size }})</h4>
+        <ul>
+          {%- for state in object.StateTable -%}
+            <li>State {{ state.Name | inspect }} with {{ state.Functions.size }} functions.</li>
+
+            <ul>
+              {%- for function in state.Functions -%}
+                <li>{{ function.Name | inspect }} in the {{ state.Name | inspect }} state.</li>
+              {%- endfor -%}
+            </ul>
+
+          {%- endfor -%}
+        </ul>
+
+      {%- endfor -%}
+
+    </section>
+
+  {%- endfor -%}
+</section>
