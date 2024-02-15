@@ -463,7 +463,7 @@ internal static class AssemblyFile
 				{ // skip
 					while (stream.ReadTokens() is string[] localTokens)
 					{
-						if (tokens[Tag] == ".endLocalTable") break;
+						if (localTokens[Tag] == ".endLocalTable") break;
 						else continue;
 					}
 					continue;
@@ -472,7 +472,7 @@ internal static class AssemblyFile
 				{ // skip
 					while (stream.ReadTokens() is string[] codeTokens)
 					{
-						if (tokens[Tag] == ".endCode") break;
+						if (codeTokens[Tag] == ".endCode") break;
 						else continue;
 					}
 					continue;
@@ -815,6 +815,15 @@ internal static class AssemblyFile
 					if (tokens.Length > 1)
 					{
 						element.AutoVar = tokens[1];
+					}
+					continue;
+				}
+				else if (tokens[Tag] == ".function")
+				{ // skip
+					while (stream.ReadTokens() is string[] functionTokens)
+					{
+						if (functionTokens[Tag] == ".endFunction") break;
+						else continue;
 					}
 					continue;
 				}
