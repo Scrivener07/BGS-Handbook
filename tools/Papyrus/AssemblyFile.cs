@@ -465,6 +465,17 @@ internal static class AssemblyFile
 				}
 				else if (tokens[Tag] == ".code")
 				{ // skip
+					while (stream.ReadTokens() is string[] codeTokens)
+					{
+						if (tokens[Tag] == ".endCode")
+						{
+							break;
+						}
+						else
+						{ // skip all
+							continue;
+						}
+					}
 					continue;
 				}
 				else
