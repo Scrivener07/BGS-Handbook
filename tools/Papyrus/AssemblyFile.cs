@@ -461,20 +461,19 @@ internal static class AssemblyFile
 				}
 				else if (tokens[Tag] == ".localTable")
 				{ // skip
+					while (stream.ReadTokens() is string[] localTokens)
+					{
+						if (tokens[Tag] == ".endLocalTable") break;
+						else continue;
+					}
 					continue;
 				}
 				else if (tokens[Tag] == ".code")
 				{ // skip
 					while (stream.ReadTokens() is string[] codeTokens)
 					{
-						if (tokens[Tag] == ".endCode")
-						{
-							break;
-						}
-						else
-						{ // skip all
-							continue;
-						}
+						if (tokens[Tag] == ".endCode") break;
+						else continue;
 					}
 					continue;
 				}
