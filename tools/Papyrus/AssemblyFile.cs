@@ -85,7 +85,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(Info)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					return element;
 				}
 			}
@@ -121,7 +121,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(UserFlags)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					return list;
 				}
 			}
@@ -195,7 +195,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(ObjectTable)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
@@ -287,6 +287,10 @@ internal static class AssemblyFile
 				}
 				else if (tokens[Tag] == ".propertyGroupTable")
 				{
+					if (PropertyGroupTable(stream, tokens) is IEnumerable<AssemblyPropertyGroup> groups)
+					{
+						element.PropertyGroupTable = groups;
+					}
 					continue;
 				}
 				else if (tokens[Tag] == ".stateTable")
@@ -299,7 +303,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(Object)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
@@ -334,7 +338,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(StateTable)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
@@ -379,7 +383,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(State)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
@@ -417,55 +421,55 @@ internal static class AssemblyFile
 			}
 
 			// Get the object elements.
-			while (stream.ReadTokens() is string[] functionTokens)
+			while (stream.ReadTokens() is string[] tokens)
 			{
-				if (functionTokens[Tag] == ".endFunction")
+				if (tokens[Tag] == ".endFunction")
 				{
 					return element;
 				}
-				else if (functionTokens[Tag] == ".userFlags")
+				else if (tokens[Tag] == ".userFlags")
 				{
-					if (functionTokens.Length > 1)
+					if (tokens.Length > 1)
 					{
-						element.UserFlags = int.Parse(functionTokens[1]);
+						element.UserFlags = int.Parse(tokens[1]);
 					}
 					continue;
 				}
-				else if (functionTokens[Tag] == ".docString")
+				else if (tokens[Tag] == ".docString")
 				{
-					if (functionTokens.Length > 1)
+					if (tokens.Length > 1)
 					{
-						element.DocString = functionTokens[1];
+						element.DocString = tokens[1];
 					}
 					continue;
 				}
-				else if (functionTokens[Tag] == ".return")
+				else if (tokens[Tag] == ".return")
 				{
-					if (functionTokens.Length > 1)
+					if (tokens.Length > 1)
 					{
-						element.Return = functionTokens[1];
+						element.Return = tokens[1];
 					}
 					continue;
 				}
-				else if (functionTokens[Tag] == ".paramTable")
+				else if (tokens[Tag] == ".paramTable")
 				{
-					if (ParameterTable(stream, functionTokens) is IEnumerable<AssemblyParameter> parameters)
+					if (ParameterTable(stream, tokens) is IEnumerable<AssemblyParameter> parameters)
 					{
 						element.ParamTable = parameters;
 					}
 					continue;
 				}
-				else if (functionTokens[Tag] == ".localTable")
+				else if (tokens[Tag] == ".localTable")
 				{ // skip
 					continue;
 				}
-				else if (functionTokens[Tag] == ".code")
+				else if (tokens[Tag] == ".code")
 				{ // skip
 					continue;
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {functionTokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(Function)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
@@ -513,7 +517,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(ParameterTable)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
@@ -548,7 +552,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(StructureTable)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
@@ -594,7 +598,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(Structure)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
@@ -629,7 +633,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(VariableTable)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
@@ -698,7 +702,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(Variable)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
@@ -733,7 +737,7 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(PropertyTable)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
@@ -776,7 +780,7 @@ internal static class AssemblyFile
 			// Get the object elements.
 			while (stream.ReadTokens() is string[] tokens)
 			{
-				if (tokens[Tag] == ".endVariable")
+				if (tokens[Tag] == ".endProperty")
 				{
 					return element;
 				}
@@ -806,7 +810,104 @@ internal static class AssemblyFile
 				}
 				else
 				{
-					Console.WriteLine($"Encountered an unexpected {tokens[Tag]} token tag.");
+					Console.WriteLine($"{nameof(Property)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
+					continue;
+				}
+			}
+
+			return element;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+
+	private static IEnumerable<AssemblyPropertyGroup>? PropertyGroupTable(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".propertyGroupTable")
+		{
+			List<AssemblyPropertyGroup> list = new();
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endPropertyGroupTable")
+				{
+					return list;
+				}
+				else if (tokens[Tag] == ".propertyGroup")
+				{
+					if (PropertyGroup(stream, tokens) is AssemblyPropertyGroup element)
+					{
+						list.Add(element);
+					}
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"{nameof(PropertyGroupTable)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
+					continue;
+				}
+			}
+			return list;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+
+	private static AssemblyPropertyGroup? PropertyGroup(AssemblyReader stream, string[] arguments)
+	{
+		if (arguments.Length > Tag && arguments[Tag] == ".propertyGroup")
+		{
+			List<string> properties = new();
+			AssemblyPropertyGroup element = new()
+			{
+				Properties = properties
+			};
+
+			// Get object attributes.
+			if (arguments.Length > 1)
+			{
+				element.Name = arguments[1];
+			}
+
+			// Get the object elements.
+			while (stream.ReadTokens() is string[] tokens)
+			{
+				if (tokens[Tag] == ".endPropertyGroup")
+				{
+					return element;
+				}
+				else if (tokens[Tag] == ".userFlags")
+				{
+					if (tokens.Length > 1)
+					{
+						element.UserFlags = int.Parse(tokens[1]);
+					}
+					continue;
+				}
+				else if (tokens[Tag] == ".docString")
+				{
+					if (tokens.Length > 1)
+					{
+						element.DocString = tokens[1];
+					}
+					continue;
+				}
+				else if (tokens[Tag] == ".property")
+				{
+					if (tokens.Length > 1)
+					{
+						properties.Add(tokens[1]);
+					}
+					continue;
+				}
+				else
+				{
+					Console.WriteLine($"{nameof(PropertyGroup)}: Encountered an unexpected {arguments[Tag]}{tokens[Tag]} token tag.");
 					continue;
 				}
 			}
