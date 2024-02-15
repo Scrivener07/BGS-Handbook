@@ -712,25 +712,6 @@ internal static class AssemblyFile
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private static IEnumerable<AssemblyProperty>? PropertyTable(AssemblyReader stream, string[] arguments)
 	{
 		if (arguments.Length > Tag && arguments[Tag] == ".propertyTable")
