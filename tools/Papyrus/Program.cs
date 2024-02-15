@@ -6,7 +6,7 @@ string assembler = string.Empty;
 string pscDirectory = string.Empty;
 string pexDirectory = string.Empty;
 
-// Read the command line arguments.
+Console.WriteLine("Read the command line arguments.");
 if (Environment.GetCommandLineArgs() is string[] arguments)
 {
 	assembler = arguments[1];
@@ -14,20 +14,20 @@ if (Environment.GetCommandLineArgs() is string[] arguments)
 	pexDirectory = arguments[3];
 }
 
-// Determine script targets.
+Console.WriteLine("Determine script targets.");
 IEnumerable<string> targets = GetScriptTargets(pscDirectory);
 SaveTargets("targets.txt", targets);
 
-// Disassemble compiled scripts into assembly files.
+Console.WriteLine("Disassemble compiled scripts into assembly files.");
 IEnumerable<string> pexFiles = FindTargetFiles(pexDirectory, "pex", targets);
 RunAssembler(assembler, pexFiles);
 
-// Deserialize assembly into CLR type.
+Console.WriteLine("Deserialize assembly into CLR type.");
 IEnumerable<string> pasFiles = FindTargetFiles(pexDirectory, "pas", targets);
 pasFiles = Extensions.MoveFiles(pasFiles, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PAS"));
 IEnumerable<AssemblyScript> assemblyObjects = CreateAssemblyScripts(pasFiles);
 
-// Serialize CLR type to a json file.
+Console.WriteLine("Serialize CLR type to a json file.");
 Save(assemblyObjects);
 
 
@@ -85,20 +85,20 @@ static void AssemblerDecompile(string executable, string file)
 	if (!File.Exists(file))
 		return;
 
-	ProcessStartInfo info = new()
+	Process process = new()
 	{
-		FileName = executable,
-		Arguments = $"\"{Path.GetFileNameWithoutExtension(file)}\" -D",
-		WorkingDirectory = Path.GetDirectoryName(file)
+		StartInfo = new ProcessStartInfo()
+		{
+			FileName = executable,
+			Arguments = $"\"{Path.GetFileNameWithoutExtension(file)}\" -D",
+			WorkingDirectory = Path.GetDirectoryName(file),
+			UseShellExecute = false,
+			RedirectStandardOutput = true
+		}
 	};
 
-	Process process = new();
-	process.StartInfo.FileName = executable;
-	process.StartInfo.Arguments = $"\"{Path.GetFileNameWithoutExtension(file)}\" -D";
-	process.StartInfo.WorkingDirectory = Path.GetDirectoryName(file);
 	process.Start();
 	process.WaitForExit(5000);
-	Console.WriteLine();
 }
 
 #endregion
