@@ -66,13 +66,13 @@ collections:
     permalink: /:collection/:name
   wiki:
     output: true
-    permalink: /:collection/:categories/:name
+    permalink: /wiki/:categories/:name
   wiki_objects_ck:
     output: true
-    permalink: /:collection/:categories/:name
+    permalink: /wiki/:categories/:name
   wiki_objects_papyrus:
     output: true
-    permalink: /:collection/:categories/:name
+    permalink: /wiki/:categories/:name
   wiki_ui_scaleform:
     output: true
     permalink: /:collection/:categories/:name
