@@ -135,10 +135,16 @@ public sealed class AssemblyProperty
 public sealed class AssemblyPropertyGroup
 {
 	public string Name { get; set; }
+	public int UserFlags { get; set; }
+	public string DocString { get; set; }
+	public IEnumerable<string> Properties { get; set; }
 
 	public AssemblyPropertyGroup()
 	{
 		Name = string.Empty;
+		UserFlags = 0;
+		DocString = string.Empty;
+		Properties = Array.Empty<string>();
 	}
 }
 
