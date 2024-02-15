@@ -61,7 +61,7 @@ static bool IsTarget(string file, IEnumerable<string> names)
 {
 	file = file.Replace(".disassemble", string.Empty);
 	string name = Path.GetFileNameWithoutExtension(file);
-	return names.Contains(name);
+	return names.Any(text => text.Equals(name, StringComparison.InvariantCultureIgnoreCase));
 }
 
 #endregion
