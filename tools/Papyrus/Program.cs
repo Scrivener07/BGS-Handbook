@@ -1,29 +1,44 @@
 ﻿using System.Diagnostics;
 using System.Text.Json;
+using Microsoft.Extensions.Configuration;
 using Papyrus;
 
-string assembler = string.Empty;
-string pscDirectory = string.Empty;
-string pexDirectory = string.Empty;
+Console.WriteLine("Read application settings");
 
-Console.WriteLine("Read the command line arguments.");
-if (Environment.GetCommandLineArgs() is string[] arguments)
+IConfigurationBuilder builder = new ConfigurationBuilder()
+	.SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+	.AddJsonFile(nameof(AppSettings) + ".json")
+	.AddCommandLine(Environment.GetCommandLineArgs());
+
+IConfiguration configuration = builder.Build();
+
+
+AppSettings? Settings = configuration.GetSection(nameof(AppSettings)).Get<AppSettings>();
+if (Settings != null)
 {
-	assembler = arguments[1];
-	pscDirectory = arguments[2];
-	pexDirectory = arguments[3];
+	Console.WriteLine($"\t- {nameof(Settings.Archiver)}: {Settings.Archiver}");
+	Console.WriteLine($"\t- {nameof(Settings.Assembler)}: {Settings.Assembler}");
+	Console.WriteLine($"\t- {nameof(Settings.ScriptSource)}: {Settings.ScriptSource}");
+	Console.WriteLine($"\t- {nameof(Settings.ScriptExecutable)}: {Settings.ScriptExecutable}");
+}
+else
+{
+	Environment.Exit(1);
 }
 
+Console.WriteLine();
+
+
 Console.WriteLine("Determine script targets.");
-IEnumerable<string> targets = GetScriptTargets(pscDirectory);
+IEnumerable<string> targets = GetScriptTargets(Settings.ScriptSource);
 SaveTargets("targets.txt", targets);
 
 Console.WriteLine("Disassemble compiled scripts into assembly files.");
-IEnumerable<string> pexFiles = FindTargetFiles(pexDirectory, "pex", targets);
-RunAssembler(assembler, pexFiles);
+IEnumerable<string> pexFiles = FindTargetFiles(Settings.ScriptExecutable, "pex", targets);
+RunAssembler(Settings.Assembler, pexFiles);
 
 Console.WriteLine("Deserialize assembly into CLR type.");
-IEnumerable<string> pasFiles = FindTargetFiles(pexDirectory, "pas", targets);
+IEnumerable<string> pasFiles = FindTargetFiles(Settings.ScriptExecutable, "pas", targets);
 pasFiles = Extensions.MoveFiles(pasFiles, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PAS"));
 IEnumerable<AssemblyScript> assemblyObjects = CreateAssemblyScripts(pasFiles);
 
