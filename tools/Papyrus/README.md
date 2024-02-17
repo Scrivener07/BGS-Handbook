@@ -5,10 +5,10 @@ See https://aka.ms/new-console-template for more information.
 ```json
 {
 	"AppSettings": {
-		"Archiver": "D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Tools\\Archive2\\\\Archive2.exe2",
-		"Assembler": "D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Papyrus Compiler\\PapyrusAssembler.exe2",
-		"ScriptSource": "D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Data\\Scripts\\Source\\Base2",
-		"ScriptExecutable": "G:\\Bethesda.Wiki\\BGS-Handbook\\tools\\Papyrus\\temp\\PEX2"
+		"Archiver": "D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Tools\\Archive2\\\\Archive2.exe",
+		"Assembler": "D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Papyrus Compiler\\PapyrusAssembler.exe",
+		"ScriptSource": "D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Data\\Scripts\\Source\\Base",
+		"ScriptExecutable": "G:\\Bethesda.Wiki\\BGS-Handbook\\tools\\Papyrus\\temp\\PEX"
 	}
 }
 ```
