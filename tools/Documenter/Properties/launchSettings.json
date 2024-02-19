@@ -1,0 +1,13 @@
+{
+	"profiles": {
+		"Papyrus": {
+			"commandName": "Project",
+			"workingDirectory": "G:\\Bethesda.Wiki\\BGS-Handbook\\tools\\Documenter"
+		},
+		"Papyrus Args": {
+			"commandName": "Project",
+			"commandLineArgs": "--AppSettings:Archiver=\"D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Tools\\Archive2\\Archive2.exe\"\r\n--AppSettings:Assembler=\"D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Papyrus Compiler\\PapyrusAssembler.exe\"\r\n--AppSettings:ScriptSource=\"D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Data\\Scripts\\Source\\Base\"\r\n--AppSettings:ScriptExecutable=\"G:\\Bethesda.Wiki\\BGS-Handbook\\tools\\Papyrus\\temp\\PEX\"",
+			"workingDirectory": "G:\\Bethesda.Wiki\\BGS-Handbook\\tools\\Documenter"
+		}
+	}
+}

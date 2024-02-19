@@ -9,11 +9,10 @@
 			"type": "coreclr",
 			"request": "launch",
 			"preLaunchTask": "build",
-			"program": "${workspaceFolder}/bin/Debug/net8.0/Papyrus.dll",
+			"program": "${workspaceFolder}/bin/Debug/net8.0/Documenter.dll",
 			"args": [
-				"D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Papyrus Compiler\\PapyrusAssembler.exe",
-				"D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Data\\Scripts\\Source\\Base",
-				"G:\\Bethesda.Wiki\\BGS-Handbook\\tools\\Papyrus\\temp\\PEX"
+				"--AppSettings:Archiver=\"D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Tools\\Archive2\\Archive2.exe\"",
+				"--AppSettings:Assembler=\"D:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Papyrus Compiler\\PapyrusAssembler.exe\""
 			],
 			"cwd": "${workspaceFolder}",
 			"stopAtEntry": false,

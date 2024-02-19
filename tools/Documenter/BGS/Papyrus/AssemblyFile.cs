@@ -1,4 +1,4 @@
-namespace Papyrus;
+namespace BGS.Papyrus;
 
 internal static class AssemblyFile
 {

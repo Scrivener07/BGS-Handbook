@@ -1,4 +1,6 @@
-﻿namespace Papyrus;
+﻿using Documenter;
+
+namespace BGS.Papyrus;
 
 internal class AssemblyReader(string file) : StreamReader(file)
 {

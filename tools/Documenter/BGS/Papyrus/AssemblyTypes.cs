@@ -1,4 +1,4 @@
-namespace Papyrus;
+namespace BGS.Papyrus;
 
 public sealed class AssemblyScript
 {

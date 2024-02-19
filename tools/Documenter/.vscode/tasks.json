@@ -7,7 +7,7 @@
 			"type": "process",
 			"args": [
 				"build",
-				"${workspaceFolder}/Papyrus.sln"
+				"${workspaceFolder}/Documenter.sln"
 			],
 			"problemMatcher": "$msCompile"
 		}
