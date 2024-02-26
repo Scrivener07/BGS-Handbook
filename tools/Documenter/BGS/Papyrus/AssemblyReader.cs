@@ -21,19 +21,29 @@ internal class AssemblyReader(string file) : StreamReader(file)
 
 	private static string Normalize(string line)
 	{
-		return line.Trim().Replace("\u0022", string.Empty).Replace("\\\\", "/");
+		return line.Trim().Replace("\\\\", "/");
 	}
 
 
 	private static string[] Tokenize(string line)
 	{
 		line = line.Cut(';', out string? comment).Trim();
+		if (comment != null)
+			comment = comment.TrimStart(';').Trim();
+
+		line = line.Cut('"', out string? quoted).Trim();
+		if (quoted != null)
+			quoted = quoted.Trim('"').Trim();
+
 		string[] tokens = line.Split(' ');
 
 		if (!string.IsNullOrWhiteSpace(comment))
-			return tokens.Append(comment).ToArray();
-		else
-			return tokens;
+			tokens = tokens.Append(comment).ToArray();
+
+		if (!string.IsNullOrWhiteSpace(quoted))
+			tokens = tokens.Append(quoted).ToArray();
+
+		return tokens;
 	}
 
 
