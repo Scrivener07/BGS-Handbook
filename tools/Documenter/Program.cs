@@ -28,6 +28,12 @@ List<Project> projects = new()
 	},
 	new()
 	{
+		Name = "Fallout 4",
+		OutputDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fallout4_DLC00"),
+		ScriptDirectory = @"G:\Bethesda.Wiki\BGS-Handbook\tools\Documenter\Targets\DLC00_Fallout",
+	},
+	new()
+	{
 		Name = "Fallout 4 - Automatron",
 		OutputDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fallout4_DLC01"),
 		ScriptDirectory = @"G:\Bethesda.Wiki\BGS-Handbook\tools\Documenter\Targets\DLC01_Automatron",
@@ -99,7 +105,7 @@ foreach (Project project in projects)
 		// Search again for the pas files in the new directory.
 		pasFiles = Directory.EnumerateFiles(pasDirectory, "*.pas", SearchOption.AllDirectories);
 
-		var scripts = CreateAssemblyData(project, pasFiles);
+		IEnumerable<AssemblyScript> scripts = CreateAssemblyData(project, pasFiles);
 
 
 		Console.WriteLine($"{project}: Serialize CLR type to a json file.");
