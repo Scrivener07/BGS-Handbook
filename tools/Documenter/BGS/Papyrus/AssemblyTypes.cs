@@ -1,9 +1,14 @@
+using System.Text.Json.Serialization;
+
 namespace BGS.Papyrus;
 
 public sealed class AssemblyScript
 {
 	public AssemblyInfo Info { get; set; }
+
+	[JsonIgnore]
 	public IEnumerable<AssemblyUserFlag> UserFlagsRef { get; set; }
+
 	public IEnumerable<AssemblyObject> ObjectTable { get; set; }
 
 	public AssemblyScript()
