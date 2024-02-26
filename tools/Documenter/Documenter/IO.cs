@@ -17,25 +17,4 @@ internal static class IO
 		File.WriteAllText(filepath, contents);
 	}
 
-
-	/// <summary>
-	/// Moves each file path to the given destination directory.
-	/// </summary>
-	/// <param name="files">The files to move.</param>
-	/// <param name="destination">The destination directory.</param>
-	/// <returns></returns>
-	public static IEnumerable<string> MoveFiles(IEnumerable<string> files, string destination)
-	{
-		List<string> values = new();
-		foreach (string file in files)
-		{
-			Directory.CreateDirectory(destination);
-			string filepath = Path.Combine(destination, Path.GetFileName(file));
-			File.Move(file, filepath, true);
-			values.Add(filepath);
-		}
-		return values;
-	}
-
-
 }

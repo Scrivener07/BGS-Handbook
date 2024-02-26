@@ -20,7 +20,6 @@ internal static class App
 	public static AppSettings? GetSettings()
 	{
 		if (Configuration != null)
-
 			return Configuration.GetSection(nameof(AppSettings)).Get<AppSettings>();
 		else
 			return null;

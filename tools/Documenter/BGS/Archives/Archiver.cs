@@ -5,7 +5,7 @@ namespace BGS.Archives;
 internal static class Archiver
 {
 
-	public static void Extract(string executable, string archiveFile, string extractDirectory)
+	public static void Extract(string executable, string archiveFile, string outputDirectory)
 	{
 		if (!File.Exists(executable))
 			return;
@@ -16,15 +16,15 @@ internal static class Archiver
 		if (!File.Exists(archiveFile))
 			return;
 
-		Directory.CreateDirectory(extractDirectory);
+		Directory.CreateDirectory(outputDirectory);
 
 		Process process = new()
 		{
 			StartInfo = new ProcessStartInfo()
 			{
 				FileName = executable,
-				Arguments = $"\"{archiveFile}\" -extract=\"{extractDirectory}\" -quiet",
-				WorkingDirectory = Path.GetDirectoryName(extractDirectory),
+				WorkingDirectory = Path.GetDirectoryName(outputDirectory),
+				Arguments = $"\"{archiveFile}\" -extract=\"{outputDirectory}\" -quiet",
 				UseShellExecute = false,
 				RedirectStandardOutput = true
 			}
